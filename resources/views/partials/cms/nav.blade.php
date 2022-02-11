@@ -135,31 +135,31 @@
                 <ul role="menu">
                   @adm
                     <li>
-                      <a href="#">Admin Panel</a>
+                      <a href="/admin">Admin Panel</a>
                     </li>
                   @endadm
                   <li>
                     <a href="#">User Panel</a>
                   </li>
                   <li>
-                    <a href="#">Donation</a>
+                    <a href="/user/donate">Donation</a>
                   </li>
                   <li>
-                    <a href="#">Vote For DP</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                    <a href="#">PvP Rewards</a>
-                  </li>
-                  <li>
-                    <a href="#">Webmall</a>
-                  </li>
-                  <li>
-                    <a href="#">Tiered Spender</a>
+                    <a href="/game/vote">Vote For DP</a>
                   </li>
                   <li class="divider"></li>
                   <li>
-                    <a href="#">Support</a>
+                    <a href="/game/rewards">PvP Rewards</a>
+                  </li>
+                  <li>
+                    <a href="/game/webmall">Webmall</a>
+                  </li>
+                  <li>
+                    <a href="/game/tieredSpender">Tiered Spender</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a href="/help/support">Support</a>
                   </li>
                   <li>
                     <a href="/auth/logout">Logout</a>
