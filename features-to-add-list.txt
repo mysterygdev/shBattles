@@ -1,0 +1,72 @@
+CMS:
+
+Most Important:
+Least Important:
+Other:
+Social Features:
+  ● Direct messages system
+  ● Custom Profile handles for social part
+  ● Guild profiles
+  ● Add/Message friends -- social media system
+Game Features:
+  ● Drop Finder
+  ● Multi-Currency webmall if enabled/disabled
+  ● GRB Rewards
+  ● Free rewards every 24 hours - open box
+  ● Server Polls
+  ● New PvP Rankings with Sort Features
+User Features:
+  ● Lost Password
+  ● Save Password/User Info/Stay Logged In/Remember Me
+  ● Security Questions / edit questions
+Auth Features (Register,login,logout):
+  ● Pin feature for password
+Security Features:
+  ● IP Account security / restrictions
+  ● Add Security Featuers/Account Privacy Settings
+  ● 2FA/OAuth?
+  ● Lock Account To Single IP ETC
+CMS Features:
+  ● Multi-Language System
+  ● Multi-Theme System
+Bugs:
+  ● Show/Hide password on multiple forms at once stops working
+  ● Mobile nav is glitchy
+
+Admin Panel:
+
+Most Important:
+  ● Web Mall Management System
+  ● Admin panel - manage online players
+  ● Admin panel for managing widgets - enable/disable (sort by enabled/disabled/etc)  - add new widget
+  ● Alerts/Notifications System (Admin Panel) - new ticket added - send notification etc
+
+Least Important:
+Other:
+
+Most Important:
+● Share DP/Donate to Friend
+● Secure Tiered Spender and PvP Rankings
+● Mailing list / Send Bulk Emails to Players via Admin Panel
+● Show/Hide Password - Show Password Strength - Show if caps on, etc
+● password requirements popup
+● simplify fetch paginator (too many js,calls etc)
+● Webmall paginator if too many items
+● Recaptcha - reigster enable/disable -- say which pages enabled/disabled for etc
+● Email Activation/Confirmation like old website made 2 years ago
+● Login Success redirect
+● notification/messaging system
+● shaiya/support tickets open a new channel on discord when created (shaiya discord bot)
+●
+
+Least Important:
+● Forum
+● Server Time Widget/Navbar/footer
+● Save form data when form fails
+●
+●
+●
+●
+
+
+Other:

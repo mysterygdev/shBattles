@@ -1,0 +1,144 @@
+.img-border{
+	display:inline;
+}
+
+.Hot{
+	border:2px solid #fc0820;
+}
+.Promo{
+	border:2px solid purple;
+}
+.New{
+	border:2px solid green;
+}
+.Sale{
+	border:2px solid blue;
+}
+
+.img-special{
+	display:inline;
+	padding:5px 5px;
+	text-transform:uppercase;
+	font-weight:bold;
+	font-size:14px;
+	font-family:"Marcellus SC", serif;
+	box-shadow: 0 0 6px;
+	/*margin-left:5px;*/
+	color:#fff;
+}
+
+.img-special.special-Hot{
+	background:#fc0820;
+}
+.img-special.special-Promo{
+	background:purple;
+}
+.img-special.special-New{
+	background:green;
+}
+.img-special.special-Sale{
+	background:blue;
+}
+
+.img-corner {
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 30%;
+	margin: 0 auto;
+	z-index: 1;
+	width: auto;
+	height: auto;
+}
+
+.product-title {
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 40%;
+	margin: 0 auto;
+}
+
+.product-details {
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 50%;
+	margin: 0 auto;
+}
+
+.product-price {
+	position: absolute;
+	right: 40%;
+	left: 0;
+	top: 65%;
+	margin: 0 auto;
+}
+
+.product-quantity {
+	position: absolute;
+	right: 0;
+	left: 50%;
+	top: 65%;
+	margin: 0 auto;
+}
+
+.single-products-item .hot {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 1;
+	text-transform: uppercase;
+	font-weight: 600;
+	background-color: #fc0820;
+	width: 55px;
+	height: 55px;
+	text-align: center;
+	line-height: 58px;
+	border-radius: 50%;
+}
+
+.single-products-item .sale {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 1;
+	text-transform: uppercase;
+	font-weight: 600;
+	background-color: blue;
+	width: 55px;
+	height: 55px;
+	text-align: center;
+	line-height: 58px;
+	border-radius: 50%;
+}
+
+.single-products-item .promo {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 1;
+	text-transform: uppercase;
+	font-weight: 600;
+	background-color: purple;
+	width: 55px;
+	height: 55px;
+	text-align: center;
+	line-height: 58px;
+	border-radius: 50%;
+}
+
+.single-products-item .new {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 1;
+	text-transform: uppercase;
+	font-weight: 600;
+	background-color: green;
+	width: 55px;
+	height: 55px;
+	text-align: center;
+	line-height: 58px;
+	border-radius: 50%;
+}

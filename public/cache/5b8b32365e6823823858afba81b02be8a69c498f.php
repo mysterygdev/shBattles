@@ -1,0 +1,1 @@
+<?php echo $__env->yieldContent('content'); ?><?php /**PATH C:\laragon\www\ShaiyaCMS\resources\views/layouts/ap/body.blade.php ENDPATH**/ ?>
