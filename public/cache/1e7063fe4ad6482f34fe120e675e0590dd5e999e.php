@@ -135,7 +135,7 @@
                 <ul role="menu">
                   <?php if (\Illuminate\Support\Facades\Blade::check('adm')): ?>
                     <li>
-                      <a href="/admin">Admin Panel</a>
+                      <a href="/admin" target="_blank">Admin Panel</a>
                     </li>
                   <?php endif; ?>
                   <li>

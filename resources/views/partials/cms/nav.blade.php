@@ -135,7 +135,7 @@
                 <ul role="menu">
                   @adm
                     <li>
-                      <a href="/admin">Admin Panel</a>
+                      <a href="/admin" target="_blank">Admin Panel</a>
                     </li>
                   @endadm
                   <li>
