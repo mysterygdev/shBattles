@@ -19,7 +19,7 @@ class Game extends Controller
 
     public function promotions()
     {
-        $promotions = $this->model(Models\User\Promotions::class, $this->user, $this->session);
+        $promotions = $this->model(Models\Game\Promotions::class, $this->user, $this->session);
 
         $widgets = $this->model(Widgets::class, $this->user, $this->session);
 
@@ -34,7 +34,7 @@ class Game extends Controller
 
     public function rewards()
     {
-        $rewards = $this->model(Models\User\Rewards::class, $this->user, $this->session);
+        $rewards = $this->model(Models\Game\Rewards::class, $this->user, $this->session);
 
         $widgets = $this->model(Widgets::class, $this->user, $this->session);
 
@@ -47,10 +47,25 @@ class Game extends Controller
         $this->view('pages/cms/game/rewards', $data);
     }
 
+    public function vote()
+    {
+        $vote = $this->model(Models\Game\Vote::class, $this->user, $this->session);
+
+        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+
+        $data = [
+            'vote' => $vote,
+            'user' => $this->user,
+            'widgets' => $widgets
+        ];
+
+        $this->view('pages/cms/game/vote', $data);
+    }
+
     /* Post Methods */
     public function pPromotions()
     {
-        $promotions = $this->model(Models\User\Promotions::class, $this->user, $this->session);
+        $promotions = $this->model(Models\Game\Promotions::class, $this->user, $this->session);
         $contentType = isset($_SERVER['CONTENT_TYPE']) ? trim($_SERVER['CONTENT_TYPE']) : '';
         if ($contentType === 'application/json') {
             //Receive the RAW post data.

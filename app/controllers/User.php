@@ -20,7 +20,7 @@ class User extends Controller
 
     public function claimReward($id)
     {
-        $rewards = $this->model(Models\User\Rewards::class, $this->user, $this->session);
+        $rewards = $this->model(Models\Game\Rewards::class, $this->user, $this->session);
 
         $widgets = $this->model(Widgets::class, $this->user, $this->session);
 
@@ -161,21 +161,6 @@ class User extends Controller
         ];
 
         $this->view('pages/cms/user/shareDp', $data);
-    }
-
-    public function vote()
-    {
-        $vote = $this->model(Models\User\Vote::class, $this->user, $this->session);
-
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
-
-        $data = [
-            'vote' => $vote,
-            'user' => $this->user,
-            'widgets' => $widgets
-        ];
-
-        $this->view('pages/cms/user/vote', $data);
     }
 
     /* Post Methods */

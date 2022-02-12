@@ -11,7 +11,7 @@
     $session = new Utils\Session;
     $user = new Utils\User($session);
 
-    $rewards = new Models\User\Rewards($user, $session);
+    $rewards = new Models\Game\Rewards($user, $session);
 
     $data = [
         'rewards' => $rewards,

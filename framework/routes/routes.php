@@ -81,7 +81,6 @@ Router::group(['prefix' => '/user'], function () {
     // Mixed
     Router::match(['get', 'post'], '/donate', 'User@donate');
     Router::match(['get', 'post'], '/paypal/listenerAdv', 'User@listenerAdv');
-    Router::match(['get', 'post'], '/vote', 'User@vote');
 });
 
 // User
@@ -106,6 +105,7 @@ Router::group(['prefix' => '/game'], function () {
     // Mixed
     Router::match(['get', 'post'], '/promotions', 'Game@promotions');
     Router::match(['get', 'post'], '/rewards', 'Game@rewards');
+    Router::match(['get', 'post'], '/vote', 'Game@vote');
 });
 
 // Admin
