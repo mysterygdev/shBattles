@@ -14,7 +14,11 @@ $Subject = $_REQUEST['Subject'];
 $Message = $_REQUEST['Message'];
 
 if ($_POST['UserUID'] && !empty($_POST['UserUID'])) {
-    if (!empty($Message)) {
+    if (empty($Message)) {
+        echo '<p class="text-center">Message can not be empty</p>';
+    } elseif (strlen($Message) > 0 && strlen(trim($Message)) == 0) {
+        echo '<p class="text-center">Message can not be empty</p>';
+    } else {
         try {
             DB::table(table('tickets'))
                 ->insert([
@@ -31,7 +35,5 @@ if ($_POST['UserUID'] && !empty($_POST['UserUID'])) {
         } catch (\Exception $e) {
             echo '<button class="badge badge-danger text-center w_100_p fs_20"><i class="fa fa-info-circle"></i> Support ticket update failed.</button>';
         }
-    } else {
-        echo '<p class="text-center">Message can not be empty.</p>';
     }
 }
