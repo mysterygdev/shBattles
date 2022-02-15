@@ -110,7 +110,7 @@
                     <div class="text-center">
                       <label for="MessageTest">Message:</label>
                     </div>
-                    <div class="input-wrap">
+                    <div class="youplay-textarea form-group">
                       <textarea name="Message" placeholder="Your message here..." class="general_input italic"></textarea>
                     </div>
                   </div>

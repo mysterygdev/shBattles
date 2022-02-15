@@ -105,7 +105,7 @@
                     <div class="text-center">
                       <label for="MessageTest">Message:</label>
                     </div>
-                    <div class="input-wrap">
+                    <div class="youplay-textarea form-group">
                       <textarea name="Message" placeholder="Message" class="form-control form-custom tac b_i"></textarea>
                     </div>
                   </div>

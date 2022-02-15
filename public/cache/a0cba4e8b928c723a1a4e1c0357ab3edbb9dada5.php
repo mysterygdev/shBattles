@@ -97,7 +97,7 @@
                     <div class="text-center">
                       <label for="MessageTest">Message:</label>
                     </div>
-                    <div class="input-wrap">
+                    <div class="youplay-textarea form-group">
                       <textarea name="Message" placeholder="Message" class="form-control form-custom tac b_i"></textarea>
                     </div>
                   </div>
@@ -118,6 +118,24 @@
   </section>
   <?php echo $__env->make('layouts.cms.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <?php echo $__env->make('layouts.cms.scripts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <script>
+    $(document).ready(function(){
+      $("button#send_ticket_submit").click(function(){
+        $.ajax({
+          type: "POST",
+          url:"/resources/jquery/addons/ajax/site/support/send_ticket_submit.php",
+          data: $("form.send_ticket").serialize(),
+          success: function(message){
+            $("#response").html(message);
+            $("#TableLoader").load(location.href + " #TabularData");
+          },
+          error: function(){
+            alert("Error");
+          }
+        });
+      });
+    });
+  </script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.cms.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\shaiyabattles\resources\views/pages/cms/help/support.blade.php ENDPATH**/ ?>

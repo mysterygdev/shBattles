@@ -9,7 +9,8 @@ use Illuminate\Database\Capsule\Manager as DB;
 
 $data = new \Classes\Utils\Data;
 
-$UserUID = isset($_POST['id']) ? $data->purify(trim($_POST['id'])) : false;
+//$UserUID = isset($_POST['id']) ? $data->purify(trim($_POST['id'])) : false;
+$UserUID = $_SESSION['User']['UserUID'];
 $Category = isset($_POST['Category']) ? $data->purify(trim($_POST['Category'])) : false;
 $Subject = isset($_POST['Subject']) ? $data->purify(trim($_POST['Subject'])) : false;
 $Message = isset($_POST['Message']) ? $data->purify(trim($_POST['Message'])) : false;
