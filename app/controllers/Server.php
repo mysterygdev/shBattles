@@ -28,7 +28,7 @@ class Server extends Controller
 
     public function bossRecords()
     {
-        $bossRecords = $this->model(Models\ServerInfo\BossRecords::class, $this->user);
+        $bossRecords = $this->model(Models\Server\BossRecords::class, $this->user);
 
         $widgets = $this->model(Widgets::class, $this->user, $this->session);
 
@@ -43,7 +43,7 @@ class Server extends Controller
 
     public function dropFinder()
     {
-        $dropFinder = $this->model(Models\ServerInfo\DropFinder::class, $this->user);
+        $dropFinder = $this->model(Models\Server\DropFinder::class, $this->user);
 
         $widgets = $this->model(Widgets::class, $this->user, $this->session);
 
@@ -95,7 +95,7 @@ class Server extends Controller
     // POST
     public function itemSearch()
     {
-        $dropFinder = $this->model(Models\ServerInfo\DropFinder::class, $this->user);
+        $dropFinder = $this->model(Models\Server\DropFinder::class, $this->user);
 
         $widgets = $this->model(Widgets::class, $this->user, $this->session);
 

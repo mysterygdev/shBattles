@@ -1,0 +1,3 @@
+[16-Feb-2022 19:56:11 America/Chicago] PHP Notice:  Undefined index: bossrecords in C:\laragon\www\shaiyabattles\public\cache\8ee42f89d27446a3d79390b3cb421598b3cfb586.php on line 34
+[16-Feb-2022 19:56:11 America/Chicago] PHP Notice:  Trying to get property 'MobID' of non-object in C:\laragon\www\shaiyabattles\public\cache\8ee42f89d27446a3d79390b3cb421598b3cfb586.php on line 34
+[16-Feb-2022 19:56:11 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\public\cache\8ee42f89d27446a3d79390b3cb421598b3cfb586.php on line 34

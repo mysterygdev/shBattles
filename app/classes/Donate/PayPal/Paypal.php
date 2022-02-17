@@ -130,7 +130,7 @@ class Paypal
                     }
                 }
             } else {
-                echo 'Reward ID Does not exist!';
+                echo 'Reward ID does not exist! Please make sure you checked a donation option. Click <a href="/user/donate">here</a> to go back.';
             }
         } catch (\Exception $e) {
             echo 'An error has occured.';
