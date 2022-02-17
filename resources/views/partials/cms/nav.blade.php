@@ -155,7 +155,7 @@
                     <a href="/game/webmall">Webmall</a>
                   </li>
                   <li>
-                    <a href="/game/tieredSpender">Tiered Spender</a>
+                    <a href="/game/webmall/tieredSpender">Tiered Spender</a>
                   </li>
                   <li class="divider"></li>
                   <li>
