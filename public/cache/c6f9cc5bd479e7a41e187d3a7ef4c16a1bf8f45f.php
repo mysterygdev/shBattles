@@ -215,3 +215,4 @@
     header("Location: $redirectLoc");
     exit();
   }
+ ?><?php /**PATH C:\laragon\www\shaiyabattles\resources\views/pages/cms/game/webmall/cartAction.blade.php ENDPATH**/ ?>

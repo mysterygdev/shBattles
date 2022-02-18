@@ -1,3 +1,13 @@
 [16-Feb-2022 19:56:11 America/Chicago] PHP Notice:  Undefined index: bossrecords in C:\laragon\www\shaiyabattles\public\cache\8ee42f89d27446a3d79390b3cb421598b3cfb586.php on line 34
 [16-Feb-2022 19:56:11 America/Chicago] PHP Notice:  Trying to get property 'MobID' of non-object in C:\laragon\www\shaiyabattles\public\cache\8ee42f89d27446a3d79390b3cb421598b3cfb586.php on line 34
 [16-Feb-2022 19:56:11 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\public\cache\8ee42f89d27446a3d79390b3cb421598b3cfb586.php on line 34
+[17-Feb-2022 21:51:28 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 209
+[17-Feb-2022 22:19:44 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 209
+[17-Feb-2022 22:19:48 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 209
+[17-Feb-2022 22:20:00 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 209
+[17-Feb-2022 22:20:05 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 209
+[17-Feb-2022 22:20:18 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 209
+[17-Feb-2022 22:21:51 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 211
+[17-Feb-2022 22:22:09 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 211
+[17-Feb-2022 22:22:18 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 211
+[17-Feb-2022 22:22:22 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 211
