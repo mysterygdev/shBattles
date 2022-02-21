@@ -14,36 +14,25 @@ function updateCartItem(obj,id){
 @section('title', 'Order Fail')
 @section('zone', 'CMS')
 @section('content')
-  <div id="exception"></div>
   @include('partials.cms.nav')
-  <div class="wrapper">
-    @include('partials.cms.header')
-    <div class="container">
-      <main class="content">
-        @include('partials.cms.slider')
-        <div id="content">
-          <div id="box1">
-            <div class="title1">
-              <h1>Purchase Failed!</h1>
-            </div>
-            <div id="content_center">
-              <div class="box-style1" style="margin-bottom:55px;">
-                <div class="entry">
-                  @guest
-                    <p>Please login to continue.</p>
-                  @else
-                    <p>You do not have enough points to purchase this!</p>
-                    <a href="/game/webmall" class="custom_button" style="text-transform: none;">Back to webmall</a>
-                    <a href="/game/webmall/cart" class="custom_button" style="text-transform: none;">Back to cart</a>
-                  @endguest
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      @include('partials.cms.sidebar')
+
+  <section class="content-wrap">
+    <div class="youplay-banner banner-top youplay-banner-parallax small">
+      <div class="image" style="background-image: url('/resources/themes/YouPlay/images/template/banner-blog-bg.jpg')"></div>
     </div>
-    @include('layouts.cms.footer')
-  </div>
+
+    <div class="container youplay-content text-center">
+        <h2 class="mt-0">Purchase Failed!</h2>
+        @guest
+          <p>Please login to continue.</p>
+        @else
+          <p>You do not have enough points to purchase this!</p>
+          <a href="/game/webmall" class="custom_button" style="text-transform: none;">Back to webmall</a>
+          <a href="/game/webmall/cart" class="custom_button" style="text-transform: none;">Back to cart</a>
+        @endguest
+    </div>
+  </section>
+
+  @include('layouts.cms.footer')
+  @include('layouts.cms.scripts')
 @endsection

@@ -55,56 +55,13 @@
           </li>
           <li class="dropdown dropdown-hover ">
             <a href="#!" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                      Features <span class="caret"></span> <span class="label">full list</span>
+                      Help <span class="caret"></span> <span class="label">e.x support</span>
                     </a>
             <div class="dropdown-menu">
               <ul role="menu">
-                <li class="dropdown dropdown-submenu pull-left ">
-                  <a href="#!" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User</a>
-                  <div class="dropdown-menu">
-                    <ul role="menu">
-                      <li><a href="user-activity.html">Activity</a>
-                      </li>
-                      <li><a href="user-profile.html">Profile</a>
-                      </li>
-                      <li><a href="user-messages.html">Messages</a>
-                      </li>
-                      <li><a href="user-messages-compose.html">Messages Compose</a>
-                      </li>
-                      <li><a href="user-settings.html">Settings</a>
-                      </li>
-                    </ul>
-                  </div>
+                <li><a href="/help/rules">Rules</a>
                 </li>
-                <li><a href="forums.html">Forums</a>
-                </li>
-                <li><a href="forums-topics.html">Forums Topics</a>
-                </li>
-                <li><a href="forums-single-topic.html">Single Topic</a>
-                </li>
-                <li><a href="matches-list.html">Matches List</a>
-                </li>
-                <li><a href="match.html">Match</a>
-                </li>
-                <li><a href="match-2.html">Match with Maps</a>
-                </li>
-              </ul>
-              <ul role="menu">
-                <li><a href="widgets.html">Widgets <span class="badge bg-default">New</span></a>
-                </li>
-                <li><a href="components.html">Components</a>
-                </li>
-                <li><a href="coming-soon.html">Coming Soon</a>
-                </li>
-                <li><a href="contact.html">Contact Us</a>
-                </li>
-                <li><a href="search.html">Search</a>
-                </li>
-                <li><a href="login.html">Login</a>
-                </li>
-                <li><a href="404.html">404</a>
-                </li>
-                <li><a href="blank.html">Blank</a>
+                <li><a href="/help/support">Support</a>
                 </li>
               </ul>
             </div>

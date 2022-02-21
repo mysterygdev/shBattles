@@ -14,35 +14,24 @@ function updateCartItem(obj,id){
 @section('title', 'Order Success')
 @section('zone', 'CMS')
 @section('content')
-  <div id="exception"></div>
   @include('partials.cms.nav')
-  <div class="wrapper">
-    @include('partials.cms.header')
-    <div class="container">
-      <main class="content">
-        @include('partials.cms.slider')
-        <div id="content">
-          <div id="box1">
-            <div class="title1">
-              <h1>Purchase Success!</h1>
-            </div>
-            <div id="content_center">
-              <div class="box-style1" style="margin-bottom:55px;">
-                <div class="entry">
-                  @guest
-                    <p>Please login to continue.</p>
-                  @else
-                    <p>Thank you for your purchase!</p>
-                    <p>You can view your past purchases in your orders page.</p>
-                  @endguest
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      @include('partials.cms.sidebar')
+
+  <section class="content-wrap">
+    <div class="youplay-banner banner-top youplay-banner-parallax small">
+      <div class="image" style="background-image: url('/resources/themes/YouPlay/images/template/banner-blog-bg.jpg')"></div>
     </div>
-    @include('layouts.cms.footer')
-  </div>
+
+    <div class="container youplay-content text-center">
+        <h2 class="mt-0">Purchase Success!</h2>
+        @guest
+          <p>Please login to continue.</p>
+        @else
+          <p>Thank you for your purchase!</p>
+          <p>You can view your past purchases in your orders page.</p>
+        @endguest
+    </div>
+  </section>
+
+  @include('layouts.cms.footer')
+  @include('layouts.cms.scripts')
 @endsection

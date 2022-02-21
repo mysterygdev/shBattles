@@ -33,7 +33,7 @@ Router::group(['prefix' => '/server'], function () {
     Router::get('/drops', 'Server@drops');
     Router::get('/download', 'Server@download');
     Router::get('/bossrecords', 'Server@bossrecords');
-    Router::get('/terms', 'Server@terms');
+    //Router::get('/terms', 'Server@terms');
 });
 // Help
 Router::group(['prefix' => '/help'], function () {

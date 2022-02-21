@@ -1,50 +1,36 @@
-<div class="sidebar col-sm-5 col-md-4 col-lg-4 col-sm-pull-7 col-md-pull-8 col-lg-pull-8">
-  <div class="widget-bl categories-widget">
-    <h5 class="fsize-20 text-center">Navigation</h5>
-    <div class="widget-wrapper">
-      <ul class="list-1">
-        <li class="color1">
-          <!-- TODO: change to /webmall/category/featured -->
-          <a href="/game/webmall?category=featured">
-            <span>Featured</span>
-          </a>
-        </li>
-        <li class="color1">
-          <a href="/game/webmall?category=gear">
-            <span>Gear</span>
-          </a>
-        </li>
-        <li class="color1">
-          <a href="/game/webmall?category=weapons">
-            <span>Weapons</span>
-          </a>
-        </li>
-        <li class="color1">
-          <a href="/game/webmall?category=capes">
-            <span>Capes & Accessories</span>
-          </a>
-        </li>
-        <li class="color1">
-          <a href="/game/webmall?category=promos">
-            <span>Promos</span>
-          </a>
-        </li>
-        <li class="color1">
-          <a href="/game/webmall?category=misc">
-            <span>Misc</span>
-          </a>
-        </li>
-        <li class="color1">
-          <a href="/game/webmall/cart">
-            <span>🛒 Cart 🛒</span>
-          </a>
-        </li>
-        <li class="color1">
-          <a href="/game/webmall/orders">
-            <span>🧾 Order History 🧾</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+<div class="col-md-3 col-md-pull-9">
+          <!-- BEGIN NAVIGATION -->
+          <div class="side-block">
+            <h4 class="block-title">Navigation</h4>
+            <ul class="block-content">
+              <li>
+                <a href="/game/webmall?category=featured">Featured</a>
+              </li>
+              <li>
+                <a href="/game/webmall?category=gear">Gear</a>
+              </li>
+              <li>
+                <a href="/game/webmall?category=weapons">Weapons</a>
+              </li>
+              <li>
+                <a href="/game/webmall?category=capes">Capes & Accessories</a>
+              </li>
+              <li>
+                <a href="/game/webmall?category=lapis">Lapis</a>
+              </li>
+              <li>
+                <a href="/game/webmall?category=promos">Promos</a>
+              </li>
+              <li>
+                <a href="/game/webmall?category=misc">Misc</a>
+              </li>
+              <li>
+                <a href="/game/webmall/orders">Order History</a>
+              </li>
+              <li>
+                <a href="/game/webmall/cart">Cart</a>
+              </li>
+            </ul>
+          </div>
+          <!-- /END NAVIGATION -->
+        </div>

@@ -73,39 +73,7 @@
             <?php endif; ?>
           </div>
         </div>
-        <div class="col-md-3 col-md-pull-9">
-          <!-- BEGIN NAVIGATION -->
-          <div class="side-block">
-            <h4 class="block-title">Navigation</h4>
-            <ul class="block-content">
-              <li>
-                <a href="'.DOC_ROOT.'/member/webmall?category=free">Free Items</a>
-              </li>
-              <li>
-                <a href="'.DOC_ROOT.'/member/webmall?category=featured">Featured</a>
-              </li>
-              <li>
-                <a href="'.DOC_ROOT.'/member/webmall?category=gear">Gear</a>
-              </li>
-              <li>
-                <a href="'.DOC_ROOT.'/member/webmall?category=weapons">Weapons</a>
-              </li>
-              <li>
-                <a href="'.DOC_ROOT.'/member/webmall?category=capes">Capes & Accessories</a>
-              </li>
-              <li>
-                <a href="'.DOC_ROOT.'/member/webmall?category=lapis">Lapis</a>
-              </li>
-              <li>
-                <a href="'.DOC_ROOT.'/member/webmall?category=promos">Promos</a>
-              </li>
-              <li>
-                <a href="'.DOC_ROOT.'/member/webmall?category=misc">Misc</a>
-              </li>
-            </ul>
-          </div>
-          <!-- /END NAVIGATION -->
-        </div>
+        <?php echo $__env->make('pages.cms.game.webmall.partials.navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
       <?php endif; ?>
     </div>
   </section>
