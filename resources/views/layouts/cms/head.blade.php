@@ -11,5 +11,4 @@
 rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 @include('layouts.cms.styles')
-{{-- @include('layouts.cms.javascript') --}}
 <title>@yield('title', 'undefined') - {{APP['title']}}</title>

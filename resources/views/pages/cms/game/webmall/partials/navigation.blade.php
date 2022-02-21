@@ -3,26 +3,30 @@
           <div class="side-block">
             <h4 class="block-title">Navigation</h4>
             <ul class="block-content">
+              <!--
+                * TODO:
+                * - Change category layout to /category/featured
+              -->
               <li>
-                <a href="/game/webmall?category=featured">Featured</a>
+                <a href="/game/webmall/category/featured">Featured</a>
               </li>
               <li>
-                <a href="/game/webmall?category=gear">Gear</a>
+                <a href="/game/webmall/category/gear">Gear</a>
               </li>
               <li>
-                <a href="/game/webmall?category=weapons">Weapons</a>
+                <a href="/game/webmall/category/weapons">Weapons</a>
               </li>
               <li>
-                <a href="/game/webmall?category=capes">Capes & Accessories</a>
+                <a href="/game/webmall/category/capes">Capes & Accessories</a>
               </li>
               <li>
-                <a href="/game/webmall?category=lapis">Lapis</a>
+                <a href="/game/webmall/category/lapis">Lapis</a>
               </li>
               <li>
-                <a href="/game/webmall?category=promos">Promos</a>
+                <a href="/game/webmall/category/promos">Promos</a>
               </li>
               <li>
-                <a href="/game/webmall?category=misc">Misc</a>
+                <a href="/game/webmall/category/misc">Misc</a>
               </li>
               <li>
                 <a href="/game/webmall/orders">Order History</a>

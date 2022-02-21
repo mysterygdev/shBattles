@@ -11,6 +11,5 @@
 rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 <?php echo $__env->make('layouts.cms.styles', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
 <title><?php echo $__env->yieldContent('title', 'undefined'); ?> - <?php echo e(APP['title']); ?></title>
 <?php /**PATH C:\laragon\www\shaiyabattles\resources\views/layouts/cms/head.blade.php ENDPATH**/ ?>

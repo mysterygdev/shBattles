@@ -55,3 +55,10 @@
 [20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
 [20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
 [20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[21-Feb-2022 16:19:44 America/Chicago] PHP Notice:  Array to string conversion in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 231
+[21-Feb-2022 16:20:16 America/Chicago] PHP Notice:  Undefined offset: 2 in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 232
+[21-Feb-2022 16:21:50 America/Chicago] PHP Notice:  Array to string conversion in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 230
+[21-Feb-2022 16:22:07 America/Chicago] PHP Notice:  Undefined property: Classes\Utils\Data::$url in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 230
+[21-Feb-2022 16:22:07 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 230
+[21-Feb-2022 16:34:37 America/Chicago] PHP Notice:  Undefined property: stdClass::$category in C:\laragon\www\shaiyabattles\public\cache\083ee621a70a0965ae64b547b3f13280a06ba29f.php on line 10
+[21-Feb-2022 16:36:52 America/Chicago] PHP Notice:  Trying to get property 'category' of non-object in C:\laragon\www\shaiyabattles\public\cache\083ee621a70a0965ae64b547b3f13280a06ba29f.php on line 11

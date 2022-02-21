@@ -92,7 +92,7 @@ class WebMall extends Controller
         $this->view('pages/cms/game/webmall/orderSuccess', $data);
     }
 
-    public function webmall()
+    public function webmall($name)
     {
         $webMall = $this->model(Models\Game\WebMall::class);
 
@@ -101,7 +101,8 @@ class WebMall extends Controller
         $data = [
             'webmall' => $webMall,
             'user' => $this->user,
-            'widgets' => $widgets
+            'widgets' => $widgets,
+            'category' => $name,
         ];
 
         $this->view('pages/cms/game/webmall/webmall', $data);

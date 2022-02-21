@@ -88,6 +88,7 @@ Router::group(['prefix' => '/game'], function () {
     Router::group(['prefix' => '/webmall'], function () {
         // GET
         Router::get('', 'WebMall@webmall');
+        Router::get('/category/{name}', 'WebMall@webmall');
         Router::get('/cart', 'WebMall@cart');
         Router::get('/checkout', 'WebMall@checkout');
         Router::get('/orders', 'WebMall@orders');

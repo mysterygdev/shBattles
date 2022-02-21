@@ -227,11 +227,18 @@ class WebMall
     */
     public function getItemCategory()
     {
-        if (isset($_GET['category'])) {
+        if ($this->data->url()[2]) {
+            if ($this->data->url()[2] == 'category') {
+                $this->category = ucfirst($this->data->url()[3]);
+            } else {
+                $this->category = 'Gear';
+            }
+        }
+        /* if (isset($_GET['category'])) {
             $this->category = ucfirst($_GET['category']);
         } else {
             $this->category = 'Gear';
-        }
+        } */
     }
 
     /**

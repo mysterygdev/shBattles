@@ -94,7 +94,7 @@
                     </li>
                   @endadm
                   <li>
-                    <a href="#">User Panel</a>
+                    <a href="/user/panel">User Panel</a>
                   </li>
                   <li>
                     <a href="/user/donate">Donation</a>
