@@ -19,3 +19,39 @@
 [19-Feb-2022 22:11:58 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 211
 [19-Feb-2022 22:12:24 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 211
 [19-Feb-2022 22:12:48 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 211
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\controllers\Community.php on line 190
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\controllers\Community.php on line 191
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\controllers\Community.php on line 193
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\controllers\Community.php on line 194
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23
+[20-Feb-2022 18:52:49 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\laragon\www\shaiyabattles\app\classes\Utils\Pagination.php on line 23

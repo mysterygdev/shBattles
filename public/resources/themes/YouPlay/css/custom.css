@@ -199,3 +199,13 @@ table.drops{
 .img-special.special-New{
 	background:green;
 }
+
+#rankingsData {
+	clear:both;
+	float:none;
+}
+
+.pagination {
+	justify-content: center !important;
+	display: flex !important;
+}

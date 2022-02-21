@@ -29,8 +29,6 @@
               <ul role="menu">
                 <li><a href="/download">Download</a>
                 </li>
-                <li><a href="/help/terms">Terms of Service</a>
-                </li>
               </ul>
             </div>
           </li>

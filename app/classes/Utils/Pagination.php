@@ -13,9 +13,9 @@ class Pagination
         for ($p = 1, $i = 0; $i < $total_records; $p++, $i += $perPage) {
             if ($page == $p) {
                 // assign current page to specific class
-                $tmp[] = '<a class="page-numbers current pagination_link" id="' . $p . '">' . $p . '</a>';
+                $tmp[] = '<li class="active"><a class="current pagination_link" id="' . $p . '">' . $p . '</a></li>';
             } else {
-                $tmp[] = '<a class="page-numbers pagination_link" id="' . $p . '">' . $p . '</a>';
+                $tmp[] = '<li><a class="pagination_link" id="' . $p . '">' . $p . '</a></li>';
             }
         }
         // thin out the pages
@@ -25,40 +25,38 @@ class Pagination
             }
         }
         // display page navigation if data covers more than one page
-        echo '<div class="pagination-area text-center">';
+        echo '<ul class="pagination">';
         if (count($tmp) > 1) {
             if ($page > 1) {
                 // display 'Prev' page
-                echo '<a class="prev page-numbers pagination_link pag-pn" id="' . $prevPage . '">
-                    <i class="bx bx-chevrons-left" id="' . $prevPage . '"></i>
-                </a>';
+                echo '<li><a class="prev pagination_link pag-pn" id="' . $prevPage . '">
+                    <i class="fas fa-chevron-circle-left" id="' . $prevPage . '"></i>
+                </a></li>';
             } else {
-                echo '<a class="prev page-numbers disabled">
-                    <i class="bx bx-chevrons-left"></i>
-                </a>';
+                echo '<li><a class="prev disabled">
+                    <i class="fas fa-chevron-circle-left"></i>
+                </a></li>';
             }
             $lastPage = 0;
-            echo '<span>';
             foreach ($tmp as $i => $link) {
                 if ($i > $lastPage + 1) {
-                    echo ' ... '; // where one or more page have been omitted
+                    echo '<li><span>... </span></li>'; // where one or more page have been omitted
                 }
                 echo $link;
                 $lastPage = $i;
             }
-            echo '</span>';
 
             if ($page <= $lastPage) {
                 // display 'Next' page
-                echo '<a class="next page-numbers pagination_link pag-pn" id="' . $nextPage . '">
-                    <i class="bx bx-chevrons-right" id="' . $nextPage . '"></i>
-                </a>';
+                echo '<li><a class="next pagination_link pag-pn" id="' . $nextPage . '">
+                    <i class="fas fa-chevron-circle-right" id="' . $nextPage . '"></i>
+                </a></li>';
             } else {
-                echo '<a class="next page-numbers disabled">
-                    <i class="bx bx-chevrons-right"></i>
-                </a>';
+                echo '<li><a class="next disabled">
+                    <i class="fas fa-chevron-circle-right"></i>
+                </a></li>';
             }
         }
-        echo '</div>';
+        echo '</ul>';
     }
 }
