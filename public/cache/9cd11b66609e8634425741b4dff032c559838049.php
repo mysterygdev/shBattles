@@ -4,30 +4,30 @@
         <!-- Social Buttons -->
         <div class="social">
             <div class="container">
-                <h3>Connect socially with <strong>youplay</strong></h3>
+                <h3>Connect socially with <strong><?php echo e(APP['title']); ?></strong></h3>
 
                 <div class="social-icons">
                     <div class="social-icon">
                         <a href="#!">
-                            <i class="fa fa-facebook-square"></i>
+                            <i class="fab fa-facebook-square"></i>
                             <span>Like on Facebook</span>
                         </a>
                     </div>
                     <div class="social-icon">
                         <a href="#!">
-                            <i class="fa fa-twitter-square"></i>
+                            <i class="fab fa-twitter-square"></i>
                             <span>Follow on Twitter</span>
                         </a>
                     </div>
                     <div class="social-icon">
                         <a href="#!">
-                            <i class="fa fa-twitch"></i>
+                            <i class="fab fa-twitch"></i>
                             <span>Watch on Twitch</span>
                         </a>
                     </div>
                     <div class="social-icon">
                         <a href="#!">
-                            <i class="fa fa-youtube-square"></i>
+                            <i class="fab fa-youtube-square"></i>
                             <span>Watch on Youtube</span>
                         </a>
                     </div>
