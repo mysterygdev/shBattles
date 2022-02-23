@@ -200,6 +200,7 @@ class Bootstrap
         define('SERVER', $this->loader->config('server'));
         define('STRIPE', $this->loader->config('stripe'));
         define('VOTE', $this->loader->config('vote'));
+        define('WEBMALL', $this->loader->config('webmall'));
         //$this->loader->loadConfigs();
     }
 

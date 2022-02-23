@@ -19,6 +19,7 @@ class Loader
         'register',
         'server',
         'stripe',
+        'webmall',
     ];
     public $helpers = [
         'abort',

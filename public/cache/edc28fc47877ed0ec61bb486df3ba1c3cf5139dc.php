@@ -1,18 +1,17 @@
-@extends('layouts.ap.app')
-@section('index', 'sendNotice')
-@section('title', 'Add Product')
-@section('zone', 'AP')
-@section('content')
-  @include('partials.ap.nav')
-  @include('partials.ap.header')
+<?php $__env->startSection('index', 'sendNotice'); ?>
+<?php $__env->startSection('title', 'Add Product'); ?>
+<?php $__env->startSection('zone', 'AP'); ?>
+<?php $__env->startSection('content'); ?>
+  <?php echo $__env->make('partials.ap.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <?php echo $__env->make('partials.ap.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <div class="pcoded-main-container">
     <div class="pcoded-wrapper">
       <div class="pcoded-content">
         <div class="pcoded-inner-content">
-          {{-- is logged in and is staff --}}
-          @if($data['user']->isAuthorized())
-            {{-- is adm, gm or gma --}}
-            @if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA())
+          
+          <?php if($data['user']->isAuthorized()): ?>
+            
+            <?php if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA()): ?>
               <div class="main-body">
                 <div class="page-wrapper">
                   <div class="row">
@@ -25,16 +24,16 @@
                           <p>First select an image, and then fill out the rest of the information.</p>
                           <p>Only one Item id and count are required. fill out as many as you like to create a package product.</p>
 
-                          @php
+                          <?php
                             //echo $data['addProduct']->getPagination();
                             echo $data['addProduct']->loadImages();
-                          @endphp
+                          ?>
 
                           <p id="response"></p>
                           <form id="form" action="">
                           </form>
                           <br>
-                          {{-- <button class="btn btn-sm btn-primary" name="btn2" id="btn2">Remove Last Product Input</button> --}}
+                          
                           <div class="form-group">
                             <!-- TODO: CREATE RANDOM PRODUCT CODE, FIRST CHECKING IF CODE EXISTS IN DATABASE EX: PROD_COD-->
                             <label for="ProductCode">Product Code</label>
@@ -58,33 +57,33 @@
                           </div>
                           <div class="form-group">
                             <label for="ProductCategory">Product Category</label>
-                            @if (!empty((WEBMALL['categories'])))
+                            <?php if(!empty((WEBMALL['categories']))): ?>
                               <select name="category" class="form-control">
                                 <option value="n/a">Select a category..</option>
-                                  @foreach (WEBMALL['categories'] as $id => $category)
-                                    <option value="{{$id}}">{{$category}}</option>
-                                  @endforeach
+                                  <?php $__currentLoopData = WEBMALL['categories']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $id => $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option value="<?php echo e($id); ?>"><?php echo e($category); ?></option>
+                                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </select>
                               <small id="ProductCategory" class="form-text text-muted">Product Category</small>
-                            @else
+                            <?php else: ?>
                               <p>
                                 It looks like there are no category options. Please make edits to the corresponding configuration file.
                               </p>
-                            @endif
+                            <?php endif; ?>
                           </div>
                           <div class="form-group">
                             <label for="ProductTag">Product Tag</label>
-                            @if (!empty((WEBMALL['tags'])))
+                            <?php if(!empty((WEBMALL['tags']))): ?>
                               <select name="tags" class="form-control">
                                 <option value="n/a">Select a tag..</option>
-                                @foreach (WEBMALL['tags'] as $id => $tag)
-                                  <option value="{{$id}}">{{$tag}}</option>
-                                @endforeach
+                                <?php $__currentLoopData = WEBMALL['tags']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $id => $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                  <option value="<?php echo e($id); ?>"><?php echo e($tag); ?></option>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </select>
                               <small id="ProductTag" class="form-text text-muted">Product Tag</small>
-                            @else
+                            <?php else: ?>
                               It looks like there are no tag options. Please make edits to the corresponding configuration file.
-                            @endif
+                            <?php endif; ?>
                           </div>
                           <button class="btn btn-sm btn-primary" name="btn" id="btn">Add Product Input</button>
                         </div>
@@ -93,10 +92,11 @@
                   </div>
                 </div>
               </div>
-            @endif
-          @else
-            {{redirect('/admin/auth/login')}}
-          @endif
+            <?php endif; ?>
+          <?php else: ?>
+            <?php echo e(redirect('/admin/auth/login')); ?>
+
+          <?php endif; ?>
         </div>
       </div>
     </div>
@@ -211,4 +211,6 @@
         }
       }
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.ap.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\shaiyabattles\resources\views/pages/ap/webmall/addProduct.blade.php ENDPATH**/ ?>

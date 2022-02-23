@@ -45,5 +45,5 @@
         // Views Directory
         'VIEWS_PATH' => env('VIEWS_PATH'),
         // URL Root
-        'URL_ROOT' => 'http://shaiyacms.local',
+        'URL_ROOT' => 'http://shaiyabattles.local',
     ];

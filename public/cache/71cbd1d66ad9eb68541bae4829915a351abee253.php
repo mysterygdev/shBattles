@@ -1,18 +1,17 @@
-@extends('layouts.ap.app')
-@section('index', 'sendNotice')
-@section('title', 'Add Product')
-@section('zone', 'AP')
-@section('content')
-  @include('partials.ap.nav')
-  @include('partials.ap.header')
+<?php $__env->startSection('index', 'sendNotice'); ?>
+<?php $__env->startSection('title', 'Add Product'); ?>
+<?php $__env->startSection('zone', 'AP'); ?>
+<?php $__env->startSection('content'); ?>
+  <?php echo $__env->make('partials.ap.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <?php echo $__env->make('partials.ap.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <div class="pcoded-main-container">
     <div class="pcoded-wrapper">
       <div class="pcoded-content">
         <div class="pcoded-inner-content">
-          {{-- is logged in and is staff --}}
-          @if($data['user']->isAuthorized())
-            {{-- is adm, gm or gma --}}
-            @if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA())
+          
+          <?php if($data['user']->isAuthorized()): ?>
+            
+            <?php if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA()): ?>
               <div class="main-body">
                 <div class="page-wrapper">
                   <div class="row">
@@ -54,12 +53,15 @@
                   </div>
                 </div>
               </div>
-            @endif
-          @else
-            {{redirect('/admin/auth/login')}}
-          @endif
+            <?php endif; ?>
+          <?php else: ?>
+            <?php echo e(redirect('/admin/auth/login')); ?>
+
+          <?php endif; ?>
         </div>
       </div>
     </div>
   </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.ap.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\shaiyabattles\resources\views/pages/ap/webmall/manageProducts.blade.php ENDPATH**/ ?>

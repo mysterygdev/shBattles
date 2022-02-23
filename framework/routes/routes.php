@@ -134,6 +134,14 @@ Router::group(['prefix' => '/admin'], function () {
         Router::post('/deleteEvent', 'Admin\Site@pDeleteEvent');
         Router::post('/updateEvent', 'Admin\Site@pEvents');
     });
+    Router::group(['prefix' => '/webmall'], function () {
+        // GET
+        Router::get('/addProduct', 'Admin\Webmall@addProduct');
+        Router::get('/editProduct', 'Admin\Webmall@editProduct');
+        Router::get('/manageProducts', 'Admin\Webmall@manageProducts');
+        Router::get('/removeProduct', 'Admin\Webmall@removeProduct');
+        // POST
+    });
     // Account
     Router::group(['prefix' => '/account'], function () {
         // GET
