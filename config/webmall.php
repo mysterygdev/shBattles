@@ -10,6 +10,7 @@
           'Misc'
         ],
         'tags' => [
+          'No tag',
           'Hot',
           'Promo',
           'New',

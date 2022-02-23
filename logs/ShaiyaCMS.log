@@ -233,3 +233,10 @@
 [23-Feb-2022 16:35:32 America/Chicago] PHP Warning:  Use of undefined constant WEBMALL - assumed 'WEBMALL' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 62
 [23-Feb-2022 16:35:32 America/Chicago] PHP Warning:  Illegal string offset 'categories' in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 62
 [23-Feb-2022 16:37:20 America/Chicago] PHP Notice:  Undefined index: categories in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 62
+[23-Feb-2022 17:36:59 America/Chicago] PHP Notice:  Undefined index: ban in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 25
+[23-Feb-2022 17:44:19 America/Chicago] PHP Notice:  Undefined variable: img in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 162
+[23-Feb-2022 17:44:19 America/Chicago] PHP Notice:  Undefined variable: img in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 163
+[23-Feb-2022 17:44:19 America/Chicago] PHP Notice:  Undefined variable: img in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 162
+[23-Feb-2022 17:44:19 America/Chicago] PHP Notice:  Undefined variable: img in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 163
+[23-Feb-2022 17:45:06 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\WebMall\AddProduct::$ProductCost in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 174
+[23-Feb-2022 17:45:06 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\WebMall\AddProduct::$ProductCost in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 174

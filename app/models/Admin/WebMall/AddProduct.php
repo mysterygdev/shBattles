@@ -2,14 +2,23 @@
 
 namespace App\Models\Admin\WebMall;
 
+use Illuminate\Database\Capsule\Manager as DB;
 use Classes\Utils as Utils;
 
 class AddProduct
 {
+    private $errors = [];
     public function __construct()
     {
         $this->data = new Utils\Data;
         $this->pagination = new Utils\Pagination;
+        $this->code = $this->getRandomString();
+        $this->image = null;
+        $this->name = isset($_POST['ProductName']) ? $this->data->purify(trim($_POST['ProductName'])) : false;
+        $this->desc = isset($_POST['ProductDesc']) ? $this->data->purify(trim($_POST['ProductDesc'])) : false;
+        $this->cost = isset($_POST['ProductCost']) ? $this->data->purify(trim($_POST['ProductCost'])) : false;
+        $this->category = isset($_POST['category']) ? $this->data->purify(trim($_POST['category'])) : false;
+        $this->tag = isset($_POST['tag']) ? $this->data->purify(trim($_POST['tag'])) : false;
     }
 
     public function getPagination()
@@ -98,5 +107,82 @@ class AddProduct
             echo ' <a href="?page='.($current_page+1).'"> Next&gt;&gt; </a> ';
         }
         echo '</div>';
+    }
+
+    public function addProduct()
+    {
+        echo 'add product here..';
+        $code = $this->getRandomString();
+        if ($this->doesProductCodeExists($code)) {
+            echo 'code already exists';
+            echo $code;
+            $newCode = $this->getRandomString();
+        } else {
+            echo 'code doesnt exist';
+        }
+    }
+
+    public function getRandomString($length = 10)
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-';
+        $string = '';
+
+        for ($i = 0; $i < $length; $i++) {
+            $string .= $characters[mt_rand(0, strlen($characters) - 1)];
+        }
+
+        return $string;
+    }
+
+    public function doesProductCodeExists($code)
+    {
+        $code = DB::table(table('products'))
+            ->select('ProductCode')
+            ->where('ProductCode', $code)
+            ->get();
+        if ($code->isEmpty()) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+
+    public function insertProduct()
+    {
+        //
+    }
+
+    public function checkIfImageIsSelected()
+    {
+        if (isset($_GET['img'])) {
+            if ($_GET['img']) {
+                $img    =   $_GET['img'];
+                $this->image = $img;
+            }
+        }
+    }
+
+    public function checkErrors(): array
+    {
+        $this->checkIfImageIsSelected();
+        if (empty($this->image)) {
+            $this->errors[] .= 'You must select an image.';
+        } elseif (empty($this->name)) {
+            $this->errors[] .= 'You must enter a name for your product.';
+        } elseif (strlen($this->desc) < 1) {
+            $this->errors[] .= 'You must enter a description for your product.';
+        } elseif (strlen($this->cost) < 1) {
+            $this->errors[] .= 'You must enter a cost for your product.';
+        } elseif (strlen($this->category) < 1) {
+            $this->errors[] .= 'You must choose a category for your product.';
+        } elseif ($this->category == 'n/a') {
+            $this->errors[] .= 'You must choose a category for your product.';
+        } elseif (strlen($this->tag) < 1) {
+            $this->errors[] .= 'You must choose a tag for your product.';
+        } elseif ($this->tag == 'n/a') {
+            $this->errors[] .= 'You must choose a tag for your product.';
+        }
+        // add checks to make sure at least 1 input is added.
+        return $this->errors;
     }
 }

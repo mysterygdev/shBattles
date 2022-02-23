@@ -22,71 +22,88 @@
                           <h5>Add Product</h5>
                         </div>
                         <div class="card-body">
+                          @if (isset($_POST['submit']))
+                            @if (!empty($data['addProduct']->checkErrors()))
+                              Errors found. Please make sure you filled out all form inputs.
+                              @php
+                                var_dump($data['addProduct']->checkErrors())
+                              @endphp
+                            @else
+                              no errors
+                            @endif
+                            {{-- {{$data['addProduct']->addProduct()}} --}}
+                          @endif
+
                           <p>First select an image, and then fill out the rest of the information.</p>
                           <p>Only one Item id and count are required. fill out as many as you like to create a package product.</p>
 
-                          @php
-                            //echo $data['addProduct']->getPagination();
-                            echo $data['addProduct']->loadImages();
-                          @endphp
+                          <form method="post">
+                            @php
+                              //echo $data['addProduct']->getPagination();
+                              echo $data['addProduct']->loadImages();
+                            @endphp
 
-                          <p id="response"></p>
-                          <form id="form" action="">
-                          </form>
-                          <br>
-                          {{-- <button class="btn btn-sm btn-primary" name="btn2" id="btn2">Remove Last Product Input</button> --}}
-                          <div class="form-group">
-                            <!-- TODO: CREATE RANDOM PRODUCT CODE, FIRST CHECKING IF CODE EXISTS IN DATABASE EX: PROD_COD-->
-                            <label for="ProductCode">Product Code</label>
-                            <input type="text" class="form-control" id="ProductCode" name="ProductCode" aria-describedby="ProductCode" placeholder="Enter product code">
-                            <small id="ProductCode" class="form-text text-muted">Special Identifier for product</small>
-                          </div>
-                          <div class="form-group">
-                            <label for="ProductName">Product Name</label>
-                            <input type="text" class="form-control" id="ProductName" name="ProductName" aria-describedby="ProductName" placeholder="Enter product name">
-                            <small id="ProductName" class="form-text text-muted">Product Name</small>
-                          </div>
-                          <div class="form-group">
-                            <label for="ProductDesc">Product Description</label>
-                            <input type="text" class="form-control" id="ProductDesc" name="ProductDesc" aria-describedby="ProductDesc" placeholder="Enter product description">
-                            <small id="ProductDesc" class="form-text text-muted">Product Description</small>
-                          </div>
-                          <div class="form-group">
-                            <label for="ProductCost">Product Cost</label>
-                            <input type="text" class="form-control" id="ProductCost" name="ProductCost" aria-describedby="ProductCost" placeholder="Enter product cost">
-                            <small id="ProductCost" class="form-text text-muted">Product Cost</small>
-                          </div>
-                          <div class="form-group">
-                            <label for="ProductCategory">Product Category</label>
-                            @if (!empty((WEBMALL['categories'])))
-                              <select name="category" class="form-control">
-                                <option value="n/a">Select a category..</option>
-                                  @foreach (WEBMALL['categories'] as $id => $category)
-                                    <option value="{{$id}}">{{$category}}</option>
+                            <p id="response"></p>
+                            {{-- <form id="form" action="">
+                            </form> --}}
+                            <br>
+                            {{-- <button class="btn btn-sm btn-primary" name="btn2" id="btn2">Remove Last Product Input</button> --}}
+                            {{-- <div class="form-group">
+                              <!-- TODO: CREATE RANDOM PRODUCT CODE, FIRST CHECKING IF CODE EXISTS IN DATABASE EX: PROD_COD-->
+                              <label for="ProductCode">Product Code</label>
+                              <input type="text" class="form-control" id="ProductCode" name="ProductCode" aria-describedby="ProductCode" placeholder="Enter product code">
+                              <small id="ProductCode" class="form-text text-muted">Special Identifier for product</small>
+                            </div> --}}
+                            <div class="form-group">
+                              <label for="ProductName">Product Name</label>
+                              <input type="text" class="form-control" id="ProductName" name="ProductName" aria-describedby="ProductName" placeholder="Enter product name">
+                              <small id="ProductName" class="form-text text-muted">Product Name</small>
+                            </div>
+                            <div class="form-group">
+                              <label for="ProductDesc">Product Description</label>
+                              <input type="text" class="form-control" id="ProductDesc" name="ProductDesc" aria-describedby="ProductDesc" placeholder="Enter product description">
+                              <small id="ProductDesc" class="form-text text-muted">Product Description</small>
+                            </div>
+                            <div class="form-group">
+                              <label for="ProductCost">Product Cost</label>
+                              <input type="text" class="form-control" id="ProductCost" name="ProductCost" aria-describedby="ProductCost" placeholder="Enter product cost">
+                              <small id="ProductCost" class="form-text text-muted">Product Cost</small>
+                            </div>
+                            <div class="form-group">
+                              <label for="ProductCategory">Product Category</label>
+                              @if (!empty((WEBMALL['categories'])))
+                                <select name="category" class="form-control">
+                                  <option value="n/a">Select a category..</option>
+                                    @foreach (WEBMALL['categories'] as $id => $category)
+                                      <option value="{{$id}}">{{$category}}</option>
+                                    @endforeach
+                                </select>
+                                <small id="ProductCategory" class="form-text text-muted">Product Category</small>
+                              @else
+                                <p>
+                                  It looks like there are no category options. Please make edits to the corresponding configuration file.
+                                </p>
+                              @endif
+                            </div>
+                            <div class="form-group">
+                              <label for="ProductTag">Product Tag</label>
+                              @if (!empty((WEBMALL['tags'])))
+                                <select name="tag" class="form-control">
+                                  <option value="n/a">Select a tag..</option>
+                                  @foreach (WEBMALL['tags'] as $id => $tag)
+                                    <option value="{{$id}}">{{$tag}}</option>
                                   @endforeach
-                              </select>
-                              <small id="ProductCategory" class="form-text text-muted">Product Category</small>
-                            @else
-                              <p>
-                                It looks like there are no category options. Please make edits to the corresponding configuration file.
-                              </p>
-                            @endif
-                          </div>
-                          <div class="form-group">
-                            <label for="ProductTag">Product Tag</label>
-                            @if (!empty((WEBMALL['tags'])))
-                              <select name="tags" class="form-control">
-                                <option value="n/a">Select a tag..</option>
-                                @foreach (WEBMALL['tags'] as $id => $tag)
-                                  <option value="{{$id}}">{{$tag}}</option>
-                                @endforeach
-                              </select>
-                              <small id="ProductTag" class="form-text text-muted">Product Tag</small>
-                            @else
-                              It looks like there are no tag options. Please make edits to the corresponding configuration file.
-                            @endif
-                          </div>
-                          <button class="btn btn-sm btn-primary" name="btn" id="btn">Add Product Input</button>
+                                </select>
+                                <small id="ProductTag" class="form-text text-muted">Product Tag</small>
+                              @else
+                                It looks like there are no tag options. Please make edits to the corresponding configuration file.
+                              @endif
+                            </div>
+                            <div class="formInput-Group" id="formInput-Group"></div>
+                            @Separator(20)
+                            <button class="btn btn-sm btn-primary" name="btn" id="btn">Add Product Input</button>
+                            <button type="submit" class="btn btn-sm btn-primary" name="submit">Create Product</button>
+                          </form>
                         </div>
                       </div>
                     </div>
@@ -103,7 +120,7 @@
   </div>
   <script>
       const btn = document.getElementById('btn');
-      const form = document.getElementById('form');
+      const form = document.getElementById('formInput-Group');
       let formInline = document.querySelector('.form-inline');
       let counter = 0
       btn.addEventListener('click', function() {
