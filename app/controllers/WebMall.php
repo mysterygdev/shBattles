@@ -165,7 +165,7 @@ class WebMall extends Controller
                     }
                     if ($this->session->has('WebMall', 'CouponCode')) {
                         $errors[] .= 'Coupon code already added.';
-                        //$this->session->forget('WebMall');
+                        $this->session->forget('WebMall');
                     }
                     // TODO: check if code still valid and not expired
                     // If No Errors Continue
@@ -175,7 +175,7 @@ class WebMall extends Controller
                         echo '<div class="alert alert-success" role="alert">';
                         echo '<strong>Awesome!</strong> This coupon code has successfully been added.';
                         echo '</div>';
-                        // reload page
+                        redirect_html('/game/webmall/checkout', 1);
                     }
                     if (count($errors)) {
                         echo '<ul>';
