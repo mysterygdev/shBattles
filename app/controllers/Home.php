@@ -22,11 +22,13 @@ class Home extends Controller
     public function index()
     {
         $newsModel = $this->model(Models\Community\News::class, $this->user);
+        $serverInfo = $this->model(Models\Server\ServerInfo::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user , $this->session);
 
         $data = [
             'news' => $newsModel,
+            'info' => $serverInfo,
             'user' => $this->user,
             'widgets' => $widgets
         ];

@@ -6,8 +6,6 @@ use Illuminate\Database\Capsule\Manager as DB;
 
 class ServerInfo
 {
-    protected $ServerIP = '127.0.0.1';
-    protected $ServerPorts = [6249, 6264];
     public $pOnline;
     public $AoL;
     public $UoF;
@@ -19,8 +17,8 @@ class ServerInfo
 
     public function serverStatus()
     {
-        $LoginConn = @fsockopen($this->ServerIP, $this->ServerPorts[0], $errno, $errstr, 0.01);
-        $GameConn = @fsockopen($this->ServerIP, $this->ServerPorts[1], $errno, $errstr, 0.01);
+        $LoginConn = @fsockopen(SERVER['ip'], SERVER['ports'][0], $errno, $errstr, 0.01);
+        $GameConn = @fsockopen(SERVER['ip'], SERVER['ports'][1], $errno, $errstr, 0.01);
         echo '<p class="lead">Login Server: ';
         if ($LoginConn) {
             echo '<span style="color:lime" class="b">Online</span>';
