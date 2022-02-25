@@ -99,6 +99,8 @@ function table($table)
         // Webmall
         case 'products':
             return 'ShaiyaCMS.dbo.products';
+        case 'productDiscounts':
+            return 'ShaiyaCMS.dbo.product_discounts';
         case 'orderHistory':
             return 'ShaiyaCMS.dbo.order_history';
         // Guildmall

@@ -85,7 +85,21 @@ class WebMall
     */
     public function total()
     {
-        return $this->cartContents['cart_total'];
+        if ($this->doesCouponCodeExist()) {
+            //TODO: add min order value and max discount requirements
+            $type = $this->getCouponData($this->session->get('WebMall', 'CouponCode'), 'Type');
+            $value = $this->getCouponData($this->session->get('WebMall', 'CouponCode'), 'Value');
+            if ($type == 'Percentage') {
+                $total =  $this->cartContents['cart_total'] - ($this->cartContents['cart_total'] * ((int)($value)/100));
+                $this->cartContents['cart_total'] = $total;
+            } elseif ($type = 'Fixed') {
+                $total =  $this->cartContents['cart_total'] - ((int)($value));
+                $this->cartContents['cart_total'] = $total;
+            }
+            return $this->cartContents['cart_total'];
+        } else {
+            return $this->cartContents['cart_total'];
+        }
     }
 
     /**
@@ -227,13 +241,14 @@ class WebMall
     */
     public function getItemCategory()
     {
-        if ($this->data->url()[2]) {
+        /* if ($this->data->url()[2]) {
             if ($this->data->url()[2] == 'category') {
                 $this->category = ucfirst($this->data->url()[3]);
             } else {
                 $this->category = 'Gear';
             }
-        }
+        } */
+        $this->category = (!empty($this->data->url()[2]) && $this->data->url()[2] === 'category') ? ucfirst($this->data->url()[3]) : 'Gear';
         /* if (isset($_GET['category'])) {
             $this->category = ucfirst($_GET['category']);
         } else {
@@ -445,6 +460,21 @@ class WebMall
         $res = DB::table(table('userPoints'))
             ->where('UserUID', $_SESSION['User']['UserUID'])
             ->update(['gpPoints' => $newPoints]);
+        return $res;
+    }
+
+    public function doesCouponCodeExist()
+    {
+        if ($this->session->has('WebMall', 'CouponCode')) {
+            return $this->session->get('WebMall', 'CouponCode');
+        }
+    }
+
+    public function getCouponData($code, $data)
+    {
+        $res = DB::table(table('productDiscounts'))
+            ->where('CouponCode', $code)
+            ->value($data);
         return $res;
     }
 }

@@ -240,3 +240,109 @@
 [23-Feb-2022 17:44:19 America/Chicago] PHP Notice:  Undefined variable: img in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 163
 [23-Feb-2022 17:45:06 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\WebMall\AddProduct::$ProductCost in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 174
 [23-Feb-2022 17:45:06 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\WebMall\AddProduct::$ProductCost in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 174
+[23-Feb-2022 18:36:46 America/Chicago] PHP Notice:  Undefined offset: 2 in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 230
+[23-Feb-2022 18:36:47 America/Chicago] PHP Notice:  Undefined offset: 2 in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 230
+[23-Feb-2022 20:56:36 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 36
+[23-Feb-2022 20:58:08 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\WebMall\AddProduct::$itemArr in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 133
+[23-Feb-2022 20:58:08 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 27
+[23-Feb-2022 20:59:31 America/Chicago] PHP Warning:  trim() expects parameter 1 to be string, array given in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 22
+[23-Feb-2022 21:00:20 America/Chicago] PHP Warning:  trim() expects parameter 1 to be string, array given in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 22
+[23-Feb-2022 21:01:28 America/Chicago] PHP Warning:  strlen() expects parameter 1 to be string, array given in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 186
+[23-Feb-2022 21:09:46 America/Chicago] PHP Warning:  Illegal offset type in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 190
+[23-Feb-2022 21:23:01 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:23:25 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:23:25 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:23:28 America/Chicago] PHP Notice:  Undefined index: Items in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:23:38 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:23:38 America/Chicago] PHP Notice:  Trying to get property 'Items' of non-object in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:23:41 America/Chicago] PHP Notice:  Trying to get property 'Items' of non-object in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:23:50 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:24:38 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:25:05 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:25:32 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:25:55 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:26:18 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:26:47 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:27:15 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:27:15 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:27:17 America/Chicago] PHP Notice:  Undefined index: Items in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:27:20 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:27:20 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:27:25 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:27:55 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:27:55 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:27:55 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:30:13 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:30:13 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:30:13 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:30:13 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:30:13 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:30:39 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:30:39 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:30:39 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:30:39 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:30:39 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:31:13 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:31:13 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:31:13 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:31:13 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:31:13 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:31:29 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:31:29 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:31:29 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:31:29 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:31:29 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:31:31 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:31:31 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:31:31 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:31:31 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:31:31 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:31:31 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 196
+[23-Feb-2022 21:34:19 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:34:19 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:34:19 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:34:19 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:34:19 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:34:19 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 27
+[23-Feb-2022 21:34:19 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 27
+[23-Feb-2022 21:34:24 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:34:24 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:34:24 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 27
+[23-Feb-2022 21:34:24 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 27
+[23-Feb-2022 21:34:26 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:34:26 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:34:26 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 27
+[23-Feb-2022 21:34:26 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 27
+[23-Feb-2022 21:34:26 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 199
+[23-Feb-2022 21:35:03 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:35:03 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:35:03 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 27
+[23-Feb-2022 21:35:03 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 27
+[23-Feb-2022 21:35:06 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 31
+[23-Feb-2022 21:35:06 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 31
+[23-Feb-2022 21:35:12 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:35:12 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:35:12 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 27
+[23-Feb-2022 21:35:12 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 27
+[23-Feb-2022 21:35:14 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 31
+[23-Feb-2022 21:35:14 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 31
+[23-Feb-2022 21:35:14 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 31
+[23-Feb-2022 21:35:14 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 31
+[23-Feb-2022 21:35:33 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:35:33 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[23-Feb-2022 21:35:33 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 27
+[23-Feb-2022 21:35:33 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 27
+[23-Feb-2022 21:35:35 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 31
+[23-Feb-2022 21:35:35 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 31
+[23-Feb-2022 21:35:35 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 31
+[23-Feb-2022 21:35:35 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 31
+[23-Feb-2022 21:35:35 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 31
+[23-Feb-2022 21:35:35 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 31
+[23-Feb-2022 21:35:51 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:35:51 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[23-Feb-2022 21:35:51 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 24
+[24-Feb-2022 21:46:22 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 211
+[24-Feb-2022 22:35:26 America/Chicago] PHP Notice:  Undefined index: Percentage in C:\laragon\www\shaiyabattles\vendor\illuminate\support\Collection.php on line 1362
+[24-Feb-2022 22:40:13 America/Chicago] PHP Notice:  A non well formed numeric value encountered in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 92
+[24-Feb-2022 22:42:15 America/Chicago] PHP Notice:  A non well formed numeric value encountered in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 92
+[24-Feb-2022 22:42:59 America/Chicago] PHP Notice:  A non well formed numeric value encountered in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 93

@@ -67,6 +67,16 @@ function updateCartItem(obj,id){
                 <a href="/game/webmall/cart" class="custom_button" style="text-transform: none;">Edit cart</a>
               </td>
               <td>
+                <p class="text-left">
+                  <strong>Coupon code</strong>
+                  <div class="col-md-3">
+                    <div class="youplay-input">
+                      <input type="text" name="couponCode" id="couponCode" placeholder="Coupon code">
+                    </div>
+                    <p id="responseCoupon"></p>
+                    <button type="submit" class="btn btn-sm" name="couponSubmit" id="couponSubmit">Apply</button>
+                  </div>
+                </p>
                 <p class="text-right">
                   <strong>Cart Total</strong>
                   <strong>{{$data['webmall']->total()}} DP</strong>
@@ -86,4 +96,33 @@ function updateCartItem(obj,id){
 
   @include('layouts.cms.footer')
   @include('layouts.cms.scripts')
+  <script>
+    document.body.addEventListener("click", e => {
+      if(e.target.closest("#couponSubmit")) {
+        e.preventDefault();
+
+        const code =  document.querySelector('input[name="couponCode"]').value;
+        const response =  document.querySelector('#responseCoupon');
+
+        fetch('/game/webmall/couponAdd', {
+          method: 'post',
+          mode: "same-origin",
+          credentials: "same-origin",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+              code
+          })
+        })
+        .then(r => r.text())
+        .then(data => {
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(data, "text/html");
+          response.innerHTML = doc.documentElement.innerHTML;
+          console.log(doc.documentElement.innerHTML);
+        })
+      }
+    });
+  </script>
 @endsection

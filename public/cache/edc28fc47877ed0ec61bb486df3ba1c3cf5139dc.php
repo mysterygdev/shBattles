@@ -23,10 +23,10 @@
                         <div class="card-body">
                           <?php if(isset($_POST['submit'])): ?>
                             <?php if(!empty($data['addProduct']->checkErrors())): ?>
+                              <!-- TODO: SHOW ALL ERRORS, NOT JUST ONE -->
                               Errors found. Please make sure you filled out all form inputs.
-                              <?php
-                                var_dump($data['addProduct']->checkErrors())
-                              ?>
+                              <?php echo e($data['addProduct']->addProduct()); ?>
+
                             <?php else: ?>
                               no errors
                             <?php endif; ?>
@@ -94,7 +94,7 @@
                             </div>
                             <div class="formInput-Group" id="formInput-Group"></div>
                             <?php separator(20) ?>
-                            <button class="btn btn-sm btn-primary" name="btn" id="btn">Add Product Input</button>
+                            <button type="button" class="btn btn-sm btn-primary" name="btn" id="btn">Add Product Input</button>
                             <button type="submit" class="btn btn-sm btn-primary" name="submit">Create Product</button>
                           </form>
                         </div>
@@ -148,7 +148,7 @@
         const input = document.createElement("input");
         input.id = 'ItemID' + counter;
         input.type = 'text';
-        input.name = 'ItemID' + counter;
+        input.name = ' Products[][Items][][ItemID' + counter + ']';
         input.setAttribute('class', 'form-control');
         input.placeholder = 'Enter product id';
         // Create column div for product count
@@ -166,7 +166,7 @@
         const input2 = document.createElement("input");
         input2.id = 'ItemCount' + counter;
         input2.type = 'text';
-        input2.name = 'ItemCount' + counter;
+        input2.name = 'Products[ItemCount' + counter + ']';
         input2.setAttribute('class', 'form-control');
         input2.placeholder = 'Enter product count';
         const div6 = document.createElement("div");

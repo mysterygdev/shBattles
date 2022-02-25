@@ -96,6 +96,7 @@ Router::group(['prefix' => '/game'], function () {
         Router::get('/orderFail', 'WebMall@orderFail');
         Router::get('/tieredSpender', 'WebMall@tieredSpender');
         // POST
+        Router::post('/couponAdd', 'WebMall@couponAdd');
         // Mixed
         Router::match(['get', 'post'], '/cartAction', 'WebMall@cartAction');
     });

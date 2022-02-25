@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use Framework\Core\CoreController as Controller;
 use App\Models as Models;
+use Illuminate\Database\Capsule\Manager as DB;
 use Classes\Utils as Utils;
 
 class WebMall extends Controller
@@ -92,7 +93,7 @@ class WebMall extends Controller
         $this->view('pages/cms/game/webmall/orderSuccess', $data);
     }
 
-    public function webmall($name)
+    public function webmall($name = false)
     {
         $webMall = $this->model(Models\Game\WebMall::class);
 
@@ -135,5 +136,56 @@ class WebMall extends Controller
         ];
 
         $this->view('pages/cms/game/webmall/cartAction', $data);
+    }
+
+    public function couponAdd()
+    {
+        $contentType = isset($_SERVER['CONTENT_TYPE']) ? trim($_SERVER['CONTENT_TYPE']) : '';
+        if ($contentType === 'application/json') {
+            //Receive the RAW post data.
+            $content = trim(file_get_contents('php://input'));
+            $decoded = json_decode($content, true);
+            //If json_decode succeeded, the JSON is valid.
+            if (is_array($decoded)) {
+                $code = isset($decoded['code']) ? $this->data->purify(trim($decoded['code'])) : false;
+                $errors = [];
+                // Error Checking
+                if (isset($code)) {
+                    // Validate Coupon Code
+                    if (empty($code)) {
+                        $errors[] .= 'Coupon code can not be empty.';
+                    }
+                    $chkCode = DB::table(table('productDiscounts'))
+                        ->select()
+                        ->where('CouponCode', $code)
+                        ->limit(1)
+                        ->get();
+                    if (count($chkCode) < 1 && !empty($code)) {
+                        $errors[] .= 'Coupon code doesnt exist';
+                    }
+                    if ($this->session->has('WebMall', 'CouponCode')) {
+                        $errors[] .= 'Coupon code already added.';
+                        //$this->session->forget('WebMall');
+                    }
+                    // TODO: check if code still valid and not expired
+                    // If No Errors Continue
+                    if (count($errors) == 0) {
+                        // Check if coupon code is already added
+                        $this->session->put('WebMall', $code, 'CouponCode');
+                        echo '<div class="alert alert-success" role="alert">';
+                        echo '<strong>Awesome!</strong> This coupon code has successfully been added.';
+                        echo '</div>';
+                        // reload page
+                    }
+                    if (count($errors)) {
+                        echo '<ul>';
+                        foreach ($errors as $error) {
+                            echo '<li>' . $error . '</li>';
+                        }
+                        echo '</ul>';
+                    }
+                }
+            }
+        }
     }
 }

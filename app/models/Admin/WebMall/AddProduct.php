@@ -8,6 +8,7 @@ use Classes\Utils as Utils;
 class AddProduct
 {
     private $errors = [];
+    //TODO: MAKE SURE ITEMID/ITEMCOUNT IS NOT EMPTY.. ITS IN ARRAY.. FIGURE IT OUT
     public function __construct()
     {
         $this->data = new Utils\Data;
@@ -19,6 +20,8 @@ class AddProduct
         $this->cost = isset($_POST['ProductCost']) ? $this->data->purify(trim($_POST['ProductCost'])) : false;
         $this->category = isset($_POST['category']) ? $this->data->purify(trim($_POST['category'])) : false;
         $this->tag = isset($_POST['tag']) ? $this->data->purify(trim($_POST['tag'])) : false;
+        $this->products = isset($_POST['Products']) ? ($_POST['Products']) : false;
+        var_dump($_POST['Products'][0]['Items']);
     }
 
     public function getPagination()
@@ -111,7 +114,6 @@ class AddProduct
 
     public function addProduct()
     {
-        echo 'add product here..';
         $code = $this->getRandomString();
         if ($this->doesProductCodeExists($code)) {
             echo 'code already exists';
@@ -181,6 +183,12 @@ class AddProduct
             $this->errors[] .= 'You must choose a tag for your product.';
         } elseif ($this->tag == 'n/a') {
             $this->errors[] .= 'You must choose a tag for your product.';
+        } elseif ($this->tag == 'n/a') {
+            $this->errors[] .= 'You must choose a tag for your product.';
+        } elseif (empty($this->products)) {
+            $this->errors[] .= 'You must add at least one item id.';
+        }
+        foreach ($this->products as $product) {
         }
         // add checks to make sure at least 1 input is added.
         return $this->errors;

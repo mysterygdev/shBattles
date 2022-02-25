@@ -68,6 +68,16 @@ function updateCartItem(obj,id){
                 <a href="/game/webmall/cart" class="custom_button" style="text-transform: none;">Edit cart</a>
               </td>
               <td>
+                <p class="text-left">
+                  <strong>Coupon code</strong>
+                  <div class="col-md-3">
+                    <div class="youplay-input">
+                      <input type="text" name="couponCode" id="couponCode" placeholder="Coupon code">
+                    </div>
+                    <p id="responseCoupon"></p>
+                    <button type="submit" class="btn btn-sm" name="couponSubmit" id="couponSubmit">Apply</button>
+                  </div>
+                </p>
                 <p class="text-right">
                   <strong>Cart Total</strong>
                   <strong><?php echo e($data['webmall']->total()); ?> DP</strong>
@@ -87,6 +97,35 @@ function updateCartItem(obj,id){
 
   <?php echo $__env->make('layouts.cms.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <?php echo $__env->make('layouts.cms.scripts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <script>
+    document.body.addEventListener("click", e => {
+      if(e.target.closest("#couponSubmit")) {
+        e.preventDefault();
+
+        const code =  document.querySelector('input[name="couponCode"]').value;
+        const response =  document.querySelector('#responseCoupon');
+
+        fetch('/game/webmall/couponAdd', {
+          method: 'post',
+          mode: "same-origin",
+          credentials: "same-origin",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+              code
+          })
+        })
+        .then(r => r.text())
+        .then(data => {
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(data, "text/html");
+          response.innerHTML = doc.documentElement.innerHTML;
+          console.log(doc.documentElement.innerHTML);
+        })
+      }
+    });
+  </script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.cms.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\shaiyabattles\resources\views/pages/cms/game/webmall/checkout.blade.php ENDPATH**/ ?>
