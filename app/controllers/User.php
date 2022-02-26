@@ -81,9 +81,12 @@ class User extends Controller
 
     public function listenerAdv()
     {
+        $donate = $this->model(Models\User\Donate::class, $this->session);
+
         $widgets = $this->model(Widgets::class, $this->user, $this->session);
 
         $data = [
+            'donate' => $donate,
             'user' => $this->user,
             'widgets' => $widgets
         ];

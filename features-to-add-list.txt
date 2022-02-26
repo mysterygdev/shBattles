@@ -40,6 +40,7 @@ Most Important:
   ● Admin panel - manage online players
   ● Admin panel for managing widgets - enable/disable (sort by enabled/disabled/etc)  - add new widget
   ● Alerts/Notifications System (Admin Panel) - new ticket added - send notification etc
+  ● Create donation/payments panel to show payments etc	
 
 Least Important:
 Other:

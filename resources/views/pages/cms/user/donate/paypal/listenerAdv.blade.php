@@ -106,8 +106,8 @@
 
         if($save_log_db == true) {
           $newPoints = $userPoint + $totalReward;
-          $data['webmall']->updateUserPoints($UserUID, $newPoints);
-          $data['webmall']->addPaymentLog($userId, $Price, $reward, $Payer_Email, $Payment_Type, 'Paypal', $Payment_Status, $Txn_ID, $Verify_Key);
+          $data['donate']->updateUserPoints($UserUID, $newPoints);
+          $data['donate']->addPaymentLog($userId, $Price, $reward, $Payer_Email, $Payment_Type, 'Paypal', $Payment_Status, $Txn_ID, $Verify_Key);
         }
         if($send_conf_email) {
           //

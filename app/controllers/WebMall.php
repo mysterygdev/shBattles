@@ -172,6 +172,7 @@ class WebMall extends Controller
                     if (count($errors) == 0) {
                         // Check if coupon code is already added
                         $this->session->put('WebMall', $code, 'CouponCode');
+                        //show how much off price was taken
                         echo '<div class="alert alert-success" role="alert">';
                         echo '<strong>Awesome!</strong> This coupon code has successfully been added.';
                         echo '</div>';

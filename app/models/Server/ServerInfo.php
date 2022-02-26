@@ -39,8 +39,8 @@ class ServerInfo
     {
         $sql = ('
                     SELECT COUNT(*) AS \'Players\',
-                    (SELECT COUNT(*) FROM PS_GameData.dbo.Chars WHERE LoginStatus=? AND Faction = ?) AS \'AoL\',
-                    (SELECT COUNT(*) FROM PS_GameData.dbo.Chars WHERE LoginStatus=? AND Faction = ?) AS \'UoF\'
+                    (SELECT COUNT(*) FROM PS_GameData.dbo.Chars WHERE LoginStatus=? AND Family IN (0,1)) AS \'AoL\',
+                    (SELECT COUNT(*) FROM PS_GameData.dbo.Chars WHERE LoginStatus=? AND Family IN (2,3)) AS \'UoF\'
                     FROM PS_GameData.dbo.Chars WHERE LoginStatus=?
         ');
 
