@@ -11,7 +11,7 @@ Social Features:
 Game Features:
   ● Drop Finder
   ● Multi-Currency webmall if enabled/disabled
-  ● GRB Rewards
+  ● GRB Rewards (Top 1-3 guilds both sides)
   ● Free rewards every 24 hours - open box
   ● Server Polls
   ● New PvP Rankings with Sort Features
@@ -40,7 +40,7 @@ Most Important:
   ● Admin panel - manage online players
   ● Admin panel for managing widgets - enable/disable (sort by enabled/disabled/etc)  - add new widget
   ● Alerts/Notifications System (Admin Panel) - new ticket added - send notification etc
-  ● Create donation/payments panel to show payments etc	
+  ● Create donation/payments panel to show payments etc
 
 Least Important:
 Other:

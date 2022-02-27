@@ -48,6 +48,8 @@
               <ul role="menu">
                 <li><a href="/community/guildrankings">Guild Rankings</a>
                 </li>
+                <li><a href="/community/polls">Polls</a>
+                </li>
               </ul>
             </div>
           </li>
@@ -119,6 +121,12 @@
                   <li>
                     <a href="/auth/logout">Logout</a>
                   </li>
+                  </li>
+                </ul>
+                <ul role="menu">
+                  <li><a href="/user/shareDP">Share DP</a>
+                  </li>
+                  <li><a href="/user/shareDP">GRB Rewards</a>
                   </li>
                 </ul>
               </div>

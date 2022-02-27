@@ -7,7 +7,7 @@ use Classes\Utils as Utils;
 
 class AddProduct
 {
-    private $errors = [];
+    public $errors = [];
     //TODO: MAKE SURE ITEMID/ITEMCOUNT IS NOT EMPTY.. ITS IN ARRAY.. FIGURE IT OUT
     public function __construct()
     {
@@ -20,9 +20,39 @@ class AddProduct
         $this->cost = isset($_POST['ProductCost']) ? $this->data->purify(trim($_POST['ProductCost'])) : false;
         $this->category = isset($_POST['category']) ? $this->data->purify(trim($_POST['category'])) : false;
         $this->tag = isset($_POST['tag']) ? $this->data->purify(trim($_POST['tag'])) : false;
-        $this->products = isset($_POST['Products']) ? ($_POST['Products']) : false;
-        var_dump($_POST['Products'][0]['Items']);
+        $this->itemIds = isset($_POST['Products']) ? ($_POST['Products']) : false;
+        $this->itemCounts = isset($_POST['Products']) ? ($_POST['Products']) : false;
+        var_dump($_POST['Products']);
+
+
     }
+    public function recursive_convert_array_to_obj($arr,$indexed=false){
+#			echo '<pre>';
+#			var_dump($arr);
+#			echo LB;
+#			echo '</pre>';
+			if(is_array($arr)){
+				$new_arr	=	array();
+				foreach($arr as $k=>$v){
+					if($indexed==true){
+						if(is_integer($k)){
+							$new_arr['Index'][$k] = $this->recursive_convert_array_to_obj($v);
+						}
+						else{
+							$new_arr[$k] = $this->recursive_convert_array_to_obj($v);
+						}
+					}
+					else{
+						$new_arr[$k] = $this->recursive_convert_array_to_obj($v);
+					}
+				}
+
+				return (object)$new_arr;
+			}
+
+			# else maintain the type of $arr
+			return $arr;
+		}
 
     public function getPagination()
     {
@@ -169,27 +199,27 @@ class AddProduct
         $this->checkIfImageIsSelected();
         if (empty($this->image)) {
             $this->errors[] .= 'You must select an image.';
-        } elseif (empty($this->name)) {
+        } if (empty($this->name)) {
             $this->errors[] .= 'You must enter a name for your product.';
-        } elseif (strlen($this->desc) < 1) {
+        } if (strlen($this->desc) < 1) {
             $this->errors[] .= 'You must enter a description for your product.';
-        } elseif (strlen($this->cost) < 1) {
+        } if (strlen($this->cost) < 1) {
             $this->errors[] .= 'You must enter a cost for your product.';
-        } elseif (strlen($this->category) < 1) {
+        } if (strlen($this->category) < 1) {
             $this->errors[] .= 'You must choose a category for your product.';
-        } elseif ($this->category == 'n/a') {
+        } if ($this->category == 'n/a') {
             $this->errors[] .= 'You must choose a category for your product.';
-        } elseif (strlen($this->tag) < 1) {
+        } if (strlen($this->tag) < 1) {
             $this->errors[] .= 'You must choose a tag for your product.';
-        } elseif ($this->tag == 'n/a') {
+        } if ($this->tag == 'n/a') {
             $this->errors[] .= 'You must choose a tag for your product.';
-        } elseif ($this->tag == 'n/a') {
+        } if ($this->tag == 'n/a') {
             $this->errors[] .= 'You must choose a tag for your product.';
-        } elseif (empty($this->products)) {
+        } if (empty($this->products)) {
             $this->errors[] .= 'You must add at least one item id.';
         }
-        foreach ($this->products as $product) {
-        }
+        /* foreach ($this->products as $product) {
+        } */
         // add checks to make sure at least 1 input is added.
         return $this->errors;
     }

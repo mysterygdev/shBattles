@@ -24,7 +24,14 @@
                           <?php if(isset($_POST['submit'])): ?>
                             <?php if(!empty($data['addProduct']->checkErrors())): ?>
                               <!-- TODO: SHOW ALL ERRORS, NOT JUST ONE -->
-                              Errors found. Please make sure you filled out all form inputs.
+                              
+                              <?php if(count($data['addProduct']->errors)): ?>
+                                <ul>
+                                <?php $__currentLoopData = $data['addProduct']->errors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <li><?php echo e($error); ?></li>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </ul>
+                            <?php endif; ?>
                               <?php echo e($data['addProduct']->addProduct()); ?>
 
                             <?php else: ?>
@@ -148,7 +155,7 @@
         const input = document.createElement("input");
         input.id = 'ItemID' + counter;
         input.type = 'text';
-        input.name = ' Products[][Items][][ItemID' + counter + ']';
+        input.name = 'Products[Items][][ItemID' + counter + ']';
         input.setAttribute('class', 'form-control');
         input.placeholder = 'Enter product id';
         // Create column div for product count
@@ -166,7 +173,7 @@
         const input2 = document.createElement("input");
         input2.id = 'ItemCount' + counter;
         input2.type = 'text';
-        input2.name = 'Products[ItemCount' + counter + ']';
+        input2.name = 'Products[Items][][ItemCount' + counter + ']';
         input2.setAttribute('class', 'form-control');
         input2.placeholder = 'Enter product count';
         const div6 = document.createElement("div");

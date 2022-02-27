@@ -28,7 +28,7 @@ class SExtended
                     DECLARE @msgg varchar(MAX) = N'/' + '" . $cmd . "'
                     DECLARE	@return_value int
 
-                    EXEC	@return_value = [PS_ChatLog].[dbo].[Command]
+                    EXEC	@return_value = [PS_AdminPanel].[dbo].[Command]
                     @serviceName = N'ps_game',
                     @cmmd = @msgg
         ");
