@@ -95,6 +95,21 @@ class Community extends Controller
         $this->view('pages/cms/community/patchnotes', $data);
     }
 
+    public function polls()
+    {
+        $polls = $this->model(Models\Community\Polls::class);
+
+        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+
+        $data = [
+            'polls' => $polls,
+            'user' => $this->user,
+            'widgets' => $widgets
+        ];
+
+        $this->view('pages/cms/community/polls', $data);
+    }
+
     public function rankings()
     {
         $rankings = $this->model(Models\Community\Rankings::class, $this->user);

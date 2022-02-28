@@ -19,6 +19,7 @@ Router::group(['prefix' => '/community'], function () {
     Router::get('/events', 'Community@events');
     Router::get('/news', 'Community@news');
     Router::get('/patchnotes', 'Community@patchnotes');
+    Router::get('/polls', 'Community@polls');
     Router::get('/rankings', 'Community@rankings');
     Router::get('/guildrankings', 'Community@guildrankings');
     Router::get('/staffteam', 'Community@staffteam');

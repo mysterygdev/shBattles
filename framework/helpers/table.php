@@ -122,5 +122,13 @@ function table($table)
         // Multi Currency
         case 'userPoints':
             return 'ShaiyaCMS.dbo.user_points';
+        // Polls
+        case 'polls':
+            return 'ShaiyaCMS.dbo.polls';
+        case 'pollOptions':
+            return 'ShaiyaCMS.dbo.poll_options';
+        case 'pollAnswers':
+            return 'ShaiyaCMS.dbo.poll_answers';
+
     }
 }
