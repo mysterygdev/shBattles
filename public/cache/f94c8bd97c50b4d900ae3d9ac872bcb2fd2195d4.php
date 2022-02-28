@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="MonsterPlay - Superpower for Gaming Websites">
-<meta name="keywords" content="gaming, game, esports, community, template, html, bootstrap, webpack">
+<meta name="description" content="<?php echo e(APP['desc']); ?>">
+<meta name="keywords" content="<?php echo e(APP['keywords']); ?>">
 <meta name="author" content="<?php echo e(APP['author']); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Favicon -->
