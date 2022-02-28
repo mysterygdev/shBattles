@@ -124,9 +124,9 @@
                   </li>
                 </ul>
                 <ul role="menu">
-                  <li><a href="/user/shareDP">Share DP</a>
+                  <li><a href="/user/shareDp">Share DP</a>
                   </li>
-                  <li><a href="/user/shareDP">GRB Rewards</a>
+                  <li><a href="/user/shareDp">GRB Rewards</a>
                   </li>
                 </ul>
               </div>

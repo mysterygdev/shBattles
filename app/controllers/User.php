@@ -226,7 +226,7 @@ class User extends Controller
                     }
                     // Display errors
                     if (count($errors)) {
-                        echo '<ul>';
+                        echo '<ul class="responseE">';
                         foreach ($errors as $error) {
                             echo '<li>' . $error . '</li>';
                         }

@@ -209,3 +209,7 @@ table.drops{
 	justify-content: center !important;
 	display: flex !important;
 }
+
+.responseE {
+	list-style-type: none !important;
+}

@@ -1,9 +1,8 @@
-@extends('layouts.cms.app')
-@section('index', 'about')
-@section('title', 'About')
-@section('zone', 'CMS')
-@section('content')
-  @include('partials.cms.nav')
+<?php $__env->startSection('index', 'about'); ?>
+<?php $__env->startSection('title', 'About'); ?>
+<?php $__env->startSection('zone', 'CMS'); ?>
+<?php $__env->startSection('content'); ?>
+  <?php echo $__env->make('partials.cms.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
   <section class="content-wrap">
     <div class="youplay-banner banner-top youplay-banner-parallax small">
@@ -12,11 +11,11 @@
 
     <div class="container youplay-content text-center">
         <h2 class="mt-0">Share Dp</h2>
-        @guest
+        <?php if (\Illuminate\Support\Facades\Blade::check('guest')): ?>
           <p>Please login to continue.</p>
-        @else
+        <?php else: ?>
           <p>Here you can share your donation points with other players.</p>
-          <h4>Available donation points: {{$data['share']->getSenderDp()}}</h4>
+          <h4>Available donation points: <?php echo e($data['share']->getSenderDp()); ?></h4>
           <p id="response"></p>
           <form class="form-inline" method="post">
             <div class="form-group">
@@ -29,15 +28,15 @@
                 <input type="text" placeholder="char name" class="form-control m_l_5" name="char" id="char"/>
               </div>
             </div>
-            @Separator(20)
+            <?php separator(20) ?>
             <button type="submit" class="btn btn-sm" name="submit" id="submit" style="margin-left:10px;">Submit</button>
           </form>
-        @endguest
+        <?php endif; ?>
     </div>
   </section>
 
-  @include('layouts.cms.footer')
-  @include('layouts.cms.scripts')
+  <?php echo $__env->make('layouts.cms.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <?php echo $__env->make('layouts.cms.scripts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <script>
     const shareBtn = document.getElementById('submit');
     shareBtn.addEventListener('click', e => {
@@ -68,4 +67,6 @@
       })
     });
   </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.cms.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\shaiyabattles\resources\views/pages/cms/user/shareDp.blade.php ENDPATH**/ ?>
