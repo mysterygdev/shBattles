@@ -72,6 +72,7 @@ Router::group(['prefix' => '/user'], function () {
     Router::get('/donateComplete', 'User@donateComplete');
     Router::get('/getRecoveryKey', 'User@getRecoveryKey');
     Router::get('/login', 'User@login');
+    Router::get('/move2Terra', 'User@moveTerra');
     Router::get('/register', 'User@register');
     Router::get('/panel', 'User@panel');
     Router::get('/panel/{id}', 'User@panel');

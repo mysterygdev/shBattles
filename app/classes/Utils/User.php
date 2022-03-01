@@ -515,6 +515,36 @@ class User
         return $query[0]->GuildID;
     }
 
+    public function updateCharGold($char, $gold)
+    {
+        // Update char gold, $user,$char
+    }
+
+    public function updateCharName($char, $oldName, $newName)
+    {
+        //
+    }
+
+    public function updateCharLevel($char, $level)
+    {
+        //
+    }
+
+    public function updateCharMap($char, $map, $x, $y, $z)
+    {
+        //
+    }
+
+    public function updateCharKills($char, $newKills)
+    {
+        //
+    }
+
+    public function updateCharDeaths($char, $newDeaths)
+    {
+        //
+    }
+
     // MISC
     public function classInfo($level = false)
     {

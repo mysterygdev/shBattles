@@ -128,6 +128,8 @@
                   </li>
                   <li><a href="/user/shareDp">GRB Rewards</a>
                   </li>
+                  <li><a href="/user/move2Terra">Move to Terra</a>
+                  </li>
                 </ul>
               </div>
             @endguest

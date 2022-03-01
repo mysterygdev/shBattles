@@ -1,6 +1,6 @@
 @extends('layouts.cms.app')
-@section('index', 'shareDp')
-@section('title', 'share DP')
+@section('index', 'moveTerra')
+@section('title', 'Move To Terra')
 @section('zone', 'CMS')
 @section('content')
   @include('partials.cms.nav')
@@ -10,28 +10,42 @@
       <div class="image" style="background-image: url('/resources/themes/YouPlay/images/template/banner-blog-bg.jpg')"></div>
     </div>
 
-    <div class="container youplay-content text-center">
-        <h2 class="mt-0">Share Dp</h2>
+    <div class="container youplay-content">
+        <h2 class="mt-0 text-center">Move To Terra</h2>
         @guest
           <p>Please login to continue.</p>
         @else
-          <p>Here you can share your donation points with other players.</p>
-          <h4>Available donation points: {{$data['share']->getSenderDp()}}</h4>
+          <p class="text-center">Here you can move to our special map terra.</p>
           <p id="response"></p>
-          <form class="form-inline" method="post">
-            <div class="form-group">
-              <div class="youplay-input">
-                <input type="text" placeholder="how much dp?" class="form-control" name="dp" id="dp"/>
+          @if(count($data['terra']->getAliveCharacters()) > 0)
+            <form class="form-inline" method="post">
+              <div class="col-md-3"></div>
+              <div class="col-md-8">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Char Name</th>
+                      <th>Select</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($data['terra']->getAliveCharacters() as $fet)
+                      <tr>
+                        <td>{{$fet->CharName}}</td>
+                        <td><input type="radio" name="CharID" value="{{$fet->CharID}}"></td>
+                      </tr>
+                    @endforeach
+                  </tbody>
+                </table>
               </div>
-            </div>
-            <div class="form-group">
-              <div class="youplay-input">
-                <input type="text" placeholder="char name" class="form-control m_l_5" name="char" id="char"/>
-              </div>
-            </div>
-            @Separator(20)
-            <button type="submit" class="btn btn-sm" name="submit" id="submit" style="margin-left:10px;">Submit</button>
-          </form>
+              @Separator(20)
+              <p class="text-center">
+                <button type="submit" class="btn btn-sm" name="submit" id="submit" style="margin-left:10px;">Select character</button>
+              </p>
+            </form>
+          @else
+            You have no alive characters.
+          @endif
         @endguest
     </div>
   </section>

@@ -106,6 +106,21 @@ class User extends Controller
         $this->view('pages/cms/auth/login', $data);
     }
 
+    public function moveTerra()
+    {
+        $terra = $this->model(Models\User\MoveTerra::class, $this->user, $this->session);
+
+        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+
+        $data = [
+            'terra' => $terra,
+            'user' => $this->user,
+            'widgets' => $widgets
+        ];
+
+        $this->view('pages/cms/user/moveTerra', $data);
+    }
+
     public function panel($page = false)
     {
         $panel = $this->model(Models\User\UserPanel::class, $this->user, $this->session);

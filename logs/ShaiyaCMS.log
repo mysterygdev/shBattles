@@ -430,3 +430,4 @@
 [26-Feb-2022 20:10:49 America/Chicago] PHP Notice:  Undefined variable: value in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 31
 [26-Feb-2022 20:10:49 America/Chicago] PHP Notice:  Undefined variable: value in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 32
 [26-Feb-2022 20:12:42 America/Chicago] PHP Fatal error:  Cannot use temporary expression in write context in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 31
+[28-Feb-2022 21:54:45 America/Chicago] PHP Notice:  Undefined index: share in C:\laragon\www\shaiyabattles\public\cache\d40fa6ad085c6439db844ae0724f3a4fd685c7e2.php on line 18
