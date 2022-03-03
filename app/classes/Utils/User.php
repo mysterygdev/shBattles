@@ -532,7 +532,16 @@ class User
 
     public function updateCharMap($char, $map, $x, $y, $z)
     {
-        //
+        $update = DB::table(table('shCharData'))
+        ->where('CharID', $char)
+        ->update(['Map' => $map, 'PosX' => $x, 'PosY' => $y, 'PosZ' => $z]);
+
+        // Check if update was successful
+        if ($update) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function updateCharKills($char, $newKills)

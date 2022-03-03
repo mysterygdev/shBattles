@@ -6,6 +6,7 @@ use Illuminate\Database\Capsule\Manager as DB;
 
 class MoveTerra
 {
+    public $charId;
     public function __construct($user, $session)
     {
         $this->data = new \Classes\Utils\Data;
@@ -23,64 +24,40 @@ class MoveTerra
         return $res;
     }
 
-    public function checkIfUserHasItem($char)
+    public function checkIfUserHasItem($itemId, $slot)
     {
-        //
-    }
-
-    public function movePlayerToMap($char)
-    {
-        //
-    }
-
-    public function getSenderDp()
-    {
-        $res = DB::table(table('shUserData'))
-            ->where('UserID', $_SESSION['User']['UserID'])
-            ->value('Point');
+        $res = DB::table(table('shUserWh'))
+            ->select()
+            ->where('UserUID', $this->user->UserUID)
+            ->where('ItemID', $itemId)
+            ->where('Slot', $slot)
+            ->where('Del', 0)
+            ->get();
         return $res;
     }
 
-    public function getReceiverDp($receiver)
+    public function checkIfCharNotSelected()
     {
-        //
-        $res = DB::table(table('shUserData'))
-            ->where('UserID', $receiver)
-            ->value('Point');
-        return $res;
+      $this->charId = isset($_POST['CharID']) ? $this->data->purify(trim($_POST['CharID'])) : false;
+      if (!$this->charId || empty($this->charId)) {
+        return true;
+      } else {
+        $this->session->put('Terra', $this->charId, 'CharID');
+      }
     }
 
-    public function getReceiver($char)
+    public function getCharId()
     {
-        // get receiver user id by char name
-        $res = DB::table(table('shCharData'))
-            ->where('CharName', $char)
-            ->value('UserID');
-        return $res;
+        return $this->session->get('Terra', 'CharID');
     }
 
-    public function sendDp($rp, $dp, $user)
+    public function movePlayerToMap()
     {
-        // send dp to said player, take away dp from sender
-        $senderOp = $this->getSenderDp();
-        $senderNp = $senderOp - $dp;
-        $receiverOp = $rp;
-        $receiverNp = $rp + $dp;
-
-        // Update Sender's points
-        $update = DB::table(table('shUserData'))
-        ->where('UserID', $_SESSION['User']['UserID'])
-        ->update(['Point' => $senderNp]);
-
-        // Update Receiver's points
-        $update2 = DB::table(table('shUserData'))
-        ->where('UserID', $user)
-        ->update(['Point' => $receiverNp]);
-
-        if ($update && $update2) {
-            return true;
+        if ($this->user->updateCharMap($this->getCharId(), 42, 1, 1, 1)) {
+          return true;
         } else {
-            return false;
+          return false;
         }
+        $this->session->forget('Terra');
     }
 }
