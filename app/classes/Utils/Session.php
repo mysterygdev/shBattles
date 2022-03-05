@@ -10,7 +10,7 @@ namespace Classes\Utils;
 class Session
 {
     private $sessionName;
-    private $name = CONFIG['sessionName'];
+    private $name = APP['sessionName'];
 
     public function __construct()
     {

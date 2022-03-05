@@ -12,5 +12,9 @@
         'secureHTTPS' => false,
         'maintenance' => false,
         // set to false for live web
-        'dev' => true
+        'dev' => true,
+        // Session
+        'sessionName' => env('SESSION_NAME'),
+        // Timezone
+        'timeZone' => 'America/Chicago',
     ];

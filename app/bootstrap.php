@@ -64,7 +64,7 @@ class Bootstrap
             $exception = new Exception;
             set_exception_handler([$exception, 'handler']);
             // Set Timezone
-            date_default_timezone_set(CONFIG['timeZone']);
+            date_default_timezone_set(APP['timeZone']);
             // Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
             // Load Stripe
@@ -188,18 +188,18 @@ class Bootstrap
     public function loadConfigs()
     {
         define('APP', $this->loader->config('app'));
-        define('AUTH', $this->loader->config('auth'));
+        define('AUTH', $this->loader->config('auth', 'mixed/auth'));
         define('CONFIG', $this->loader->config('config'));
-        define('DIRS', $this->loader->config('dirs'));
-        define('DONATE', $this->loader->config('donate'));
-        define('DB', $this->loader->config('database'));
+        define('DIRS', $this->loader->config('dirs', 'mixed/main'));
+        define('DONATE', $this->loader->config('donate', 'cms/game/donate'));
+        define('DB', $this->loader->config('database', 'mixed/main'));
         define('MAIL', $this->loader->config('mail'));
-        define('MAPS', $this->loader->config('maps'));
-        define('PAYPAL', $this->loader->config('paypal'));
-        define('REGISTER', $this->loader->config('register'));
-        define('SERVER', $this->loader->config('server'));
-        define('STRIPE', $this->loader->config('stripe'));
-        define('VOTE', $this->loader->config('vote'));
+        define('MAPS', $this->loader->config('maps', 'cms/game'));
+        define('PAYPAL', $this->loader->config('paypal', 'cms/game/donate'));
+        define('REGISTER', $this->loader->config('register', 'mixed/auth'));
+        define('SERVER', $this->loader->config('server', 'cms/game'));
+        define('STRIPE', $this->loader->config('stripe', 'cms/game/donate'));
+        define('VOTE', $this->loader->config('vote', 'cms/game'));
         define('WEBMALL', $this->loader->config('webmall'));
         //$this->loader->loadConfigs();
     }

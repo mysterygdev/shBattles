@@ -34,10 +34,13 @@ class Loader
     ];
 
     // Load config files
-    public function config($config)
+    public function config($config, $path = false)
     {
-        if (file_exists(CONFIG_PATH . $config . '.php')) {
-            return require_once CONFIG_PATH . $config . '.php';
+        if (!$path) {
+            $path = '';
+        }
+        if (file_exists(CONFIG_PATH . $path . '/' . $config . '.php')) {
+            return require_once CONFIG_PATH . $path . '/' .  $config . '.php';
         } else {
             throw new Exceptions\ConfigException;
         }
