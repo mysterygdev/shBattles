@@ -197,7 +197,7 @@ class Bootstrap
         define('MAPS', $this->loader->config('maps', 'cms/game'));
         define('PAYPAL', $this->loader->config('paypal', 'cms/game/donate'));
         define('REGISTER', $this->loader->config('register', 'mixed/auth'));
-        define('SERVER', $this->loader->config('server', 'cms/game'));
+        define('SERVER', $this->loader->config('server'));
         define('STRIPE', $this->loader->config('stripe', 'cms/game/donate'));
         define('VOTE', $this->loader->config('vote', 'cms/game'));
         define('WEBMALL', $this->loader->config('webmall'));

@@ -23,11 +23,27 @@
         @guest
           <p>Please login to continue.</p>
         @else
-          @if ($data['donate']->getMethod() == 'paypal')
+          @if ($data['donate']->getMethod() == 'paypal' && $data['donate']->getType() == 'normal')
             <h2 class="text-center">Processing Your Donation...</h2>
             We are now processing your donation. You will be re-directed to PayPal to complete the process.<br><br>
             {{$data['donate']->getDonateInfo($data['donate']->getKey(), $data['donate']->getMethod())}}
-          @elseif (empty($data['donate']->getMethod()))
+          @elseif (
+              $data['donate']->getMethod() == 'paypal' && $data['donate']->getType() == 'toFriend'
+              && !empty($data['donate']->getKey())
+            )
+            <div class="row">
+              <div class="col-md-3">
+                <div class="youplay-input">
+                  <input type="text" name="char" id="char" placeholder="Character Name">
+                </div>
+              </div>
+            </div>
+              <div class="donate-btns">
+                <button type="submit" name="SubmitBtn" class="btn gradient color-white" value="paypal">
+                  Send Payment
+                </button>
+              </div>
+          @elseif (empty($data['donate']->getMethod()) || empty($data['donate']->getKey()))
             An error has seemed to occur. Please try again.
           @endif
         @endguest

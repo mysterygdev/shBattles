@@ -11,39 +11,43 @@
 
     <div class="container youplay-content text-center">
       <h2 class="mt-0">User Panel</h2>
-      <div role="tabpanel">
-        <div class="panel-btns text-center">
-          <button type="button" class="btn btn-sm btn-dark m_auto" onclick="location.href='/user/panel/details';">
-            Account Details
-          </button>
-          <button type="button" class="btn btn-sm btn-dark m_auto" onclick="location.href='/user/panel/chars';">
-            Characters
-          </button>
-          <button type="button" class="btn btn-sm btn-dark m_auto" onclick="location.href='/user/panel/password';">
-            Change Password
-          </button>
-          <button type="button" class="btn btn-sm btn-dark m_auto" onclick="location.href='/user/panel/res';">
-            Resurrect
-          </button>
-        </div>
-        <div class="panel-content text-center">
-          <?php if(!$data['page']): ?>
-            <?php echo $__env->make('pages.cms.user.panel.details', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-          <?php else: ?>
-            <?php if($data['page'] == 'details'): ?>
+      <?php if (\Illuminate\Support\Facades\Blade::check('guest')): ?>
+        <p>Please login to continue.</p>
+      <?php else: ?>
+        <div role="tabpanel">
+          <div class="panel-btns text-center">
+            <button type="button" class="btn btn-sm btn-dark m_auto" onclick="location.href='/user/panel/details';">
+              Account Details
+            </button>
+            <button type="button" class="btn btn-sm btn-dark m_auto" onclick="location.href='/user/panel/chars';">
+              Characters
+            </button>
+            <button type="button" class="btn btn-sm btn-dark m_auto" onclick="location.href='/user/panel/password';">
+              Change Password
+            </button>
+            <button type="button" class="btn btn-sm btn-dark m_auto" onclick="location.href='/user/panel/res';">
+              Resurrect
+            </button>
+          </div>
+          <div class="panel-content text-center">
+            <?php if(!$data['page']): ?>
               <?php echo $__env->make('pages.cms.user.panel.details', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-            <?php elseif($data['page'] == 'chars'): ?>
-              <?php echo $__env->make('pages.cms.user.panel.characters', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-            <?php elseif($data['page'] == 'password'): ?>
-              <?php echo $__env->make('pages.cms.user.panel.changePassword', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-            <?php elseif($data['page'] == 'res'): ?>
-              <?php echo $__env->make('pages.cms.user.panel.resurrect', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php else: ?>
+              <?php if($data['page'] == 'details'): ?>
+                <?php echo $__env->make('pages.cms.user.panel.details', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+              <?php elseif($data['page'] == 'chars'): ?>
+                <?php echo $__env->make('pages.cms.user.panel.characters', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+              <?php elseif($data['page'] == 'password'): ?>
+                <?php echo $__env->make('pages.cms.user.panel.changePassword', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+              <?php elseif($data['page'] == 'res'): ?>
+                <?php echo $__env->make('pages.cms.user.panel.resurrect', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+              <?php endif; ?>
             <?php endif; ?>
-          <?php endif; ?>
+          </div>
+          
+          
         </div>
-        
-        
-      </div>
+      <?php endif; ?>
     </div>
   </section>
 

@@ -434,3 +434,8 @@
 [05-Mar-2022 02:22:25 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\laragon\www\shaiyabattles\app\controllers\Home.php on line 18
 [05-Mar-2022 02:22:25 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\laragon\www\shaiyabattles\app\controllers\Errors.php on line 12
 [05-Mar-2022 02:22:38 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\laragon\www\shaiyabattles\app\controllers\Home.php on line 18
+[05-Mar-2022 02:37:30 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\laragon\www\shaiyabattles\app\controllers\Home.php on line 18
+[05-Mar-2022 02:37:30 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\laragon\www\shaiyabattles\app\controllers\Errors.php on line 12
+[04-Mar-2022 20:57:57 America/Chicago] PHP Notice:  Undefined index: toFriend in C:\laragon\www\shaiyabattles\app\models\User\Donate.php on line 104
+[04-Mar-2022 21:00:58 America/Chicago] PHP Notice:  Undefined index: toFriend in C:\laragon\www\shaiyabattles\app\models\User\Donate.php on line 109
+[04-Mar-2022 21:01:02 America/Chicago] PHP Notice:  Undefined index: toFriend in C:\laragon\www\shaiyabattles\app\models\User\Donate.php on line 109

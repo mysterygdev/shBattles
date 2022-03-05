@@ -94,6 +94,11 @@ class Donate
         return isset($_GET['Key']) ? $this->data->urlSafeB64Decode($_GET['Key']) : false;
     }
 
+    public function getType()
+    {
+        return isset($_GET['type']) ? $_GET['type'] : false;
+    }
+
     public function getMethod()
     {
         return isset($_GET['method']) ? $_GET['method'] : false;
@@ -101,7 +106,12 @@ class Donate
 
     public function getHeader()
     {
-        return header('location: ../../../../user/donateProcess?Key=' . $this->data->urlSafeB64Encode($this->getRewardID()) . '&method=' . $_POST['SubmitBtn']);
+        if ($_POST['toFriend'] == 'on') {
+            $_GET['type'] = 'toFriend';
+        } else {
+            $_GET['type'] = 'normal';
+        }
+        return header('location: ../../../../user/donateProcess?Key=' . $this->data->urlSafeB64Encode($this->getRewardID()) . '&type=' . $_GET['type'].'&method=' . $_POST['SubmitBtn']);
     }
 
     public function getDonateInfo($Key, $Method)
