@@ -192,6 +192,7 @@ class Bootstrap
         define('CONFIG', $this->loader->config('config'));
         define('DIRS', $this->loader->config('dirs', 'mixed/main'));
         define('DONATE', $this->loader->config('donate', 'cms/game/donate'));
+        define('COINBASE', $this->loader->config('COINBASE', 'cms/game/donate'));
         define('DB', $this->loader->config('database', 'mixed/main'));
         define('MAIL', $this->loader->config('mail'));
         define('MAPS', $this->loader->config('maps', 'cms/game'));

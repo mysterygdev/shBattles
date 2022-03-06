@@ -114,6 +114,11 @@ class Donate
         return header('location: ../../../../user/donateProcess?Key=' . $this->data->urlSafeB64Encode($this->getRewardID()) . '&type=' . $_GET['type'].'&method=' . $_POST['SubmitBtn']);
     }
 
+    public function getCryptoCheckout()
+    {
+        return COINBASE['options'][$this->getKey()];
+    }
+
     public function getDonateInfo($Key, $Method)
     {
         return $this->paypal->donateInfo($Key, $Method);

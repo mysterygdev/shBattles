@@ -50,6 +50,9 @@
                   <button type="submit" name="SubmitBtn" class="btn gradient color-white" value="stripe">
                     Donate with Stripe
                   </button>
+                  <button type="submit" name="SubmitBtn" class="btn gradient color-white" value="crypto">
+                    Donate with Crypto
+                  </button>
                   
                   <input name="toFriend" id="terms" type="radio"/> Donate to friend?
                 </div>

@@ -18,6 +18,16 @@
             <br>
             <br>
             <a class="btn btn-lg" href="/download">Download</a>
+
+    <div>
+      <a class="buy-with-crypto"
+        href="https://commerce.coinbase.com/checkout/837dc0e3-2517-4e27-a000-1fbe3fd73ecd">
+        Buy with Crypto
+      </a>
+      <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
+      </script>
+    </div>
+
           </div>
         </div>
       </div>

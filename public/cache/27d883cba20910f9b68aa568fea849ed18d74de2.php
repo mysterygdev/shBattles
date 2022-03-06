@@ -21,7 +21,10 @@
             We are now processing your donation. You will be re-directed to PayPal to complete the process.<br><br>
             <?php echo e($data['donate']->getDonateInfo($data['donate']->getKey(), $data['donate']->getMethod())); ?>
 
-          <?php elseif($data['donate']->getMethod() == 'paypal' && $data['donate']->getType() == 'toFriend' && !empty($data['donate']->getKey())): ?>
+          <?php elseif(
+              $data['donate']->getMethod() == 'paypal' && $data['donate']->getType() == 'toFriend'
+              && !empty($data['donate']->getKey())
+            ): ?>
             <div class="row">
               <div class="col-md-3">
                 <div class="youplay-input">
@@ -34,6 +37,65 @@
                   Send Payment
                 </button>
               </div>
+          <?php elseif(
+              $data['donate']->getMethod() == 'crypto' && $data['donate']->getType() == 'normal'
+              && !empty($data['donate']->getKey())
+            ): ?>
+
+
+
+    
+
+    <div>
+      <a class="buy-with-crypto"
+        href="https://commerce.coinbase.com/checkout/<?php echo e($data['donate']->getCryptoCheckout()); ?>">
+        Donate
+      </a>
+      <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
+      </script>
+    </div>
+
+    
+
+
+</div>
+
+              <?php
+                /* $ch = curl_init("https://api.commerce.coinbase.com/charges/");
+                 $post = array(
+    "name" => "E currency exchange",
+    "description" => "Exchange for Whatever",
+    "local_price" => array(
+        'amount' => '1.00',
+        'currency' => 'USD'
+    ),
+    "pricing_type" => "fixed_price",
+    "metadata" => array(
+        'customer_id' => 'customerID',
+        'name' => 'ANY NAME'
+    )
+);
+$post = json_encode($post);
+        curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_SSLVERSION, 6);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        // This is often required if the server is missing a global cert bundle, or is using an outdated one.
+        curl_setopt($ch, CURLOPT_FORBID_REUSE, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
+        $headers[] = "Content-Type: application/json";
+        $headers[] = "X-Cc-Api-Key: 891d32f3-41c3-4e86-b4ac-ab00fd5b2e44";
+        $headers[] = "X-Cc-Version: 2018-03-22";
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        $res = curl_exec($ch);
+        var_dump($res);
+        $info = curl_getinfo($ch);
+        $http_code = $info['http_code'];
+        curl_close($ch); */
+              ?>
           <?php elseif(empty($data['donate']->getMethod()) || empty($data['donate']->getKey())): ?>
             An error has seemed to occur. Please try again.
           <?php endif; ?>
