@@ -16,6 +16,6 @@
         'options' => [
             // donate id, coinbase checkout link
             2 => 'a5fd1510-6e05-437b-b0a3-69893b232695',
-            3 => '837dc0e3-2517-4e27-a000-1fbe3fd73ecd'
+            3 => '0e9d0893-8056-49c5-a983-de4fe6898b2d'
         ]
     ];

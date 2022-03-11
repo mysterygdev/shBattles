@@ -64,7 +64,14 @@
         href="https://commerce.coinbase.com/checkout/{{$data['donate']->getCryptoCheckout()}}">
         Donate
       </a>
-      <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
+      {{-- <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
+      </script> --}}
+      <script src="https://commerce.coinbase.com/v1/checkout.js?onload=onPaymentDetected"></script>
+      <script>
+        BuyWithCrypto.registerCallback('onPaymentDetected', function(e){
+          // Charge failed
+          alert("wtf");
+      });
       </script>
     </div>
 

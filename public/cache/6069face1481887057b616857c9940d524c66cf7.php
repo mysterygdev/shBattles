@@ -18,20 +18,26 @@
             <br>
             <br>
             <a class="btn btn-lg" href="/download">Download</a>
-
-    <div>
-      <a class="buy-with-crypto"
-        href="https://commerce.coinbase.com/checkout/837dc0e3-2517-4e27-a000-1fbe3fd73ecd">
-        Buy with Crypto
-      </a>
-      <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
-      </script>
-    </div>
-
           </div>
         </div>
       </div>
     </section>
+
+    <?php
+      echo 'WTF';
+      $ch = curl_init("https://discordapp.com/api/webhooks/951311758352605195/jl3yaD-ks0CYHfElL-JGTPdYdlImduM5fgBW-EAhpgQVwu1Pbf11fltG5v5uK5iuWxLK");
+      curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+      curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+      curl_setopt($ch, CURLOPT_POST, 1);
+      curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(array("content" => "hello", "username" => "bot")));
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($ch, CURLOPT_SSLVERSION, 6);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+      $res = curl_exec($ch);
+      var_dump($res);
+
+    ?>
 
     <!-- Show server data such as players online,servertime,etc -->
     <?php echo $__env->make('pages.cms.home.partials.data', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
