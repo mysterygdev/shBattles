@@ -454,3 +454,58 @@
 [05-Mar-2022 20:52:14 America/Chicago] PHP Notice:  Undefined index: toFriend in C:\laragon\www\shaiyabattles\app\models\User\Donate.php on line 109
 [05-Mar-2022 21:31:41 America/Chicago] PHP Notice:  Undefined index: toFriend in C:\laragon\www\shaiyabattles\app\models\User\Donate.php on line 109
 [05-Mar-2022 21:32:24 America/Chicago] PHP Notice:  Undefined index: toFriend in C:\laragon\www\shaiyabattles\app\models\User\Donate.php on line 109
+[10-Mar-2022 21:00:55 America/Chicago] PHP Fatal error:  DiscordPHP will not run on a webserver. Please use PHP CLI to run a DiscordPHP bot. in C:\laragon\www\shaiyabattles\vendor\team-reflex\discord-php\src\Discord\Discord.php on line 320
+[10-Mar-2022 21:02:54 America/Chicago] PHP Fatal error:  DiscordPHP will not run on a webserver. Please use PHP CLI to run a DiscordPHP bot. in C:\laragon\www\shaiyabattles\vendor\team-reflex\discord-php\src\Discord\Discord.php on line 320
+[10-Mar-2022 21:03:03 America/Chicago] PHP Notice:  Undefined index: discord in C:\laragon\www\shaiyabattles\public\cache\6069face1481887057b616857c9940d524c66cf7.php on line 27
+[10-Mar-2022 21:04:51 America/Chicago] PHP Notice:  Undefined index: discord in C:\laragon\www\shaiyabattles\public\cache\6069face1481887057b616857c9940d524c66cf7.php on line 27
+[11-Mar-2022 12:47:28 America/Chicago] PHP Notice:  Undefined index: btnClck in C:\laragon\www\shaiyabattles\app\controllers\Home.php on line 20
+[11-Mar-2022 12:47:33 America/Chicago] PHP Notice:  Undefined index: btnClck in C:\laragon\www\shaiyabattles\app\controllers\Home.php on line 20
+[11-Mar-2022 12:47:34 America/Chicago] PHP Notice:  Undefined index: btnClck in C:\laragon\www\shaiyabattles\app\controllers\Home.php on line 20
+[11-Mar-2022 12:47:35 America/Chicago] PHP Notice:  Undefined index: btnClck in C:\laragon\www\shaiyabattles\app\controllers\Home.php on line 20
+[11-Mar-2022 12:48:02 America/Chicago] PHP Notice:  Undefined index: btnClck in C:\laragon\www\shaiyabattles\app\controllers\Home.php on line 20
+[11-Mar-2022 12:48:03 America/Chicago] PHP Notice:  Undefined index: btnClck in C:\laragon\www\shaiyabattles\app\controllers\Home.php on line 20
+[11-Mar-2022 12:48:04 America/Chicago] PHP Notice:  Undefined index: btnClck in C:\laragon\www\shaiyabattles\app\controllers\Home.php on line 20
+[11-Mar-2022 12:51:58 America/Chicago] PHP Fatal error:  DiscordPHP will not run on a webserver. Please use PHP CLI to run a DiscordPHP bot. in C:\laragon\www\shaiyabattles\vendor\team-reflex\discord-php\src\Discord\Discord.php on line 320
+[11-Mar-2022 12:53:47 America/Chicago] PHP Fatal error:  DiscordPHP will not run on a webserver. Please use PHP CLI to run a DiscordPHP bot. in C:\laragon\www\shaiyabattles\vendor\team-reflex\discord-php\src\Discord\Discord.php on line 320
+[11-Mar-2022 13:10:44 America/Chicago] PHP Notice:  Undefined index: toFriend in C:\laragon\www\shaiyabattles\app\models\User\Donate.php on line 109
+[11-Mar-2022 13:53:57 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[11-Mar-2022 14:00:07 America/Chicago] PHP Notice:  Undefined index: Products in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 25
+[12-Mar-2022 12:59:00 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 183
+[12-Mar-2022 12:59:00 America/Chicago] PHP Notice:  Trying to access array offset on value of type bool in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 195
+[12-Mar-2022 12:59:00 America/Chicago] PHP Notice:  Trying to access array offset on value of type bool in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 196
+[12-Mar-2022 13:08:35 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 183
+[12-Mar-2022 13:08:35 America/Chicago] PHP Notice:  Trying to access array offset on value of type bool in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 195
+[12-Mar-2022 13:08:35 America/Chicago] PHP Notice:  Trying to access array offset on value of type bool in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 196
+[12-Mar-2022 13:08:43 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 183
+[12-Mar-2022 13:08:43 America/Chicago] PHP Notice:  Trying to access array offset on value of type bool in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 195
+[12-Mar-2022 13:08:43 America/Chicago] PHP Notice:  Trying to access array offset on value of type bool in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 196
+[12-Mar-2022 13:08:47 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 183
+[12-Mar-2022 13:08:47 America/Chicago] PHP Notice:  Trying to access array offset on value of type bool in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 195
+[12-Mar-2022 13:08:47 America/Chicago] PHP Notice:  Trying to access array offset on value of type bool in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 196
+[12-Mar-2022 13:39:23 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 27
+[12-Mar-2022 13:45:37 America/Chicago] PHP Notice:  Undefined offset: 3 in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 197
+[12-Mar-2022 13:45:37 America/Chicago] PHP Notice:  Undefined offset: 3 in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 198
+[12-Mar-2022 14:04:46 America/Chicago] PHP Notice:  Undefined variable: error in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[12-Mar-2022 14:04:46 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\WebMall\AddProduct::$ in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[12-Mar-2022 14:04:46 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[12-Mar-2022 14:05:37 America/Chicago] PHP Notice:  Undefined variable: error in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[12-Mar-2022 14:05:37 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\WebMall\AddProduct::$ in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[12-Mar-2022 14:05:37 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[12-Mar-2022 14:06:56 America/Chicago] PHP Notice:  Undefined variable: error in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[12-Mar-2022 14:06:56 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\WebMall\AddProduct::$ in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[12-Mar-2022 14:06:56 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[12-Mar-2022 14:09:13 America/Chicago] PHP Notice:  Undefined variable: error in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[12-Mar-2022 14:09:13 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\WebMall\AddProduct::$ in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[12-Mar-2022 14:10:57 America/Chicago] PHP Notice:  Undefined variable: error in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[12-Mar-2022 14:10:57 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\WebMall\AddProduct::$ in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[13-Mar-2022 20:18:26 America/Chicago] PHP Notice:  Undefined variable: error in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[13-Mar-2022 20:18:26 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\WebMall\AddProduct::$ in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[13-Mar-2022 20:27:27 America/Chicago] PHP Notice:  Undefined variable: error in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[13-Mar-2022 20:27:27 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\WebMall\AddProduct::$ in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 39
+[13-Mar-2022 20:33:26 America/Chicago] PHP Fatal error:  Can't use method return value in write context in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 36
+[13-Mar-2022 20:33:30 America/Chicago] PHP Fatal error:  Can't use method return value in write context in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 36
+[13-Mar-2022 20:33:43 America/Chicago] PHP Fatal error:  Can't use method return value in write context in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 36
+[13-Mar-2022 20:41:24 America/Chicago] PHP Fatal error:  Can't use method return value in write context in C:\laragon\www\shaiyabattles\public\cache\edc28fc47877ed0ec61bb486df3ba1c3cf5139dc.php on line 36
+[13-Mar-2022 21:08:29 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 265
+[13-Mar-2022 21:08:29 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 265
+[13-Mar-2022 21:08:29 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 265

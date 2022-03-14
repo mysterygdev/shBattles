@@ -21,7 +21,8 @@
         "izniburak/router": "dev-master",
         "miladrahimi/phprouter": "5.*",
         "pecee/simple-router": "dev-master",
-        "arrilot/laravel-widgets": "dev-master"
+        "arrilot/laravel-widgets": "dev-master",
+        "team-reflex/discord-php": "dev-master"
     },
     "minimum-stability": "dev",
     "config": {

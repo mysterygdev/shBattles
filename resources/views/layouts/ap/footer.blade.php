@@ -30,3 +30,5 @@
 <script src="/resources/jquery/addons/tinymce/v4.9.0/js/init.tinymce.js"></script>
 <!-- Tabs -->
 <script src="/resources/jquery/addons/tabs/tabs.js"></script>
+<!-- jQuery AddInput -->
+<script src="/resources/jquery/addons/input-addproduct/input.js"></script>

@@ -419,6 +419,8 @@ class Auth extends Controller
                         $errors[] .= 'Please provide a UserID.';
                     } elseif (ctype_alnum($userName) === false) {
                         $errors[] .= 'UserID must consist of numbers and letters only.';
+                    } elseif (strlen($userName) > 18) {
+                        $errors[] .= 'UserID can not contain more than 18 characters.';
                     }
                     $chkUser = DB::table(table('shUserData'))
                         ->select('UserID')
@@ -435,6 +437,8 @@ class Auth extends Controller
                         $errors[] .= 'Confirmation password can not be empty.';
                     } elseif ($Password != $confirmPassword) {
                         $errors[] .= 'Passwords do not match.';
+                    } elseif (strlen($Password) > 12 || strlen($confirmPassword) > 12) {
+                        $errors[] .= 'Passwords can not contain more than 12 characters.';
                     }
                     // Validate Email
                     if (empty($email)) {
@@ -457,6 +461,8 @@ class Auth extends Controller
                     // Validate Security Answer
                     if (empty($sAnswer)) {
                         $errors[] .= 'Please provide a security answer.';
+                    } elseif (strlen($sAnswer) > 50) {
+                        $errors[] .= 'Security answer can not contain more than 50 characters.';
                     }
                     // Validate Terms of Use
                     if ($terms == 'off') {

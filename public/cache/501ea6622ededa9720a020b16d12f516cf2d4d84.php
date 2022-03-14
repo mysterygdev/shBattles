@@ -1,1 +1,0 @@
-<?php echo $__env->yieldContent('content'); ?><?php /**PATH C:\laragon\www\originals\resources\views/layouts/ap/body.blade.php ENDPATH**/ ?>

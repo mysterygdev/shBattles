@@ -69,7 +69,7 @@
       <script src="https://commerce.coinbase.com/v1/checkout.js?onload=onPaymentDetected"></script>
       <script>
         BuyWithCrypto.registerCallback('onPaymentDetected', function(e){
-          // Charge failed
+          // Charge detected
           alert("wtf");
       });
       </script>

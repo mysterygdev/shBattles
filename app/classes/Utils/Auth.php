@@ -49,8 +49,8 @@ class Auth
             $user->updateLoginStatus(0);
             $this->session->regenerate();
             $this->session->forget('User');
-            $referrer = $_SERVER['HTTP_REFERER'];
-            redirect($referrer);
+            //$referrer = $_SERVER['HTTP_REFERER'];
+            redirect('/user/logout');
         }
     }
 

@@ -24,7 +24,7 @@ class Home extends Controller
         $newsModel = $this->model(Models\Community\News::class, $this->user);
         $serverInfo = $this->model(Models\Server\ServerInfo::class);
 
-        $widgets = $this->model(Widgets::class, $this->user , $this->session);
+        $widgets = $this->model(Widgets::class, $this->user, $this->session);
 
         $data = [
             'news' => $newsModel,

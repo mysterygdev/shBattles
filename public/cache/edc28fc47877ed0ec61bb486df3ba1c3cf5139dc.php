@@ -31,13 +31,16 @@
                                     <li><?php echo e($error); ?></li>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </ul>
-                            <?php endif; ?>
-                              <?php echo e($data['addProduct']->addProduct()); ?>
-
+                              <?php endif; ?>
                             <?php else: ?>
-                              no errors
+                              <?php if($data['addProduct']->insertProduct() == true): ?>
+                                success
+                              <?php else: ?>
+                                false
+                                error is: <?php echo e($data['addProduct']->error); ?>
+
+                              <?php endif; ?>
                             <?php endif; ?>
-                            
                           <?php endif; ?>
 
                           <p>First select an image, and then fill out the rest of the information.</p>
@@ -99,9 +102,14 @@
                                 It looks like there are no tag options. Please make edits to the corresponding configuration file.
                               <?php endif; ?>
                             </div>
-                            <div class="formInput-Group" id="formInput-Group"></div>
+                            <div class="col-sm-4 form-group input_fields_wrap">
+                              <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="Prod[ItemID][]" placeholder="Item ID">
+                                <input type="text" class="mx-3 form-control" name="Prod[ItemCount][]" placeholder="Item Count">
+                                <button class="btn btn-primary add_field_button">+</button>
+                              </div>
+                            </div>
                             <?php separator(20) ?>
-                            <button type="button" class="btn btn-sm btn-primary" name="btn" id="btn">Add Product Input</button>
                             <button type="submit" class="btn btn-sm btn-primary" name="submit">Create Product</button>
                           </form>
                         </div>
@@ -119,116 +127,6 @@
       </div>
     </div>
   </div>
-  <script>
-      const btn = document.getElementById('btn');
-      const form = document.getElementById('formInput-Group');
-      let formInline = document.querySelector('.form-inline');
-      let counter = 0
-      btn.addEventListener('click', function() {
-        addInput();
-      }.bind(this));
-      document.body.addEventListener("click", e => {
-        //alert("wut");
-        if(e.target.closest(".btn-danger")) {
-          e.preventDefault();
-          removeInput();
-        }
-      });
-
-      function addInput() {
-        counter++;
-        // Create form inline div for product id
-        const div = document.createElement("div");
-        div.setAttribute('class', 'form-inline');
-        div.id = 'form-inline'+counter;
-        // Create column div for product id
-        const div1 = document.createElement("div");
-        div1.setAttribute('class', 'col-sm-3');
-        // Create form group div for product id
-        const div2 = document.createElement("div");
-        div2.setAttribute('class', 'form-group');
-        // Create label of Item ID for product id
-        const label = document.createElement("label");
-        label.htmlFor = 'ItemID' + counter;
-        label.innerHTML = "Item ID " + counter;
-        // Create input of Item ID for product id
-        const input = document.createElement("input");
-        input.id = 'ItemID' + counter;
-        input.type = 'text';
-        input.name = 'Products[Items][][ItemID' + counter + ']';
-        input.setAttribute('class', 'form-control');
-        input.placeholder = 'Enter product id';
-        // Create column div for product count
-        const div4 = document.createElement("div");
-        div4.setAttribute('class', 'col-sm-3');
-        div4.setAttribute('style', 'margin-left:10%;');
-        // Create form group div for product count
-        const div5 = document.createElement("div");
-        div5.setAttribute('class', 'form-group');
-        // Create label of Item Count for product id
-        const label2 = document.createElement("label");
-        label2.htmlFor = 'ItemCount' + counter;
-        label2.innerHTML = "Item Count " + counter;
-        // Create input of Item Count for product id
-        const input2 = document.createElement("input");
-        input2.id = 'ItemCount' + counter;
-        input2.type = 'text';
-        input2.name = 'Products[Items][][ItemCount' + counter + ']';
-        input2.setAttribute('class', 'form-control');
-        input2.placeholder = 'Enter product count';
-        const div6 = document.createElement("div");
-        div6.setAttribute('class', 'col-sm-3');
-        div6.setAttribute('style', 'margin-left:5%;');
-        const button = document.createElement("button");
-        button.setAttribute('class', 'btn btn-danger');
-        button.innerHTML = 'X';
-        button.id = 'btn2';
-        button.setAttribute('type', 'button');
-        // Append all items/divs
-        form.appendChild(div);
-        div.appendChild(div1);
-        div1.appendChild(div2);
-        div2.appendChild(label);
-        div2.appendChild(input);
-        div.appendChild(div4);
-        div4.appendChild(div5);
-        div5.appendChild(label2);
-        div5.appendChild(input2);
-        div.appendChild(div6);
-        div6.appendChild(button);
-      }
-
-      function removeInput() {
-        //alert("??");
-        if (counter > 0) {
-          //document.getElementById("form-inline"+counter).remove();
-          //document.getElementById("form-inline"+counter).remove();
-          //alert("1");
-          //document.getElementsByClassName("btn-danger").removeChild(document.getElementsByClassName("btn-danger").lastChild);
-          //alert("2");
-          //document.querySelector('.form-inline').remove();
-          const formInline = document.querySelector('.form-inline');
-          const btn = document.querySelector('.btn-danger');
-          //formInline.remove();
-          //btn.closest(".form-inline").remove();
-          //formInline.parentNode.removeChild(element);
-          //firstDiv.remove();
-          /* var el = document.getElementById('btn2');
-          var closestParent = el.parentNode.closest('.form-inline');
-          console.log(closestParent); */
-          // Get last form-inline class that was added
-          const last = Array.from(
-            document.querySelectorAll('.form-inline')
-          ).pop();
-          //console.log(last);
-          // remove last class inputs
-          last.remove();
-          //alert("wut");
-        } else {
-          alert("error");
-        }
-      }
-</script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.ap.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\shaiyabattles\resources\views/pages/ap/webmall/addProduct.blade.php ENDPATH**/ ?>

@@ -8,6 +8,7 @@ use Classes\Utils as Utils;
 class AddProduct
 {
     public $errors = [];
+    public $error = 0;
     //TODO: MAKE SURE ITEMID/ITEMCOUNT IS NOT EMPTY.. ITS IN ARRAY.. FIGURE IT OUT
     public function __construct()
     {
@@ -20,39 +21,36 @@ class AddProduct
         $this->cost = isset($_POST['ProductCost']) ? $this->data->purify(trim($_POST['ProductCost'])) : false;
         $this->category = isset($_POST['category']) ? $this->data->purify(trim($_POST['category'])) : false;
         $this->tag = isset($_POST['tag']) ? $this->data->purify(trim($_POST['tag'])) : false;
-        $this->itemIds = isset($_POST['Products']) ? ($_POST['Products']) : false;
-        $this->itemCounts = isset($_POST['Products']) ? ($_POST['Products']) : false;
-        var_dump($_POST['Products']);
-
-
+        $this->prod = isset($_POST["Prod"]) ? $_POST["Prod"] : false;
+        $this->ItemID = isset($_POST['Prod']['ItemID']) ? ($_POST['Prod']['ItemID']) : false;
+        $this->ItemCount = isset($_POST['Prod']['ItemCount']) ? ($_POST['Prod']['ItemCount']) : false;
     }
-    public function recursive_convert_array_to_obj($arr,$indexed=false){
-#			echo '<pre>';
-#			var_dump($arr);
-#			echo LB;
-#			echo '</pre>';
-			if(is_array($arr)){
-				$new_arr	=	array();
-				foreach($arr as $k=>$v){
-					if($indexed==true){
-						if(is_integer($k)){
-							$new_arr['Index'][$k] = $this->recursive_convert_array_to_obj($v);
-						}
-						else{
-							$new_arr[$k] = $this->recursive_convert_array_to_obj($v);
-						}
-					}
-					else{
-						$new_arr[$k] = $this->recursive_convert_array_to_obj($v);
-					}
-				}
+    public function recursive_convert_array_to_obj($arr, $indexed=false)
+    {
+        #			echo '<pre>';
+        #			var_dump($arr);
+        #			echo LB;
+        #			echo '</pre>';
+        if (is_array($arr)) {
+            $new_arr	=	array();
+            foreach ($arr as $k=>$v) {
+                if ($indexed==true) {
+                    if (is_integer($k)) {
+                        $new_arr['Index'][$k] = $this->recursive_convert_array_to_obj($v);
+                    } else {
+                        $new_arr[$k] = $this->recursive_convert_array_to_obj($v);
+                    }
+                } else {
+                    $new_arr[$k] = $this->recursive_convert_array_to_obj($v);
+                }
+            }
 
-				return (object)$new_arr;
-			}
+            return (object)$new_arr;
+        }
 
-			# else maintain the type of $arr
-			return $arr;
-		}
+        # else maintain the type of $arr
+        return $arr;
+    }
 
     public function getPagination()
     {
@@ -145,13 +143,12 @@ class AddProduct
     public function addProduct()
     {
         $code = $this->getRandomString();
+
         if ($this->doesProductCodeExists($code)) {
-            echo 'code already exists';
-            echo $code;
-            $newCode = $this->getRandomString();
-        } else {
-            echo 'code doesnt exist';
+            $this->addProduct();
         }
+
+        return $code;
     }
 
     public function getRandomString($length = 10)
@@ -181,7 +178,41 @@ class AddProduct
 
     public function insertProduct()
     {
-        //
+        $count = count($this->ItemID);
+
+        for ($x = 0; $x < $count; $x++) {
+            if ($x <= 0) {
+                $Main=1;
+            } else {
+                $Main=0;
+            }
+            $stmt = DB::table(table('products'))
+            ->insert([
+                'ProductCode' => $this->code,
+                'ProductName' => $this->name,
+                'ProductDesc' => $this->desc,
+                'ProductCurrency' => 'dp',
+                'ProductCost' => $this->cost,
+                'ProductImage' => $this->image,
+                'Category' => $this->category,
+                'Tag' => $this->tag,
+                'ItemID' => $this->ItemID[$x],
+                'ItemCount' => $this->ItemCount[$x],
+                'Main' => $Main
+            ]);
+        }
+
+        if ($stmt) {
+            $this->error = 0;
+        } else {
+            $this->error = 1;
+        }
+
+        if ($this->error == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function checkIfImageIsSelected()
@@ -194,29 +225,86 @@ class AddProduct
         }
     }
 
+    public function checkIfItemExists($itemId)
+    {
+        // check if item id exists in db
+        $item = DB::table(table('shItems'))
+            ->select('ItemName')
+            ->where('ItemID', $itemId)
+            ->get();
+
+        //return $item;
+
+        if (!$item->isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function checkErrors(): array
     {
         $this->checkIfImageIsSelected();
         if (empty($this->image)) {
             $this->errors[] .= 'You must select an image.';
-        } if (empty($this->name)) {
+        }
+        if (empty($this->name)) {
             $this->errors[] .= 'You must enter a name for your product.';
-        } if (strlen($this->desc) < 1) {
+        }
+        if (strlen($this->desc) < 1) {
             $this->errors[] .= 'You must enter a description for your product.';
-        } if (strlen($this->cost) < 1) {
+        }
+        if (strlen($this->cost) < 1) {
             $this->errors[] .= 'You must enter a cost for your product.';
-        } if (strlen($this->category) < 1) {
+        } elseif (!is_numeric($this->cost)) {
+            $this->errors[] .= 'Cost must be a number/integer.';
+        }
+        if (strlen($this->category) < 1) {
             $this->errors[] .= 'You must choose a category for your product.';
-        } if ($this->category == 'n/a') {
+        }
+        if ($this->category == 'n/a') {
             $this->errors[] .= 'You must choose a category for your product.';
-        } if (strlen($this->tag) < 1) {
+        }
+        if (strlen($this->tag) < 1) {
             $this->errors[] .= 'You must choose a tag for your product.';
-        } if ($this->tag == 'n/a') {
+        }
+        if ($this->tag == 'n/a') {
             $this->errors[] .= 'You must choose a tag for your product.';
-        } if ($this->tag == 'n/a') {
+        }
+        if ($this->tag == 'n/a') {
             $this->errors[] .= 'You must choose a tag for your product.';
-        } if (empty($this->products)) {
+        }
+        if (empty($this->ItemID || count($this->ItemID) < 1)) {
             $this->errors[] .= 'You must add at least one item id.';
+        }
+        if (empty($this->ItemCount || count($this->ItemCount) < 1)) {
+            $this->errors[] .= 'You must add at least one item count.';
+        }
+        $itemIdCount = count($this->ItemID);
+        for ($x = 0; $x < $itemIdCount; $x++) {
+            if (empty($this->ItemID[$x])) {
+                $this->errors[] .= 'Item ID '.$x.' can not be empty.';
+            } elseif (!is_numeric($this->ItemID[$x])) {
+                $this->errors[] .= 'Item ID '.$x.' must be a number/integer.';
+            } elseif (strlen($this->ItemID[$x]) < 4 || strlen($this->ItemID[$x]) > 6) {
+                $this->errors[] .= 'Item ID '.$x.' can not be greater than 6 characters or less than 4 characters.';
+            } elseif (($this->ItemID[$x]) > 255255) {
+                $this->errors[] .= 'Item ID '.$x.' can not be greater than 255255.';
+            } elseif (!$this->checkIfItemExists($this->ItemID[$x])) {
+                $this->errors[] .= 'Item ID does not exist.';
+            }
+        }
+        $itemCntCount = count($this->ItemCount);
+        for ($x = 0; $x < $itemCntCount; $x++) {
+            if (empty($this->ItemCount[$x])) {
+                $this->errors[] .= 'Item Count '.$x.' can not be empty.';
+            } elseif (!is_numeric($this->ItemCount[$x])) {
+                $this->errors[] .= 'Item Count '.$x.' must be a number/integer.';
+            } elseif (strlen($this->ItemCount[$x]) > 3) {
+                $this->errors[] .= 'Item Count '.$x.' can not be greater than 3 characters.';
+            } elseif (($this->ItemCount[$x]) > 255) {
+                $this->errors[] .= 'Item Count '.$x.' can not be greater than 255.';
+            }
         }
         /* foreach ($this->products as $product) {
         } */
