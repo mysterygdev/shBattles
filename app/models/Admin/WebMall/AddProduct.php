@@ -24,6 +24,7 @@ class AddProduct
         $this->prod = isset($_POST["Prod"]) ? $_POST["Prod"] : false;
         $this->ItemID = isset($_POST['Prod']['ItemID']) ? ($_POST['Prod']['ItemID']) : false;
         $this->ItemCount = isset($_POST['Prod']['ItemCount']) ? ($_POST['Prod']['ItemCount']) : false;
+        var_dump($_POST);
     }
     public function recursive_convert_array_to_obj($arr, $indexed=false)
     {

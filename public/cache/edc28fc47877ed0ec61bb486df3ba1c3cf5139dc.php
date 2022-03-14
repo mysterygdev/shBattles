@@ -59,17 +59,17 @@
                             
                             <div class="form-group">
                               <label for="ProductName">Product Name</label>
-                              <input type="text" class="form-control" id="ProductName" name="ProductName" aria-describedby="ProductName" placeholder="Enter product name">
+                              <input type="text" class="form-control" id="ProductName" name="ProductName" placeholder="Enter product name" value="<?php echo e(isset($data['addProduct']->name) ? $data['addProduct']->name : ''); ?>">
                               <small id="ProductName" class="form-text text-muted">Product Name</small>
                             </div>
                             <div class="form-group">
                               <label for="ProductDesc">Product Description</label>
-                              <input type="text" class="form-control" id="ProductDesc" name="ProductDesc" aria-describedby="ProductDesc" placeholder="Enter product description">
+                              <input type="text" class="form-control" id="ProductDesc" name="ProductDesc" placeholder="Enter product description" value="<?php echo e(isset($data['addProduct']->desc) ? $data['addProduct']->desc : ''); ?>">
                               <small id="ProductDesc" class="form-text text-muted">Product Description</small>
                             </div>
                             <div class="form-group">
                               <label for="ProductCost">Product Cost</label>
-                              <input type="text" class="form-control" id="ProductCost" name="ProductCost" aria-describedby="ProductCost" placeholder="Enter product cost">
+                              <input type="text" class="form-control" id="ProductCost" name="ProductCost" placeholder="Enter product cost" value="<?php echo e(isset($data['addProduct']->cost) ? $data['addProduct']->cost : ''); ?>">
                               <small id="ProductCost" class="form-text text-muted">Product Cost</small>
                             </div>
                             <div class="form-group">
