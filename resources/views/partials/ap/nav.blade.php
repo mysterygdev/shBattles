@@ -18,7 +18,7 @@
         @auth
           @if($data['user']->isADM())
           @include('partials.ap.nav.site')
-          {{-- @include('partials.ap.nav.webmall') --}}
+            @include('partials.ap.nav.webmall')
             @include('partials.ap.nav.admin')
           @endif
           @if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA())

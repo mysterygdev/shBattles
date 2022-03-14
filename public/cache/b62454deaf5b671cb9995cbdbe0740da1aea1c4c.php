@@ -6,7 +6,7 @@
     <span class="pcoded-mtext">Site Tools</span>
   </a>
   <ul class="pcoded-submenu">
-    <li class=""><a href="/admin/site/events" class="">Manage Events</a></li>
+    
     <li class=""><a href="/admin/site/tickets" class="">Manage Tickets</a></li>
   </ul>
 </li>

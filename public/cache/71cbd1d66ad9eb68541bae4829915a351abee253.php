@@ -1,18 +1,17 @@
-@extends('layouts.ap.app')
-@section('index', 'sendNotice')
-@section('title', 'Add Product')
-@section('zone', 'AP')
-@section('content')
-  @include('partials.ap.nav')
-  @include('partials.ap.header')
+<?php $__env->startSection('index', 'sendNotice'); ?>
+<?php $__env->startSection('title', 'Add Product'); ?>
+<?php $__env->startSection('zone', 'AP'); ?>
+<?php $__env->startSection('content'); ?>
+  <?php echo $__env->make('partials.ap.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <?php echo $__env->make('partials.ap.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <div class="pcoded-main-container">
     <div class="pcoded-wrapper">
       <div class="pcoded-content">
         <div class="pcoded-inner-content">
-          {{-- is logged in and is staff --}}
-          @if($data['user']->isAuthorized())
-            {{-- is adm, gm or gma --}}
-            @if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA())
+          
+          <?php if($data['user']->isAuthorized()): ?>
+            
+            <?php if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA()): ?>
               <div class="main-body">
                 <div class="page-wrapper">
                   <div class="row">
@@ -26,7 +25,7 @@
                         </div>
                         <div class="card-body">
                           <!-- need paginator for other pages of products, maybe datatables?? homepage example?? -->
-                          @if (count($data['manageProducts']->getProducts()) > 0)
+                          <?php if(count($data['manageProducts']->getProducts()) > 0): ?>
                             <table class="table table-striped" id="NewPlayers">
                               <thead>
                                 <tr>
@@ -40,38 +39,40 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                @foreach ($data['manageProducts']->getProducts() as $fet)
+                                <?php $__currentLoopData = $data['manageProducts']->getProducts(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fet): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                   <tr>
-                                    <td>{{$fet->ProductID}}</td>
-                                    <td>{{$fet->ProductName}}</td>
-                                    <td>{{$fet->ProductCost}}</td>
-                                    <td><img src="/resources/themes/core/images/shop_icons/{{$fet->ProductImage}}.png"></td>
-                                    <td>{{WEBMALL['categories'][$fet->Category]}}</td>
+                                    <td><?php echo e($fet->ProductID); ?></td>
+                                    <td><?php echo e($fet->ProductName); ?></td>
+                                    <td><?php echo e($fet->ProductCost); ?></td>
+                                    <td><img src="/resources/themes/core/images/shop_icons/<?php echo e($fet->ProductImage); ?>.png"></td>
+                                    <td><?php echo e(WEBMALL['categories'][$fet->Category]); ?></td>
                                     <td>3</td>
                                     <td><button type="submit" class="btn btn-sm btn-primary" name="submit">Edit</button></td>
-                                    <td><button type="submit" class="btn btn-sm btn-danger open_mp_rmv_modal" data-toggle="modal" data-id="{{$fet->ProductID}}~{{$fet->ProductName}}" data-target="#get_mP_rmv_modal">Remove</button></td>
+                                    <td><button type="submit" class="btn btn-sm btn-danger open_mp_rmv_modal" data-toggle="modal" data-id="<?php echo e($fet->ProductID); ?>~<?php echo e($fet->ProductName); ?>" data-target="#get_mP_rmv_modal">Remove</button></td>
                                   </tr>
-                                @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </tbody>
                             </table>
-                          @else
+                          <?php else: ?>
                             no
-                          @endif
+                          <?php endif; ?>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            @endif
-          @else
-            {{redirect('/admin/auth/login')}}
-          @endif
+            <?php endif; ?>
+          <?php else: ?>
+            <?php echo e(redirect('/admin/auth/login')); ?>
+
+          <?php endif; ?>
         </div>
       </div>
     </div>
   </div>
-  {{display('get_mP_rmv_modal','','0','2','Confirm Product Removal')}}
+  <?php echo e(display('get_mP_rmv_modal','','0','2','Confirm Product Removal')); ?>
+
   <!-- Are you sure you want to remove this product? yes : no -->
   <script>
     $(document).on('click', '.open_mp_rmv_modal', function (e) {
@@ -99,4 +100,6 @@
       });
     });
   </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.ap.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\shaiyabattles\resources\views/pages/ap/webmall/manageProducts.blade.php ENDPATH**/ ?>

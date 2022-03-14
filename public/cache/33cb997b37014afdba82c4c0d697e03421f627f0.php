@@ -22,7 +22,7 @@
 <!-- Ajax Loader -->
 
 <!-- jQuery v1.12.4 -->
-<script src="/resources/themes/Godlike/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/resources/jquery/core/v1.12.4/jquery-v1.12.4.js"></script>
 <!-- Custom JS -->
 <script src="/resources/themes/ap/js/custom.js"></script>
 <title><?php echo $__env->yieldContent('title', 'undefined'); ?> - <?php echo e(APP['title']); ?></title>

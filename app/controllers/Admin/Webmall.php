@@ -49,11 +49,11 @@ class Webmall extends Controller
 
     public function manageProducts()
     {
-        $addProduct = $this->model(Models\Admin\WebMall\AddProduct::class);
+        $manageProducts = $this->model(Models\Admin\WebMall\ManageProducts::class);
 
         $data = [
             'user' => $this->user,
-            'addProduct' => $addProduct,
+            'manageProducts' => $manageProducts,
             'logSys' => $this->logSys
         ];
 

@@ -7,8 +7,9 @@
   </a>
   <ul class="pcoded-submenu">
     <li class=""><a href="/admin/webmall/addProduct" class="">Add Product</a></li>
-    {{-- <li class=""><a href="/admin/webmall/editProduct" class="">Edit Product</a></li> --}}
+    
     <li class=""><a href="/admin/webmall/manageProducts" class="">Manage Products</a></li>
-    {{-- <li class=""><a href="/admin/webmall/removeProduct" class="">Remove Product</a></li> --}}
+    
   </ul>
 </li>
+<?php /**PATH C:\laragon\www\shaiyabattles\resources\views/partials/ap/nav/webmall.blade.php ENDPATH**/ ?>

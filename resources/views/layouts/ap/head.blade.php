@@ -22,7 +22,7 @@
 <!-- Ajax Loader -->
 {{-- <link rel="stylesheet" href="/resources/jquery/ui/v1.12.1/themes/Dot Luv/jquery-ui-style.css"> --}}
 <!-- jQuery v1.12.4 -->
-<script src="/resources/themes/Godlike/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/resources/jquery/core/v1.12.4/jquery-v1.12.4.js"></script>
 <!-- Custom JS -->
 <script src="/resources/themes/ap/js/custom.js"></script>
 <title>@yield('title', 'undefined') - {{APP['title']}}</title>
