@@ -34,7 +34,8 @@
                                   <th>Cost</th>
                                   <th>Image</th>
                                   <th>Category</th>
-                                  <th>Count</th>
+                                  <th>Tag</th>
+                                  
                                   <th>Action</th>
                                 </tr>
                               </thead>
@@ -46,9 +47,10 @@
                                     <td><?php echo e($fet->ProductCost); ?></td>
                                     <td><img src="/resources/themes/core/images/shop_icons/<?php echo e($fet->ProductImage); ?>.png"></td>
                                     <td><?php echo e(WEBMALL['categories'][$fet->Category]); ?></td>
-                                    <td>3</td>
+                                    <td><?php echo e(WEBMALL['tags'][$fet->Tag]); ?></td>
+                                    
                                     <td><button type="submit" class="btn btn-sm btn-primary" name="submit">Edit</button></td>
-                                    <td><button type="submit" class="btn btn-sm btn-danger open_mp_rmv_modal" data-toggle="modal" data-id="<?php echo e($fet->ProductID); ?>~<?php echo e($fet->ProductName); ?>" data-target="#get_mP_rmv_modal">Remove</button></td>
+                                    <td><button type="submit" class="btn btn-sm btn-danger open_mp_rmv_modal" data-toggle="modal" data-id="<?php echo e($fet->ProductID); ?>~<?php echo e($fet->ProductName); ?>~<?php echo e($fet->ProductCode); ?>" data-target="#get_mP_rmv_modal">Remove</button></td>
                                   </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </tbody>

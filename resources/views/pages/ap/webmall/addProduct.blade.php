@@ -35,10 +35,9 @@
                               @endif
                             @else
                               @if ($data['addProduct']->insertProduct() == true)
-                                success
+                                Product created successfully.
                               @else
-                                false
-                                error is: {{$data['addProduct']->error}}
+                                Could not create new product.
                               @endif
                             @endif
                           @endif

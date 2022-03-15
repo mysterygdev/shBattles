@@ -35,7 +35,8 @@
                                   <th>Cost</th>
                                   <th>Image</th>
                                   <th>Category</th>
-                                  <th>Count</th>
+                                  <th>Tag</th>
+                                  {{-- <th>Count</th> --}}
                                   <th>Action</th>
                                 </tr>
                               </thead>
@@ -47,9 +48,10 @@
                                     <td>{{$fet->ProductCost}}</td>
                                     <td><img src="/resources/themes/core/images/shop_icons/{{$fet->ProductImage}}.png"></td>
                                     <td>{{WEBMALL['categories'][$fet->Category]}}</td>
-                                    <td>3</td>
+                                    <td>{{WEBMALL['tags'][$fet->Tag]}}</td>
+                                    {{-- <td>3</td> --}}
                                     <td><button type="submit" class="btn btn-sm btn-primary" name="submit">Edit</button></td>
-                                    <td><button type="submit" class="btn btn-sm btn-danger open_mp_rmv_modal" data-toggle="modal" data-id="{{$fet->ProductID}}~{{$fet->ProductName}}" data-target="#get_mP_rmv_modal">Remove</button></td>
+                                    <td><button type="submit" class="btn btn-sm btn-danger open_mp_rmv_modal" data-toggle="modal" data-id="{{$fet->ProductID}}~{{$fet->ProductName}}~{{$fet->ProductCode}}" data-target="#get_mP_rmv_modal">Remove</button></td>
                                   </tr>
                                 @endforeach
                               </tbody>

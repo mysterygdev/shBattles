@@ -11,10 +11,10 @@
     $session = new Utils\Session;
     $user = new Utils\User($session);
 
-    $rewards = new Models\Game\Rewards($user, $session);
+    $manageProducts = new Models\Admin\WebMall\ManageProducts;
 
     $data = [
-        'rewards' => $rewards,
+        'manageProducts' => $manageProducts,
         'user' => $user
     ];
 

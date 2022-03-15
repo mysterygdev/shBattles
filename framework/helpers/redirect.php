@@ -3,7 +3,7 @@ function redirect($location, $delay = null)
 {
     if (substr($location, 0, 1) == '/') {
         if ($delay) {
-            header('refresh:' . $delay . ';url= ' . DIRS['URLROOT'] . $location);
+            header('refresh:' . $delay . ';url= ' . DIRS['URL_ROOT'] . $location);
         } else {
             header('location: ' . $location);
         }
