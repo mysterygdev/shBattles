@@ -47,6 +47,19 @@ class Webmall extends Controller
         $this->view('pages/ap/webmall/addProduct', $data);
     }
 
+    public function editProduct()
+    {
+        $editProduct = $this->model(Models\Admin\WebMall\EditProduct::class);
+
+        $data = [
+            'user' => $this->user,
+            'editProduct' => $editProduct,
+            'logSys' => $this->logSys
+        ];
+
+        $this->view('pages/ap/webmall/editProduct', $data);
+    }
+
     public function manageProducts()
     {
         $manageProducts = $this->model(Models\Admin\WebMall\ManageProducts::class);

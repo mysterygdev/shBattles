@@ -35,7 +35,7 @@
                               @endif
                             @else
                               @if ($data['addProduct']->insertProduct() == true)
-                                Product created successfully.
+                                <p><strong class="font-weight-bold">Product created successfully.</strong></p>
                               @else
                                 Could not create new product.
                               @endif

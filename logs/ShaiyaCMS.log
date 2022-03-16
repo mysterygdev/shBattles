@@ -510,3 +510,10 @@
 [13-Mar-2022 21:08:29 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 265
 [13-Mar-2022 21:08:29 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 265
 [14-Mar-2022 17:42:22 America/Chicago] PHP Notice:  Trying to get property '' of non-object in C:\laragon\www\shaiyabattles\public\cache\71cbd1d66ad9eb68541bae4829915a351abee253.php on line 45
+[15-Mar-2022 20:41:18 America/Chicago] PHP Notice:  Undefined index: id in C:\laragon\www\shaiyabattles\public\cache\ea5b87cac148a17e42dd65b807f786790ecae48d.php on line 26
+[15-Mar-2022 20:50:50 America/Chicago] PHP Notice:  Undefined offset: 0 in C:\laragon\www\shaiyabattles\vendor\illuminate\support\Collection.php on line 1362
+[15-Mar-2022 20:50:50 America/Chicago] PHP Notice:  Trying to get property 'ProductID' of non-object in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 187
+[15-Mar-2022 20:54:43 America/Chicago] PHP Notice:  Undefined offset: 0 in C:\laragon\www\shaiyabattles\vendor\illuminate\support\Collection.php on line 1362
+[15-Mar-2022 20:54:43 America/Chicago] PHP Notice:  Trying to get property 'ProductID' of non-object in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 187
+[15-Mar-2022 21:02:58 America/Chicago] PHP Notice:  Undefined offset: 0 in C:\laragon\www\shaiyabattles\vendor\illuminate\support\Collection.php on line 1362
+[15-Mar-2022 21:02:58 America/Chicago] PHP Notice:  Trying to get property 'ProductName' of non-object in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\EditProduct.php on line 38

@@ -177,9 +177,33 @@ class AddProduct
         }
     }
 
+    public function doesProductIdExist()
+    {
+        $res = DB::table(table('products'))
+            ->select('ProductID')
+            ->orderBy('ProductID', 'DESC')
+            ->limit(1)
+            ->get();
+        return $res;
+    }
+
     public function insertProduct()
     {
         $count = count($this->ItemID);
+
+        $id = null;
+
+        $checkProductId = $this->doesProductIdExist();
+
+        if ($checkProductId->isEmpty()) {
+            $id = 1;
+        } else {
+            if (!$checkProductId) {
+                $id = 1;
+            } else {
+                $id = $checkProductId[0]->ProductID + 1;
+            }
+        }
 
         for ($x = 0; $x < $count; $x++) {
             if ($x <= 0) {
@@ -189,6 +213,7 @@ class AddProduct
             }
             $stmt = DB::table(table('products'))
             ->insert([
+                'ProductID' => $id,
                 'ProductCode' => $this->code,
                 'ProductName' => $this->name,
                 'ProductDesc' => $this->desc,

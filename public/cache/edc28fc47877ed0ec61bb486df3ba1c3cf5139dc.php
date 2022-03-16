@@ -34,11 +34,9 @@
                               <?php endif; ?>
                             <?php else: ?>
                               <?php if($data['addProduct']->insertProduct() == true): ?>
-                                success
+                                <p><strong class="font-weight-bold">Product created successfully.</strong></p>
                               <?php else: ?>
-                                false
-                                error is: <?php echo e($data['addProduct']->error); ?>
-
+                                Could not create new product.
                               <?php endif; ?>
                             <?php endif; ?>
                           <?php endif; ?>
