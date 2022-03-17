@@ -50,7 +50,7 @@
                                     <td>{{WEBMALL['categories'][$fet->Category]}}</td>
                                     <td>{{WEBMALL['tags'][$fet->Tag]}}</td>
                                     {{-- <td>3</td> --}}
-                                    <td><button type="submit" class="btn btn-sm btn-primary" name="submit">Edit</button></td>
+                                    <td><button type="button" class="btn btn-sm btn-primary" name="submit" onclick="window.open('/admin/webmall/editProduct?id={{$fet->ProductID}}','_target')">Edit</button></td>
                                     <td><button type="submit" class="btn btn-sm btn-danger open_mp_rmv_modal" data-toggle="modal" data-id="{{$fet->ProductID}}~{{$fet->ProductName}}~{{$fet->ProductCode}}" data-target="#get_mP_rmv_modal">Remove</button></td>
                                   </tr>
                                 @endforeach

@@ -8,5 +8,6 @@
   <ul class="pcoded-submenu">
     {{-- <li class=""><a href="/admin/site/events" class="">Manage Events</a></li> --}}
     <li class=""><a href="/admin/site/tickets" class="">Manage Tickets</a></li>
+    <li class=""><a href="/admin/site/tickets" class="">Manage PvP Rewards</a></li>
   </ul>
 </li>

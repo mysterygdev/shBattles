@@ -49,7 +49,7 @@
                                     <td><?php echo e(WEBMALL['categories'][$fet->Category]); ?></td>
                                     <td><?php echo e(WEBMALL['tags'][$fet->Tag]); ?></td>
                                     
-                                    <td><button type="submit" class="btn btn-sm btn-primary" name="submit">Edit</button></td>
+                                    <td><button type="button" class="btn btn-sm btn-primary" name="submit" onclick="window.open('/admin/webmall/editProduct?id=<?php echo e($fet->ProductID); ?>','_target')">Edit</button></td>
                                     <td><button type="submit" class="btn btn-sm btn-danger open_mp_rmv_modal" data-toggle="modal" data-id="<?php echo e($fet->ProductID); ?>~<?php echo e($fet->ProductName); ?>~<?php echo e($fet->ProductCode); ?>" data-target="#get_mP_rmv_modal">Remove</button></td>
                                   </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

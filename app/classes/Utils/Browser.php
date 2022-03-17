@@ -76,11 +76,52 @@ class Browser
             return $_SERVER['HTTP_CLIENT_IP'];
         } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
             return $_SERVER['HTTP_X_FORWARDED_FOR'];
-        } elseif (!empty($_SERVER['REMOTE_HOST'])) {
+        } elseif (!empty($_SERVER['REMOTE_HOST'])) { // is used for host name, dont use for ip
             return $_SERVER['REMOTE_HOST'];
         } else {
             return $_SERVER['REMOTE_ADDR'];
         }
+    }
+
+    public function getClientIpAddress()
+    {
+        # Initialization
+        $searchList = "HTTP_CLIENT_IP,HTTP_X_FORWARDED_FOR,HTTP_X_FORWARDED,HTTP_X_CLUSTER_CLIENT_IP,HTTP_FORWARDED_FOR,HTTP_FORWARDED,REMOTE_ADDR";
+        $clientIpAddress = "";
+
+        # Loop through parameters
+        $mylist = explode(',', $searchList);
+        foreach ($mylist as $myItem) {
+            # Is our list set?
+            if (isset($_SERVER[trim($myItem)])) {
+                # Loop through IP addresses
+                $myIpList = explode(',', $_SERVER[trim($myItem)]);
+                foreach ($myIpList as $myIp) {
+                    if (filter_var(trim($myIp), FILTER_VALIDATE_IP)) {
+                        # Set client IP address
+                        $clientIpAddress = trim($myIp);
+
+                        # Exit loop
+                        break;
+                    }
+                }
+            }
+
+            # Did we find any IP addresses?
+            if (trim($clientIpAddress) != "") {
+                # Exit loop
+                break;
+            }
+        }
+
+        # Default (if needed)
+        if (trim($clientIpAddress) == "") {
+            # IP address was not found, use "Unknown"
+            $clientIpAddress = "Unknown";
+        }
+
+        # Exit
+        return $clientIpAddress;
     }
 
     public function hostname($ip): string
@@ -93,7 +134,7 @@ class Browser
     {
         echo '<b>Browser Class => Display Properties:</b>';
         echo '<pre>';
-            print_r(get_object_vars(__CLASS__));
+        print_r(get_object_vars(__CLASS__));
         echo '</pre>';
     }
 }

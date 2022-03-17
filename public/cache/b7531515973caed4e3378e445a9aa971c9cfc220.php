@@ -17,7 +17,8 @@
         </li>
         <?php if (\Illuminate\Support\Facades\Blade::check('auth')): ?>
           <?php if($data['user']->isADM()): ?>
-          <?php echo $__env->make('partials.ap.nav.site', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php echo $__env->make('partials.ap.nav.payments', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php echo $__env->make('partials.ap.nav.site', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <?php echo $__env->make('partials.ap.nav.webmall', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <?php echo $__env->make('partials.ap.nav.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
           <?php endif; ?>

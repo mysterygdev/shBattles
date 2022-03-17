@@ -8,6 +8,7 @@
   <ul class="pcoded-submenu">
     
     <li class=""><a href="/admin/site/tickets" class="">Manage Tickets</a></li>
+    <li class=""><a href="/admin/site/tickets" class="">Manage PvP Rewards</a></li>
   </ul>
 </li>
 <?php /**PATH C:\laragon\www\shaiyabattles\resources\views/partials/ap/nav/site.blade.php ENDPATH**/ ?>
