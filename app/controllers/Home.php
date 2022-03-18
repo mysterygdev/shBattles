@@ -17,8 +17,6 @@ class Home extends Controller
         $this->data = new Utils\Data;
         $this->session = new Utils\Session;
         $this->user = new Utils\User($this->session);
-
-        echo 'ip: '.$this->browser->setClientIpAddress($_SERVER);
     }
 
     public function index()

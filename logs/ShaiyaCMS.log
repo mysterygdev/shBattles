@@ -517,3 +517,5 @@
 [15-Mar-2022 20:54:43 America/Chicago] PHP Notice:  Trying to get property 'ProductID' of non-object in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\AddProduct.php on line 187
 [15-Mar-2022 21:02:58 America/Chicago] PHP Notice:  Undefined offset: 0 in C:\laragon\www\shaiyabattles\vendor\illuminate\support\Collection.php on line 1362
 [15-Mar-2022 21:02:58 America/Chicago] PHP Notice:  Trying to get property 'ProductName' of non-object in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\EditProduct.php on line 38
+[17-Mar-2022 19:11:45 America/Chicago] PHP Warning:  preg_match(): Unknown modifier ']' in C:\laragon\www\shaiyabattles\app\controllers\Auth.php on line 424
+[17-Mar-2022 19:12:10 America/Chicago] PHP Warning:  preg_match(): Unknown modifier ']' in C:\laragon\www\shaiyabattles\app\controllers\Auth.php on line 424

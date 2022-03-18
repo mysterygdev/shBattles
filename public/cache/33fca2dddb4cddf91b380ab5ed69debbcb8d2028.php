@@ -15,10 +15,6 @@
             <?php if (\Illuminate\Support\Facades\Blade::check('auth')): ?>
               <h4>You are already logged in!</h4>
             <?php else: ?>
-              <?php
-                echo 'wtf';
-                var_dump($_POST);
-              ?>
               <div class="youplay-login">
                 <div class="youplay-form text-center">
                   <h2 class="mt-0">Register</h2>

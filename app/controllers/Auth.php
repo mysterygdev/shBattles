@@ -417,10 +417,10 @@ class Auth extends Controller
                     // Validate Username
                     if (empty($userName)) {
                         $errors[] .= 'Please provide a UserID.';
-                    } elseif (ctype_alnum($userName) === false) {
-                        $errors[] .= 'UserID must consist of numbers and letters only.';
                     } elseif (strlen($userName) > 18) {
                         $errors[] .= 'UserID can not contain more than 18 characters.';
+                    } else if(preg_match('/[^a-zA-Z0-9*+\/]+$/', $userName)) {
+                        $errors[] .= 'UserID must consist of numbers and letters only.';
                     }
                     $chkUser = DB::table(table('shUserData'))
                         ->select('UserID')
