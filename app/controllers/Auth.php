@@ -341,7 +341,7 @@ class Auth extends Controller
                                         $this->session->put('User', $userInfo->Status, 'Status');
                                         $this->user->updateLoginStatus(1);
                                         $errors[] .= 'Login successful.<br>Loading your homepage now...';
-                                        redirect_html('/', 3);
+                                        redirect_html($this->session->getReferer(), 3);
                                     } else {
                                         $errors[] .= 'Your account has been banned due to rules infractions.<br>To find out what infraction you were banned for, as well as ban period,<br>please ask a GM or GS.';
                                     }
@@ -385,6 +385,7 @@ class Auth extends Controller
                 $Password = isset($decoded['pw']) ? $this->data->purify(trim($decoded['pw'])) : false;
                 $confirmPassword = isset($decoded['pw2']) ? $this->data->purify(trim($decoded['pw2'])) : false;
                 $email = isset($decoded['email']) ? $this->data->purify(trim($decoded['email'])) : false;
+                $emailArray = explode("@", $email);
                 $captcha = isset($decoded['captcha']) ? $this->data->purify(trim($decoded['captcha'])) : false;
                 $sQuestion = isset($decoded['sQuestion']) ? $this->data->purify(trim($decoded['sQuestion'])) : false;
                 $sAnswer = isset($decoded['sAnswer']) ? $this->data->purify(trim($decoded['sAnswer'])) : false;
@@ -444,6 +445,8 @@ class Auth extends Controller
                     if (empty($email)) {
                         $errors[] .= 'Please provide your e-mail.';
                     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                        $errors[] .= 'Invalid e-mail format.';
+                    } elseif (!checkdnsrr(array_pop($emailArray), "MX")) {
                         $errors[] .= 'Invalid e-mail format.';
                     }
                     $chkEmail = DB::table(table('webPresence'))

@@ -519,3 +519,7 @@
 [15-Mar-2022 21:02:58 America/Chicago] PHP Notice:  Trying to get property 'ProductName' of non-object in C:\laragon\www\shaiyabattles\app\models\Admin\WebMall\EditProduct.php on line 38
 [17-Mar-2022 19:11:45 America/Chicago] PHP Warning:  preg_match(): Unknown modifier ']' in C:\laragon\www\shaiyabattles\app\controllers\Auth.php on line 424
 [17-Mar-2022 19:12:10 America/Chicago] PHP Warning:  preg_match(): Unknown modifier ']' in C:\laragon\www\shaiyabattles\app\controllers\Auth.php on line 424
+[17-Mar-2022 20:31:15 America/Chicago] PHP Notice:  Undefined property: App\Controllers\Server::$referer in C:\laragon\www\shaiyabattles\app\controllers\Server.php on line 17
+[17-Mar-2022 20:31:18 America/Chicago] PHP Notice:  Undefined property: App\Controllers\Server::$referer in C:\laragon\www\shaiyabattles\app\controllers\Server.php on line 17
+[17-Mar-2022 21:02:52 America/Chicago] PHP Notice:  Array to string conversion in C:\laragon\www\shaiyabattles\app\controllers\Server.php on line 18
+[17-Mar-2022 21:02:55 America/Chicago] PHP Notice:  Array to string conversion in C:\laragon\www\shaiyabattles\app\controllers\Server.php on line 18

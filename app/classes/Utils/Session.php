@@ -2,6 +2,9 @@
 
 namespace Classes\Utils;
 
+use Classes\Utils\Data;
+use Classes\Utils\Cookie;
+
 /**
  * @author Brandon Gonzalez
  * @copyright Copyright (c) 2020, Brandon Gonzalez
@@ -11,9 +14,12 @@ class Session
 {
     private $sessionName;
     private $name = APP['sessionName'];
+    protected $referer;
 
     public function __construct()
     {
+        $this->data = new Data();
+        $this->cookie = new Cookie();
         if (!isset($_SESSION)) {
             // Start our session
             if (!empty($name)) {
@@ -164,5 +170,21 @@ class Session
             default:
                 return var_dump($vars);
         }
+    }
+
+    public function getReferer()
+    {
+        return $this->cookie->get('referer');
+    }
+
+    public function setReferer()
+    {
+        $this->referer = $_SERVER['REQUEST_URI'];
+        if ($this->referer === '/community/getRankings') {
+            $this->referer = '/community/rankings';
+        } else {
+            $this->referer = $_SERVER['REQUEST_URI'];
+        }
+        $this->cookie->put('referer', $this->referer, time() + 100, '/');
     }
 }

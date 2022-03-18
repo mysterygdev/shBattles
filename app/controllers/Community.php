@@ -15,6 +15,7 @@ class Community extends Controller
         $this->session = new Utils\Session;
         $this->user = new Utils\User($this->session);
         $this->pagination = new Utils\Pagination;
+        $this->session->setReferer();
     }
 
     public function discord()

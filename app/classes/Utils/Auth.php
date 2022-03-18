@@ -50,7 +50,7 @@ class Auth
             $this->session->regenerate();
             $this->session->forget('User');
             //$referrer = $_SERVER['HTTP_REFERER'];
-            redirect('/user/logout');
+            redirect($this->session->getReferer());
         }
     }
 

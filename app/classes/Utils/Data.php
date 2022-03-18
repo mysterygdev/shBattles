@@ -533,6 +533,14 @@ class Data
         }
     }
 
+    public function url2()
+    {
+        if (isset($_GET['url'])) {
+            $url = parse_url($_GET['url']);
+            return $url['path'];
+        }
+    }
+
     // MISC
     private function props()
     {

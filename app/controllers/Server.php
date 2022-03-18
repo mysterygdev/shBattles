@@ -8,11 +8,13 @@ use Classes\Utils;
 
 class Server extends Controller
 {
+    protected $referer;
     public function __construct()
     {
         $this->data = new Utils\Data;
         $this->session = new Utils\Session;
         $this->user = new Utils\User($this->session);
+        $this->session->setReferer();
     }
 
     public function about()
