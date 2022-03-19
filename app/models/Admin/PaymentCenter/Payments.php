@@ -15,11 +15,9 @@ class Payments
     public function getPayments()
     {
         $payments = DB::table(table('logPayments'))
-          ->select()
-          ->orderBy('PaymentDate', 'DESC')
-          ->get();
+            ->select()
+            ->orderBy('PaymentDate', 'ASC')
+            ->get();
         return $payments;
     }
-
-    // search for specific payment, datatables??
 }

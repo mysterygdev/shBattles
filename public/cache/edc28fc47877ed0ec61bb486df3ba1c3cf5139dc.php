@@ -1,4 +1,4 @@
-<?php $__env->startSection('index', 'sendNotice'); ?>
+<?php $__env->startSection('index', 'addProduct'); ?>
 <?php $__env->startSection('title', 'Add Product'); ?>
 <?php $__env->startSection('zone', 'AP'); ?>
 <?php $__env->startSection('content'); ?>

@@ -7,6 +7,8 @@
   </a>
   <ul class="pcoded-submenu">
     {{-- <li class=""><a href="/admin/payments/paymentGateway" class="">Payment Gateway</a></li> --}}
+    <li class=""><a href="/admin/paymentCenter/addDonation" class="">Add New Donation</a></li>
+    <li class=""><a href="/admin/paymentCenter/manageDonations" class="">Manage Donations</a></li>
     <li class=""><a href="/admin/paymentCenter/payments" class="">View Payments</a></li>
   </ul>
 </li>

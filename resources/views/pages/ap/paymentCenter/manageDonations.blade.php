@@ -1,6 +1,6 @@
 @extends('layouts.ap.app')
-@section('index', 'payments')
-@section('title', 'Payments')
+@section('index', 'manageDonations')
+@section('title', 'Manage Donations')
 @section('zone', 'AP')
 @section('content')
   @include('partials.ap.nav')
@@ -19,38 +19,39 @@
                     <div class="col-sm-12">
                       <div class="card">
                         <div class="card-header text-center">
-                          <h5 class="">View Payments</h5>
+                          <h5 class="">Manage donations</h5>
+                          <div class="float-right">
+                            <button type="button" class="btn btn-sm btn-primary"  onclick="window.open('/admin/paymentCenter/addDonation','_self')">Add New Donation</button>
+                          </div>
                         </div>
                         <div class="card-body">
-                          @if (count($data['payments']->getPayments()) > 0)
-                            <table class="table table-striped" id="Payments">
+                          <!-- need paginator for other pages of products, maybe datatables?? homepage example?? -->
+                          @if (count($data['donations']->getDonations()) > 0)
+                            <table class="table table-striped" id="NewPlayers">
                               <thead>
                                 <tr>
-                                  <th>UserID</th>
-                                  <th>Amount Paid</th>
+                                  <th>ID</th>
                                   <th>Reward</th>
-                                  <th>Email</th>
-                                  <th>Payment Status</th>
-                                  <th>Payment Type</th>
-                                  <th>Payment Date</th>
+                                  <th>Bonus</th>
+                                  <th>Price</th>
+                                  <th>Action</th>
                                 </tr>
                               </thead>
                               <tbody>
-                                @foreach ($data['payments']->getPayments() as $fet)
+                                @foreach ($data['donations']->getDonations() as $fet)
                                   <tr>
-                                    <td>{{$fet->UserID}}</td>
-                                    <td>{{$fet->Paid}}</td>
+                                    <td>{{$fet->RowID}}</td>
                                     <td>{{$fet->Reward}}</td>
-                                    <td>{{$fet->DonatorEmail}}</td>
-                                    <td>{{!empty($fet->PaymentStatus) ? $fet->PaymentStatus : 'NULL'}}</td>
-                                    <td>{{!empty($fet->PaymentType) ? $fet->PaymentType : 'NULL'}}</td>
-                                    <td>{{$data['data']->convertTimeToDate('F d, Y h:i:s A', $fet->PaymentDate)}}</td>
+                                    <td>{{!empty($fet->Bonus) ? $fet->Bonus : 'N/A'}}</td>
+                                    <td>{{$fet->Price}}</td>
+                                    <td><button type="button" class="btn btn-sm btn-primary" name="submit" onclick="window.open('/admin/webmall/editProduct?id={{$fet->ProductID}}','_target')">Edit</button></td>
+                                    <td><button type="submit" class="btn btn-sm btn-danger open_mp_rmv_modal" data-toggle="modal" data-id="{{$fet->ProductID}}~{{$fet->ProductName}}~{{$fet->ProductCode}}" data-target="#get_mP_rmv_modal">Remove</button></td>
                                   </tr>
                                 @endforeach
                               </tbody>
                             </table>
                           @else
-                            There are currently no posted payments.
+                            There are currently no donation items.
                           @endif
                         </div>
                       </div>
@@ -66,13 +67,4 @@
       </div>
     </div>
   </div>
-  <script>
-  $(document).ready(function(){
-    $('#Payments').dataTable( {
-      "searching": true,
-			"info": false,
-			"bLengthChange": false
-    });
-	});
-</script>
 @endsection

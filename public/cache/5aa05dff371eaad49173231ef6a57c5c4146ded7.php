@@ -22,7 +22,7 @@
                         </div>
                         <div class="card-body">
                           <?php if(count($data['payments']->getPayments()) > 0): ?>
-                            <table class="table table-striped" id="NewPlayers">
+                            <table class="table table-striped" id="Payments">
                               <thead>
                                 <tr>
                                   <th>UserID</th>
@@ -41,9 +41,9 @@
                                     <td><?php echo e($fet->Paid); ?></td>
                                     <td><?php echo e($fet->Reward); ?></td>
                                     <td><?php echo e($fet->DonatorEmail); ?></td>
-                                    <td><?php echo e($fet->PaymentStatus); ?></td>
-                                    <td><?php echo e($fet->PaymentType); ?></td>
-                                    <td><?php echo e($fet->PaymentDate); ?></td>
+                                    <td><?php echo e(!empty($fet->PaymentStatus) ? $fet->PaymentStatus : 'NULL'); ?></td>
+                                    <td><?php echo e(!empty($fet->PaymentType) ? $fet->PaymentType : 'NULL'); ?></td>
+                                    <td><?php echo e($data['data']->convertTimeToDate('F d, Y h:i:s A', $fet->PaymentDate)); ?></td>
                                   </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </tbody>
@@ -66,6 +66,15 @@
       </div>
     </div>
   </div>
+  <script>
+  $(document).ready(function(){
+    $('#Payments').dataTable( {
+      "searching": true,
+			"info": false,
+			"bLengthChange": false
+    });
+	});
+</script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.ap.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\shaiyabattles\resources\views/pages/ap/paymentCenter/payments.blade.php ENDPATH**/ ?>

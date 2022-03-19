@@ -129,8 +129,11 @@ Router::group(['prefix' => '/admin'], function () {
     });
     Router::group(['prefix' => '/paymentCenter'], function () {
         // GET
+        Router::get('/addDonation', 'Admin\PaymentCenter@addDonation');
+        Router::get('/manageDonations', 'Admin\PaymentCenter@manageDonations');
         Router::get('/payments', 'Admin\PaymentCenter@payments');
         // POST
+        Router::post('/submitDonation', 'Admin\PaymentCenter@submitDonation');
     });
     Router::group(['prefix' => '/site'], function () {
         // GET

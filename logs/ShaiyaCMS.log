@@ -529,3 +529,33 @@
 [17-Mar-2022 23:47:51 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\laragon\www\shaiyabattles\framework\blade\BladeController.php:83) in C:\laragon\www\shaiyabattles\app\classes\Utils\Cookie.php on line 10
 [17-Mar-2022 23:52:26 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\laragon\www\shaiyabattles\framework\blade\BladeController.php:83) in C:\laragon\www\shaiyabattles\app\classes\Utils\Cookie.php on line 10
 [18-Mar-2022 21:08:39 America/Chicago] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in C:\laragon\www\shaiyabattles\app\classes\Utils\Session.php on line 177
+[19-Mar-2022 17:17:24 America/Chicago] PHP Notice:  Undefined index: data in C:\laragon\www\shaiyabattles\public\cache\5aa05dff371eaad49173231ef6a57c5c4146ded7.php on line 46
+[19-Mar-2022 17:35:39 America/Chicago] PHP Notice:  Undefined index: toFriend in C:\laragon\www\shaiyabattles\app\models\User\Donate.php on line 109
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductID in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 46
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductID in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductName in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductCode in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductID in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 46
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductID in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductName in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductCode in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductID in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 46
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductID in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductName in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductCode in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductID in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 46
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductID in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductName in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductCode in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductID in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 46
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductID in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductName in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductCode in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductID in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 46
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductID in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductName in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductCode in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductID in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 46
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductID in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductName in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[19-Mar-2022 17:48:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductCode in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
