@@ -1,5 +1,5 @@
-<?php $__env->startSection('index', 'sendNotice'); ?>
-<?php $__env->startSection('title', 'Add Product'); ?>
+<?php $__env->startSection('index', 'manageProducts'); ?>
+<?php $__env->startSection('title', 'Manage Products'); ?>
 <?php $__env->startSection('zone', 'AP'); ?>
 <?php $__env->startSection('content'); ?>
   <?php echo $__env->make('partials.ap.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -56,7 +56,7 @@
                               </tbody>
                             </table>
                           <?php else: ?>
-                            no
+                            There are currently no products.
                           <?php endif; ?>
                         </div>
                       </div>
