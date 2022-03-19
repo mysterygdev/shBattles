@@ -390,6 +390,7 @@ class Auth extends Controller
                 $sQuestion = isset($decoded['sQuestion']) ? $this->data->purify(trim($decoded['sQuestion'])) : false;
                 $sAnswer = isset($decoded['sAnswer']) ? $this->data->purify(trim($decoded['sAnswer'])) : false;
                 $terms = isset($decoded['terms']) ? $this->data->purify(trim($decoded['terms'])) : false;
+                $gRecaptcha = isset($decoded['gRecaptcha']) ? $this->data->purify(trim($decoded['gRecaptcha'])) : false;
                 //$captchaUser = filter_var($decoded['captcha'], FILTER_SANITIZE_STRING);
                 $activationKey = $this->data->randStr();
                 // 22 length string
@@ -466,6 +467,19 @@ class Auth extends Controller
                         $errors[] .= 'Please provide a security answer.';
                     } elseif (strlen($sAnswer) > 50) {
                         $errors[] .= 'Security answer can not contain more than 50 characters.';
+                    }
+                    // Validate Google Recaptcha
+                    if (AUTH['recaptchaEnabled'] === true && AUTH['recaptcha'] == 'google') {
+                        if(isset($gRecaptcha)){
+                            $responseKey = $gRecaptcha;
+                            $url = 'https://www.google.com/recaptcha/api/siteverify?secret='.AUTH['googleSecretKey'].'&response='.$responseKey.'&remoteip='.$this->browser->ip();
+                            $response = json_decode(file_get_contents($url));
+                            if ($response->success) {
+                                echo 'success recaptcha';
+                            } else {
+                                echo 'fail recaptcha';
+                            }
+                        }
                     }
                     // Validate Terms of Use
                     if ($terms == 'off') {

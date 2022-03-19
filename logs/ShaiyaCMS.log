@@ -523,3 +523,9 @@
 [17-Mar-2022 20:31:18 America/Chicago] PHP Notice:  Undefined property: App\Controllers\Server::$referer in C:\laragon\www\shaiyabattles\app\controllers\Server.php on line 17
 [17-Mar-2022 21:02:52 America/Chicago] PHP Notice:  Array to string conversion in C:\laragon\www\shaiyabattles\app\controllers\Server.php on line 18
 [17-Mar-2022 21:02:55 America/Chicago] PHP Notice:  Array to string conversion in C:\laragon\www\shaiyabattles\app\controllers\Server.php on line 18
+[17-Mar-2022 22:12:19 America/Chicago] PHP Notice:  Undefined variable: response in C:\laragon\www\shaiyabattles\app\controllers\Auth.php on line 481
+[17-Mar-2022 22:12:19 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\controllers\Auth.php on line 481
+[17-Mar-2022 22:12:19 America/Chicago] PHP Notice:  Undefined variable: errors_body in C:\laragon\www\shaiyabattles\app\controllers\Auth.php on line 482
+[17-Mar-2022 23:47:51 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\laragon\www\shaiyabattles\framework\blade\BladeController.php:83) in C:\laragon\www\shaiyabattles\app\classes\Utils\Cookie.php on line 10
+[17-Mar-2022 23:52:26 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\laragon\www\shaiyabattles\framework\blade\BladeController.php:83) in C:\laragon\www\shaiyabattles\app\classes\Utils\Cookie.php on line 10
+[18-Mar-2022 21:08:39 America/Chicago] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in C:\laragon\www\shaiyabattles\app\classes\Utils\Session.php on line 177

@@ -127,6 +127,11 @@ Router::group(['prefix' => '/admin'], function () {
         // Mixed
         Router::match(['get', 'post'], '/login', 'User@donate');
     });
+    Router::group(['prefix' => '/paymentCenter'], function () {
+        // GET
+        Router::get('/payments', 'Admin\PaymentCenter@payments');
+        // POST
+    });
     Router::group(['prefix' => '/site'], function () {
         // GET
         Router::get('/events', 'Admin\Site@events');

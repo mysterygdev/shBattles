@@ -4,7 +4,6 @@ namespace Classes\Utils;
 
 class Cookie
 {
-
     public function put(string $key, $value, $time): void
     {
         setcookie($key, $value, $time, '/', null, null, true);
@@ -39,7 +38,7 @@ class Cookie
     public function all($type = null)
     {
         $result = '<pre>';
-            $result .= $this->variables($type, $_COOKIE);
+        $result .= $this->variables($type, $_COOKIE);
         $result .= '</pre>';
         return $result;
     }

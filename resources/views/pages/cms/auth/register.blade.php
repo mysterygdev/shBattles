@@ -42,6 +42,14 @@
                       <input type="text" name="SecAnswer" id="Input-SecAnswer" placeholder="Security answer">
                     </div>
                     <input name="terms" id="terms" type="radio"/> I Agree to the <strong>{{APP['title']}}</strong> <a href="/help/terms" target="_blank">Terms Of Use</a>
+                    @if (AUTH['recaptchaEnabled'] === true && AUTH['recaptcha'] == 'google')
+                      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                      <script>
+                        window.recaptchaEnabled = true;
+                        window.recaptcha = 'google';
+                      </script>
+                      <div class="g-recaptcha" data-sitekey="{{AUTH['googleSiteKey']}}"></div>
+                    @endif
                     @Separator(20)
                     <button class="btn btn-default db" id="register" name="sub_reg">Register</button>
                   </form>
@@ -59,6 +67,8 @@
       if(e.target.closest("#register")) {
         e.preventDefault();
 
+        //alert(window.globalVar);
+
         const display =  document.querySelector('input[name="displayname"]').value;
         const user =  document.querySelector('input[name="username"]').value;
         const email =  document.querySelector('input[name="email"]').value;
@@ -66,6 +76,12 @@
         const pw2 =  document.querySelector('input[name="password2"]').value;
         const sQuestion =  document.querySelector('select[name="SecQuestion"]').value;
         const sAnswer =  document.querySelector('input[name="SecAnswer"]').value;
+
+        let gRecaptcha = null;
+        if (window.recaptchaEnabled === true && window.recaptcha == 'google') {
+          gRecaptcha =  grecaptcha.getResponse();
+        }
+        console.log(gRecaptcha);
         let terms;
         if (document.querySelector('#terms').checked) {
           terms = document.querySelector('input[name=terms]:checked').value;
@@ -90,7 +106,8 @@
               pw2,
               sQuestion,
               sAnswer,
-              terms
+              terms,
+              gRecaptcha
           })
         })
         .then(r => r.text())

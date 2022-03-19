@@ -174,12 +174,17 @@ class Session
 
     public function getReferer()
     {
-        return $this->cookie->get('referer');
+        if ($this->cookie->has('referer')) {
+            return $this->cookie->get('referer');
+        } else {
+            return '/';
+        }
     }
 
     public function setReferer()
     {
         $this->referer = $_SERVER['REQUEST_URI'];
+        //echo 'ref: '.$this->referer;
         if ($this->referer === '/community/getRankings') {
             $this->referer = '/community/rankings';
         } else {

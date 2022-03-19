@@ -1,6 +1,6 @@
 @extends('layouts.ap.app')
-@section('index', 'sendNotice')
-@section('title', 'Add Product')
+@section('index', 'manageProducts')
+@section('title', 'Manage Products')
 @section('zone', 'AP')
 @section('content')
   @include('partials.ap.nav')
@@ -57,7 +57,7 @@
                               </tbody>
                             </table>
                           @else
-                            no
+                            There are currently no products.
                           @endif
                         </div>
                       </div>

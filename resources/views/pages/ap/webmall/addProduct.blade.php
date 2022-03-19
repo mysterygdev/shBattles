@@ -1,5 +1,5 @@
 @extends('layouts.ap.app')
-@section('index', 'sendNotice')
+@section('index', 'addProduct')
 @section('title', 'Add Product')
 @section('zone', 'AP')
 @section('content')
