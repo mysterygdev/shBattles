@@ -29,6 +29,9 @@
             <button type="button" class="btn btn-sm btn-dark m_auto" onclick="location.href='/user/panel/res';">
               Resurrect
             </button>
+            <button type="button" class="btn btn-sm btn-dark m_auto" onclick="location.href='/user/panel/security';">
+              Security
+            </button>
           </div>
           <div class="panel-content text-center">
             @if (!$data['page'])
@@ -42,6 +45,8 @@
                 @include('pages.cms.user.panel.changePassword')
               @elseif ($data['page'] == 'res')
                 @include('pages.cms.user.panel.resurrect')
+              @elseif ($data['page'] == 'security')
+                @include('pages.cms.user.panel.security')
               @endif
             @endif
           </div>

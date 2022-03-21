@@ -580,3 +580,8 @@
 [19-Mar-2022 17:57:51 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductID in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
 [19-Mar-2022 17:57:51 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductName in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
 [19-Mar-2022 17:57:51 America/Chicago] PHP Notice:  Undefined property: stdClass::$ProductCode in C:\laragon\www\shaiyabattles\public\cache\809977533af4174ffc6915debf002eae6ec3efe3.php on line 47
+[20-Mar-2022 21:25:55 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\PaymentCenter\Donations::$getRewardById in C:\laragon\www\shaiyabattles\app\controllers\Admin\PaymentCenter.php on line 100
+[20-Mar-2022 21:25:55 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\PaymentCenter\Donations::$getRewardById in C:\laragon\www\shaiyabattles\app\controllers\Admin\PaymentCenter.php on line 100
+[20-Mar-2022 21:30:35 America/Chicago] PHP Notice:  Undefined index: Reward in C:\laragon\www\shaiyabattles\vendor\illuminate\support\Collection.php on line 1362
+[20-Mar-2022 21:30:35 America/Chicago] PHP Notice:  Undefined index: Reward in C:\laragon\www\shaiyabattles\vendor\illuminate\support\Collection.php on line 1362
+[20-Mar-2022 21:43:44 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\PaymentCenter\Donations::$getBonusById in C:\laragon\www\shaiyabattles\app\controllers\Admin\PaymentCenter.php on line 116

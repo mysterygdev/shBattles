@@ -28,6 +28,9 @@
             <button type="button" class="btn btn-sm btn-dark m_auto" onclick="location.href='/user/panel/res';">
               Resurrect
             </button>
+            <button type="button" class="btn btn-sm btn-dark m_auto" onclick="location.href='/user/panel/security';">
+              Security
+            </button>
           </div>
           <div class="panel-content text-center">
             <?php if(!$data['page']): ?>
@@ -41,6 +44,8 @@
                 <?php echo $__env->make('pages.cms.user.panel.changePassword', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
               <?php elseif($data['page'] == 'res'): ?>
                 <?php echo $__env->make('pages.cms.user.panel.resurrect', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+              <?php elseif($data['page'] == 'security'): ?>
+                <?php echo $__env->make('pages.cms.user.panel.security', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
               <?php endif; ?>
             <?php endif; ?>
           </div>

@@ -43,7 +43,7 @@
                                     <td><?php echo e($fet->Reward); ?></td>
                                     <td><?php echo e(!empty($fet->Bonus) ? $fet->Bonus : 'N/A'); ?></td>
                                     <td><?php echo e($fet->Price); ?></td>
-                                    <td><button type="button" class="btn btn-sm btn-primary" name="submit" onclick="window.open('/admin/paymentCenter/editDonation?id=<?php echo e($fet->RowID); ?>','_target')">Edit</button></td>
+                                    <td><button type="button" class="btn btn-sm btn-primary" name="submit" onclick="window.open('/admin/paymentCenter/editDonation/<?php echo e($fet->RowID); ?>','_target')">Edit</button></td>
                                     <td><button type="submit" class="btn btn-sm btn-danger open_mD_rmv_modal" data-toggle="modal" data-id="<?php echo e($fet->RowID); ?>~<?php echo e($fet->Reward); ?>~<?php echo e($fet->Bonus); ?>~<?php echo e($fet->Price); ?>" data-target="#get_mD_rmv_modal">Remove</button></td>
                                   </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

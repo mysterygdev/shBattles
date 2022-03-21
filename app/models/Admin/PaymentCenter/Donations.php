@@ -31,6 +31,30 @@ class Donations
         return $donation;
     }
 
+    public function getRewardById($id)
+    {
+        $reward = DB::table(table('donateOptions'))
+            ->where('RowID', $id)
+            ->value('Reward');
+        return $reward;
+    }
+
+    public function getBonusById($id)
+    {
+        $bonus = DB::table(table('donateOptions'))
+            ->where('RowID', $id)
+            ->value('Bonus');
+        return $bonus;
+    }
+
+    public function getPriceById($id)
+    {
+        $price = DB::table(table('donateOptions'))
+            ->where('RowID', $id)
+            ->value('Price');
+        return $price;
+    }
+
     public function createDonation($reward, $price, $bonus = null)
     {
         $stmt = DB::table(table('donateOptions'))
@@ -43,6 +67,20 @@ class Donations
             echo 'Donation of Reward '.$reward.' created successfully.';
         } else {
             echo 'Donation could not be created.';
+        }
+    }
+
+    public function updateDonationById($id, $Reward, $Bonus, $Price)
+    {
+        try {
+            $update = DB::table(table('donateOptions'))
+            ->where('RowID', $id)
+            ->update(['Reward' => $Reward, 'Bonus' => $Bonus, 'Price' => $Price]);
+            echo 'Updated donation option '.$id .': Reward => '.$Reward.' Bonus => '.$Bonus.' Price => '.$Price;
+        } catch (\Illuminate\Database\QueryException $e) {
+            echo 'Donation option update failed.';
+        } catch (\Exception $e) {
+            echo 'Donation option update failed';
         }
     }
 

@@ -44,7 +44,7 @@
                                     <td>{{$fet->Reward}}</td>
                                     <td>{{!empty($fet->Bonus) ? $fet->Bonus : 'N/A'}}</td>
                                     <td>{{$fet->Price}}</td>
-                                    <td><button type="button" class="btn btn-sm btn-primary" name="submit" onclick="window.open('/admin/paymentCenter/editDonation?id={{$fet->RowID}}','_target')">Edit</button></td>
+                                    <td><button type="button" class="btn btn-sm btn-primary" name="submit" onclick="window.open('/admin/paymentCenter/editDonation/{{$fet->RowID}}','_target')">Edit</button></td>
                                     <td><button type="submit" class="btn btn-sm btn-danger open_mD_rmv_modal" data-toggle="modal" data-id="{{$fet->RowID}}~{{$fet->Reward}}~{{$fet->Bonus}}~{{$fet->Price}}" data-target="#get_mD_rmv_modal">Remove</button></td>
                                   </tr>
                                 @endforeach
