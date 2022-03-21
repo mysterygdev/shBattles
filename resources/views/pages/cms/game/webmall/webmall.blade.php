@@ -17,7 +17,7 @@
       @else
         <div class="col-md-9 col-md-push-3 isotope">
           <h2 class="text-center">Your available points to spend: <span class="fw_bold">{{$data['webmall']->getUserPoints()}}</span></h2>
-          <h3 class="text-center">{{$data['webmall']->category}}</h3>
+          <h3 class="text-center">{{$data['webmall']->getItemCategoryName()}}</h3>
           <div class="isotope-list">
             @if (count($data['webmall']->getProducts()) > 0)
               @foreach ($data['webmall']->getProducts() as $res)

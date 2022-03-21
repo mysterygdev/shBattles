@@ -585,3 +585,5 @@
 [20-Mar-2022 21:30:35 America/Chicago] PHP Notice:  Undefined index: Reward in C:\laragon\www\shaiyabattles\vendor\illuminate\support\Collection.php on line 1362
 [20-Mar-2022 21:30:35 America/Chicago] PHP Notice:  Undefined index: Reward in C:\laragon\www\shaiyabattles\vendor\illuminate\support\Collection.php on line 1362
 [20-Mar-2022 21:43:44 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\PaymentCenter\Donations::$getBonusById in C:\laragon\www\shaiyabattles\app\controllers\Admin\PaymentCenter.php on line 116
+[20-Mar-2022 22:04:28 America/Chicago] PHP Notice:  Trying to get property '' of non-object in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 251
+[20-Mar-2022 22:04:42 America/Chicago] PHP Notice:  Undefined index: $this->data->url()[3] in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 251

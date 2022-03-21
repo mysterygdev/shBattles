@@ -248,12 +248,17 @@ class WebMall
                 $this->category = 'Gear';
             }
         } */
-        $this->category = (!empty($this->data->url()[2]) && $this->data->url()[2] === 'category') ? ucfirst($this->data->url()[3]) : 'Gear';
+        $this->category = (!empty($this->data->url()[2]) && $this->data->url()[2] === 'category') ? $this->data->url()[3] : 0;
         /* if (isset($_GET['category'])) {
             $this->category = ucfirst($_GET['category']);
         } else {
             $this->category = 'Gear';
         } */
+    }
+
+    public function getItemCategoryName()
+    {
+        return (!empty($this->data->url()[2]) && $this->data->url()[2] === 'category') ? WEBMALL['categories'][$this->data->url()[3]] : WEBMALL['categories'][0];
     }
 
     /**

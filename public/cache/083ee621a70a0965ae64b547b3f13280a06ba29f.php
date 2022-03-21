@@ -38,3 +38,4 @@
           </div>
           <!-- /END NAVIGATION -->
         </div>
+<?php /**PATH C:\laragon\www\shaiyabattles\resources\views/pages/cms/game/webmall/partials/navigation.blade.php ENDPATH**/ ?>

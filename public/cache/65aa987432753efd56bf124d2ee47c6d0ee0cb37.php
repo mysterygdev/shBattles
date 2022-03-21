@@ -4,6 +4,12 @@
   <form id="pass_form" method="post">
     <div id="response"></div><br>
     <div class="secOption">
+      <p>Your IP address:</p>
+    </div>
+    <div class="secOption">
+      <p>Your Recovery Key</p>
+    </div>
+    <div class="secOption">
       <div id="2FA" class="MFA">
         <span>Two-Factor Authentication(2FA):</span>
         <input type="radio" id="huey" name="drone" value="huey">
@@ -18,6 +24,12 @@
         <label class="block"><input type="radio" name="radgroup" value="A">Google</label>
         <label class="block"><input type="radio" name="radgroup" value="A">Email</label>
       </div>
+    </div>
+    <div class="secOption">
+      <p>Update Security Q/A</p>
+    </div>
+    <div class="secOption">
+      <p>WhiteList IPS..</p>
     </div>
     <?php separator(20) ?>
     <button type="submit" class="btn btn-sm btn-dark m_auto">
