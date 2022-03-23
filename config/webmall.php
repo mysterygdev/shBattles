@@ -16,4 +16,6 @@
           'New',
           'Sale'
         ],
+        // 0 = giftBox, 1 = Bank
+        'sendMethod' => 0
     ];

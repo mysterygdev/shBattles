@@ -46,6 +46,7 @@ function table($table)
             return 'PS_GameDefs.dbo.Items';
         case 'shUmg':
             return 'PS_GameData.dbo.UserMaxGrow';
+        // UserStoredPointItems = Gift Box
         case 'shUserBank':
             return 'PS_GameData.dbo.UserStoredPointItems';
         case 'shUserWh':
@@ -69,6 +70,7 @@ function table($table)
             return 'PS_GameData.dbo.GuildChars';
         case 'shGuildDetails':
             return 'PS_GameData.dbo.GuildDetails';
+        // Users_Product = Bank Teller
         case 'shUserProduct':
             return 'PS_Billing.dbo.Users_Product';
         case 'shMaps':
