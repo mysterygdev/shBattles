@@ -38,7 +38,7 @@ class Rewards
 
     public function validateKills($id)
     {
-        $res = DB::table(table('pvpRewards'))
+        $res = DB::table(table('logPvpRewards'))
         ->select()
         ->where('UserUID', $this->user->UserUID)
         ->where('PrizeID', $id)

@@ -122,14 +122,12 @@ class Bootstrap
             $this->security = new Security;
             // Load Helpers
             $this->loadHelpers();
-            // Init Session
-            $this->session = new Utils\Session;
             // Init PHP
             $this->php = new Utils\PHP;
+            // Init Session
+            $this->session = new Utils\Session;
             // Init DB
             $this->database = new DB;
-            // Init Settings
-            $this->settings = new \Classes\Settings\Settings($this->session);
             // Init Data
             $this->data = new Utils\Data;
 

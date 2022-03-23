@@ -21,7 +21,7 @@ if (empty($Tier)) {
 
 if (count($errors) == 0) {
     if (!empty($UserUID)) {
-        $res = DB::table(table('tieredSpender'))
+        $res = DB::table(table('logTieredSpender'))
             ->select()
             ->where('UserUID', $_SESSION['User']['UserUID'])
             ->where('Tier', $Tier)
@@ -84,7 +84,7 @@ if (count($errors) == 0) {
                 }
             }
             if ($success) {
-                $stmt = DB::table(table('tieredSpender'))
+                $stmt = DB::table(table('logTieredSpender'))
                 ->insert([
                     'UserUID' => $_SESSION['User']['UserUID'],
                     'Tier' => $Tier,

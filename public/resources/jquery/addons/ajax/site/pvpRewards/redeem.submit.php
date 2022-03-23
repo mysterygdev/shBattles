@@ -8,6 +8,8 @@
 
   $data = new \Classes\Utils\Data;
 
+  var_dump($_SESSION);
+
   $PrizeID = isset($_POST['id']) ? $data->purify(trim($_POST['id'])) : false;
   $UserUID = isset($_POST['UserUID']) ? $data->purify(trim($_POST['UserUID'])) : false;
   $ProductCodeName = 'PvP Reward';
@@ -181,7 +183,7 @@ $res = DB::table(table('shUserData'))
   $oldPoints = $res[0]->Point;
   $newPoints = $oldPoints + $Points;
 
-$ins = DB::table(table('pvpRewards'))
+$ins = DB::table(table('logPvpRewards'))
 ->insert([
     'UserUID' => $UserUID,
     'PrizeID' => $PrizeID,

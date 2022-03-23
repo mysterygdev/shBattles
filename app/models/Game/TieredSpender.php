@@ -159,7 +159,7 @@ class TieredSpender
 
     public function isRedeemed()
     {
-        $res = DB::table(table('tieredSpender'))
+        $res = DB::table(table('logTieredSpender'))
             ->select()
             ->where('UserUID', $_SESSION['User']['UserUID'])
             ->get();
@@ -245,7 +245,7 @@ class TieredSpender
 
     public function hasUserRedeemedTier($tier)
     {
-        $res = DB::table(table('tieredSpender'))
+        $res = DB::table(table('logTieredSpender'))
             ->select()
             ->where('UserUID', $_SESSION['User']['UserUID'])
             ->where('Tier', $tier)
