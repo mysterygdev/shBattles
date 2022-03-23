@@ -200,6 +200,7 @@ class Bootstrap
         define('REGISTER', $this->loader->config('register', 'mixed/auth'));
         define('SERVER', $this->loader->config('server'));
         define('STRIPE', $this->loader->config('stripe', 'cms/game/donate'));
+        define('TERRA', $this->loader->config('terra', 'cms/game'));
         define('VOTE', $this->loader->config('vote', 'cms/game'));
         define('WEBMALL', $this->loader->config('webmall'));
         //$this->loader->loadConfigs();

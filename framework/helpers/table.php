@@ -21,6 +21,12 @@ function table($table)
             return 'ShaiyaCMS.dbo.log_payments';
         case 'logSession':
             return 'ShaiyaCMS.dbo.log_session';
+        case 'logPvpRewards':
+            return 'ShaiyaCMS.dbo.log_pvp_rewards';
+        case 'logTieredSpender':
+            return 'ShaiyaCMS.dbo.log_tiered_spender';
+        case 'logPromos':
+            return 'ShaiyaCMS.dbo.log_promotion_codes';
         // Users
         case 'webPresence':
             return 'ShaiyaCMS.dbo.web_presence';
@@ -85,14 +91,15 @@ function table($table)
             return 'PS_GameData.dbo.PointLog';
         case 'statPadders':
             return 'ShaiyaCMS.dbo.stat_padders';
+        // Tickets
         case 'tickets':
             return 'ShaiyaCMS.dbo.tickets';
         case 'messages':
             return 'ShaiyaCMS.dbo.messages';
+        // Promos
         case 'promos':
             return 'ShaiyaCMS.dbo.promotion_codes';
-        case 'promoLogs':
-            return 'ShaiyaCMS.dbo.promotion_codes_logs';
+        // PvP Rewards
         case 'pvpRewards':
             return 'ShaiyaCMS.dbo.pvp_rewards';
         // Drop Finder
@@ -117,8 +124,6 @@ function table($table)
         case 'eventCalender':
             return 'ShaiyaCMS.dbo.events';
         // Tiered Spender
-        case 'tieredSpender':
-            return 'ShaiyaCMS.dbo.tiered_spender';
         case 'tieredRewards':
             return 'ShaiyaCMS.dbo.tiered_rewards';
         // Multi Currency

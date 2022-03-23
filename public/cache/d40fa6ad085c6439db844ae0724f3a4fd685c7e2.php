@@ -18,7 +18,7 @@
           <p id="response"></p>
           <!-- TODO: first, check if item exists in warehouse, then do this .. -->
           <?php if(count($data['terra']->getAliveCharacters()) > 0): ?>
-            <?php if(count($data['terra']->checkIfUserHasItem('100204', 1)) > 0): ?>
+            <?php if(count($data['terra']->checkIfUserHasItem(TERRA['ItemId'], TERRA['Slot'])) > 0): ?>
               <form class="form-inline" method="post">
                 <div class="col-md-3"></div>
                 <div class="col-md-8">

@@ -19,6 +19,7 @@ class Loader
         'register',
         'server',
         'stripe',
+        'terra',
         'webmall',
     ];
     public $helpers = [
