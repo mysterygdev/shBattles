@@ -40,20 +40,20 @@
                 $data['rewards']->getPvPRewards();
                 $index=1;
               @endphp
-              @foreach ($data['rewards']->Rewards as $Reward)
+              @foreach ($data['rewards']->getRewards() as $Reward)
                 <tr>
-                  <td>{{$index}}</td>
-                  <td>{{$data['rewards']->Kills['K'.$index]}}</td>
+                  <td>{{$Reward->RewardID}}</td>
+                  <td>{{$data['rewards']->getKillsReq($index)}}</td>
                   <td><div class="RankIcon RankIcon{{$index}}"></div></td>
-                  <td>{{$Reward}}</td>
+                  <td>{{$Reward->Points}} DP</td>
                   @if ($data['rewards']->k1 >=$data['rewards']->Kills['K'.$index])
                     @php
                       $data['rewards']->validateKills($index);
                     @endphp
                     @if($data['rewards']->rowCount==0)
-                      <td class="text-center"><button class="btn gradient color-white open_send_prize_modal" data-toggle="modal" data-id="{{$index}}~{{$Reward}}~{{$_SESSION['User']['UserUID']}}" data-target="#get_reward_modal">Redeem Prize</button></td>
+                      <td class="text-center"><button class="btn gradient color-white open_send_prize_modal" data-toggle="modal" data-id="{{$index}}~{{$Reward->Points}} DP~{{$_SESSION['User']['UserUID']}}" data-target="#get_reward_modal">Redeem Prize</button></td>
                     @else
-                      <td class="tac">You already redeemed this Prize!</td>
+                      <td class="text-center">You already redeemed this Prize!</td>
                     @endif
                   @else
                     <td>You need more kills to redeem this Prize!</td>

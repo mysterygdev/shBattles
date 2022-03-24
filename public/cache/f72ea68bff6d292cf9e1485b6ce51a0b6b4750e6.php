@@ -34,18 +34,18 @@
                 $data['rewards']->getPvPRewards();
                 $index=1;
               ?>
-              <?php $__currentLoopData = $data['rewards']->Rewards; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Reward): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <?php $__currentLoopData = $data['rewards']->getRewards(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Reward): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                  <td><?php echo e($index); ?></td>
-                  <td><?php echo e($data['rewards']->Kills['K'.$index]); ?></td>
+                  <td><?php echo e($Reward->RewardID); ?></td>
+                  <td><?php echo e($data['rewards']->getKillsReq($index)); ?></td>
                   <td><div class="RankIcon RankIcon<?php echo e($index); ?>"></div></td>
-                  <td><?php echo e($Reward); ?></td>
+                  <td><?php echo e($Reward->Points); ?> DP</td>
                   <?php if($data['rewards']->k1 >=$data['rewards']->Kills['K'.$index]): ?>
                     <?php
                       $data['rewards']->validateKills($index);
                     ?>
                     <?php if($data['rewards']->rowCount==0): ?>
-                      <td class="text-center"><button class="btn gradient color-white open_send_prize_modal" data-toggle="modal" data-id="<?php echo e($index); ?>~<?php echo e($Reward); ?>~<?php echo e($_SESSION['User']['UserUID']); ?>" data-target="#get_reward_modal">Redeem Prize</button></td>
+                      <td class="text-center"><button class="btn gradient color-white open_send_prize_modal" data-toggle="modal" data-id="<?php echo e($index); ?>~<?php echo e($Reward->Points); ?> DP~<?php echo e($_SESSION['User']['UserUID']); ?>" data-target="#get_reward_modal">Redeem Prize</button></td>
                     <?php else: ?>
                       <td class="tac">You already redeemed this Prize!</td>
                     <?php endif; ?>
