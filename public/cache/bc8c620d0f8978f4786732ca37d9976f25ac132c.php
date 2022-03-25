@@ -17,6 +17,11 @@
         <div class="col-md-9 col-md-push-3 isotope">
           <h2 class="text-center">Your available points to spend: <span class="fw_bold"><?php echo e($data['webmall']->getUserPoints()); ?></span></h2>
           <h3 class="text-center"><?php echo e($data['webmall']->getItemCategoryName()); ?></h3>
+          <?php if(isset($_SESSION['message'])): ?>
+            <?php echo e($_SESSION['message']); ?>
+
+          <?php unset($_SESSION['message']); ?>
+          <?php endif; ?>
           <div class="isotope-list">
             <?php if(count($data['webmall']->getProducts()) > 0): ?>
               <?php $__currentLoopData = $data['webmall']->getProducts(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $res): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

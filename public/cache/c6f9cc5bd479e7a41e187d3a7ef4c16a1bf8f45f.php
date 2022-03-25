@@ -29,7 +29,7 @@
       $insertItem = $data['webmall']->insert($itemData);
       // Redirect to cart page
       $_SESSION['message'] = '('.$itemData['name'].') was added to your cart.';
-      $redirectLoc = $insertItem?'/game/webmall':'/';
+      $redirectLoc = $insertItem?$_SERVER['HTTP_REFERER']:'/game/webmall';
     } elseif ($_REQUEST['action'] == 'updateCartItem' && !empty($_REQUEST['id'])) {
       // Update item data in cart
       $itemData = [
@@ -207,6 +207,7 @@
       }
     } elseif ($_REQUEST['action'] == 'clearCart' && $data['webmall']->totalItems() > 0) {
       $data['webmall']->destroy();
+      $_SESSION['message'] = 'Cart has been emptied successfully.';
     }
     $_SESSION['sessData'] = $sessData;
   }
