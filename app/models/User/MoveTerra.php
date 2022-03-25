@@ -59,6 +59,11 @@ class MoveTerra
             ->where('Slot', $slot)
             ->where('Del', 0)
             ->delete();
+        if ($del) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function movePlayerToMap()

@@ -309,6 +309,7 @@ class WebMall
         $res = DB::table(table('products'))
             ->select()
             ->where('Category', $this->category)
+            ->where('Main', true)
             ->orderBy('ProductID', 'DESC')
             ->get();
         return $res;

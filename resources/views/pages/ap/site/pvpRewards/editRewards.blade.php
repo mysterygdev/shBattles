@@ -1,6 +1,6 @@
 @extends('layouts.ap.app')
-@section('index', 'editDonation')
-@section('title', 'Edit Donation')
+@section('index', 'editPvpRewards')
+@section('title', 'Edit Rewards')
 @section('zone', 'AP')
 @section('content')
   @include('partials.ap.nav')
@@ -19,28 +19,34 @@
                     <div class="col-sm-12">
                       <div class="card">
                         <div class="card-header text-center">
-                          <h5 class="">Edit Donation</h5>
+                          <h5 class="">Editing Reward: <strong class="font-weight-bold">{{$data['id']}}</strong></h5>
                           <div class="float-right">
-                            <button type="button" class="btn btn-sm btn-primary"  onclick="window.open('/admin/paymentCenter/manageDonations','_self')">Manage Donations</button>
+                            <button type="button" class="btn btn-sm btn-primary"  onclick="window.open('/admin/site/pvpRewards/manageRewards','_self')">Manage Rewards</button>
                           </div>
                         </div>
                         <div class="card-body">
-                          @if (count($data['donations']->getDonationById($data['id'])) > 0)
+                          @if (count($data['rewards']->getRewardById($data['id'])) > 0)
                             <form method="post">
                               <p id="response"></p>
-                              @foreach ($data['donations']->getDonationById($data['id']) as $fet)
-                                <div class="form-group">
-                                  <label for="Reward">Reward</label>
-                                  <input type="text" class="form-control" id="Reward" name="Reward" placeholder="Enter Reward" value="{{isset($fet->Reward) ? $fet->Reward : 'NULL'}}">
+                              @foreach ($data['rewards']->getRewardById($data['id']) as $fet)
+                              <div class="form-group">
+                                  <label for="RewardID">RewardID</label>
+                                  <input type="text" class="form-control" id="RewardID" name="RewardID" value="{{$fet->RewardID}}" readonly>
                                 </div>
                                 <div class="form-group">
-                                  <label for="Bonus">Bonus</label>
-                                  <input type="text" class="form-control" id="Bonus" name="Bonus" placeholder="Bonus" value="{{isset($fet->Bonus) ? $fet->Bonus : NULL}}">
-                                  <small id="Bonus" class="form-text text-muted">Bonus Points (Not Required)</small>
+                                  <label for="RewardType">RewardType</label>
+                                  <input type="text" class="form-control" id="RewardType" name="RewardType" placeholder="Enter Reward Type" value="{{isset($fet->RewardType) ? $fet->RewardType : 'NULL'}}">
+                                  <small id="RewardType" class="form-text text-muted">Reward Type (Points) = Only valid setting atm</small>
                                 </div>
                                 <div class="form-group">
-                                  <label for="Price">Price</label>
-                                  <input type="text" class="form-control" id="Price" name="Price" placeholder="Price" value="{{isset($fet->Price) ? $fet->Price : 'NULL'}}">
+                                  <label for="K1Req">Kills Required</label>
+                                  <input type="text" class="form-control" id="K1Req" name="K1Req" placeholder="Enter Kills Required" value="{{isset($fet->K1Req) ? $fet->K1Req : 'NULL'}}">
+                                  <small id="K1Req" class="form-text text-muted">Kills Required - how many kills are required for this reward?</small>
+                                </div>
+                                <div class="form-group">
+                                  <label for="Points">Points</label>
+                                  <input type="text" class="form-control" id="Points" name="Points" placeholder="Enter Points Reward" value="{{isset($fet->Points) ? $fet->Points : 'NULL'}}">
+                                  <small id="Points" class="form-text text-muted">Points - how many points will user receive?</small>
                                 </div>
                                 <p class="text-center">
                                   <button type="submit" class="btn btn-sm btn-primary" name="submit" id="submit">Save Changes</button>
@@ -49,7 +55,7 @@
                               @endforeach
                             </form>
                           @else
-                            Donation option doesn't exist.
+                            Reward ID doesn't exist.
                           @endif
                         </div>
                       </div>
@@ -71,13 +77,13 @@
         e.preventDefault();
 
         const id =  document.querySelector('input[name="id"]').value;
-        const reward =  document.querySelector('input[name="Reward"]').value;
-        const bonus =  document.querySelector('input[name="Bonus"]').value;
-        const price =  document.querySelector('input[name="Price"]').value;
+        const rewardType =  document.querySelector('input[name="RewardType"]').value;
+        const k1Req =  document.querySelector('input[name="K1Req"]').value;
+        const points =  document.querySelector('input[name="Points"]').value;
 
         const response =  document.querySelector('#response');
 
-        fetch('/admin/paymentCenter/editDonationOpt', {
+        fetch('/admin/site/pvpRewards/editRewardOpt', {
           method: 'post',
           mode: "same-origin",
           credentials: "same-origin",
@@ -86,9 +92,9 @@
           },
           body: JSON.stringify({
               id,
-              reward,
-              bonus,
-              price
+              rewardType,
+              k1Req,
+              points
           })
         })
         .then(r => r.text())

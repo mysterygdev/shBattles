@@ -40,8 +40,8 @@ class Char
     {
         if (is_numeric($id)) {
             $res = DB::table(table('shCharData'))
-              ->where('CharID', $id)
-              ->value('CharName');
+                ->where('CharID', $id)
+                ->value('CharName');
         } else {
             echo 'Identifier must be numeric for character id.';
         }

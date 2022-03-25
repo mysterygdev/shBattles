@@ -140,6 +140,19 @@ Router::group(['prefix' => '/admin'], function () {
     Router::group(['prefix' => '/site'], function () {
         // GET
         Router::get('/events', 'Admin\Site@events');
+        Router::group(['prefix' => '/pvpRewards'], function () {
+            // GET
+            Router::get('/addReward', 'Admin\Site@addPvpRewards');
+            Router::get('/editReward/{id}', 'Admin\Site@editPvpRewards');
+            Router::get('/manageRewards', 'Admin\Site@managePvpRewards');
+            // POST
+            Router::post('/editRewardOpt', 'Admin\Site@editRewardOpt');
+            Router::post('/submitReward', 'Admin\Site@submitReward');
+        });
+        Router::group(['prefix' => '/tieredSpender'], function () {
+            Router::get('/addReward', 'Admin\Site@addTierRewards');
+            Router::get('/manageRewards', 'Admin\Site@manageTierRewards');
+        });
         Router::get('/newEvent', 'Admin\Site@newEvent');
         Router::get('/tickets', 'Admin\Site@tickets');
         // POST

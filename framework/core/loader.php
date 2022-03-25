@@ -10,7 +10,7 @@ class Loader
         'app',
         'auth',
         'config',
-        'database',
+        'db',
         'dirs',
         'donate',
         'mail',
@@ -21,6 +21,10 @@ class Loader
         'stripe',
         'terra',
         'webmall',
+    ];
+    public $notAllowedConfigs = [
+        '',
+        '',
     ];
     public $helpers = [
         'abort',
@@ -93,6 +97,57 @@ class Loader
             }
         }
         return true;
+    }
+
+    function has_string_keys(array $array) {
+        return count(array_filter(array_keys($array), 'is_string')) > 0;
+    }
+
+    public function loadResources($path, $type, $array, $recursive = false)
+    {
+        if(!is_dir($path)) {
+            return false;
+		}
+
+        $files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
+
+        foreach ($files as $file) {
+            //$file = basename($file);
+            if ($file == '.' || $file == '..') {
+                continue;
+            }
+
+            if(is_dir($path.$file) && $recursive){
+				$this->loadResources($path.$file,$type,$array,$recursive);
+			} else {
+                if (is_file($file)) {
+                    $ext = pathinfo($file,PATHINFO_EXTENSION);
+
+                    if ($ext == 'php') {
+
+                        $fileName = basename($file, '.php');
+                        $fileName = strtoupper($fileName);
+                        $fullPath = $file;
+
+                        if ($type == 'helper') {
+                            if (in_array(basename($file, '.php'), $array)) {
+                                include($fullPath);
+                            } else {
+                                // Error
+                            }
+                        } elseif($type == 'config') {
+                            if (in_array(basename($file, '.php'), $array)) {
+                                //echo 'config loaded: '.$fileName;
+                                define($fileName,include($fullPath));
+                                echo 'config loaded: '.$fileName.'<br>';
+                            } else {
+                                // Error
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public function ifArray($array, $file, $do)

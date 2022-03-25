@@ -202,6 +202,7 @@ class Bootstrap
         define('VOTE', $this->loader->config('vote', 'cms/game'));
         define('WEBMALL', $this->loader->config('webmall'));
         //$this->loader->loadConfigs();
+        //$this->loader->loadResources(CONFIG_PATH, 'config', $this->loader->configs, true);
     }
 
     public function loadHelpers()

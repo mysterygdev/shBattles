@@ -8,6 +8,19 @@
   <ul class="pcoded-submenu">
     {{-- <li class=""><a href="/admin/site/events" class="">Manage Events</a></li> --}}
     <li class=""><a href="/admin/site/tickets" class="">Manage Tickets</a></li>
-    <li class=""><a href="/admin/site/tickets" class="">Manage PvP Rewards</a></li>
+    <li class="pcoded-hasmenu pcoded-trigger">
+      <a href="#!" class="">PvP Rewards</a>
+      <ul class="pcoded-submenu" style="display: block;">
+        <li class=""><a href="/admin/site/pvpRewards/addReward" class="">Add PvP Reward</a></li>
+        <li class=""><a href="/admin/site/pvpRewards/manageRewards" class="">Manage PvP Rewards</a></li>
+      </ul>
+    </li>
+    <li class="pcoded-hasmenu pcoded-trigger">
+      <a href="#!" class="">Tiered Spender</a>
+      <ul class="pcoded-submenu" style="display: block;">
+        <li class=""><a href="/admin/site/tieredSpender/addReward" class="">Add Tier Reward</a></li>
+        <li class=""><a href="/admin/site/tieredSpender/manageRewards" class="">Manage Tier Rewards</a></li>
+      </ul>
+    </li>
   </ul>
 </li>

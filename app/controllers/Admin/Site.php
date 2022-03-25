@@ -17,7 +17,33 @@ class Site extends Controller
         $this->user = new Utils\User($this->session);
     }
 
-    /* Post Methods */
+    /* Get Methods */
+
+    public function addPvpRewards()
+    {
+        $rewards = $this->model(Models\Admin\Site\PvpRewards\Rewards::class);
+
+        $data = [
+            'user' => $this->user,
+            'data' => $this->data,
+            'rewards' => $rewards
+        ];
+
+        $this->view('pages/ap/site/pvpRewards/addReward', $data);
+    }
+
+    public function addTierRewards()
+    {
+        $rewards = $this->model(Models\Admin\Site\PvpRewards\Rewards::class);
+
+        $data = [
+            'user' => $this->user,
+            'data' => $this->data,
+            'rewards' => $rewards
+        ];
+
+        $this->view('pages/ap/site/pvpRewards/manageRewards', $data);
+    }
 
     public function index()
     {
@@ -45,6 +71,46 @@ class Site extends Controller
         ];
 
         $this->view('pages/ap/site/events', $data);
+    }
+
+    public function editPvpRewards($id)
+    {
+        $rewards = $this->model(Models\Admin\Site\PvpRewards\Rewards::class);
+
+        $data = [
+            'user' => $this->user,
+            'data' => $this->data,
+            'rewards' => $rewards,
+            'id' => $id,
+        ];
+
+        $this->view('pages/ap/site/pvpRewards/editRewards', $data);
+    }
+
+    public function managePvpRewards()
+    {
+        $rewards = $this->model(Models\Admin\Site\PvpRewards\Rewards::class);
+
+        $data = [
+            'user' => $this->user,
+            'data' => $this->data,
+            'rewards' => $rewards
+        ];
+
+        $this->view('pages/ap/site/pvpRewards/manageRewards', $data);
+    }
+
+    public function manageTierRewards()
+    {
+        $rewards = $this->model(Models\Admin\Site\PvpRewards\Rewards::class);
+
+        $data = [
+            'user' => $this->user,
+            'data' => $this->data,
+            'rewards' => $rewards
+        ];
+
+        $this->view('pages/ap/site/pvpRewards/manageRewards', $data);
     }
 
     public function newEvent()
@@ -75,6 +141,130 @@ class Site extends Controller
     }
 
     /* Post Methods */
+
+    public function editRewardOpt()
+    {
+        $rewards = $this->model(Models\Admin\Site\PvpRewards\Rewards::class);
+        $contentType = isset($_SERVER['CONTENT_TYPE']) ? trim($_SERVER['CONTENT_TYPE']) : '';
+        if ($contentType === 'application/json') {
+            //Receive the RAW post data.
+            $content = trim(file_get_contents('php://input'));
+
+            $decoded = json_decode($content, true);
+
+            //If json_decode succeeded, the JSON is valid.
+            if (is_array($decoded)) {
+                $id = isset($decoded['id']) ? $this->data->purify(trim($decoded['id'])) : false;
+                $rewardType = isset($decoded['rewardType']) ? $this->data->purify(trim($decoded['rewardType'])) : false;
+                $k1Req = isset($decoded['k1Req']) ? $this->data->purify(trim($decoded['k1Req'])) : false;
+                $points = isset($decoded['points']) ? $this->data->purify(trim($decoded['points'])) : false;
+                $errors = [];
+
+                // Error Checking
+                if (isset($rewardType)) {
+                    // Validate Reward Type
+                    if (empty($rewardType)) {
+                        $errors[] .= 'Reward Type can not be empty.';
+                    } elseif (ucfirst($rewardType) !== 'Points') {
+                        $errors[] .= 'Reward type must be points.';
+                    }
+                    // Validate Kills Required
+                    if (empty($k1Req)) {
+                        $errors[] .= 'Kills Required can not be empty.';
+                    } elseif (!is_numeric($k1Req)) {
+                        $errors[] .= 'Kills Required must be numeric.';
+                    }
+                    if (empty($points)) {
+                        $errors[] .= 'Points Reward can not be empty.';
+                    } elseif (!is_numeric($points)) {
+                        $errors[] .= 'Points Reward must be numeric.';
+                    }
+                    // If No Errors Continue
+                    if (count($errors) == 0) {
+                        // Create Reward Option
+                        if ($rewards->getRewardTypeById($id) != $rewardType || $rewards->getK1ReqById($id) !== $k1Req || $rewards->getPointsById($id) !== $points) {
+                            $rewards->updateRewardById($id, $rewardType, $k1Req, $points);
+                        } else {
+                            echo 'No changes found. No update made.';
+                        }
+                    }
+                    // Display errors
+                    if (count($errors)) {
+                        echo '<ul>';
+                        foreach ($errors as $error) {
+                            echo '<li>' . $error . '</li>';
+                        }
+                        echo '</ul>';
+                    }
+                }
+            }
+        }
+    }
+
+    public function submitReward()
+    {
+        $rewards = $this->model(Models\Admin\Site\PvpRewards\Rewards::class);
+        $contentType = isset($_SERVER['CONTENT_TYPE']) ? trim($_SERVER['CONTENT_TYPE']) : '';
+        if ($contentType === 'application/json') {
+            //Receive the RAW post data.
+            $content = trim(file_get_contents('php://input'));
+
+            $decoded = json_decode($content, true);
+
+            //If json_decode succeeded, the JSON is valid.
+            if (is_array($decoded)) {
+                $rewardType = isset($decoded['rewardType']) ? $this->data->purify(trim($decoded['rewardType'])) : false;
+                $k1Req = isset($decoded['k1Req']) ? $this->data->purify(trim($decoded['k1Req'])) : false;
+                $points = isset($decoded['points']) ? $this->data->purify(trim($decoded['points'])) : false;
+                $errors = [];
+
+                // Error Checking
+                if (isset($rewardType)) {
+                    // Validate Reward Type
+                    if (empty($rewardType)) {
+                        $errors[] .= 'Reward Type can not be empty.';
+                    } elseif (ucfirst($rewardType) !== 'Points') {
+                        $errors[] .= 'Reward type must be points.';
+                    }
+                    // Validate Kills Required
+                    if (empty($k1Req)) {
+                        $errors[] .= 'Kills Required can not be empty.';
+                    } elseif (!is_numeric($k1Req)) {
+                        $errors[] .= 'Kills Required must be numeric.';
+                    }
+                    if (empty($points)) {
+                        $errors[] .= 'Points Reward can not be empty.';
+                    } elseif (!is_numeric($points)) {
+                        $errors[] .= 'Points Reward must be numeric.';
+                    }
+                    // If No Errors Continue
+                    if (count($errors) == 0) {
+                        // Create Reward Option
+                        $id = null;
+                        $checkRewardId = $rewards->doesRewardIdExist();
+                        if ($checkRewardId->isEmpty()) {
+                            $id = 1;
+                        } else {
+                            if (!$checkRewardId) {
+                                $id = 1;
+                            } else {
+                                $id = $checkRewardId[0]->RewardID + 1;
+                            }
+                        }
+                        $rewards->createReward($id, $rewardType, $k1Req, $points);
+                    }
+                    // Display errors
+                    if (count($errors)) {
+                        echo '<ul>';
+                        foreach ($errors as $error) {
+                            echo '<li>' . $error . '</li>';
+                        }
+                        echo '</ul>';
+                    }
+                }
+            }
+        }
+    }
 
     public function pCreateEvent()
     {
