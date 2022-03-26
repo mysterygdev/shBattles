@@ -150,8 +150,13 @@ Router::group(['prefix' => '/admin'], function () {
             Router::post('/submitReward', 'Admin\Site@submitReward');
         });
         Router::group(['prefix' => '/tieredSpender'], function () {
+            // GET
             Router::get('/addReward', 'Admin\Site@addTierRewards');
+            Router::get('/editReward/{id}', 'Admin\Site@editTierRewards');
             Router::get('/manageRewards', 'Admin\Site@manageTierRewards');
+            // POST
+            Router::post('/editRewardOpt', 'Admin\Site@editTierRewardOpt');
+            Router::post('/submitReward', 'Admin\Site@submitTierReward');
         });
         Router::get('/newEvent', 'Admin\Site@newEvent');
         Router::get('/tickets', 'Admin\Site@tickets');

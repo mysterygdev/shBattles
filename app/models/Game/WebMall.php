@@ -427,13 +427,13 @@ class WebMall
 
     public function getPvpPoints()
     {
-        $res = DB::table(table('userPoints'))
+        $res = DB::table(table('shUserData'))
             ->where('UserUID', $_SESSION['User']['UserUID'])
-            ->value('pvpPoints');
+            ->value('PvpPoint');
         return $res;
     }
 
-    public function getApPoints()
+    /* public function getApPoints()
     {
         $res = DB::table(table('userPoints'))
             ->where('UserUID', $_SESSION['User']['UserUID'])
@@ -447,7 +447,7 @@ class WebMall
             ->where('UserUID', $_SESSION['User']['UserUID'])
             ->value('gpPoints');
         return $res;
-    }
+    } */
 
     public function updateDpPoints($newPoints)
     {
@@ -459,13 +459,13 @@ class WebMall
 
     public function updatePvpPoints($newPoints)
     {
-        $res = DB::table(table('userPoints'))
+        $res = DB::table(table('shUserData'))
             ->where('UserUID', $_SESSION['User']['UserUID'])
-            ->update(['pvpPoints' => $newPoints]);
+            ->update(['PvpPoint' => $newPoints]);
         return $res;
     }
 
-    public function updateApPoints($newPoints)
+    /* public function updateApPoints($newPoints)
     {
         $res = DB::table(table('userPoints'))
             ->where('UserUID', $_SESSION['User']['UserUID'])
@@ -479,7 +479,7 @@ class WebMall
             ->where('UserUID', $_SESSION['User']['UserUID'])
             ->update(['gpPoints' => $newPoints]);
         return $res;
-    }
+    } */
 
     public function doesCouponCodeExist()
     {

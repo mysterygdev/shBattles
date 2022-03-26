@@ -187,7 +187,6 @@ class Bootstrap
     {
         define('APP', $this->loader->config('app'));
         define('AUTH', $this->loader->config('auth', 'mixed/auth'));
-        define('CONFIG', $this->loader->config('config'));
         define('DIRS', $this->loader->config('dirs', 'mixed/main'));
         define('DONATE', $this->loader->config('donate', 'cms/game/donate'));
         define('COINBASE', $this->loader->config('COINBASE', 'cms/game/donate'));

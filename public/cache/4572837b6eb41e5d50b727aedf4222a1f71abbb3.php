@@ -61,7 +61,8 @@ function updateCartItem(obj,id){
                         <div class="col-xs-6 col-md-3 align-right">
                           <div class="price">
                             <strong style="margin-right:10px">x<?php echo e($item['qty']); ?></strong>
-                            <?php echo e($item['price']); ?> DP
+                            <?php echo e($item['price']); ?> <?php echo e(strtoupper($item['crncy'])); ?>
+
                           </div>
                           <a href="/game/webmall/cartAction?action=removeCartItem&id=<?php echo e($item['rowid']); ?>&prodId=<?php echo e($item['id']); ?>" class="remove fas fa-trash-alt" title="Remove Item"></a>
                         </div>
@@ -71,7 +72,7 @@ function updateCartItem(obj,id){
                 </div>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
               <div class="align-right h3 mr-20 mb-20">
-                <span style="margin-right:10px;">Total: <strong><?php echo e($data['webmall']->total()); ?> DP</strong></span>
+                <span style="margin-right:10px;">Total: <strong><?php echo e($data['webmall']->total()); ?> Points</strong></span>
               </div>
               <div class="align-left">
                 <a href="/game/webmall/cartAction/?action=clearCart" class="btn btn-lg">Empty Cart</a>

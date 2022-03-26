@@ -19,6 +19,8 @@ class Site extends Controller
 
     /* Get Methods */
 
+    // PvP Rewards
+
     public function addPvpRewards()
     {
         $rewards = $this->model(Models\Admin\Site\PvpRewards\Rewards::class);
@@ -32,9 +34,11 @@ class Site extends Controller
         $this->view('pages/ap/site/pvpRewards/addReward', $data);
     }
 
+    // Tier Rewards
+
     public function addTierRewards()
     {
-        $rewards = $this->model(Models\Admin\Site\PvpRewards\Rewards::class);
+        $rewards = $this->model(Models\Admin\Site\TieredSpender\Rewards::class);
 
         $data = [
             'user' => $this->user,
@@ -42,7 +46,7 @@ class Site extends Controller
             'rewards' => $rewards
         ];
 
-        $this->view('pages/ap/site/pvpRewards/manageRewards', $data);
+        $this->view('pages/ap/site/tieredSpender/addReward', $data);
     }
 
     public function index()
@@ -73,6 +77,8 @@ class Site extends Controller
         $this->view('pages/ap/site/events', $data);
     }
 
+    // PvP Rewards
+
     public function editPvpRewards($id)
     {
         $rewards = $this->model(Models\Admin\Site\PvpRewards\Rewards::class);
@@ -87,6 +93,24 @@ class Site extends Controller
         $this->view('pages/ap/site/pvpRewards/editRewards', $data);
     }
 
+    // Tier Rewards
+
+    public function editTierRewards($id)
+    {
+        $rewards = $this->model(Models\Admin\Site\TieredSpender\Rewards::class);
+
+        $data = [
+            'user' => $this->user,
+            'data' => $this->data,
+            'rewards' => $rewards,
+            'id' => $id,
+        ];
+
+        $this->view('pages/ap/site/tieredSpender/editReward', $data);
+    }
+
+    // PvP Rewards
+
     public function managePvpRewards()
     {
         $rewards = $this->model(Models\Admin\Site\PvpRewards\Rewards::class);
@@ -100,9 +124,11 @@ class Site extends Controller
         $this->view('pages/ap/site/pvpRewards/manageRewards', $data);
     }
 
+    // Tier Rewards
+
     public function manageTierRewards()
     {
-        $rewards = $this->model(Models\Admin\Site\PvpRewards\Rewards::class);
+        $rewards = $this->model(Models\Admin\Site\TieredSpender\Rewards::class);
 
         $data = [
             'user' => $this->user,
@@ -110,7 +136,7 @@ class Site extends Controller
             'rewards' => $rewards
         ];
 
-        $this->view('pages/ap/site/pvpRewards/manageRewards', $data);
+        $this->view('pages/ap/site/tieredSpender/manageRewards', $data);
     }
 
     public function newEvent()
@@ -141,6 +167,8 @@ class Site extends Controller
     }
 
     /* Post Methods */
+
+    // PvP Rewards
 
     public function editRewardOpt()
     {
@@ -265,6 +293,193 @@ class Site extends Controller
             }
         }
     }
+
+    // Tier Rewards
+
+    public function editTierRewardOpt()
+    {
+        $rewards = $this->model(Models\Admin\Site\TieredSpender\Rewards::class);
+        $contentType = isset($_SERVER['CONTENT_TYPE']) ? trim($_SERVER['CONTENT_TYPE']) : '';
+        if ($contentType === 'application/json') {
+            //Receive the RAW post data.
+            $content = trim(file_get_contents('php://input'));
+
+            $decoded = json_decode($content, true);
+
+            //If json_decode succeeded, the JSON is valid.
+            if (is_array($decoded)) {
+                $id = isset($decoded['id']) ? $this->data->purify(trim($decoded['id'])) : false;
+                $rewardName = isset($decoded['rewardName']) ? $this->data->purify(trim($decoded['rewardName'])) : false;
+                $rewardDesc = isset($decoded['rewardDesc']) ? $this->data->purify(trim($decoded['rewardDesc'])) : false;
+                $oldRewardImage = isset($decoded['oldRewardImage']) ? $this->data->purify(trim($decoded['oldRewardImage'])) : false;
+                $newRewardImage = isset($decoded['newRewardImage']) ? $this->data->purify(trim($decoded['newRewardImage'])) : false;
+                $rewardImage = null;
+                $rewardItemID = isset($decoded['rewardItemID']) ? $this->data->purify(trim($decoded['rewardItemID'])) : false;
+                $rewardQuantity = isset($decoded['rewardQuantity']) ? $this->data->purify(trim($decoded['rewardQuantity'])) : false;
+                $rewardTier = isset($decoded['rewardTier']) ? $this->data->purify(trim($decoded['rewardTier'])) : false;
+                $errors = [];
+
+                // Error Checking
+                if (isset($rewardTier)) {
+                    // Validate Reward Name
+                    if (empty($rewardName)) {
+                        $errors[] .= 'Reward Name can not be empty.';
+                    }
+                    // Validate Reward Desc
+                    if (empty($rewardDesc)) {
+                        $errors[] .= 'Reward Desc can not be empty.';
+                    }
+                    // Validate Reward Image
+                    if (!isset($newRewardImage) || empty($newRewardImage)) {
+                        echo 'new reward image not set';
+                    } else {
+                        if ($oldRewardImage != $newRewardImage) {
+                            $rewardImage = $newRewardImage;
+                        } else {
+                            $rewardImage = $oldRewardImage;
+                        }
+                    }
+                    if (empty($rewardImage)) {
+                        $errors[] .= 'Reward Image can not be empty.';
+                    }
+                    if (empty($rewardItemID)) {
+                        $errors[] .= 'Reward Item ID can not be empty.';
+                    } elseif (!is_numeric($rewardItemID)) {
+                        $errors[] .= 'Reward Item ID must be numeric.';
+                    } elseif (strlen($rewardItemID) < 4 || strlen($rewardItemID) > 6) {
+                        $errors[] .= 'Reward Item ID can not be greater than 6 characters or less than 4 characters.';
+                    } elseif (($rewardItemID) > 255255) {
+                        $errors[] .= 'Reward Item ID can not be greater than 255255.';
+                    } elseif (!$rewards->checkIfItemExists($rewardItemID)) {
+                        $errors[] .= 'Reward Item ID does not exist.';
+                    }
+                    if (empty($rewardQuantity)) {
+                        $errors[] .= 'Reward Quantity can not be empty.';
+                    } elseif (!is_numeric($rewardQuantity)) {
+                        $errors[] .= 'Reward Quantity must be numeric.';
+                    } elseif (strlen($rewardQuantity) > 3) {
+                        $errors[] .= 'Reward Quantity can not be greater than 3 characters.';
+                    } elseif (($rewardQuantity) > 255) {
+                        $errors[] .= 'Reward Quantity can not be greater than 255.';
+                    }
+                    if (empty($rewardTier)) {
+                        $errors[] .= 'Reward Tier can not be empty.';
+                    } elseif (!is_numeric($rewardTier)) {
+                        $errors[] .= 'Reward Tier must be numeric.';
+                    } elseif (($rewardTier) > 10) {
+                        $errors[] .= 'Reward Tier can not be greater than 10.';
+                    }
+                    // If No Errors Continue
+                    if (count($errors) == 0) {
+                        // Create Reward Option
+                        if (
+                            $rewards->getRewardValueById($id, 'RewardName') != $rewardName ||
+                            $rewards->getRewardValueById($id, 'RewardDesc') !== $rewardDesc ||
+                            $rewards->getRewardValueById($id, 'RewardImage') !== $rewardImage ||
+                            $rewards->getRewardValueById($id, 'RewardItemID') !== $rewardItemID ||
+                            $rewards->getRewardValueById($id, 'RewardQuantity') !== $rewardQuantity ||
+                            $rewards->getRewardValueById($id, 'Tier') !== $rewardTier
+                        ) {
+                            $rewards->updateRewardById(
+                                $id, $rewardName, $rewardDesc, $rewardImage, $rewardItemID, $rewardQuantity, $rewardTier
+                            );
+                        } else {
+                            echo 'No changes found. No update made.';
+                        }
+                    }
+                    // Display errors
+                    if (count($errors)) {
+                        echo '<ul>';
+                        foreach ($errors as $error) {
+                            echo '<li>' . $error . '</li>';
+                        }
+                        echo '</ul>';
+                    }
+                }
+            }
+        }
+    }
+
+    public function submitTierReward()
+    {
+        $rewards = $this->model(Models\Admin\Site\TieredSpender\Rewards::class);
+        $contentType = isset($_SERVER['CONTENT_TYPE']) ? trim($_SERVER['CONTENT_TYPE']) : '';
+        if ($contentType === 'application/json') {
+            //Receive the RAW post data.
+            $content = trim(file_get_contents('php://input'));
+
+            $decoded = json_decode($content, true);
+
+            //If json_decode succeeded, the JSON is valid.
+            if (is_array($decoded)) {
+                $rewardName = isset($decoded['rewardName']) ? $this->data->purify(trim($decoded['rewardName'])) : false;
+                $rewardDesc = isset($decoded['rewardDesc']) ? $this->data->purify(trim($decoded['rewardDesc'])) : false;
+                $rewardImage = isset($decoded['rewardImage']) ? $this->data->purify(trim($decoded['rewardImage'])) : false;
+                $rewardItemID = isset($decoded['rewardItemID']) ? $this->data->purify(trim($decoded['rewardItemID'])) : false;
+                $rewardQuantity = isset($decoded['rewardQuantity']) ? $this->data->purify(trim($decoded['rewardQuantity'])) : false;
+                $rewardTier = isset($decoded['rewardTier']) ? $this->data->purify(trim($decoded['rewardTier'])) : false;
+                $errors = [];
+
+                // Error Checking
+                if (isset($rewardTier)) {
+                    // Validate Reward Name
+                    if (empty($rewardName)) {
+                        $errors[] .= 'Reward Name can not be empty.';
+                    }
+                    // Validate Reward Desc
+                    if (empty($rewardDesc)) {
+                        $errors[] .= 'Reward Desc can not be empty.';
+                    }
+                    // Validate Reward Image
+                    if (empty($rewardImage)) {
+                        $errors[] .= 'Reward Image can not be empty.';
+                    }
+                    if (empty($rewardItemID)) {
+                        $errors[] .= 'Reward Item ID can not be empty.';
+                    } elseif (!is_numeric($rewardItemID)) {
+                        $errors[] .= 'Reward Item ID must be numeric.';
+                    } elseif (strlen($rewardItemID) < 4 || strlen($rewardItemID) > 6) {
+                        $errors[] .= 'Reward Item ID can not be greater than 6 characters or less than 4 characters.';
+                    } elseif (($rewardItemID) > 255255) {
+                        $errors[] .= 'Reward Item ID can not be greater than 255255.';
+                    } elseif (!$rewards->checkIfItemExists($rewardItemID)) {
+                        $errors[] .= 'Reward Item ID does not exist.';
+                    }
+                    if (empty($rewardQuantity)) {
+                        $errors[] .= 'Reward Quantity can not be empty.';
+                    } elseif (!is_numeric($rewardQuantity)) {
+                        $errors[] .= 'Reward Quantity must be numeric.';
+                    } elseif (strlen($rewardQuantity) > 3) {
+                        $errors[] .= 'Reward Quantity can not be greater than 3 characters.';
+                    } elseif (($rewardQuantity) > 255) {
+                        $errors[] .= 'Reward Quantity can not be greater than 255.';
+                    }
+                    if (empty($rewardTier)) {
+                        $errors[] .= 'Reward Tier can not be empty.';
+                    } elseif (!is_numeric($rewardTier)) {
+                        $errors[] .= 'Reward Tier must be numeric.';
+                    } elseif (($rewardTier) > 10) {
+                        $errors[] .= 'Reward Tier can not be greater than 10.';
+                    }
+                    // If No Errors Continue
+                    if (count($errors) == 0) {
+                        // Create Reward Option
+                        $rewards->createReward($rewardName, $rewardDesc, $rewardImage, $rewardItemID, $rewardQuantity, $rewardTier);
+                    }
+                    // Display errors
+                    if (count($errors)) {
+                        echo '<ul>';
+                        foreach ($errors as $error) {
+                            echo '<li>' . $error . '</li>';
+                        }
+                        echo '</ul>';
+                    }
+                }
+            }
+        }
+    }
+
+    // Misc
 
     public function pCreateEvent()
     {

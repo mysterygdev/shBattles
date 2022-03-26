@@ -15,7 +15,11 @@
         <p>Please login to continue.</p>
       <?php else: ?>
         <div class="col-md-9 col-md-push-3 isotope">
-          <h2 class="text-center">Your available points to spend: <span class="fw_bold"><?php echo e($data['webmall']->getUserPoints()); ?></span></h2>
+          <h2 class="text-center">
+            Your available points to spend:
+            <span class="fw_bold"><?php echo e($data['webmall']->getUserPoints()); ?> DP</span>,
+            <span class="fw_bold"><?php echo e($data['webmall']->getPvpPoints()); ?> PVP</span>
+          </h2>
           <h3 class="text-center"><?php echo e($data['webmall']->getItemCategoryName()); ?></h3>
           <?php if(isset($_SESSION['message'])): ?>
             <?php echo e($_SESSION['message']); ?>
@@ -46,7 +50,8 @@
                           </div>
                           <div class="col-xs-6 col-md-3 align-right">
                             <div class="price">
-                              <?php echo e($res->ProductCost); ?> DP
+                              <?php echo e($res->ProductCost); ?> <?php echo e(strtoupper($res->ProductCurrency)); ?>
+
                             </div>
                             <select name="Quantity" class="custom-select custom-select-sm form-control form-control-sm">
                               <option value="1">1</option>

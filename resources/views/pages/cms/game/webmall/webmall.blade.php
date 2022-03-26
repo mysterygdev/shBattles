@@ -16,7 +16,11 @@
         <p>Please login to continue.</p>
       @else
         <div class="col-md-9 col-md-push-3 isotope">
-          <h2 class="text-center">Your available points to spend: <span class="fw_bold">{{$data['webmall']->getUserPoints()}}</span></h2>
+          <h2 class="text-center">
+            Your available points to spend:
+            <span class="fw_bold">{{$data['webmall']->getUserPoints()}} DP</span>,
+            <span class="fw_bold">{{$data['webmall']->getPvpPoints()}} PVP</span>
+          </h2>
           <h3 class="text-center">{{$data['webmall']->getItemCategoryName()}}</h3>
           @if (isset($_SESSION['message']))
             {{$_SESSION['message']}}
@@ -45,7 +49,7 @@
                           </div>
                           <div class="col-xs-6 col-md-3 align-right">
                             <div class="price">
-                              {{$res->ProductCost}} DP
+                              {{$res->ProductCost}} {{strtoupper($res->ProductCurrency)}}
                             </div>
                             <select name="Quantity" class="custom-select custom-select-sm form-control form-control-sm">
                               <option value="1">1</option>

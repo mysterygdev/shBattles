@@ -51,7 +51,7 @@ function updateCartItem(obj,id){
                     <td><img src="/resources/themes/core/images/shop_icons/<?php echo e($item['image']); ?>" alt="" class="img-responsive"></td>
                   <?php endif; ?>
                   <td><?php echo e($item['name']); ?></td>
-                  <td><?php echo e($item['price']); ?> DP</td>
+                  <td><?php echo e($item['price']); ?> <?php echo e(strtoupper($item['crncy'])); ?></td>
                   <td><?php echo e($item['qty']); ?></td>
                   <td><?php echo e($item['subtotal']); ?></td>
                 </tr>
@@ -80,7 +80,7 @@ function updateCartItem(obj,id){
                 </p>
                 <p class="text-right">
                   <strong>Cart Total</strong>
-                  <strong><?php echo e($data['webmall']->total()); ?> DP</strong>
+                  <strong><?php echo e($data['webmall']->total()); ?> Points</strong>
                 </p>
               </td>
               <td></td>

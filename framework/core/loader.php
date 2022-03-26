@@ -9,7 +9,6 @@ class Loader
     public $configs = [
         'app',
         'auth',
-        'config',
         'db',
         'dirs',
         'donate',

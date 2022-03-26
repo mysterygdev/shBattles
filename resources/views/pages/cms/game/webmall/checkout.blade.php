@@ -50,7 +50,7 @@ function updateCartItem(obj,id){
                     <td><img src="/resources/themes/core/images/shop_icons/{{$item['image']}}" alt="" class="img-responsive"></td>
                   @endif
                   <td>{{$item['name']}}</td>
-                  <td>{{$item['price']}} DP</td>
+                  <td>{{$item['price']}} {{strtoupper($item['crncy'])}}</td>
                   <td>{{$item['qty']}}</td>
                   <td>{{$item['subtotal']}}</td>
                 </tr>
@@ -79,7 +79,7 @@ function updateCartItem(obj,id){
                 </p>
                 <p class="text-right">
                   <strong>Cart Total</strong>
-                  <strong>{{$data['webmall']->total()}} DP</strong>
+                  <strong>{{$data['webmall']->total()}} Points</strong>
                 </p>
               </td>
               <td></td>

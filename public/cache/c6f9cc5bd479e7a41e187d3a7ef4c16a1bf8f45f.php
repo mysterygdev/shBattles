@@ -20,6 +20,7 @@
         'image' => $res[0]->ProductImage,
         'name' => $res[0]->ProductName,
         'desc' => $res[0]->ProductDesc,
+        'crncy' => $res[0]->ProductCurrency,
         'price' => $res[0]->ProductCost,
         'tag' => $res[0]->Tag,
         'qty' => $qty
@@ -57,12 +58,20 @@
 				$itemQuantity =   $item['qty'];
 
         if (isset($_SESSION['User'])) {
-          $stmt = DB::table(table('shUserData'))
-            ->select()
-            ->where('UserUID', $_SESSION['User']['UserUID'])
-            ->limit(1)
-            ->get();
-          $data['webmall']->getPoints	=	$stmt[0]->Point;
+          if (in_array($data['webmall']->getCurrency($item['id']), $data['webmall']->getValidCurrencies())) {
+            if ($data['webmall']->getCurrency($item['id']) == 'dp') {
+              $data['webmall']->getPoints	=	$data['webmall']->getDpPoints();
+            }
+            if ($data['webmall']->getCurrency($item['id']) == 'pvp') {
+              $data['webmall']->getPoints	=	$data['webmall']->getPvpPoints();
+            }
+            /* if ($data['webmall']->getCurrency($item['id']) == 'ap') {
+              $data['webmall']->getPoints	=	$data['webmall']->getApPoints();
+            }
+            if ($data['webmall']->getCurrency($item['id']) == 'gp') {
+              $data['webmall']->getPoints	=	$data['webmall']->getGpPoints();
+            } */
+          }
         }
         $product_code	=	$item['code'];
         // query might not be needed
@@ -74,9 +83,23 @@
         if ($data['webmall']->getPoints	>=$subtotal) {
           $quantity	=	1;
           $newPoints	=	$data['webmall']->getPoints - $subtotal;
-          $stmt = DB::table(table('shUserData'))
+          if (in_array($data['webmall']->getCurrency($item['id']), $data['webmall']->getValidCurrencies())) {
+            if ($data['webmall']->getCurrency($item['id']) == 'dp') {
+              $data['webmall']->updateDpPoints($newPoints);
+            }
+            if ($data['webmall']->getCurrency($item['id']) == 'pvp') {
+              $data['webmall']->updatePvpPoints($newPoints);
+            }
+            /* if ($data['webmall']->getCurrency($item['id']) == 'ap') {
+              $data['webmall']->updateApPoints($newPoints);
+            }
+            if ($data['webmall']->getCurrency($item['id']) == 'gp') {
+              $data['webmall']->updateGpPoints($newPoints);
+            } */
+          }
+          /* $stmt = DB::table(table('shUserData'))
             ->where('UserUID', $_SESSION['User']['UserUID'])
-            ->update(['Point' => $newPoints]);
+            ->update(['Point' => $newPoints]); */
           //while ($quantity <=	$item['qty']) {
             $stmt = DB::table(table('shPointLog'))
               ->insert([

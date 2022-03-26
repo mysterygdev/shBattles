@@ -57,7 +57,7 @@ function updateCartItem(obj,id){
                         <div class="col-xs-6 col-md-3 align-right">
                           <div class="price">
                             <strong style="margin-right:10px">x{{$item['qty']}}</strong>
-                            {{$item['price']}} DP
+                            {{$item['price']}} {{strtoupper($item['crncy'])}}
                           </div>
                           <a href="/game/webmall/cartAction?action=removeCartItem&id={{$item['rowid']}}&prodId={{$item['id']}}" class="remove fas fa-trash-alt" title="Remove Item"></a>
                         </div>
@@ -67,7 +67,7 @@ function updateCartItem(obj,id){
                 </div>
               @endforeach
               <div class="align-right h3 mr-20 mb-20">
-                <span style="margin-right:10px;">Total: <strong>{{$data['webmall']->total()}} DP</strong></span>
+                <span style="margin-right:10px;">Total: <strong>{{$data['webmall']->total()}} Points</strong></span>
               </div>
               <div class="align-left">
                 <a href="/game/webmall/cartAction/?action=clearCart" class="btn btn-lg">Empty Cart</a>

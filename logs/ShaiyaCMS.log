@@ -3260,3 +3260,134 @@
 [25-Mar-2022 19:02:48 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 214
 [25-Mar-2022 19:02:58 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 214
 [25-Mar-2022 19:03:00 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 214
+[26-Mar-2022 00:35:25 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:35:25 UTC] PHP Warning:  Illegal string offset 'host' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:35:25 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:35:25 UTC] PHP Warning:  Illegal string offset 'database' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:35:25 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:35:25 UTC] PHP Warning:  Illegal string offset 'username' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:35:25 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:35:25 UTC] PHP Warning:  Illegal string offset 'password' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:35:25 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:35:25 UTC] PHP Warning:  Illegal string offset 'options' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:35:54 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:35:54 UTC] PHP Warning:  Illegal string offset 'host' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:35:54 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:35:54 UTC] PHP Warning:  Illegal string offset 'database' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:35:54 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:35:54 UTC] PHP Warning:  Illegal string offset 'username' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:35:54 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:35:54 UTC] PHP Warning:  Illegal string offset 'password' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:35:54 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:35:54 UTC] PHP Warning:  Illegal string offset 'options' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:43:04 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:43:04 UTC] PHP Warning:  Illegal string offset 'host' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:43:04 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:43:04 UTC] PHP Warning:  Illegal string offset 'database' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:43:04 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:43:04 UTC] PHP Warning:  Illegal string offset 'username' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:43:04 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:43:04 UTC] PHP Warning:  Illegal string offset 'password' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:43:04 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:43:04 UTC] PHP Warning:  Illegal string offset 'options' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:47:36 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:47:36 UTC] PHP Warning:  Illegal string offset 'host' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:47:36 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:47:36 UTC] PHP Warning:  Illegal string offset 'database' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:47:36 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:47:36 UTC] PHP Warning:  Illegal string offset 'username' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:47:36 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:47:36 UTC] PHP Warning:  Illegal string offset 'password' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:47:36 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:47:36 UTC] PHP Warning:  Illegal string offset 'options' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:47:58 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:47:58 UTC] PHP Warning:  Illegal string offset 'host' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:47:58 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:47:58 UTC] PHP Warning:  Illegal string offset 'database' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:47:58 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:47:58 UTC] PHP Warning:  Illegal string offset 'username' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:47:58 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:47:58 UTC] PHP Warning:  Illegal string offset 'password' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:47:58 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:47:58 UTC] PHP Warning:  Illegal string offset 'options' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:04 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:48:04 UTC] PHP Warning:  Illegal string offset 'host' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:48:04 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:48:04 UTC] PHP Warning:  Illegal string offset 'database' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:48:04 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:04 UTC] PHP Warning:  Illegal string offset 'username' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:04 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:04 UTC] PHP Warning:  Illegal string offset 'password' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:04 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:04 UTC] PHP Warning:  Illegal string offset 'options' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:09 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:48:09 UTC] PHP Warning:  Illegal string offset 'host' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:48:09 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:48:09 UTC] PHP Warning:  Illegal string offset 'database' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:48:09 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:09 UTC] PHP Warning:  Illegal string offset 'username' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:09 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:09 UTC] PHP Warning:  Illegal string offset 'password' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:09 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:09 UTC] PHP Warning:  Illegal string offset 'options' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:46 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:48:46 UTC] PHP Warning:  Illegal string offset 'host' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:48:46 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:48:46 UTC] PHP Warning:  Illegal string offset 'database' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:48:46 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:46 UTC] PHP Warning:  Illegal string offset 'username' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:46 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:46 UTC] PHP Warning:  Illegal string offset 'password' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:46 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:48:46 UTC] PHP Warning:  Illegal string offset 'options' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:49:02 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:49:02 UTC] PHP Warning:  Illegal string offset 'host' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:49:02 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:49:02 UTC] PHP Warning:  Illegal string offset 'database' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 00:49:02 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:49:02 UTC] PHP Warning:  Illegal string offset 'username' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:49:02 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:49:02 UTC] PHP Warning:  Illegal string offset 'password' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:49:02 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 00:49:02 UTC] PHP Warning:  Illegal string offset 'options' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 01:04:26 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 01:04:26 UTC] PHP Warning:  Illegal string offset 'host' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 01:04:26 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 01:04:26 UTC] PHP Warning:  Illegal string offset 'database' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 19
+[26-Mar-2022 01:04:26 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 01:04:26 UTC] PHP Warning:  Illegal string offset 'username' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 01:04:26 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 01:04:26 UTC] PHP Warning:  Illegal string offset 'password' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 01:04:26 UTC] PHP Warning:  Use of undefined constant DB - assumed 'DB' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[26-Mar-2022 01:04:26 UTC] PHP Warning:  Illegal string offset 'options' in C:\laragon\www\shaiyabattles\app\classes\DB\MSSQL.php on line 23
+[25-Mar-2022 22:35:32 America/Chicago] PHP Warning:  Use of undefined constant db - assumed 'db' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\public\index.php on line 4
+[25-Mar-2022 22:35:33 America/Chicago] PHP Warning:  Use of undefined constant db - assumed 'db' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\public\index.php on line 4
+[25-Mar-2022 22:35:51 America/Chicago] PHP Warning:  Use of undefined constant db - assumed 'db' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\public\index.php on line 4
+[25-Mar-2022 22:35:52 America/Chicago] PHP Warning:  Use of undefined constant db - assumed 'db' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\public\index.php on line 4
+[25-Mar-2022 22:35:53 America/Chicago] PHP Warning:  Use of undefined constant db - assumed 'db' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\public\index.php on line 4
+[25-Mar-2022 22:35:53 America/Chicago] PHP Warning:  Use of undefined constant db - assumed 'db' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\public\index.php on line 4
+[25-Mar-2022 22:35:54 America/Chicago] PHP Warning:  Use of undefined constant db - assumed 'db' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\public\index.php on line 4
+[25-Mar-2022 22:35:54 America/Chicago] PHP Warning:  Use of undefined constant db - assumed 'db' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\public\index.php on line 4
+[25-Mar-2022 22:36:29 America/Chicago] PHP Warning:  Use of undefined constant db - assumed 'db' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\public\index.php on line 4
+[25-Mar-2022 22:36:29 America/Chicago] PHP Warning:  Use of undefined constant db - assumed 'db' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\public\index.php on line 4
+[25-Mar-2022 22:40:24 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 237
+[25-Mar-2022 22:42:21 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 237
+[25-Mar-2022 22:44:20 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 237
+[25-Mar-2022 22:44:33 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 237
+[25-Mar-2022 22:45:00 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 237
+[25-Mar-2022 22:45:05 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 237
+[25-Mar-2022 22:45:26 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 237
+[25-Mar-2022 22:45:38 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 237
+[25-Mar-2022 22:45:40 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 237
+[25-Mar-2022 22:49:29 America/Chicago] PHP Notice:  Undefined index: crncy in C:\laragon\www\shaiyabattles\public\cache\4572837b6eb41e5d50b727aedf4222a1f71abbb3.php on line 75
+[25-Mar-2022 22:54:11 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 237
+[26-Mar-2022 12:30:48 America/Chicago] PHP Notice:  Undefined property: stdClass::$RewardID in C:\laragon\www\shaiyabattles\app\controllers\Admin\Site.php on line 368
+[26-Mar-2022 12:31:21 America/Chicago] PHP Notice:  Undefined property: stdClass::$RewardID in C:\laragon\www\shaiyabattles\app\controllers\Admin\Site.php on line 368
+[26-Mar-2022 12:32:44 America/Chicago] PHP Notice:  Undefined variable: id in C:\laragon\www\shaiyabattles\app\controllers\Admin\Site.php on line 358
+[26-Mar-2022 12:33:20 America/Chicago] PHP Notice:  Undefined variable: id in C:\laragon\www\shaiyabattles\app\controllers\Admin\Site.php on line 358
+[26-Mar-2022 12:47:48 America/Chicago] PHP Notice:  Undefined property: stdClass::$RewardID in C:\laragon\www\shaiyabattles\public\cache\730bc83663953f71e4c0796c056c9c56583d7b14.php on line 33
+[26-Mar-2022 12:50:09 America/Chicago] PHP Notice:  Undefined property: stdClass::$RewardID in C:\laragon\www\shaiyabattles\public\cache\730bc83663953f71e4c0796c056c9c56583d7b14.php on line 33
+[26-Mar-2022 13:29:18 America/Chicago] PHP Notice:  Undefined index: rankings in C:\laragon\www\shaiyabattles\public\cache\662e9c098e0cecf5ccdf25a00be5567fe792b275.php on line 19
+[26-Mar-2022 13:29:18 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\public\cache\662e9c098e0cecf5ccdf25a00be5567fe792b275.php on line 19
+[26-Mar-2022 13:35:53 America/Chicago] PHP Notice:  Undefined variable: guild in C:\laragon\www\shaiyabattles\public\cache\662e9c098e0cecf5ccdf25a00be5567fe792b275.php on line 30
+[26-Mar-2022 13:51:27 America/Chicago] PHP Notice:  Undefined index: GuildID in C:\laragon\www\shaiyabattles\vendor\illuminate\support\Collection.php on line 1362

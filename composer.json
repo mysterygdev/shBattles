@@ -22,7 +22,8 @@
         "miladrahimi/phprouter": "5.*",
         "pecee/simple-router": "dev-master",
         "arrilot/laravel-widgets": "dev-master",
-        "team-reflex/discord-php": "dev-master"
+        "team-reflex/discord-php": "dev-master",
+        "monolog/monolog": "2.x-dev"
     },
     "minimum-stability": "dev",
     "config": {
@@ -31,6 +32,8 @@
     "autoload": {
       "psr-4": {
         "Classes\\": "app/classes",
+        "Utils\\"		:	"app/classes/Utils",
+        "Sys\\"     : "app/classes/sys",
         "App\\Exceptions\\": "app/exceptions",
         "App\\Controllers\\": "app/controllers",
         "App\\Models\\": "app/models",

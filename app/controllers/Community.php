@@ -226,10 +226,12 @@ class Community extends Controller
 
                 if ($rankings) {
                     $model = $this->model(Models\Community\Rankings::class);
+                    $guild = new \Classes\Shaiya\Guild;
                     $arr = [
                         'rankings' => $rankings,
                         'rankNum' => $RankNum,
-                        'rank' => $model
+                        'rank' => $model,
+                        'guild' => $guild
                     ];
                     $this->view('fetch/rankings/rankings', $arr);
                 }

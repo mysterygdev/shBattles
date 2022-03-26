@@ -27,7 +27,7 @@
                 <td></td>
                 <td class="IconHolder" width="10"></td>
                 <td><?php echo e($rankings->Level); ?></td>
-                <td>test</td>
+                <td><?php echo e($data['guild']->getGuildNameByCharName($rankings->CharName)); ?></td>
                 <td><?php echo e($rankings->K1); ?></td>
                 <td><?php echo e($rankings->K2); ?></td>
                 <td>

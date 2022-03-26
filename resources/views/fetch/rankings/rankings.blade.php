@@ -27,7 +27,7 @@
                 <td></td>
                 <td class="IconHolder" width="10"></td>
                 <td>{{$rankings->Level}}</td>
-                <td>test</td>
+                <td>{{$data['guild']->getGuildNameByCharName($rankings->CharName)}}</td>
                 <td>{{$rankings->K1}}</td>
                 <td>{{$rankings->K2}}</td>
                 <td>

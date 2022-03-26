@@ -1,6 +1,6 @@
 @extends('layouts.ap.app')
-@section('index', 'editPvpRewards')
-@section('title', 'Edit Rewards')
+@section('index', 'addPvpRewards')
+@section('title', 'Add Reward')
 @section('zone', 'AP')
 @section('content')
   @include('partials.ap.nav')
@@ -29,17 +29,17 @@
                             <p id="response"></p>
                             <div class="form-group">
                               <label for="RewardType">RewardType</label>
-                              <input type="text" class="form-control" id="RewardType" name="RewardType" placeholder="Enter Reward Type" value="{{isset($fet->RewardType) ? $fet->RewardType : ''}}">
+                              <input type="text" class="form-control" id="RewardType" name="RewardType" placeholder="Enter Reward Type">
                               <small id="RewardType" class="form-text text-muted">Reward Type (Points) = Only valid setting atm</small>
                             </div>
                             <div class="form-group">
                               <label for="K1Req">Kills Required</label>
-                              <input type="text" class="form-control" id="K1Req" name="K1Req" placeholder="Enter Kills Required" value="{{isset($fet->K1Req) ? $fet->K1Req : ''}}">
+                              <input type="text" class="form-control" id="K1Req" name="K1Req" placeholder="Enter Kills Required">
                               <small id="K1Req" class="form-text text-muted">Kills Required - how many kills are required for this reward?</small>
                             </div>
                             <div class="form-group">
                               <label for="Points">Points</label>
-                              <input type="text" class="form-control" id="Points" name="Points" placeholder="Enter Points Reward" value="{{isset($fet->Points) ? $fet->Points : ''}}">
+                              <input type="text" class="form-control" id="Points" name="Points" placeholder="Enter Points Reward">
                               <small id="Points" class="form-text text-muted">Points - how many points will user receive?</small>
                             </div>
                             <p class="text-center">

@@ -51,7 +51,7 @@
                               </tbody>
                             </table>
                           @else
-                            There are currently no posted payments.
+                            There are currently no rewards.
                           @endif
                         </div>
                       </div>

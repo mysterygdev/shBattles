@@ -50,7 +50,7 @@
                               </tbody>
                             </table>
                           <?php else: ?>
-                            There are currently no posted payments.
+                            There are currently no rewards.
                           <?php endif; ?>
                         </div>
                       </div>
