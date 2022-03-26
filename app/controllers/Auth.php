@@ -332,7 +332,7 @@ class Auth extends Controller
                             ->where('Web.UserID', $userName)
                             ->orWhere('Web.Email', $userName)
                             ->get();
-                        if ($fet) {
+                        if (!$fet->isEmpty()) {
                             foreach ($fet as $userInfo) {
                                 if (password_verify($Password, $userInfo->Pw)) {
                                     if ($userInfo->Status == 0 || $userInfo->Status == 16 || $userInfo->Status == 32 || $userInfo->Status == 48 || $userInfo->Status == 64 || $userInfo->Status == 80 || $userInfo->Status == 128) {

@@ -168,11 +168,12 @@ Router::group(['prefix' => '/admin'], function () {
     Router::group(['prefix' => '/webmall'], function () {
         // GET
         //Router::get('/addProduct', 'Admin\Webmall@addProduct');
-        Router::get('/editProduct', 'Admin\Webmall@editProduct');
+        //Router::get('/editProduct', 'Admin\Webmall@editProduct');
         Router::get('/manageProducts', 'Admin\Webmall@manageProducts');
         Router::get('/removeProduct', 'Admin\Webmall@removeProduct');
         // POST
         Router::match(['get', 'post'], '/addProduct', 'Admin\Webmall@addProduct');
+        Router::match(['get', 'post'], '/editProduct', 'Admin\Webmall@editProduct');
     });
     // Account
     Router::group(['prefix' => '/account'], function () {

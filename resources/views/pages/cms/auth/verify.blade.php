@@ -28,7 +28,7 @@
             @if ($data['verify']->getUserStatus($data['verify']->getActivationData($data['id'])->UserID) == '-1' || $data['verify']->getUserStatus($data['verify']->getActivationData($data['id'])->UserID) == '-5')
                 It looks like your account is banned, therefore we cannot activate your account.
             @else
-              @if ($data['verify']->updateUserStatus($data['verify']->getActivationData($data['id'])->UserID, 16) && $data['verify']->updateVerified($data['verify']->getActivationData($data['id'])->UserID, 1))
+              @if ($data['verify']->updateUserStatus($data['verify']->getActivationData($data['id'])->UserID, 0) && $data['verify']->updateVerified($data['verify']->getActivationData($data['id'])->UserID, 1))
                 Your account has been successfully activated.
               @else
                 There was an error attempting to verify your account.
