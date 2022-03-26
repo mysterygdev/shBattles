@@ -3242,3 +3242,21 @@
 [25-Mar-2022 18:45:11 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 211
 [25-Mar-2022 18:46:08 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 212
 [25-Mar-2022 18:46:45 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 212
+[25-Mar-2022 18:52:59 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 212
+[25-Mar-2022 18:53:39 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 213
+[25-Mar-2022 18:53:41 America/Chicago] PHP Notice:  Undefined variable: itemData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 47
+[25-Mar-2022 18:53:41 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 47
+[25-Mar-2022 18:53:41 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 213
+[25-Mar-2022 18:54:53 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 213
+[25-Mar-2022 18:54:58 America/Chicago] PHP Notice:  Undefined variable: itemData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 47
+[25-Mar-2022 18:54:58 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 47
+[25-Mar-2022 18:54:58 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 213
+[25-Mar-2022 18:58:48 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 214
+[25-Mar-2022 18:58:53 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 214
+[25-Mar-2022 19:02:36 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 214
+[25-Mar-2022 19:02:41 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 214
+[25-Mar-2022 19:02:43 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 214
+[25-Mar-2022 19:02:46 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 214
+[25-Mar-2022 19:02:48 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 214
+[25-Mar-2022 19:02:58 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 214
+[25-Mar-2022 19:03:00 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\c6f9cc5bd479e7a41e187d3a7ef4c16a1bf8f45f.php on line 214

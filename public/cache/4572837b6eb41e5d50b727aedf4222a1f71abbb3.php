@@ -29,6 +29,11 @@ function updateCartItem(obj,id){
           <div class="col-md-9 col-md-push-3 isotope">
             <?php echo e($data['webmall']->initCart()); ?>
 
+            <?php if(isset($_SESSION['message'])): ?>
+              <?php echo e($_SESSION['message']); ?>
+
+              <?php unset($_SESSION['message']); ?>
+            <?php endif; ?>
             <?php if($data['webmall']->totalItems() > 0): ?>
               <?php $cartItems = $data['webmall']->contents(); ?>
               <?php $__currentLoopData = $cartItems; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -58,7 +63,7 @@ function updateCartItem(obj,id){
                             <strong style="margin-right:10px">x<?php echo e($item['qty']); ?></strong>
                             <?php echo e($item['price']); ?> DP
                           </div>
-                          <a href="/game/webmall/cartAction?action=removeCartItem&id=<?php echo e($item['rowid']); ?>" class="remove fas fa-trash-alt" title="Remove Item"></a>
+                          <a href="/game/webmall/cartAction?action=removeCartItem&id=<?php echo e($item['rowid']); ?>&prodId=<?php echo e($item['id']); ?>" class="remove fas fa-trash-alt" title="Remove Item"></a>
                         </div>
                       </div>
                     </div>

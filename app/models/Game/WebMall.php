@@ -316,6 +316,18 @@ class WebMall
     }
 
     /**
+          * Get Product Name: Returns the product name
+          * @return    string
+    */
+    public function getProductName($id)
+    {
+        $name = DB::table(table('products'))
+            ->where('ProductID', $id)
+            ->value('ProductName');
+        return $name;
+    }
+
+    /**
           * Get Tags: Returns if the product has a tag
           * @return    string
     */

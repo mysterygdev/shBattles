@@ -28,6 +28,10 @@ function updateCartItem(obj,id){
         @else
           <div class="col-md-9 col-md-push-3 isotope">
             {{$data['webmall']->initCart()}}
+            @if (isset($_SESSION['message']))
+              {{$_SESSION['message']}}
+              @unset($_SESSION['message'])
+            @endif
             @if ($data['webmall']->totalItems() > 0)
               @php $cartItems = $data['webmall']->contents(); @endphp
               @foreach($cartItems as $item)
@@ -55,7 +59,7 @@ function updateCartItem(obj,id){
                             <strong style="margin-right:10px">x{{$item['qty']}}</strong>
                             {{$item['price']}} DP
                           </div>
-                          <a href="/game/webmall/cartAction?action=removeCartItem&id={{$item['rowid']}}" class="remove fas fa-trash-alt" title="Remove Item"></a>
+                          <a href="/game/webmall/cartAction?action=removeCartItem&id={{$item['rowid']}}&prodId={{$item['id']}}" class="remove fas fa-trash-alt" title="Remove Item"></a>
                         </div>
                       </div>
                     </div>

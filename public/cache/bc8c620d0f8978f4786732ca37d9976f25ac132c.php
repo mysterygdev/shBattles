@@ -20,7 +20,7 @@
           <?php if(isset($_SESSION['message'])): ?>
             <?php echo e($_SESSION['message']); ?>
 
-          <?php unset($_SESSION['message']); ?>
+            <?php unset($_SESSION['message']); ?>
           <?php endif; ?>
           <div class="isotope-list">
             <?php if(count($data['webmall']->getProducts()) > 0): ?>

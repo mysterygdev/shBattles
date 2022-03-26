@@ -20,7 +20,7 @@
           <h3 class="text-center">{{$data['webmall']->getItemCategoryName()}}</h3>
           @if (isset($_SESSION['message']))
             {{$_SESSION['message']}}
-          @unset($_SESSION['message'])
+            @unset($_SESSION['message'])
           @endif
           <div class="isotope-list">
             @if (count($data['webmall']->getProducts()) > 0)

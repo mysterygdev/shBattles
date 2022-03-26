@@ -44,6 +44,8 @@
       $deleteItem = $data['webmall']->remove($_REQUEST['id']);
       // Redirect to cart page
       $redirectLoc = '/game/webmall/cart';
+      $productName = $data['webmall']->getProductName($_REQUEST['prodId']);
+      $_SESSION['message'] = '('.$productName.') was removed from your cart.';
     } elseif ($_REQUEST['action'] == 'placeOrder' && $data['webmall']->totalItems() > 0) {
       $redirectLoc = '/game/webmall/checkout';
       $cartItems = $data['webmall']->contents();
