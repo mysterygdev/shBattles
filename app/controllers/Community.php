@@ -233,7 +233,7 @@ class Community extends Controller
                         'rank' => $model,
                         'guild' => $guild
                     ];
-                    $this->view('fetch/rankings/rankings', $arr);
+                    $this->view('fetch/cms/rankings/rankings', $arr);
                 }
             } catch (\Exception $e) {
                 // query failed

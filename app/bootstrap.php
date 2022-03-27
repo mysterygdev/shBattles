@@ -38,20 +38,28 @@ class Bootstrap
         }
         define('APP_PATH', ROOT_PATH . '/../app' . DS);
         define('CLASSES_PATH', APP_PATH . 'classes' . DS);
-        define('FRAMEWORK_PATH', ROOT_PATH . '/../framework' . DS);
-        define('PUBLIC_PATH', 'Public' . DS);
-        define('CONFIG_PATH', APP_PATH . '/../config' . DS);
-        define('RESOURCES_PATH', APP_PATH . '/../resources' . DS);
         define('CONTROLLER_PATH', APP_PATH . 'controllers' . DS);
+        define('EXCEPTIONS_PATH', APP_PATH . 'exceptions' . DS);
         define('MODELS_PATH', APP_PATH . 'models' . DS);
         define('WIDGETS_PATH', APP_PATH . 'widgets' . DS);
-        define('VIEWS_PATH', APP_PATH . 'views' . DS);
+        define('CONFIG_PATH', APP_PATH . '/../config' . DS);
+        define('FRAMEWORK_PATH', ROOT_PATH . '/../framework' . DS);
         define('BLADE_PATH', FRAMEWORK_PATH . 'Blade' . DS);
         define('CORE_PATH', FRAMEWORK_PATH . 'Core' . DS);
-        define('DB_PATH', FRAMEWORK_PATH . 'database' . DS);
+        define('HELPER_PATH', FRAMEWORK_PATH . 'Helpers' . DS);
         define('LIB_PATH', FRAMEWORK_PATH . 'libraries' . DS);
         define('ROUTES_PATH', FRAMEWORK_PATH . 'routes' . DS);
-        define('HELPER_PATH', FRAMEWORK_PATH . 'Helpers' . DS);
+        define('LOGS_PATH', ROOT_PATH . '/../logs' . DS);
+        define('PUBLIC_PATH', '/');
+        define('PBLC_RESOURCES_PATH', PUBLIC_PATH . 'resources/');
+        define('THEMES_PATH', PBLC_RESOURCES_PATH . 'themes/');
+        define('CORE_THEME_PATH', THEMES_PATH . 'core');
+        define('YP_THEME_PATH', THEMES_PATH . 'YouPlay');
+        define('AJAX_PATH', PUBLIC_PATH . 'jquery/addons/ajax/' . DS);
+        define('RESOURCES_PATH', APP_PATH . '/../resources' . DS);
+        define('LANGS_PATH', RESOURCES_PATH . '/langs' . DS);
+        define('VIEWS_PATH', RESOURCES_PATH . '/views' . DS);
+        define('DB_PATH', FRAMEWORK_PATH . 'database' . DS);
         define('UPLOAD_PATH', PUBLIC_PATH . 'uploads' . DS);
         if (!defined('AJAX_CALL')) {
             // Load core classes

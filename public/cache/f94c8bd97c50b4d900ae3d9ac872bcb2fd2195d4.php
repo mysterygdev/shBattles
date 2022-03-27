@@ -5,7 +5,7 @@
 <meta name="author" content="<?php echo e(APP['author']); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Favicon -->
-<link href="/resources/themes/core/images/icons/favicon.png" rel="icon" type="image/x-icon">
+<link href="<?php echo e(DIRS['CORE_THEME_PATH']); ?>/images/icons/favicon.png" rel="icon" type="image/x-icon">
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
 rel="stylesheet">

@@ -38,6 +38,8 @@
         'THEMES_PATH' => env('THEMES_PATH'),
         // Core Theme Directory
         'CORE_THEME_PATH' => env('CORE_THEME_PATH'),
+        // YouPlay Theme Directory
+        'YP_THEME_PATH' => env('YP_THEME_PATH'),
         // Ajax Directory
         'AJAX_PATH' => env('AJAX_PATH'),
         // Languages Directory
