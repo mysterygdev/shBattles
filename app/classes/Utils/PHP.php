@@ -32,9 +32,9 @@ class PHP
             }
             ini_set('short_open_tag', '1');
             ini_set('log_errors', 1);
-            ini_set('error_log', '../logs/ShaiyaCMS.log');
+            ini_set('error_log', DIRS['LOGS_PATH'].'/ShaiyaCMS.log');
             // Modify default sessions path
-            ini_set('session.save_path', $_SERVER['DOCUMENT_ROOT'].'/../logs/session');
+            ini_set('session.save_path', DIRS['LOGS_PATH'].'/session');
         }
     }
 }
