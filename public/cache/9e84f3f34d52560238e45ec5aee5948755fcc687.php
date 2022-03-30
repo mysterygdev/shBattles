@@ -28,6 +28,7 @@
                       <tr>
                         <th><input type="radio" name="RewardID" disabled="disabled" /></th>
                         <th>Reward</th>
+                        <th>Currency</th>
                         <th>Price</th>
                       </tr>
                     </thead>
@@ -36,6 +37,7 @@
                         <tr>
                           <td><input type="radio" name="RewardID" value="<?php echo e($res->RowID); ?>"></td>
                           <td><?php echo e($res->Reward); ?> points</td>
+                          <td><?php echo e($res->RewardCurrency); ?></td>
                           <td><?php echo e($res->Price); ?> <?php echo e(DONATE['currency']); ?></td>
                         </tr>
                       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

@@ -136,6 +136,9 @@ function table($table)
             return 'ShaiyaCMS.dbo.poll_options';
         case 'pollAnswers':
             return 'ShaiyaCMS.dbo.poll_answers';
+        // Verification Keys
+        case 'verificationKey':
+            return 'ShaiyaCMS.dbo.verification_codes';
 
     }
 }

@@ -86,6 +86,9 @@
         $reward = DB::table(table('donateOptions'))
                         ->where('RowID', $RewardID)
                         ->value('Reward');
+        $currency = DB::table(table('donateOptions'))
+                        ->where('RowID', $RewardID)
+                        ->value('RewardCurrency');
         $bonus = DB::table(table('donateOptions'))
                         ->where('RowID', $RewardID)
                         ->value('Bonus');
@@ -99,15 +102,22 @@
                         ->where('UserUID', $UserUID)
                         ->value('UserID');
 				#$UserPoint		=	Database::do_query("Point","SH_USERDATA","UserUID",$UserUID);
-        $userPoint = DB::table(table('shUserData'))
+        $userPointDp = DB::table(table('shUserData'))
                         ->where('UserUID', $UserUID)
                         ->value('Point');
+        $userPointVip = DB::table(table('shUserData'))
+                        ->where('UserUID', $UserUID)
+                        ->value('VipPoint');
 				$Verify_Key		=	$_POST['verify_sign'];
 
         if($save_log_db == true) {
-          $newPoints = $userPoint + $totalReward;
-          $data['donate']->updateUserPoints($UserUID, $newPoints);
-          $data['donate']->addPaymentLog($userId, $Price, $reward, $Payer_Email, $Payment_Type, 'Paypal', $Payment_Status, $Txn_ID, $Verify_Key);
+          if (strtoupper($currency) == 'DP') {
+            $newPoints = $userPointDp + $totalReward;
+          } elseif (strtoupper($currency) == 'VIP') {
+            $newPoints = $userPointVip + $totalReward;
+          }
+          $data['donate']->updateUserPoints($UserUID, $currency, $newPoints);
+          $data['donate']->addPaymentLog($userId, $Price, $reward, $currency, $Payer_Email, $Payment_Type, 'Paypal', $Payment_Status, $Txn_ID, $Verify_Key);
         }
         if($send_conf_email) {
           //

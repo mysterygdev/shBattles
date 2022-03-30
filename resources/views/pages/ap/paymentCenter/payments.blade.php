@@ -29,6 +29,7 @@
                                   <th>UserID</th>
                                   <th>Amount Paid</th>
                                   <th>Reward</th>
+                                  <th>Reward Currency</th>
                                   <th>Email</th>
                                   <th>Payment Status</th>
                                   <th>Payment Type</th>
@@ -41,6 +42,7 @@
                                     <td>{{$fet->UserID}}</td>
                                     <td>{{$fet->Paid}}</td>
                                     <td>{{$fet->Reward}}</td>
+                                    <td>{{$fet->RewardCurrency}}</td>
                                     <td>{{$fet->DonatorEmail}}</td>
                                     <td>{{!empty($fet->PaymentStatus) ? $fet->PaymentStatus : 'NULL'}}</td>
                                     <td>{{!empty($fet->PaymentType) ? $fet->PaymentType : 'NULL'}}</td>

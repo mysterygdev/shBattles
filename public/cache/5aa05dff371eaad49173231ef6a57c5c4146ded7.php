@@ -28,6 +28,7 @@
                                   <th>UserID</th>
                                   <th>Amount Paid</th>
                                   <th>Reward</th>
+                                  <th>Reward Currency</th>
                                   <th>Email</th>
                                   <th>Payment Status</th>
                                   <th>Payment Type</th>
@@ -40,6 +41,7 @@
                                     <td><?php echo e($fet->UserID); ?></td>
                                     <td><?php echo e($fet->Paid); ?></td>
                                     <td><?php echo e($fet->Reward); ?></td>
+                                    <td><?php echo e($fet->RewardCurrency); ?></td>
                                     <td><?php echo e($fet->DonatorEmail); ?></td>
                                     <td><?php echo e(!empty($fet->PaymentStatus) ? $fet->PaymentStatus : 'NULL'); ?></td>
                                     <td><?php echo e(!empty($fet->PaymentType) ? $fet->PaymentType : 'NULL'); ?></td>

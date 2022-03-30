@@ -62,8 +62,8 @@
             if ($data['webmall']->getCurrency($item['id']) == 'dp') {
               $data['webmall']->getPoints	=	$data['webmall']->getDpPoints();
             }
-            if ($data['webmall']->getCurrency($item['id']) == 'pvp') {
-              $data['webmall']->getPoints	=	$data['webmall']->getPvpPoints();
+            if ($data['webmall']->getCurrency($item['id']) == 'vip') {
+              $data['webmall']->getPoints	=	$data['webmall']->getVipPoints();
             }
             /* if ($data['webmall']->getCurrency($item['id']) == 'ap') {
               $data['webmall']->getPoints	=	$data['webmall']->getApPoints();
@@ -87,8 +87,8 @@
             if ($data['webmall']->getCurrency($item['id']) == 'dp') {
               $data['webmall']->updateDpPoints($newPoints);
             }
-            if ($data['webmall']->getCurrency($item['id']) == 'pvp') {
-              $data['webmall']->updatePvpPoints($newPoints);
+            if ($data['webmall']->getCurrency($item['id']) == 'vip') {
+              $data['webmall']->updateVipPoints($newPoints);
             }
             /* if ($data['webmall']->getCurrency($item['id']) == 'ap') {
               $data['webmall']->updateApPoints($newPoints);
@@ -106,6 +106,7 @@
                   'UserUID' => $_SESSION['User']['UserUID'],
                   'CharID' => 1,
                   'UsePoint' => $data['webmall']->total(),
+                  'Currency' => $data['webmall']->getCurrency($item['id']),
                   'ProductCode' => $product_code,
                   'UseType' => 1
               ]);
@@ -123,7 +124,38 @@
 
 
               #while ($data=$stmtSlot->fetch()) {
+              $sql = ('
+                        Declare @Empty smallint
+                        Declare @Slot smallint
+                        Set @Slot = 0
+                        Set @Empty = 0
+                        WHILE (@Slot <= 239)
+                          BEGIN
+                          SET @empty = (SELECT COUNT(Slot) FROM PS_GameData.dbo.UserStoredPointItems WHERE UserUID = ? AND Slot = @Slot)
+                          IF (@empty <= 0) BREAK
+                          ELSE
+                          SET @Slot = @Slot+1
+                          END
+                          Select @Slot as Slot
+              ');
+
+              $stmtSlot = DB::select(DB::raw($sql), [$_SESSION['User']['UserUID']]);
+              foreach ($stmtSlot as $fet) {
+                if ($fet->Slot<240) {
+                  $slot		=	$fet->Slot;
+                } else {
+                  $slot = null;
+                  $sessData['status']['type'] = 'error';
+                }
+              }
               if (in_array($itemType, $data['webmall']->getNonStackableTypes())) {
+                /* if (!empty($slot) || $slot !== null) {
+                  echo 'slot: '.$slot;
+                  die();
+                } else {
+                  echo 'slot null1';
+                  die();
+                } */
                 while ($quantity <= $itemQuantity) {
                   $sql = ('
                         Declare @Empty smallint
@@ -162,6 +194,23 @@
                   $quantity	=	$quantity+1;
                 }
               } else {
+                /* if (!empty($slot) || $slot !== null) {
+                  /* echo 'slot: '.$slot;
+                  die(); */
+                  /* $slotCount = floor($totalCount / 255);
+                  $tooManyItems = ($slotCount > 1);
+                  if ($tooManyItems) {
+                    $leftOver = $itemCount-($slotCount * 255);
+                    echo 'leftover: '.$leftOver;
+                  } else {
+                    echo 'not too much<br>';
+                    echo 'total count: '.$totalCount.'<br>';
+                  }
+                  die();
+                } else {
+                  echo 'slot null';
+                  die();
+                } */
                 $sql = ('
                         Declare @Empty smallint
                         Declare @Slot smallint

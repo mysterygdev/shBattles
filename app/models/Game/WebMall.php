@@ -404,7 +404,8 @@ class WebMall
             'dp',
             'pvp',
             'ap',
-            'gp'
+            'gp',
+            'vip'
         ];
         return $validCurrencies;
     }
@@ -430,6 +431,14 @@ class WebMall
         $res = DB::table(table('shUserData'))
             ->where('UserUID', $_SESSION['User']['UserUID'])
             ->value('PvpPoint');
+        return $res;
+    }
+
+    public function getVipPoints()
+    {
+        $res = DB::table(table('shUserData'))
+            ->where('UserUID', $_SESSION['User']['UserUID'])
+            ->value('VipPoint');
         return $res;
     }
 
@@ -462,6 +471,14 @@ class WebMall
         $res = DB::table(table('shUserData'))
             ->where('UserUID', $_SESSION['User']['UserUID'])
             ->update(['PvpPoint' => $newPoints]);
+        return $res;
+    }
+
+    public function updateVipPoints($newPoints)
+    {
+        $res = DB::table(table('shUserData'))
+            ->where('UserUID', $_SESSION['User']['UserUID'])
+            ->update(['VipPoint' => $newPoints]);
         return $res;
     }
 

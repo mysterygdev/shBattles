@@ -90,7 +90,7 @@ class Paypal
         // code here
         try {
             $res = DB::table(table('donateOptions'))
-                ->select('RowID', 'Reward', 'Price')
+                ->select('RowID', 'Reward', 'RewardCurrency', 'Price')
                 ->where('RowID', $Key)
                 ->get();
 

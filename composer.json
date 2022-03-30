@@ -12,17 +12,11 @@
     "require": {
       "jenssegers/blade": "dev-master",
       "illuminate/database": "^7.2",
-      "ephp/socketio": "dev-master",
-      "rase/socket.io-emitter": "dev-master",
       "vlucas/phpdotenv": "^4.1@dev",
       "phpmailer/phpmailer": "dev-master",
       "nikic/fast-route": "^2.0@dev",
       "cbschuld/browser.php": "^1.9@dev",
-        "izniburak/router": "dev-master",
-        "miladrahimi/phprouter": "5.*",
         "pecee/simple-router": "dev-master",
-        "arrilot/laravel-widgets": "dev-master",
-        "team-reflex/discord-php": "dev-master",
         "monolog/monolog": "2.x-dev"
     },
     "minimum-stability": "dev",

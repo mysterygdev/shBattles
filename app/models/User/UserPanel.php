@@ -99,4 +99,38 @@ class UserPanel
             echo 'No slots available.';
         }
     }
+
+    public function createVerificationKey()
+    {
+        $key = $this->data->randStr();
+    }
+
+    public function sendVerificationEmail()
+    {
+        /* $key = $this->data->randBytes(3);
+        $stmt = DB::table(table('verificationKey'))
+            ->insert([
+                'Key' => $key,
+                'Active' => 1
+            ]); */
+        // after insert key, send email
+
+        // after email send verify key in db and time
+        $res = DB::table(table('verificationKey'))
+            ->select()
+            ->where('Key', '11111')
+            ->limit(1)
+            ->get();
+        $dbKey = 123456;
+        $dateString = '2022-03-28 1:30:19.960';
+        $timestamp = strtotime($dateString);
+        $dbTime = $res[0]->Date;
+
+        $dbtimestamp = strtotime($dbTime);
+        if (time() - $dbtimestamp > 5 * 60) {
+            echo '5 min past';
+        } else {
+            echo 'lets do some code';
+        }
+    }
 }

@@ -138,18 +138,24 @@ class Donate
         return $res;
     }
 
-    public function updateUserPoints($user, $points)
+    public function updateUserPoints($user, $currency, $points)
     {
-        $update = DB::table(table('shUserData'))
+        if (strtoupper($currency) == 'DP') {
+            $update = DB::table(table('shUserData'))
                 ->where('UserUID', $user)
                 ->update(['Point' => $points]);
+            } elseif (strtoupper($currency) == 'VIP') {
+                $update = DB::table(table('shUserData'))
+                    ->where('UserUID', $user)
+                    ->update(['VipPoint' => $points]);
+            }
 
         if ($update) {
             return true;
         }
     }
 
-    public function addPaymentLog($user, $paid, $reward, $email, $type, $method, $status = null, $transId = null, $tValKey = null)
+    public function addPaymentLog($user, $paid, $reward, $rewardCurrency, $email, $type, $method, $status = null, $transId = null, $tValKey = null)
     {
         //
         $stmt = DB::table(table('logPayments'))
@@ -157,6 +163,7 @@ class Donate
             'UserID' => $user,
             'Paid' => $paid,
             'Reward' => $reward,
+            'RewardCurrency' => $rewardCurrency,
             'DonatorEmail' => $email,
             'PaymentStatus' => $status,
             'TransID' => $transId,

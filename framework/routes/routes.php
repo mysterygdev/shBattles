@@ -73,8 +73,8 @@ Router::group(['prefix' => '/user'], function () {
     Router::get('/getRecoveryKey', 'User@getRecoveryKey');
     Router::get('/login', 'User@login');
     Router::get('/register', 'User@register');
-    Router::get('/panel', 'User@panel');
-    Router::get('/panel/{id}', 'User@panel');
+    //Router::get('/panel', 'User@panel');
+    //Router::get('/panel/{id}', 'User@panel');
     Router::get('/settings', 'User@settings');
     Router::get('/shareDp', 'User@shareDp');
     // POST
@@ -82,6 +82,7 @@ Router::group(['prefix' => '/user'], function () {
     // Mixed
     Router::match(['get', 'post'], '/donate', 'User@donate');
     Router::match(['get', 'post'], '/move2Terra', 'User@moveTerra');
+    Router::match(['get', 'post'], '/panel/{id}', 'User@panel');
     Router::match(['get', 'post'], '/paypal/listenerAdv', 'User@listenerAdv');
 });
 

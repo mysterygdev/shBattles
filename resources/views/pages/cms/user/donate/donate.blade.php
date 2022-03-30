@@ -34,6 +34,7 @@
                       <tr>
                         <th><input type="radio" name="RewardID" disabled="disabled" /></th>
                         <th>Reward</th>
+                        <th>Currency</th>
                         <th>Price</th>
                       </tr>
                     </thead>
@@ -42,6 +43,7 @@
                         <tr>
                           <td><input type="radio" name="RewardID" value="{{$res->RowID}}"></td>
                           <td>{{$res->Reward}} points</td>
+                          <td>{{$res->RewardCurrency}}</td>
                           <td>{{$res->Price}} {{DONATE['currency']}}</td>
                         </tr>
                       @endforeach

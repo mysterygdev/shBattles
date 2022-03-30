@@ -15,6 +15,7 @@ class Vote
         $this->data = new \Classes\Utils\Data;
         $this->session = $session;
         $this->user = $user;
+        //$this->insertItem(100204, 2);
         $this->getVoteReferer();
     }
 
@@ -187,6 +188,46 @@ class Vote
             ->where('UserUID', $_SESSION['User']['UserUID'])
             ->value('Point');
             return $res;
+        }
+    }
+
+    public function insertItem($itemId, $itemCount)
+    {
+        $slot = 0;
+        $sql = ('
+                        Declare @Empty smallint
+                        Declare @Slot smallint
+                        Set @Slot = 0
+                        Set @Empty = 0
+                        WHILE (@Slot <= 239)
+                        BEGIN
+                        SET @empty = (SELECT COUNT(Slot) FROM PS_GameData.dbo.UserStoredPointItems WHERE UserUID = ? AND Slot = @Slot)
+                        IF (@empty <= 0) BREAK
+                        ELSE
+                        SET @Slot = @Slot+1
+                        END
+                        Select @Slot as Slot
+        ');
+
+        $stmtSlot = DB::select(DB::raw($sql), [$_SESSION['User']['UserUID']]);
+        foreach ($stmtSlot as $fet) {
+            if ($fet->Slot<240) {
+                $slot		=	$fet->Slot;
+            } else {
+                $slot = null;
+            }
+        }
+        if (!empty($slot) || $slot !== null) {
+            $stmt = DB::table(table('shUserBank'))
+                ->insert([
+                    'UserUID' => $_SESSION['User']['UserUID'],
+                    'Slot' => $slot,
+                    'ItemID' => $itemId,
+                    'ItemCount' => $itemCount,
+                    'ProductCode' => 'vote'
+                ]);
+        } else {
+            // stop
         }
     }
 }
