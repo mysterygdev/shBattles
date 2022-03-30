@@ -6,6 +6,8 @@ function table($table)
       // CMS
         case 'cmsMain':
             return 'ShaiyaCMS.dbo.cms_main';
+        case 'cmsConfig':
+            return 'ShaiyaCMS.dbo.cms_configurations';
         case 'widgets':
             return 'ShaiyaCMS.dbo.cms_widgets';
       // Logs

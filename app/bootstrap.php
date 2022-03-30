@@ -14,7 +14,7 @@ class Bootstrap
 {
     public function __construct()
     {
-        // Load Vendor autoloader for Vendor resources
+        # Load Vendor autoloader for Vendor resources
         require_once dirname(__DIR__) . '/vendor/autoload.php';
 
         $this->loader = new Loader;
@@ -23,6 +23,36 @@ class Bootstrap
     }
 
     private function init()
+    {
+        # Misc Helpers
+        $this->loadDefines();
+        if (!defined('AJAX_CALL')) {
+            # Load Dotenv
+            $this->initDotEnv();
+            # Load core classes
+            require_once CORE_PATH . 'loader.php';
+            # Load configuration files
+            $this->loadConfigs();
+            # Load Helpers
+            $this->loadHelpers();
+            # Init PHP
+            $this->loadPhp();
+            # Init SSL Check
+            $this->security = new Security;
+            # Set Default Exception
+            $this->loadException();
+            # Set Timezone
+            date_default_timezone_set(APP['timeZone']);
+            # Init DB
+            $this->database = new DB;
+            # Load HTMLPurifier
+            require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
+            # Load Langs
+            //$this->loadLangSystem();
+        }
+    }
+
+    public function loadDefines()
     {
         // Define misc helpers
         define('DS', DIRECTORY_SEPARATOR);
@@ -61,134 +91,13 @@ class Bootstrap
         define('VIEWS_PATH', RESOURCES_PATH . '/views' . DS);
         define('DB_PATH', FRAMEWORK_PATH . 'database' . DS);
         define('UPLOAD_PATH', PUBLIC_PATH . 'uploads' . DS);
-        if (!defined('AJAX_CALL')) {
-            // Load core classes
-            require_once CORE_PATH . 'loader.php';
-            // Load Dotenv
-            $this->initDotEnv();
-            // Load configuration files
-            $this->loadConfigs();
-            // Set Default Exception
-            $exception = new Exception;
-            set_exception_handler([$exception, 'handler']);
-            // Set Timezone
-            date_default_timezone_set(APP['timeZone']);
-            // Load HTMLPurifier
-            require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
-            // Load Stripe
-            require_once LIB_PATH . 'Stripe/init.php';
-            // Init SSL Check
-            $this->security = new Security;
-            // Load Helpers
-            $this->loadHelpers();
-            // Init Session
-//            $this->session = new Utils\Session;
-            // Init PHP
-            $this->php = new Utils\PHP;
-            // Init DB
-            $this->database = new DB;
-            // Init Settings
-            $this->settings = new \Classes\Settings\Settings;
-            // Init Data
-            $this->data = new Utils\Data;
-            // Init Paypal
-            $this->paypal = new \Classes\Donate\PayPal\Paypal;
-            // Init Stripe
-            //$this->stripe = new \Classes\Donate\Stripe\Stripe;
-            // Load Langs
-            $this->getLang();
-            $this->loadLangs();
-            \Stripe\Stripe::setApiKey(STRIPE['secret_key']);
-            //define('DOC_ROOT', dirname(dirname(__FILE__)));
-            //echo 'current directory: ' . dirname(dirname(__FILE__));
-        }
     }
 
-    public function dispatch()
+    public function initDotEnv()
     {
-        /* Load external routes file */
-        require_once '../framework/routes/routes.php';
-
-        // Start the routing
-        SimpleRouter::start();
-    }
-
-    public function isAjax()
-    {
-        if (defined('AJAX_CALL')) {
-            //$this->run();
-
-            // Load core classes
-            require_once CORE_PATH . 'loader.php';
-            // Load Dotenv
-            $this->initDotEnv();
-            // Load configuration files
-            $this->loadConfigs();
-            // Load HTMLPurifier
-            require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
-            // Init SSL Check
-            $this->security = new Security;
-            // Load Helpers
-            $this->loadHelpers();
-            // Init PHP
-            $this->php = new Utils\PHP;
-            // Init Session
-            $this->session = new Utils\Session;
-            // Init DB
-            $this->database = new DB;
-            // Init Data
-            $this->data = new Utils\Data;
-
-            //echo 'ajax loaded';
-
-            // Load HTMLPurifier
-            require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
-            // Load Purifier Method
-            //$this->data->do('load_purifier');
-
-            // Load Helpers
-            foreach (scandir(DIRS['FRAMEWORK_PATH'] . '/Helpers/') as $filename) {
-                $path = DIRS['FRAMEWORK_PATH'] . '/Helpers/' . $filename;
-                if (is_file($path)) {
-                    require_once $path;
-                }
-            }
-        }
-    }
-
-    public function getLang()
-    {
-        // Defaut language English
-        $getLang = (isset($_GET['lang'])) ? $_SESSION['lang'] = $_GET['lang'] : '';
-        $lang = (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) : '';
-
-        if ($getLang) {
-            if (!defined('LANG')) {
-                define('LANG', $getLang);
-            }
-        } elseif (isset($_SESSION['lang'])) {
-            if (!defined('LANG')) {
-                define('LANG', $_SESSION['lang']);
-            }
-        } elseif ($lang) {
-            if (!defined('LANG')) {
-                define('LANG', $lang);
-            }
-        } else {
-            $lang = 'en';
-            if (!defined('LANG')) {
-                define('LANG', $lang);
-            }
-        }
-    }
-
-    public function loadLangs()
-    {
-        if (!is_dir(RESOURCES_PATH . '/langs/' . LANG)) {
-            define('MESSAGES', require_once RESOURCES_PATH . '/langs/en/messages.php');
-        } else {
-            define('MESSAGES', require_once RESOURCES_PATH . '/langs/' . LANG . '/messages.php');
-        }
+        $rootDir = dirname(dirname(__FILE__));
+        $dotenv = Dotenv::createImmutable($rootDir);
+        $dotenv->load();
     }
 
     public function loadConfigs()
@@ -226,10 +135,107 @@ class Bootstrap
         $this->loader->loadHelpers();
     }
 
-    public function initDotEnv()
+    public function loadPhp()
     {
-        $rootDir = dirname(dirname(__FILE__));
-        $dotenv = Dotenv::createImmutable($rootDir);
-        $dotenv->load();
+        $this->php = new Utils\PHP;
+    }
+
+    public function loadException()
+    {
+        $exception = new Exception;
+        set_exception_handler([$exception, 'handler']);
+    }
+
+    public function loadLangSystem()
+    {
+        $this->getLang();
+        $this->loadLangs();
+    }
+
+    public function getLang()
+    {
+        // Defaut language English
+        $getLang = (isset($_GET['lang'])) ? $_SESSION['lang'] = $_GET['lang'] : '';
+        $lang = (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) : '';
+
+        if ($getLang) {
+            if (!defined('LANG')) {
+                define('LANG', $getLang);
+            }
+        } elseif (isset($_SESSION['lang'])) {
+            if (!defined('LANG')) {
+                define('LANG', $_SESSION['lang']);
+            }
+        } elseif ($lang) {
+            if (!defined('LANG')) {
+                define('LANG', $lang);
+            }
+        } else {
+            $lang = 'en';
+            if (!defined('LANG')) {
+                define('LANG', $lang);
+            }
+        }
+    }
+
+    public function loadLangs()
+    {
+        if (!is_dir(RESOURCES_PATH . '/langs/' . LANG)) {
+            define('MESSAGES', require_once RESOURCES_PATH . '/langs/en/messages.php');
+        } else {
+            define('MESSAGES', require_once RESOURCES_PATH . '/langs/' . LANG . '/messages.php');
+        }
+    }
+
+    public function isAjax()
+    {
+        if (defined('AJAX_CALL')) {
+            //$this->run();
+
+            // Load core classes
+            require_once CORE_PATH . 'loader.php';
+            // Load Dotenv
+            $this->initDotEnv();
+            // Load configuration files
+            $this->loadConfigs();
+            // Load HTMLPurifier
+            require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
+            // Init SSL Check
+            $this->security = new Security;
+            // Load Helpers
+            $this->loadHelpers();
+            // Init PHP
+            $this->php = new Utils\PHP;
+            // Init Session
+            $this->session = new Utils\Session;
+            // Init DB
+            $this->database = new DB;
+            // Init Data
+            //$this->data = new Utils\Data;
+
+            //echo 'ajax loaded';
+
+            // Load HTMLPurifier
+            require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
+            // Load Purifier Method
+            //$this->data->do('load_purifier');
+
+            // Load Helpers
+            foreach (scandir(DIRS['FRAMEWORK_PATH'] . '/Helpers/') as $filename) {
+                $path = DIRS['FRAMEWORK_PATH'] . '/Helpers/' . $filename;
+                if (is_file($path)) {
+                    require_once $path;
+                }
+            }
+        }
+    }
+
+    public function dispatch()
+    {
+        /* Load external routes file */
+        require_once '../framework/routes/routes.php';
+
+        // Start the routing
+        SimpleRouter::start();
     }
 }

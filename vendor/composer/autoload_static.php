@@ -717,6 +717,7 @@ class ComposerStaticInit0a60aa2b05500db884e3a2aeb6cf4c52
         'Classes\\DB\\SQL' => __DIR__ . '/../..' . '/app/classes/DB/SQL.php',
         'Classes\\Exception\\Exception' => __DIR__ . '/../..' . '/app/classes/Exception/Exception.php',
         'Classes\\Exception\\SystemException' => __DIR__ . '/../..' . '/app/classes/Exception/SystemException.php',
+        'Classes\\Framework\\Configuration' => __DIR__ . '/../..' . '/app/classes/Framework/Configuration.php',
         'Classes\\Security\\Security' => __DIR__ . '/../..' . '/app/classes/Security/Security.php',
         'Classes\\Settings\\Settings' => __DIR__ . '/../..' . '/app/classes/Settings/Settings.php',
         'Classes\\Shaiya\\Char' => __DIR__ . '/../..' . '/app/classes/Shaiya/Char.php',

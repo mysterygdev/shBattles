@@ -120,6 +120,7 @@
               $itemType		=	$product->Type;
               $itemID		=	$product->ItemID;
               $itemCount	=	$product->ItemCount;
+              $itemQuantity = $itemQuantity;
               $totalCount = $itemQuantity * $itemCount;
 
 
@@ -211,7 +212,8 @@
                   echo 'slot null';
                   die();
                 } */
-                $sql = ('
+                while ($quantity <= $itemQuantity) {
+                  $sql = ('
                         Declare @Empty smallint
                         Declare @Slot smallint
                         Set @Slot = 0
@@ -224,25 +226,28 @@
                           SET @Slot = @Slot+1
                           END
                           Select @Slot as Slot
-                ');
+                  ');
 
-                $stmtSlot = DB::select(DB::raw($sql), [$_SESSION['User']['UserUID']]);
-                foreach ($stmtSlot as $fet) {
-                  if ($fet->Slot<240) {
-                    $slot		=	$fet->Slot;
-                  } else {
-                    echo 'User: '.$_SESSION['User']['UserID'].' has too many Items in his/her gift box and can not hold any more.';
-                    $sessData['status']['type'] = 'error';
+                  $stmtSlot = DB::select(DB::raw($sql), [$_SESSION['User']['UserUID']]);
+                  foreach ($stmtSlot as $fet) {
+                    if ($fet->Slot<240) {
+                      $slot		=	$fet->Slot;
+                    } else {
+                      echo 'User: '.$_SESSION['User']['UserID'].' has too many Items in his/her gift box and can not hold any more.';
+                      $sessData['status']['type'] = 'error';
+                    }
                   }
+                  // force item to not be stacked.. no more quantity than 1
+                  $stmt = DB::table(table('shUserBank'))
+                  ->insert([
+                      'UserUID' => $_SESSION['User']['UserUID'],
+                      'Slot' => $slot,
+                      'ItemID' => $itemID,
+                      'ItemCount' => $itemCount,
+                      'ProductCode' => $product_code
+                  ]);
+                  $quantity	=	$quantity+1;
                 }
-                $stmt = DB::table(table('shUserBank'))
-                ->insert([
-                    'UserUID' => $_SESSION['User']['UserUID'],
-                    'Slot' => $slot,
-                    'ItemID' => $itemID,
-                    'ItemCount' => $totalCount,
-                    'ProductCode' => $product_code
-                ]);
               }
 
               /* echo 'item count: '.$itemCount;

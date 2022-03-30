@@ -204,6 +204,7 @@ return array(
     'Classes\\DB\\SQL' => $baseDir . '/app/classes/DB/SQL.php',
     'Classes\\Exception\\Exception' => $baseDir . '/app/classes/Exception/Exception.php',
     'Classes\\Exception\\SystemException' => $baseDir . '/app/classes/Exception/SystemException.php',
+    'Classes\\Framework\\Configuration' => $baseDir . '/app/classes/Framework/Configuration.php',
     'Classes\\Security\\Security' => $baseDir . '/app/classes/Security/Security.php',
     'Classes\\Settings\\Settings' => $baseDir . '/app/classes/Settings/Settings.php',
     'Classes\\Shaiya\\Char' => $baseDir . '/app/classes/Shaiya/Char.php',
