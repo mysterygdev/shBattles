@@ -1,9 +1,9 @@
 <?php
 
-namespace Classes\Shaiya;
+namespace Shaiya;
 
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Utils as Utils;
+use Utils;
 
 class SExtended
 {

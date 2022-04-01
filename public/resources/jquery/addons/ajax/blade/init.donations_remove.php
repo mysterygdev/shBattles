@@ -5,8 +5,8 @@
     $bootstrap = new  App\Bootstrap();
     $bootstrap->isAjax();
     use Jenssegers\Blade\Blade;
-    use App\Models as Models;
-    use Classes\Utils as Utils;
+    use Models;
+    use Utils;
 
     $session = new Utils\Session;
     $user = new Utils\User($session);

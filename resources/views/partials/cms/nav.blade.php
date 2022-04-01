@@ -86,7 +86,7 @@
               </div>
             @else
               <a href="#!" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                {{$data['user']->DisplayName}} <span class="caret"></span> <span class="label">Welcome</span>
+                {{$data['user']::$DisplayName}} <span class="caret"></span> <span class="label">Welcome</span>
               </a>
               <div class="dropdown-menu">
                 <ul role="menu">

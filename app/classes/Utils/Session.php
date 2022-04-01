@@ -1,86 +1,81 @@
 <?php
+    // @author Brandon Gonzalez
+    // @copyright Copyright (c) 2020, Brandon Gonzalez
 
-namespace Classes\Utils;
+    Namespace Utils;
 
-use Classes\Utils\Data;
-use Classes\Utils\Cookie;
+    Use Utils\{
+        Cookie,
+        Data
+    };
+    class Session{
+        private static $sessionName,$name = APP['sessionName'];
+        protected static $referer;
 
-/**
- * @author Brandon Gonzalez
- * @copyright Copyright (c) 2020, Brandon Gonzalez
- */
-
-class Session
-{
-    private $sessionName;
-    private $name = APP['sessionName'];
-    protected $referer;
-
-    public function __construct()
-    {
-        $this->data = new Data();
-        $this->cookie = new Cookie();
-        if (!isset($_SESSION)) {
-            // Start our session
-            if (!empty($name)) {
-                session_name($this->name);
-            } else {
-                session_name('Default');
-            }
-            session_start();
-            if (!empty($name)) {
-                setcookie($this->name, session_id(), 0, '/', null, null, true);
-            } else {
-                setcookie('Default', session_id(), 0, '/', null, null, true);
-            }
-        }
-        $this->sessionName = $this->name;
-    }
-
-    /**
-     * Creates a session variable
-     *
-     * @param $key
-     * The key of the session
-     * @param $value
-     * The value of said key
-     * @param $key2
-     * The second key of the session (if needed)
-     * @return void
-     */
-    public function put($key, $value, $key2 = null): void
-    {
-        // check if session started on each function
-        // can extend this to allow as many keys as you want to without much text at all
-
-        if (isset($_SESSION)) {
-            if (session_name() === $this->sessionName) {
-                if ($key2 || !empty($key2)) {
-                    if (!isset($_SESSION[$key][$key2])) {
-                        $_SESSION[$key][$key2] = $value;
-                    }
+        public static function run() {
+            if (!isset($_SESSION)) {
+                // Start our session
+                if (!empty($name)) {
+                    session_name(self::$name);
                 } else {
-                    if (!isset($_SESSION[$key])) {
-                        $_SESSION[$key] = $value;
+                    session_name('Default');
+                }
+
+                session_start();
+
+                if (!empty($name)) {
+                    setcookie(self::$name, session_id(), 0, '/', null, null, true);
+                } else {
+                    setcookie('Default', session_id(), 0, '/', null, null, true);
+                }
+            }
+
+            self::$sessionName = self::$name;
+        }
+
+        /**
+        * Creates a session variable
+        *
+        * @param $key
+        * The key of the session
+        * @param $value
+        * The value of said key
+        * @param $key2
+        * The second key of the session (if needed)
+        * @return void
+        */
+        public static function put($key, $value, $key2 = null): void{
+            // check if session started on each function
+            // can extend this to allow as many keys as you want to without much text at all
+
+            if (isset($_SESSION)) {
+                if (session_name() === self::$sessionName) {
+                    if ($key2 || !empty($key2)) {
+                        if (!isset($_SESSION[$key][$key2])) {
+                            $_SESSION[$key][$key2] = $value;
+                        }
+                    }
+                    else {
+                        if (!isset($_SESSION[$key])) {
+                            $_SESSION[$key] = $value;
+                        }
                     }
                 }
             }
         }
-    }
-
-    public function regenerate(): void
-    {
-        if (isset($_SESSION)) {
-            if (session_name() === $this->sessionName) {
-                session_regenerate_id(true);
+        public static function regenerate(): void
+        {
+            if (isset($_SESSION)) {
+                if (session_name() === self::$sessionName) {
+                    session_regenerate_id(true);
+                }
             }
         }
-    }
 
-    public function has(string $key, $key2 = null): bool
+    public static function has(string $key, $key2 = null): bool
     {
         if (isset($_SESSION)) {
-            if (session_name() === $this->sessionName) {
+            if (session_name() === self::$sessionName) {
                 if (isset($_SESSION[$key])) {
                     return true;
                 }
@@ -92,10 +87,10 @@ class Session
         }
     }
 
-    public function get(string $key, $key2 = null): string
+    public static function get(string $key, $key2 = null): string
     {
         if (isset($_SESSION)) {
-            if (session_name() === $this->sessionName) {
+            if (session_name() === self::$sessionName) {
                 if ($key2) {
                     if (isset($_SESSION[$key][$key2])) {
                         return $_SESSION[$key][$key2];
@@ -114,10 +109,10 @@ class Session
         }
     }
 
-    public function exists(string $key): bool
+    public static function exists(string $key): bool
     {
         if (isset($_SESSION)) {
-            if (session_name() === $this->sessionName) {
+            if (session_name() === self::$sessionName) {
                 if (isset($_SESSION[$key])) {
                     return true;
                 } else {
@@ -127,22 +122,22 @@ class Session
         }
     }
 
-    public function all($type = null)
+    public static function all($type = null)
     {
         if (isset($_SESSION)) {
-            if (session_name() === $this->sessionName) {
+            if (session_name() === self::$sessionName) {
                 $result = '<pre>';
-                $result .= $this->variables($type, $_SESSION);
+                $result .= self::variables($type, $_SESSION);
                 $result .= '</pre>';
                 return $result;
             }
         }
     }
 
-    public function forget(string $key): void
+    public static function forget(string $key): void
     {
         if (isset($_SESSION)) {
-            if (session_name() === $this->sessionName) {
+            if (session_name() === self::$sessionName) {
                 if (isset($_SESSION[$key])) {
                     unset($_SESSION[$key]);
                 }
@@ -150,17 +145,17 @@ class Session
         }
     }
 
-    public function flush(): void
+    public static function flush(): void
     {
         if (isset($_SESSION)) {
-            if (session_name() === $this->sessionName) {
+            if (session_name() === self::$sessionName) {
                 session_unset();
                 session_destroy();
             }
         }
     }
 
-    public function variables($type, $vars)
+    public static function variables($type, $vars)
     {
         switch ($type) {
             case '1':
@@ -172,24 +167,24 @@ class Session
         }
     }
 
-    public function getReferer()
+    public static function getReferer()
     {
-        if ($this->cookie->has('referer')) {
-            return $this->cookie->get('referer');
+        if (Cookie::has('referer')) {
+            return Cookie::get('referer');
         } else {
             return '/';
         }
     }
 
-    public function setReferer()
+    public static function setReferer()
     {
-        $this->referer = $_SERVER['REQUEST_URI'];
+        self::$referer = $_SERVER['REQUEST_URI'];
         //echo 'ref: '.$this->referer;
-        if ($this->referer === '/community/getRankings') {
-            $this->referer = '/community/rankings';
+        if (self::$referer === '/community/getRankings') {
+            self::$referer = '/community/rankings';
         } else {
-            $this->referer = $_SERVER['REQUEST_URI'];
+            self::$referer = $_SERVER['REQUEST_URI'];
         }
-        $this->cookie->put('referer', $this->referer, time() + 100, '/');
+        Cookie::put('referer', self::$referer, time() + 100, '/');
     }
 }

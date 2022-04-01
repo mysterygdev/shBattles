@@ -2,14 +2,14 @@
 
 namespace App\Models\Auth;
 
+use Utils;
 use Illuminate\Database\Capsule\Manager as DB;
 
 class Verify
 {
-    public function __construct($user, $session)
+    public function __construct($user)
     {
-        $this->data = new \Classes\Utils\Data;
-        $this->session = $session;
+        $this->data = new Utils\Data;
         $this->user = $user;
     }
 

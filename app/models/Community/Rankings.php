@@ -1,6 +1,6 @@
 <?php
 
-    namespace App\Models\Community;
+    namespace Models\Community;
 
     class Rankings
     {
@@ -8,7 +8,7 @@
 
         public function __construct()
         {
-            $this->MSSQL = new \Classes\DB\MSSQL;
+            $this->MSSQL = new \DB\MSSQL;
         }
 
         public function getRankings()

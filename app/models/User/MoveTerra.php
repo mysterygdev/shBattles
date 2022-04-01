@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Models\User;
+namespace Models\User;
 
 use Illuminate\Database\Capsule\Manager as DB;
+use Utils;
+use Utils\Session;
 
 class MoveTerra
 {
     public $charId;
-    public function __construct($user, $session)
+    public function __construct($user)
     {
-        $this->data = new \Classes\Utils\Data;
-        $this->session = $session;
+        $this->data = new Utils\Data;
         $this->user = $user;
     }
 
@@ -42,13 +43,13 @@ class MoveTerra
         if (!$this->charId || empty($this->charId)) {
             return true;
         } else {
-            $this->session->put('Terra', $this->charId, 'CharID');
+            Session::put('Terra', $this->charId, 'CharID');
         }
     }
 
     public function getCharId()
     {
-        return $this->session->get('Terra', 'CharID');
+        return Session::get('Terra', 'CharID');
     }
 
     public function removeSpecialItem($itemId, $slot)
@@ -73,6 +74,6 @@ class MoveTerra
         } else {
             return false;
         }
-        $this->session->forget('Terra');
+        Session::forget('Terra');
     }
 }

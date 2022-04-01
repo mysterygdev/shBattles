@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Models\User;
+namespace Models\User;
 
 use Illuminate\Database\Capsule\Manager as DB;
+use Utils;
 
 class UserPanel
 {
@@ -10,10 +11,9 @@ class UserPanel
     public $res;
     public $errors = [];
 
-    public function __construct($user, $session)
+    public function __construct($user)
     {
-        $this->data = new \Classes\Utils\Data;
-        $this->session = $session;
+        $this->data = new Utils\Data;
         $this->user = $user;
     }
 

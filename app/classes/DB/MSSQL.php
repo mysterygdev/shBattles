@@ -1,10 +1,9 @@
 <?php
 
-namespace Classes\DB;
+namespace DB;
 
-use \PDO;
 use Illuminate\Database\Capsule\Manager as Eloquent;
-use App\Exceptions\DatabaseException;
+use Exception\DatabaseException;
 
 class MSSQL
 {
@@ -20,7 +19,7 @@ class MSSQL
 
         // Create PDO instance
         try {
-            $dbh = new PDO($dsn, DB['username'], DB['password'], DB['options']);
+            $dbh = new \PDO($dsn, DB['username'], DB['password'], DB['options']);
         } catch (\PDOException $e) {
             throw new DatabaseException($e->getMessage());
         }

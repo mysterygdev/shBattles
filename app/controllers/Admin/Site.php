@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Controllers\Admin;
+namespace Controllers\Admin;
 
-use Framework\Core\CoreController as Controller;
-use App\Models;
-use Classes\Sys\LogSys;
-use Classes\Utils;
+use Core\CoreController;
+use Models;
+use Utils;
+use Sys\LogSys;
 
-class Site extends Controller
+class Site extends CoreController
 {
     public function __construct()
     {
         $this->data = new Utils\Data;
         $this->logSys = new LogSys;
-        $this->session = new Utils\Session;
-        $this->user = new Utils\User($this->session);
+        $this->user = new Utils\User;
     }
 
     /* Get Methods */

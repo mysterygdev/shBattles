@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Controllers;
+namespace Controllers;
 
-use Framework\Core\CoreController as Controller;
-use App\Models as Models;
-use Classes\Utils;
+use Core\CoreController;
+use Models;
+use Utils;
 
-class Home extends Controller
+class Home extends CoreController
 {
     public function __construct()
     {
@@ -15,8 +15,7 @@ class Home extends Controller
         $this->captcha = new Utils\Captcha;
         $this->pagination = new Utils\Pagination;
         $this->data = new Utils\Data;
-        $this->session = new Utils\Session;
-        $this->user = new Utils\User($this->session);
+        $this->user = new Utils\User;
     }
 
     public function index()
@@ -24,7 +23,7 @@ class Home extends Controller
         $newsModel = $this->model(Models\Community\News::class, $this->user);
         $serverInfo = $this->model(Models\Server\ServerInfo::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'news' => $newsModel,
@@ -38,7 +37,7 @@ class Home extends Controller
 
     public function downloads()
     {
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'user' => $this->user,

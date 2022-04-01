@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace Controllers;
 
-use Framework\Core\CoreController as Controller;
-use App\Models as Models;
-use Classes\Utils as Utils;
+use Core\CoreController as Controller;
+use Models;
+use Utils;
+use Utils\Session;
 use Illuminate\Database\Capsule\Manager as DB;
 
 class Community extends Controller
@@ -12,10 +13,9 @@ class Community extends Controller
     public function __construct()
     {
         $this->data = new Utils\Data;
-        $this->session = new Utils\Session;
-        $this->user = new Utils\User($this->session);
+        $this->user = new Utils\User;
         $this->pagination = new Utils\Pagination;
-        $this->session->setReferer();
+        Session::setReferer();
     }
 
     public function discord()
@@ -38,9 +38,9 @@ class Community extends Controller
 
     public function events()
     {
-        $events = $this->model(Models\Community\Events::class, $this->session);
+        $events = $this->model(Models\Community\Events::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'events' => $events,
@@ -55,7 +55,7 @@ class Community extends Controller
     {
         $guildRankingsModel = $this->model(Models\Community\GuildRankings::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'guildrankings' => $guildRankingsModel->getGuildRankings(),
@@ -70,7 +70,7 @@ class Community extends Controller
     {
         $newsModel = $this->model(Models\Community\News::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'news' => $newsModel->getNews(),
@@ -85,7 +85,7 @@ class Community extends Controller
     {
         $patchNotesModel = $this->model(Models\Community\PatchNotes::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'patchnotes' => $patchNotesModel->getPatchNotes(),
@@ -100,7 +100,7 @@ class Community extends Controller
     {
         $polls = $this->model(Models\Community\Polls::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'polls' => $polls,
@@ -115,7 +115,7 @@ class Community extends Controller
     {
         $rankings = $this->model(Models\Community\Rankings::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'user' => $this->user,

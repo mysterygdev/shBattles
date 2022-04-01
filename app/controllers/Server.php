@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace Controllers;
 
-use Framework\Core\CoreController as Controller;
-use App\Models;
-use Classes\Utils;
+use Core\CoreController as Controller;
+use Models;
+use Utils;
+use Utils\Session;
 
 class Server extends Controller
 {
@@ -12,14 +13,13 @@ class Server extends Controller
     public function __construct()
     {
         $this->data = new Utils\Data;
-        $this->session = new Utils\Session;
-        $this->user = new Utils\User($this->session);
-        $this->session->setReferer();
+        $this->user = new Utils\User;
+        Session::setReferer();
     }
 
     public function about()
     {
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'user' => $this->user,
@@ -32,7 +32,7 @@ class Server extends Controller
     {
         $bossRecords = $this->model(Models\Server\BossRecords::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'bossrecords' => $bossRecords,
@@ -47,7 +47,7 @@ class Server extends Controller
     {
         $dropFinder = $this->model(Models\Server\DropFinder::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'drops' => $dropFinder,
@@ -60,7 +60,7 @@ class Server extends Controller
 
     public function drops()
     {
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'user' => $this->user,
@@ -72,7 +72,7 @@ class Server extends Controller
 
     public function download()
     {
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'user' => $this->user,
@@ -84,7 +84,7 @@ class Server extends Controller
 
     public function terms()
     {
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'user' => $this->user,
@@ -99,7 +99,7 @@ class Server extends Controller
     {
         $dropFinder = $this->model(Models\Server\DropFinder::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'drops' => $dropFinder,

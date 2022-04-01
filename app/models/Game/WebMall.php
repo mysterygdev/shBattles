@@ -1,44 +1,39 @@
 <?php
 
-namespace App\Models\Game;
+namespace Models\Game;
 
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Utils as Utils;
+Use DB\Queries\WebmallDB;
+use Utils\{
+    Arrays,
+    Data,
+    Session,
+    User
+};
 
 class WebMall
 {
-    public $name;
-    public $code;
-    public $quantity;
-    public $cost;
-    public $category;
-    public $special;
-    public $getPoints;
-    public $newPoints;
-    public $total;
-    public $totalCount;
-    public $subTotal;
-    public $slot;
-    public $maxSlot;
-    public $fet;
-    public $fetCount;
-    protected $cartContents = [];
+    public static $name,$code,$quantity,$cost,$category,$special;
+    public static $getPoints,$newPoints,$total,$totalCount;
+    public static $subTotal,$slot,$maxSlot,$fet,$fetCount;
+    protected static $cartContents = [];
 
     public function __construct()
     {
-        $this->data = new \Classes\Utils\Data;
-        $this->session = new Utils\Session;
-        $this->user = new Utils\User($this->session);
-        $this->user->run();
+        new Data;
+        new Session;
+        new User;
 
-        $this->getItemCategory();
-        $this->getUserPoints();
+        User::run();
+
+        self::getItemCategory();
+        self::getUserPoints();
         //$this->getUserGuildPoints();
         // get the shopping cart array from the session
-        $this->cartContents = !empty($_SESSION['cart_contents']) ? $_SESSION['cart_contents'] : null;
-        if ($this->cartContents === null) {
+        self::$cartContents = !empty($_SESSION['cart_contents']) ? $_SESSION['cart_contents'] : null;
+        if (self::$cartContents === null) {
             // set some base values
-            $this->cartContents = ['cart_total' => 0, 'total_items' => 0];
+            self::$cartContents = ['cart_total' => 0, 'total_items' => 0];
         }
     }
 
@@ -47,10 +42,10 @@ class WebMall
           * @param    bool
           * @return    array
     */
-    public function contents()
+    public static function contents()
     {
         // rearrange the newest first
-        $cart = array_reverse($this->cartContents);
+        $cart = array_reverse(self::$cartContents);
 
         // remove these so they don't create a problem when showing the cart table
         unset($cart['total_items'], $cart['cart_total']);
@@ -63,42 +58,42 @@ class WebMall
           * @param    string    $row_id
           * @return    array
     */
-    public function getItem($row_id)
+    public static function getItem($row_id)
     {
-        return (in_array($row_id, ['total_items', 'cart_total'], true) or !isset($this->cartContents[$row_id]))
+        return (in_array($row_id, ['total_items', 'cart_total'], true) or !isset(self::$cartContents[$row_id]))
             ? false
-            : $this->cartContents[$row_id];
+            : self::$cartContents[$row_id];
     }
 
     /**
           * Total Items: Returns the total item count
           * @return    int
     */
-    public function totalItems()
+    public static function totalItems()
     {
-        return $this->cartContents['total_items'];
+        return self::$cartContents['total_items'];
     }
 
     /**
           * Cart Total: Returns the total price
           * @return    int
     */
-    public function total()
+    public static function total()
     {
-        if ($this->doesCouponCodeExist()) {
+        if (self::doesCouponCodeExist()) {
             //TODO: add min order value and max discount requirements
-            $type = $this->getCouponData($this->session->get('WebMall', 'CouponCode'), 'Type');
-            $value = $this->getCouponData($this->session->get('WebMall', 'CouponCode'), 'Value');
+            $type = self::getCouponData(Session::get('WebMall', 'CouponCode'), 'Type');
+            $value = self::getCouponData(Session::get('WebMall', 'CouponCode'), 'Value');
             if ($type == 'Percentage') {
-                $total =  $this->cartContents['cart_total'] - ($this->cartContents['cart_total'] * ((int)($value)/100));
-                $this->cartContents['cart_total'] = $total;
+                $total =  self::$cartContents['cart_total'] - (self::$cartContents['cart_total'] * ((int)($value)/100));
+                self::$cartContents['cart_total'] = $total;
             } elseif ($type = 'Fixed') {
-                $total =  $this->cartContents['cart_total'] - ((int)($value));
-                $this->cartContents['cart_total'] = $total;
+                $total =  self::$cartContents['cart_total'] - ((int)($value));
+                self::$cartContents['cart_total'] = $total;
             }
-            return $this->cartContents['cart_total'];
+            return self::$cartContents['cart_total'];
         } else {
-            return $this->cartContents['cart_total'];
+            return self::$cartContents['cart_total'];
         }
     }
 
@@ -107,7 +102,7 @@ class WebMall
           * @param    array
           * @return    bool
     */
-    public function insert($item = [])
+    public static function insert($item = [])
     {
         if (!is_array($item) or count($item) === 0) {
             return false;
@@ -128,14 +123,14 @@ class WebMall
                 // create a unique identifier for the item being inserted into the cart
                 $rowid = md5($item['id']);
                 // get quantity if it's already there and add it on
-                $old_qty = isset($this->cartContents[$rowid]['qty']) ? (int) $this->cartContents[$rowid]['qty'] : 0;
+                $old_qty = isset(self::$cartContents[$rowid]['qty']) ? (int) self::$cartContents[$rowid]['qty'] : 0;
                 // re-create the entry with unique identifier and updated quantity
                 $item['rowid'] = $rowid;
                 $item['qty'] += $old_qty;
-                $this->cartContents[$rowid] = $item;
+                self::$cartContents[$rowid] = $item;
 
                 // save Cart Item
-                if ($this->saveCart()) {
+                if (self::saveCart()) {
                     return isset($rowid) ? $rowid : true;
                 } else {
                     return false;
@@ -149,12 +144,12 @@ class WebMall
           * @param    array
           * @return    bool
     */
-    public function update($item = [])
+    public static function update($item = [])
     {
         if (!is_array($item) or count($item) === 0) {
             return false;
         } else {
-            if (!isset($item['rowid'], $this->cartContents[$item['rowid']])) {
+            if (!isset($item['rowid'], self::$cartContents[$item['rowid']])) {
                 return false;
             } else {
                 // prep the quantity
@@ -162,23 +157,23 @@ class WebMall
                     $item['qty'] = (float) $item['qty'];
                     // remove the item from the cart, if quantity is zero
                     if ($item['qty'] == 0) {
-                        unset($this->cartContents[$item['rowid']]);
+                        unset(self::$cartContents[$item['rowid']]);
                         return true;
                     }
                 }
 
                 // find updatable keys
-                $keys = array_intersect(array_keys($this->cartContents[$item['rowid']]), array_keys($item));
+                $keys = array_intersect(array_keys(self::$cartContents[$item['rowid']]), array_keys($item));
                 // prep the price
                 if (isset($item['price'])) {
                     $item['price'] = (float) $item['price'];
                 }
                 // product id & name shouldn't be changed
                 foreach (array_diff($keys, ['id', 'name']) as $key) {
-                    $this->cartContents[$item['rowid']][$key] = $item[$key];
+                    self::$cartContents[$item['rowid']][$key] = $item[$key];
                 }
                 // save cart data
-                $this->saveCart();
+                self::saveCart();
                 return true;
             }
         }
@@ -188,26 +183,26 @@ class WebMall
           * Save the cart array to the session
           * @return    bool
     */
-    protected function saveCart()
+    protected static function saveCart()
     {
-        $this->cartContents['total_items'] = $this->cartContents['cart_total'] = 0;
-        foreach ($this->cartContents as $key => $val) {
+        self::$cartContents['total_items'] = self::$cartContents['cart_total'] = 0;
+        foreach (self::$cartContents as $key => $val) {
             // make sure the array contains the proper indexes
             if (!is_array($val) or !isset($val['price'], $val['qty'])) {
                 continue;
             }
 
-            $this->cartContents['cart_total'] += ($val['price'] * $val['qty']);
-            $this->cartContents['total_items'] += $val['qty'];
-            $this->cartContents[$key]['subtotal'] = ($this->cartContents[$key]['price'] * $this->cartContents[$key]['qty']);
+            self::$cartContents['cart_total'] += ($val['price'] * $val['qty']);
+            self::$cartContents['total_items'] += $val['qty'];
+            self::$cartContents[$key]['subtotal'] = (self::$cartContents[$key]['price'] * self::$cartContents[$key]['qty']);
         }
 
         // if cart empty, delete it from the session
-        if (count($this->cartContents) <= 2) {
+        if (count(self::$cartContents) <= 2) {
             unset($_SESSION['cart_contents']);
             return false;
         } else {
-            $_SESSION['cart_contents'] = $this->cartContents;
+            $_SESSION['cart_contents'] = self::$cartContents;
             return true;
         }
     }
@@ -217,11 +212,11 @@ class WebMall
           * @param    int
           * @return    bool
     */
-    public function remove($row_id)
+    public static function remove($row_id)
     {
         // unset & save
-        unset($this->cartContents[$row_id]);
-        $this->saveCart();
+        unset(self::$cartContents[$row_id]);
+        self::saveCart();
         return true;
     }
 
@@ -229,9 +224,9 @@ class WebMall
           * Destroy the cart: Empties the cart and destroy the session
           * @return    void
     */
-    public function destroy()
+    public static function destroy()
     {
-        $this->cartContents = ['cart_total' => 0, 'total_items' => 0];
+        self::$cartContents = ['cart_total' => 0, 'total_items' => 0];
         unset($_SESSION['cart_contents']);
     }
 
@@ -239,7 +234,7 @@ class WebMall
           * Get Item Category: Returns the current item category
           * @return    string
     */
-    public function getItemCategory()
+    public static function getItemCategory()
     {
         /* if ($this->data->url()[2]) {
             if ($this->data->url()[2] == 'category') {
@@ -248,7 +243,7 @@ class WebMall
                 $this->category = 'Gear';
             }
         } */
-        $this->category = (!empty($this->data->url()[2]) && $this->data->url()[2] === 'category') ? $this->data->url()[3] : 0;
+        self::$category = (!empty(Data::url()[2]) && Data::url()[2] === 'category') ? Data::url()[3] : 0;
         /* if (isset($_GET['category'])) {
             $this->category = ucfirst($_GET['category']);
         } else {
@@ -256,24 +251,21 @@ class WebMall
         } */
     }
 
-    public function getItemCategoryName()
+    public static function getItemCategoryName()
     {
-        return (!empty($this->data->url()[2]) && $this->data->url()[2] === 'category') ? WEBMALL['categories'][$this->data->url()[3]] : WEBMALL['categories'][0];
+        return (!empty(Data::url()[2]) && Data::url()[2] === 'category') ? WEBMALL['categories'][Data::url()[3]] : WEBMALL['categories'][0];
     }
 
     /**
           * Get User Points: Returns the current users points
           * @return    string
     */
-    public function getUserPoints()
+    public static function getUserPoints()
     {
         if (isset($_SESSION['User'])) {
-            $res = DB::table(table('shUserData'))
-            ->select()
-            ->where('UserUID', $_SESSION['User']['UserUID'])
-            ->limit(1)
-            ->get();
-            return $res[0]->Point;
+            $res    =   WebmallDB::__get_UserPoint($_SESSION['User']['UserUID']);
+
+            return $res->Point;
         }
     }
 
@@ -281,13 +273,13 @@ class WebMall
           * Get User Guild Points: Returns the current users guild points
           * @return    string
     */
-    public function getUserGuildPoints()
+    public static function getUserGuildPoints()
     {
-        if ($this->user->isLoggedIn()) {
-            $charID = $this->user->getCharIdFromUser($_SESSION['User']['UserUID']);
-            if ($this->user->isCharInGuild($charID)) {
+        if (User::isLoggedIn()) {
+            $charID = User::getCharIdFromUser($_SESSION['User']['UserUID']);
+            if (User::isCharInGuild($charID)) {
                 if (isset($_SESSION['User'])) {
-                    $guildID = $this->user->getGuildFromChar($charID);
+                    $guildID = User::getGuildFromChar($charID);
 
                     $res = DB::table(table('shGuilds'))
                     ->select('GuildPoint')
@@ -308,10 +300,11 @@ class WebMall
     {
         $res = DB::table(table('products'))
             ->select()
-            ->where('Category', $this->category)
+            ->where('Category', self::$category)
             ->where('Main', true)
             ->orderBy('ProductID', 'DESC')
             ->get();
+
         return $res;
     }
 
@@ -498,10 +491,10 @@ class WebMall
         return $res;
     } */
 
-    public function doesCouponCodeExist()
+    public static function doesCouponCodeExist()
     {
-        if ($this->session->has('WebMall', 'CouponCode')) {
-            return $this->session->get('WebMall', 'CouponCode');
+        if (Session::has('WebMall', 'CouponCode')) {
+            return Session::get('WebMall', 'CouponCode');
         }
     }
 

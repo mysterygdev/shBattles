@@ -1,15 +1,14 @@
 <?php
 
-namespace Framework\Blade;
+namespace Blade;
 
 use Jenssegers\Blade\Blade;
-use Classes\Sys\LogSys;
-use \Classes\Utils;
+use Sys\LogSys;
+use Utils;
 
 class BladeController
 {
     public $blade;
-    protected $session;
     //protected $user;
 
     public function __construct($type, $view = false)
@@ -20,16 +19,12 @@ class BladeController
             $this->blade = new Blade(DIRS['WIDGETS_PATH'] . '/' . $view . '/php', 'cache');
         }
 
-        //$this->session = new Utils\Session;
-        //$this->auth = new Utils\Auth($this->session);
-        //$this->user = new Utils\User($this->session);
         $this->logSys = new LogSys;
     }
 
-    public function loadDirectives($user, $session)
+    public function loadDirectives($user)
     {
-        $this->session = $session;
-        $this->auth = new Utils\Auth($this->session);
+        $this->auth = new Utils\Auth();
         $this->user = $user;
         $this->blade->if('auth', function () {
             return $this->auth->check();
@@ -93,27 +88,6 @@ class BladeController
         // Check for view file
         if (file_exists('../app/widgets/' . $view . '/php/script.blade.php')) {
             echo $this->blade->make('script', ['data' => $data])->render();
-        } else {
-            echo 'Widget doesn\'t exist';
-        }
-    }
-
-    public function loadWidget2($view, $js = false, $data = false)
-    {
-        // Check for view file
-        $widget = new Utils\Widget;
-        $dataset = $widget->display();
-        if (file_exists('../app/widgets/' . $view . '/php/script.blade.php')) {
-            echo $this->blade->make('script', ['data' => $data])->render();
-            foreach ($dataset as $res) {
-                if ($res->Name == $view) {
-                    if ($res->JS) {
-                        if (is_file('../app/widgets/' . $view . '/js/' . $res->JS)) {
-                            echo '<script src="../app/widgets/' . $view . '/js/' . $res->JS . '"></script>';
-                        }
-                    }
-                }
-            }
         } else {
             echo 'Widget doesn\'t exist';
         }

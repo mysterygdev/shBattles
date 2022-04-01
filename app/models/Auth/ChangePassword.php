@@ -2,15 +2,14 @@
 
 namespace App\Models\Auth;
 
-use Classes\Utils as Utils;
+use Utils;
 use Classes\Sys\MailSys as Mail;
 
 class ChangePassword
 {
-    public function __construct($user, $session)
+    public function __construct($user)
     {
-        $this->data = new \Classes\Utils\Data;
-        $this->session = $session;
+        $this->data = new Utils\Data;
         $this->user = $user;
     }
 

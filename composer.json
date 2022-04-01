@@ -16,8 +16,8 @@
       "phpmailer/phpmailer": "dev-master",
       "nikic/fast-route": "^2.0@dev",
       "cbschuld/browser.php": "^1.9@dev",
-        "pecee/simple-router": "dev-master",
-        "monolog/monolog": "2.x-dev"
+      "pecee/simple-router": "dev-master",
+      "monolog/monolog": "2.x-dev"
     },
     "minimum-stability": "dev",
     "config": {
@@ -25,15 +25,17 @@
     },
     "autoload": {
       "psr-4": {
-        "Classes\\": "app/classes",
-        "Utils\\"		:	"app/classes/Utils",
-        "Sys\\"     : "app/classes/sys",
-        "App\\Exceptions\\": "app/exceptions",
-        "App\\Controllers\\": "app/controllers",
-        "App\\Models\\": "app/models",
-        "Framework\\Core\\": "framework/core",
-        "Framework\\Blade\\": "framework/blade",
-        "Exceptions\\"   :  "app/classes/exception"
+        "DB\\"        : "app/classes/db",
+        "Utils\\"		  :	"app/classes/Utils",
+        "Core\\"      : "framework/core",
+        "Sys\\"       : "app/classes/sys",
+        "Exception\\": "app/exception",
+        "Exceptions\\" : "app/classes/exceptions",
+        "Controllers\\": "app/controllers",
+        "Models\\"    : "app/models",
+        "Blade\\"     : "framework/blade",
+        "Security\\"  : "app/classes/Security",
+        "Shaiya\\"  : "app/classes/Shaiya"
       }
     }
 }

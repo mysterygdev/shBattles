@@ -6,10 +6,6 @@ use Illuminate\Database\Capsule\Manager as DB;
 
 class Polls
 {
-    public function __construct()
-    {
-        $this->db = new \Classes\DB\MSSQL;
-    }
 
     public function getPolls()
     {

@@ -1,16 +1,15 @@
 <?php
 
-namespace App\Controllers;
+namespace Controllers;
 
-use Framework\Core\CoreController as Controller;
-use Classes\Utils as Utils;
+use Core\CoreController;
+use Utils;
 
-class Errors extends Controller
+class Errors extends CoreController
 {
     public function __construct()
     {
-        $this->session = new Utils\Session;
-        $this->user = new Utils\User($this->session);
+        $this->user = new Utils\User;
     }
 
     public function error301()

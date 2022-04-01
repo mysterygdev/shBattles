@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Models\Game;
+namespace Models\Game;
 
 use Illuminate\Database\Capsule\Manager as DB;
+use Utils;
 
 class Vote
 {
@@ -10,10 +11,9 @@ class Vote
     public $referer = null;
     public $VoteStatus = 'Not Voted';
 
-    public function __construct($user, $session)
+    public function __construct($user)
     {
-        $this->data = new \Classes\Utils\Data;
-        $this->session = $session;
+        $this->data = new Utils\Data;
         $this->user = $user;
         //$this->insertItem(100204, 2);
         $this->getVoteReferer();

@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Controllers\Admin;
+namespace Controllers\Admin;
 
-use Framework\Core\CoreController as Controller;
-use App\Models as Models;
-use Classes\Sys\LogSys;
-use Classes\Utils as Utils;
+use Core\CoreController;
+use Models;
+use Utils;
+use Sys\LogSys;
 
-class PaymentCenter extends Controller
+class PaymentCenter extends CoreController
 {
     public function __construct()
     {
         $this->data = new Utils\Data;
         $this->logSys = new LogSys;
-        $this->session = new Utils\Session;
-        $this->user = new Utils\User($this->session);
+        $this->user = new Utils\User;
     }
 
     public function addDonation()

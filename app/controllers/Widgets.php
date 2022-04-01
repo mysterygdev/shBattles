@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Controllers;
+namespace Controllers;
 
-use Framework\Core\CoreController as Controller;
+use Core\CoreController as Controller;
 use Illuminate\Database\Capsule\Manager as DB;
-use App\Models as Models;
-use Classes\Utils;
+use Models;
+use Utils;
+use Utils\Session;
 
 class Widgets extends Controller
 {
-    public function __construct($user, $session)
+    public function __construct($user)
     {
         $this->data = new Utils\Data;
-        $this->session = $session;
         $this->user = $user;
     }
 

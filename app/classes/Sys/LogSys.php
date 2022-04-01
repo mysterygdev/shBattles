@@ -1,8 +1,8 @@
 <?php
 
-namespace Classes\Sys;
+namespace Sys;
 
-use Classes\Utils as Utils;
+use Utils;
 use Illuminate\Database\Capsule\Manager as DB;
 
 class LogSys

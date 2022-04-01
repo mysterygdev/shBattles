@@ -3,7 +3,7 @@
 namespace App\Models\Help;
 
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Utils as Utils;
+use Utils;
 
 class Support
 {
@@ -13,8 +13,7 @@ class Support
 
     public function __construct($user)
     {
-        $this->data = new \Classes\Utils\Data;
-        $this->session = new Utils\Session;
+        $this->data = new Utils\Data;
         //$this->getTickets();
     }
 

@@ -4,7 +4,7 @@ namespace App\Models\User;
 
 use Illuminate\Database\Capsule\Manager as DB;
 use Classes\Donate\PayPal\Paypal as Paypal;
-use Classes\Utils as Utils;
+use Utils;
 
 class Donate
 {
@@ -12,10 +12,9 @@ class Donate
     public $res;
     public $errors = [];
 
-    public function __construct($session)
+    public function __construct()
     {
-        $this->data = new \Classes\Utils\Data;
-        $this->session = $session;
+        $this->data = new Utils\Data;
         $this->paypal = new Paypal;
     }
 

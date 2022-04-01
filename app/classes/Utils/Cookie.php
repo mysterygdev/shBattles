@@ -1,15 +1,15 @@
 <?php
 
-namespace Classes\Utils;
+namespace Utils;
 
 class Cookie
 {
-    public function put(string $key, $value, $time): void
+    public static function put(string $key, $value, $time): void
     {
         setcookie($key, $value, $time, '/', null, null, true);
     }
 
-    public function has(string $key): bool
+    public static function has(string $key): bool
     {
         if (isset($_COOKIE[$key])) {
             return true;
@@ -18,7 +18,7 @@ class Cookie
         }
     }
 
-    public function get(string $key): string
+    public static function get(string $key): string
     {
         if (isset($_COOKIE[$key])) {
             $result = $_COOKIE[$key];

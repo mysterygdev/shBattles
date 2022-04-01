@@ -1,27 +1,27 @@
 <?php
 
-namespace App\Controllers;
+namespace Controllers;
 
-use Framework\Core\CoreController as Controller;
-use App\Models;
-use Classes\Utils as Utils;
+use Core\CoreController as Controller;
+use Models;
+use Utils;
+use Utils\Session;
 
 class Game extends Controller
 {
     public function __construct()
     {
         $this->data = new Utils\Data;
-        $this->session = new Utils\Session;
-        $this->user = new Utils\User($this->session);
+        $this->user = new Utils\User;
     }
 
     /* Get Methods */
 
     public function promotions()
     {
-        $promotions = $this->model(Models\Game\Promotions::class, $this->user, $this->session);
+        $promotions = $this->model(Models\Game\Promotions::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'promotions' => $promotions,
@@ -34,9 +34,9 @@ class Game extends Controller
 
     public function rewards()
     {
-        $rewards = $this->model(Models\Game\Rewards::class, $this->user, $this->session);
+        $rewards = $this->model(Models\Game\Rewards::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'rewards' => $rewards,
@@ -49,9 +49,9 @@ class Game extends Controller
 
     public function vote()
     {
-        $vote = $this->model(Models\Game\Vote::class, $this->user, $this->session);
+        $vote = $this->model(Models\Game\Vote::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'vote' => $vote,
@@ -65,7 +65,7 @@ class Game extends Controller
     /* Post Methods */
     public function pPromotions()
     {
-        $promotions = $this->model(Models\Game\Promotions::class, $this->user, $this->session);
+        $promotions = $this->model(Models\Game\Promotions::class, $this->user);
         $contentType = isset($_SERVER['CONTENT_TYPE']) ? trim($_SERVER['CONTENT_TYPE']) : '';
         if ($contentType === 'application/json') {
             //Receive the RAW post data.

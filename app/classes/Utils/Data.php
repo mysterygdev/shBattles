@@ -1,6 +1,6 @@
 <?php
 
-namespace Classes\Utils;
+namespace Utils;
 
 use HTMLPurifier;
 
@@ -526,7 +526,7 @@ class Data
         }
     }
 
-    public function url()
+    public static function url()
     {
         if (isset($_GET['url'])) {
             return $url	=	explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));

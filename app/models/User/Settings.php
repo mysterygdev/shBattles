@@ -3,6 +3,8 @@
 namespace App\Models\User;
 
 use Illuminate\Database\Capsule\Manager as DB;
+use Utils;
+use Utils\Session;
 
 class Settings
 {
@@ -10,10 +12,9 @@ class Settings
     public $res;
     public $errors = [];
 
-    public function __construct($user, $session)
+    public function __construct($user)
     {
-        $this->data = new \Classes\Utils\Data;
-        $this->session = $session;
+        $this->data = new Utils\Data;
         $this->user = $user;
     }
 

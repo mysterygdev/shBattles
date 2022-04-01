@@ -1,0 +1,14 @@
+<?php
+   Namespace Utils;
+
+   Use Illuminate\Database\Capsule\Manager as Eloquent;
+
+   Class Forum{
+      public static function checkUserFlags($UserUID){
+         $stmt   =   Eloquent::table(table('FORUM_USER_PERMS'))
+                        ->where('UserUID',$UserUID)
+                        ->limit(1);
+         return $stmt;
+      }
+   }
+?>

@@ -1,19 +1,15 @@
 <?php
 
-namespace Classes\Utils;
+namespace Utils;
 
 class Auth
 {
-    public function __construct($session)
-    {
-        $this->session = $session;
-    }
 
     // similar to laravels auth class
     public function check()
     {
         // Check if user is logged in
-        if ($this->session->has('User')) {
+        if (Session::has('User')) {
             return true;
         }
     }
@@ -21,7 +17,7 @@ class Auth
     public function guest()
     {
         // Check if user is not logged in
-        if (!$this->session->has('User')) {
+        if (!Session::has('User')) {
             return true;
         }
     }

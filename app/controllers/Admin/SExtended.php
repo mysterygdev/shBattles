@@ -2,13 +2,13 @@
 
 namespace App\Controllers\Admin;
 
-use Framework\Core\CoreController as Controller;
-use App\Models;
-use Classes\Sys\LogSys;
-use Classes\Shaiya\SExtended as SE;
-use Classes\Utils as Utils;
+use Core\CoreController;
+use Shaiya\SExtended as SE;
+use Models;
+use Utils;
+use Sys\LogSys;
 
-class SExtended extends Controller
+class SExtended extends CoreController
 {
     public function __construct()
     {

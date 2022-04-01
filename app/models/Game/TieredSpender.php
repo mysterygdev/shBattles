@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models\Game;
+namespace Models\Game;
 
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Utils as Utils;
+use Utils;
 
 class TieredSpender
 {
@@ -12,9 +12,8 @@ class TieredSpender
 
     public function __construct()
     {
-        $this->data = new \Classes\Utils\Data;
-        $this->session = new Utils\Session;
-        $this->user = new Utils\User($this->session);
+        $this->data = new Utils\Data;
+        $this->user = new Utils\User;
         $this->user->run();
         $this->getTotal();
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Server;
+namespace Models\Server;
 
 use Illuminate\Database\Capsule\Manager as DB;
 
@@ -9,11 +9,6 @@ class ServerInfo
     public $pOnline;
     public $AoL;
     public $UoF;
-
-    public function __construct()
-    {
-        $this->db = new \Classes\DB\MSSQL;
-    }
 
     public function serverStatus()
     {

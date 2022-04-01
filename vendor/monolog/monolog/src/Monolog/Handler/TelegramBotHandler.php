@@ -13,6 +13,7 @@ namespace Monolog\Handler;
 
 use RuntimeException;
 use Monolog\Logger;
+use Monolog\Utils;
 
 /**
  * Handler send logs to Telegram using Telegram Bot API.
@@ -265,7 +266,7 @@ class TelegramBotHandler extends AbstractProcessingHandler
     {
         $truncatedMarker = ' (...truncated)';
         if (!$this->splitLongMessages && strlen($message) > self::MAX_MESSAGE_LENGTH) {
-            return [substr($message, 0, self::MAX_MESSAGE_LENGTH - strlen($truncatedMarker)) . $truncatedMarker];
+            return [Utils::substr($message, 0, self::MAX_MESSAGE_LENGTH - strlen($truncatedMarker)) . $truncatedMarker];
         }
 
         return str_split($message, self::MAX_MESSAGE_LENGTH);

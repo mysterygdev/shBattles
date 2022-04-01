@@ -3,7 +3,7 @@
 namespace App\Models\Server;
 
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Utils as Utils;
+use Utils;
 
 class DropFinder
 {
@@ -14,8 +14,7 @@ class DropFinder
 
     public function __construct()
     {
-        $this->data = new \Classes\Utils\Data;
-        $this->session = new Utils\Session;
+        $this->data = new Utils\Data;
     }
 
     public function getItemName()

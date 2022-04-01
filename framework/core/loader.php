@@ -1,8 +1,8 @@
 <?php
 
-namespace Framework\Core;
+namespace Core;
 
-use App\Exceptions;
+use Exceptions;
 
 class Loader
 {
@@ -98,15 +98,16 @@ class Loader
         return true;
     }
 
-    function has_string_keys(array $array) {
+    public function has_string_keys(array $array)
+    {
         return count(array_filter(array_keys($array), 'is_string')) > 0;
     }
 
     public function loadResources($path, $type, $array, $recursive = false)
     {
-        if(!is_dir($path)) {
+        if (!is_dir($path)) {
             return false;
-		}
+        }
 
         $files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
 
@@ -116,14 +117,13 @@ class Loader
                 continue;
             }
 
-            if(is_dir($path.$file) && $recursive){
-				$this->loadResources($path.$file,$type,$array,$recursive);
-			} else {
+            if (is_dir($path.$file) && $recursive) {
+                $this->loadResources($path.$file, $type, $array, $recursive);
+            } else {
                 if (is_file($file)) {
-                    $ext = pathinfo($file,PATHINFO_EXTENSION);
+                    $ext = pathinfo($file, PATHINFO_EXTENSION);
 
                     if ($ext == 'php') {
-
                         $fileName = basename($file, '.php');
                         $fileName = strtoupper($fileName);
                         $fullPath = $file;
@@ -134,10 +134,10 @@ class Loader
                             } else {
                                 // Error
                             }
-                        } elseif($type == 'config') {
+                        } elseif ($type == 'config') {
                             if (in_array(basename($file, '.php'), $array)) {
                                 //echo 'config loaded: '.$fileName;
-                                define($fileName,include($fullPath));
+                                define($fileName, include($fullPath));
                                 echo 'config loaded: '.$fileName.'<br>';
                             } else {
                                 // Error

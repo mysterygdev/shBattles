@@ -6,7 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'TrafficCophp' => array($vendorDir . '/trafficcophp/bytebuffer/src'),
-    'Evenement' => array($vendorDir . '/evenement/evenement/src'),
-    'Ephp' => array($vendorDir . '/ephp/socketio/lib'),
 );

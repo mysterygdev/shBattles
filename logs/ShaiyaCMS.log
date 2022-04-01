@@ -143,3 +143,364 @@
 [30-Mar-2022 17:45:40 America/Chicago] PHP Warning:  session_name(): Cannot change session name when headers already sent in C:\laragon\www\shaiyabattles\app\classes\Utils\Session.php on line 28
 [30-Mar-2022 17:45:40 America/Chicago] PHP Warning:  session_start(): Cannot start session when headers already sent in C:\laragon\www\shaiyabattles\app\classes\Utils\Session.php on line 30
 [30-Mar-2022 17:45:40 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\laragon\www\shaiyabattles\app\classes\Framework\Configuration.php:16) in C:\laragon\www\shaiyabattles\app\classes\Utils\Session.php on line 34
+[30-Mar-2022 23:47:13 UTC] PHP Fatal error:  Uncaught Error: Class 'Classes\Security\Security' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:41
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#1 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#2 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 41
+[30-Mar-2022 23:47:25 UTC] PHP Fatal error:  Uncaught Error: Class 'Classes\Security\Security' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:41
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#1 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#2 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 41
+[30-Mar-2022 23:47:30 UTC] PHP Fatal error:  Uncaught Error: Class 'Classes\Security\Security' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:41
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#1 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#2 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 41
+[30-Mar-2022 23:49:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Classes\Security\Security' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:41
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#1 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#2 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 41
+[30-Mar-2022 23:49:57 UTC] PHP Fatal error:  Uncaught Error: Class 'Security\Security' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:41
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#1 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#2 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 41
+[30-Mar-2022 23:50:03 UTC] PHP Fatal error:  Uncaught Error: Class 'Security\Security' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:41
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#1 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#2 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 41
+[30-Mar-2022 23:51:24 UTC] PHP Fatal error:  Uncaught Error: Class 'Exception\Exception' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[30-Mar-2022 23:52:55 UTC] PHP Fatal error:  Uncaught Error: Class 'Exception\Exception' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[30-Mar-2022 23:53:55 UTC] PHP Warning:  set_exception_handler() expects the argument (Exception::handler) to be a valid callback in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 146
+[30-Mar-2022 18:53:55 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Classes\DB\MSSQL' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:47
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#1 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#2 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 47
+[30-Mar-2022 23:55:23 UTC] PHP Fatal error:  Uncaught Error: Class 'Exception\Exception' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[30-Mar-2022 23:55:47 UTC] PHP Fatal error:  Uncaught Error: Class 'Exception\Exception' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[30-Mar-2022 23:56:22 UTC] PHP Fatal error:  Uncaught Error: Class 'Exception\Exception' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[30-Mar-2022 23:56:29 UTC] PHP Fatal error:  Uncaught Error: Class 'Exception\Exception' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[30-Mar-2022 23:59:47 UTC] PHP Fatal error:  Uncaught Error: Class 'Exception\Exception' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[31-Mar-2022 00:03:04 UTC] PHP Fatal error:  Uncaught Error: Class 'Exception\Exception' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[31-Mar-2022 00:03:11 UTC] PHP Fatal error:  Uncaught Error: Class 'Exceptions\Exception' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[31-Mar-2022 00:03:40 UTC] PHP Fatal error:  Uncaught Error: Class 'Exceptions\Exception' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[31-Mar-2022 00:04:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Exceptions\Exception' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[31-Mar-2022 00:04:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Exceptions\Exception' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[31-Mar-2022 00:06:15 UTC] PHP Notice:  Undefined property: App\Bootstrap::$Exception in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[31-Mar-2022 00:06:15 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[31-Mar-2022 00:06:15 UTC] PHP Notice:  Undefined property: App\Bootstrap::$Exception in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[31-Mar-2022 00:06:15 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[31-Mar-2022 00:06:28 UTC] PHP Fatal error:  Uncaught Error: Class 'Exceptions\Exception' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[31-Mar-2022 00:06:28 UTC] PHP Fatal error:  Uncaught Error: Class 'Exceptions\Exception' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:145
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(43): App\Bootstrap->loadException()
+#1 C:\laragon\www\shaiyabattles\app\bootstrap.php(22): App\Bootstrap->init()
+#2 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#3 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 145
+[31-Mar-2022 00:30:12 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Security' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:40
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(21): App\Bootstrap->init()
+#1 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#2 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 40
+[31-Mar-2022 00:30:12 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Security' not found in C:\laragon\www\shaiyabattles\app\bootstrap.php:40
+Stack trace:
+#0 C:\laragon\www\shaiyabattles\app\bootstrap.php(21): App\Bootstrap->init()
+#1 C:\laragon\www\shaiyabattles\public\index.php(3): App\Bootstrap->__construct()
+#2 {main}
+  thrown in C:\laragon\www\shaiyabattles\app\bootstrap.php on line 40
+[30-Mar-2022 20:11:35 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\laragon\www\shaiyabattles\framework\blade\BladeController.php:83) in C:\laragon\www\shaiyabattles\framework\helpers\redirect.php on line 8
+[30-Mar-2022 20:13:17 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 291
+[30-Mar-2022 20:18:26 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 291
+[30-Mar-2022 21:37:37 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 254
+[30-Mar-2022 21:37:42 America/Chicago] PHP Notice:  Undefined index: webmall in C:\laragon\www\shaiyabattles\app\classes\DB\Queries\Webmall.php on line 23
+[30-Mar-2022 21:42:48 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 112
+[30-Mar-2022 21:42:48 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 258
+[31-Mar-2022 19:04:02 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 275
+[31-Mar-2022 19:04:58 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 275
+[31-Mar-2022 19:05:14 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 275
+[31-Mar-2022 19:58:39 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$session in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 23
+[31-Mar-2022 19:58:39 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$user in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 24
+[31-Mar-2022 20:33:23 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$session in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 23
+[31-Mar-2022 20:33:23 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$user in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 24
+[31-Mar-2022 20:34:29 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$session in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 23
+[31-Mar-2022 20:34:29 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$user in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 24
+[31-Mar-2022 21:35:27 America/Chicago] PHP Deprecated:  Non-static method Utils\User::isLoggedIn() should not be called statically in C:\laragon\www\shaiyabattles\app\classes\Utils\User.php on line 64
+[31-Mar-2022 21:35:27 America/Chicago] PHP Deprecated:  Non-static method Utils\User::isLoggedIn() should not be called statically in C:\laragon\www\shaiyabattles\app\classes\Utils\User.php on line 64
+[31-Mar-2022 21:35:27 America/Chicago] PHP Deprecated:  Non-static method Utils\User::isLoggedIn() should not be called statically in C:\laragon\www\shaiyabattles\app\classes\Utils\User.php on line 64
+[31-Mar-2022 21:45:04 America/Chicago] PHP Notice:  Accessing static property Utils\User::$DisplayName as non static in C:\laragon\www\shaiyabattles\public\cache\ba98b3ce6c5bc0541fde85aec0721f9302cc5849.php on line 89
+[31-Mar-2022 21:45:04 America/Chicago] PHP Notice:  Undefined property: Utils\User::$DisplayName in C:\laragon\www\shaiyabattles\public\cache\ba98b3ce6c5bc0541fde85aec0721f9302cc5849.php on line 89
+[31-Mar-2022 21:45:04 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$data in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 256
+[31-Mar-2022 21:47:11 America/Chicago] PHP Notice:  Accessing static property Utils\User::$DisplayName as non static in C:\laragon\www\shaiyabattles\public\cache\ba98b3ce6c5bc0541fde85aec0721f9302cc5849.php on line 89
+[31-Mar-2022 21:47:11 America/Chicago] PHP Notice:  Undefined property: Utils\User::$DisplayName in C:\laragon\www\shaiyabattles\public\cache\ba98b3ce6c5bc0541fde85aec0721f9302cc5849.php on line 89
+[31-Mar-2022 21:47:11 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$category as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 303
+[31-Mar-2022 21:47:11 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$category in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 303
+[31-Mar-2022 21:50:09 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$category as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 303
+[31-Mar-2022 21:50:09 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$category in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 303
+[31-Mar-2022 22:00:41 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 130
+[31-Mar-2022 22:00:41 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 188
+[31-Mar-2022 22:00:41 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 188
+[31-Mar-2022 22:00:41 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 189
+[31-Mar-2022 22:00:41 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 195
+[31-Mar-2022 22:00:41 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 196
+[31-Mar-2022 22:00:41 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 197
+[31-Mar-2022 22:00:41 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 197
+[31-Mar-2022 22:00:41 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 197
+[31-Mar-2022 22:00:41 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 201
+[31-Mar-2022 22:00:41 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 205
+[31-Mar-2022 22:00:41 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 263
+[31-Mar-2022 22:01:00 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 74
+[31-Mar-2022 22:01:00 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$cartContents in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 74
+[31-Mar-2022 22:01:00 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 74
+[31-Mar-2022 22:01:37 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:01:37 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$cartContents in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:01:37 America/Chicago] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:01:37 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\public\cache\cd51a5f18974d458534edd6a2000b6f755a87dff.php on line 39
+[31-Mar-2022 22:01:37 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$session in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 495
+[31-Mar-2022 22:10:07 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:10:07 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$cartContents in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:10:07 America/Chicago] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:10:07 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\public\cache\cd51a5f18974d458534edd6a2000b6f755a87dff.php on line 39
+[31-Mar-2022 22:10:07 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$session in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 495
+[31-Mar-2022 22:10:43 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:10:43 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$cartContents in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:10:43 America/Chicago] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:10:43 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\public\cache\cd51a5f18974d458534edd6a2000b6f755a87dff.php on line 39
+[31-Mar-2022 22:10:43 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$session in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 495
+[31-Mar-2022 22:12:07 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:12:07 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$cartContents in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:12:07 America/Chicago] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:12:07 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\public\cache\cd51a5f18974d458534edd6a2000b6f755a87dff.php on line 39
+[31-Mar-2022 22:12:07 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$session in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 495
+[31-Mar-2022 22:12:10 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:12:10 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$cartContents in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:12:10 America/Chicago] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:12:10 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\public\cache\cd51a5f18974d458534edd6a2000b6f755a87dff.php on line 39
+[31-Mar-2022 22:12:10 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$session in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 495
+[31-Mar-2022 22:12:13 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:12:13 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$cartContents in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:12:13 America/Chicago] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:12:13 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\public\cache\cd51a5f18974d458534edd6a2000b6f755a87dff.php on line 39
+[31-Mar-2022 22:12:13 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$session in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 495
+[31-Mar-2022 22:12:18 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:12:18 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$cartContents in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:12:18 America/Chicago] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:12:18 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\public\cache\cd51a5f18974d458534edd6a2000b6f755a87dff.php on line 39
+[31-Mar-2022 22:12:18 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$session in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 495
+[31-Mar-2022 22:14:00 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:14:00 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$cartContents in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:14:00 America/Chicago] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 48
+[31-Mar-2022 22:14:00 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\laragon\www\shaiyabattles\public\cache\cd51a5f18974d458534edd6a2000b6f755a87dff.php on line 39
+[31-Mar-2022 22:14:00 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 96
+[31-Mar-2022 22:14:00 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$cartContents in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 96
+[31-Mar-2022 22:14:00 America/Chicago] PHP Notice:  Trying to access array offset on value of type null in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 96
+[31-Mar-2022 22:19:50 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 130
+[31-Mar-2022 22:19:50 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 188
+[31-Mar-2022 22:19:50 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 188
+[31-Mar-2022 22:19:50 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 189
+[31-Mar-2022 22:19:50 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 195
+[31-Mar-2022 22:19:50 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 196
+[31-Mar-2022 22:19:50 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 197
+[31-Mar-2022 22:19:50 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 197
+[31-Mar-2022 22:19:50 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 197
+[31-Mar-2022 22:19:50 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 201
+[31-Mar-2022 22:19:50 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 205
+[31-Mar-2022 22:19:50 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 263
+[31-Mar-2022 22:20:04 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 130
+[31-Mar-2022 22:20:04 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 188
+[31-Mar-2022 22:20:04 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 188
+[31-Mar-2022 22:20:04 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 189
+[31-Mar-2022 22:20:04 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 195
+[31-Mar-2022 22:20:04 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 196
+[31-Mar-2022 22:20:04 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 197
+[31-Mar-2022 22:20:04 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 197
+[31-Mar-2022 22:20:04 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 197
+[31-Mar-2022 22:20:04 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 201
+[31-Mar-2022 22:20:04 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 205
+[31-Mar-2022 22:20:04 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 263
+[31-Mar-2022 22:22:43 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 130
+[31-Mar-2022 22:22:43 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 188
+[31-Mar-2022 22:22:43 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 188
+[31-Mar-2022 22:22:43 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 189
+[31-Mar-2022 22:22:43 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 195
+[31-Mar-2022 22:22:43 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 196
+[31-Mar-2022 22:22:43 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 197
+[31-Mar-2022 22:22:43 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 197
+[31-Mar-2022 22:22:43 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 197
+[31-Mar-2022 22:22:43 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 201
+[31-Mar-2022 22:22:43 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$cartContents as non static in C:\laragon\www\shaiyabattles\app\models\Game\WebMall.php on line 205
+[31-Mar-2022 22:22:43 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 263
+[31-Mar-2022 22:35:22 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 263
+[31-Mar-2022 22:39:29 America/Chicago] PHP Notice:  Object of class Illuminate\Support\Collection could not be converted to number in C:\laragon\www\shaiyabattles\app\classes\DB\Queries\WebmallDB.php on line 27
+[31-Mar-2022 22:42:52 America/Chicago] PHP Notice:  Object of class Illuminate\Support\Collection could not be converted to number in C:\laragon\www\shaiyabattles\app\classes\DB\Queries\WebmallDB.php on line 28
+[31-Mar-2022 22:43:21 America/Chicago] PHP Notice:  Object of class Illuminate\Support\Collection could not be converted to number in C:\laragon\www\shaiyabattles\app\classes\DB\Queries\WebmallDB.php on line 28
+[31-Mar-2022 22:44:28 America/Chicago] PHP Notice:  Undefined variable: arr in C:\laragon\www\shaiyabattles\app\classes\Utils\Arrays.php on line 35
+[31-Mar-2022 22:45:55 America/Chicago] PHP Notice:  Undefined variable: arr in C:\laragon\www\shaiyabattles\app\classes\Utils\Arrays.php on line 35
+[31-Mar-2022 22:46:45 America/Chicago] PHP Notice:  Undefined variable: arr in C:\laragon\www\shaiyabattles\app\classes\Utils\Arrays.php on line 35
+[31-Mar-2022 23:45:06 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[31-Mar-2022 23:45:06 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$getPoints in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[31-Mar-2022 23:45:06 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 87
+[31-Mar-2022 23:45:06 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[31-Mar-2022 23:45:06 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 108
+[31-Mar-2022 23:46:12 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[31-Mar-2022 23:46:12 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$getPoints in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[31-Mar-2022 23:46:12 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 87
+[31-Mar-2022 23:46:12 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[31-Mar-2022 23:46:12 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 108
+[31-Mar-2022 23:46:12 America/Chicago] PHP Notice:  Undefined variable: sql in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 170
+[31-Mar-2022 23:46:12 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\classes\DB\Queries\WebmallDB.php on line 82
+[31-Mar-2022 23:46:12 America/Chicago] PHP Notice:  Undefined variable: UserUID in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 174
+[31-Mar-2022 23:51:16 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[31-Mar-2022 23:51:16 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$getPoints in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[31-Mar-2022 23:51:16 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 87
+[31-Mar-2022 23:51:16 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[31-Mar-2022 23:51:16 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 108
+[31-Mar-2022 23:51:16 America/Chicago] PHP Notice:  Undefined variable: sql in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 170
+[31-Mar-2022 23:51:16 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\classes\DB\Queries\WebmallDB.php on line 82
+[31-Mar-2022 23:53:38 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[31-Mar-2022 23:53:38 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$getPoints in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[31-Mar-2022 23:53:38 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 87
+[31-Mar-2022 23:53:38 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[31-Mar-2022 23:53:38 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 108
+[31-Mar-2022 23:53:38 America/Chicago] PHP Notice:  Undefined variable: sql in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 170
+[31-Mar-2022 23:53:38 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\classes\DB\Queries\WebmallDB.php on line 82
+[31-Mar-2022 23:53:38 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 204
+[31-Mar-2022 23:55:13 America/Chicago] PHP Notice:  Object of class Illuminate\Support\Collection could not be converted to number in C:\laragon\www\shaiyabattles\app\classes\DB\Queries\WebmallDB.php on line 28
+[31-Mar-2022 23:55:13 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[31-Mar-2022 23:55:13 America/Chicago] PHP Notice:  Undefined property: Models\Game\WebMall::$getPoints in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[31-Mar-2022 23:55:13 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 87
+[31-Mar-2022 23:55:13 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[31-Mar-2022 23:55:13 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 108
+[31-Mar-2022 23:55:13 America/Chicago] PHP Notice:  Undefined variable: sql in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 170
+[31-Mar-2022 23:55:13 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\classes\DB\Queries\WebmallDB.php on line 82
+[31-Mar-2022 23:55:13 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 204
+[01-Apr-2022 07:40:34 America/Chicago] PHP Notice:  Object of class Illuminate\Support\Collection could not be converted to number in C:\laragon\www\shaiyabattles\app\classes\DB\Queries\WebmallDB.php on line 28
+[01-Apr-2022 07:40:34 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 87
+[01-Apr-2022 07:40:34 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 107
+[01-Apr-2022 07:40:34 America/Chicago] PHP Notice:  Accessing static property Models\Game\WebMall::$getPoints as non static in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 108
+[01-Apr-2022 07:40:34 America/Chicago] PHP Notice:  Undefined variable: sql in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 170
+[01-Apr-2022 07:40:34 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\laragon\www\shaiyabattles\app\classes\DB\Queries\WebmallDB.php on line 82
+[01-Apr-2022 07:40:34 America/Chicago] PHP Notice:  Undefined variable: sessData in C:\laragon\www\shaiyabattles\public\cache\75de597e356ac64672e2c15177ec4aa69ff1a061.php on line 204
+[01-Apr-2022 07:56:18 America/Chicago] PHP Notice:  Undefined property: Controllers\Home::$session in C:\laragon\www\shaiyabattles\app\controllers\Home.php on line 18
+[01-Apr-2022 07:56:18 America/Chicago] PHP Notice:  Undefined property: Controllers\Home::$session in C:\laragon\www\shaiyabattles\app\controllers\Home.php on line 26
+[01-Apr-2022 07:56:18 America/Chicago] PHP Notice:  Undefined property: Controllers\Home::$session in C:\laragon\www\shaiyabattles\framework\core\CoreController.php on line 32
+[01-Apr-2022 07:56:32 America/Chicago] PHP Notice:  Undefined property: Controllers\Home::$session in C:\laragon\www\shaiyabattles\app\controllers\Home.php on line 26
+[01-Apr-2022 07:56:32 America/Chicago] PHP Notice:  Undefined property: Controllers\Home::$session in C:\laragon\www\shaiyabattles\framework\core\CoreController.php on line 32
+[01-Apr-2022 07:56:59 America/Chicago] PHP Notice:  Undefined property: Controllers\Home::$session in C:\laragon\www\shaiyabattles\framework\core\CoreController.php on line 32
+[01-Apr-2022 07:57:58 America/Chicago] PHP Notice:  Undefined property: Utils\Auth::$session in C:\laragon\www\shaiyabattles\app\classes\Utils\Auth.php on line 24
+[01-Apr-2022 08:30:59 America/Chicago] PHP Notice:  Accessing static property Utils\User::$UserUID as non static in C:\laragon\www\shaiyabattles\app\models\Game\Rewards.php on line 25
+[01-Apr-2022 08:30:59 America/Chicago] PHP Notice:  Undefined property: Utils\User::$UserUID in C:\laragon\www\shaiyabattles\app\models\Game\Rewards.php on line 25
+[01-Apr-2022 08:31:03 America/Chicago] PHP Notice:  Accessing static property Utils\User::$UserUID as non static in C:\laragon\www\shaiyabattles\app\models\Game\Rewards.php on line 25
+[01-Apr-2022 08:31:03 America/Chicago] PHP Notice:  Undefined property: Utils\User::$UserUID in C:\laragon\www\shaiyabattles\app\models\Game\Rewards.php on line 25
+[01-Apr-2022 08:36:14 America/Chicago] PHP Notice:  Accessing static property Utils\User::$UserUID as non static in C:\laragon\www\shaiyabattles\app\models\User\MoveTerra.php on line 23
+[01-Apr-2022 08:36:14 America/Chicago] PHP Notice:  Undefined property: Utils\User::$UserUID in C:\laragon\www\shaiyabattles\app\models\User\MoveTerra.php on line 23
+[01-Apr-2022 08:36:50 America/Chicago] PHP Notice:  Accessing static property Utils\User::$UserUID as non static in C:\laragon\www\shaiyabattles\app\models\User\MoveTerra.php on line 22
+[01-Apr-2022 08:36:50 America/Chicago] PHP Notice:  Undefined property: Utils\User::$UserUID in C:\laragon\www\shaiyabattles\app\models\User\MoveTerra.php on line 22
+[01-Apr-2022 09:03:25 America/Chicago] PHP Warning:  Use of undefined constant LANG - assumed 'LANG' (this will throw an Error in a future version of PHP) in C:\laragon\www\shaiyabattles\public\cache\76b795c75f523ab8e5c9662e789fa79af3e62d0f.php on line 22
+[01-Apr-2022 09:03:25 America/Chicago] PHP Notice:  Accessing static property Utils\User::$DisplayName as non static in C:\laragon\www\shaiyabattles\public\cache\76b795c75f523ab8e5c9662e789fa79af3e62d0f.php on line 61
+[01-Apr-2022 09:03:25 America/Chicago] PHP Notice:  Undefined property: Utils\User::$DisplayName in C:\laragon\www\shaiyabattles\public\cache\76b795c75f523ab8e5c9662e789fa79af3e62d0f.php on line 61
+[01-Apr-2022 09:03:25 America/Chicago] PHP Notice:  Accessing static property Utils\User::$Status as non static in C:\laragon\www\shaiyabattles\public\cache\76b795c75f523ab8e5c9662e789fa79af3e62d0f.php on line 61
+[01-Apr-2022 09:03:25 America/Chicago] PHP Notice:  Undefined property: Utils\User::$Status in C:\laragon\www\shaiyabattles\public\cache\76b795c75f523ab8e5c9662e789fa79af3e62d0f.php on line 61

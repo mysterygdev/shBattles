@@ -1,11 +1,11 @@
 <?php
 
 use Pecee\SimpleRouter\SimpleRouter as Router;
-use Pecee\Http\Request;
 use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
+use Pecee\Http\Request;
 use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 
-Router::setDefaultNamespace('App\Controllers');
+Router::setDefaultNamespace('Controllers');
 
 // Default Route
 Router::get('/', 'Home@Index');
@@ -49,20 +49,20 @@ Router::group(['prefix' => '/help'], function () {
 // Auth
 Router::group(['prefix' => '/auth'], function () {
     // GET
-    Router::get('/captcha', 'Auth@captcha');
-    Router::get('/forgotPassword', 'Auth@forgotPassword');
-    Router::get('/verify/{name?}', 'Auth@verify');
+    Router::get('/captcha', 'AuthController@captcha');
+    Router::get('/forgotPassword', 'AuthController@forgotPassword');
+    Router::get('/verify/{name?}', 'AuthController@verify');
     // POST
-    Router::post('/changePassword', 'Auth@changePassword');
-    Router::post('/forgotPasswordPost', 'Auth@forgotPasswordPost');
-    Router::post('/login', 'Auth@login');
+    Router::post('/changePassword', 'AuthController@changePassword');
+    Router::post('/forgotPasswordPost', 'AuthController@forgotPasswordPost');
+    Router::post('/login', 'AuthController@login');
     //Router::post('/logout', 'Auth@logout');
-    Router::post('/register', 'Auth@register');
-    Router::post('/verifyDisplayName', 'Auth@verifyDisplayName');
-    Router::post('/verifyUserName', 'Auth@verifyUserName');
+    Router::post('/register', 'AuthController@register');
+    Router::post('/verifyDisplayName', 'AuthController@verifyDisplayName');
+    Router::post('/verifyUserName', 'AuthController@verifyUserName');
 
     // Mixed
-    Router::match(['get', 'post'], '/logout', 'Auth@logout');
+    Router::match(['get', 'post'], '/logout', 'AuthController@logout');
 });
 
 // User

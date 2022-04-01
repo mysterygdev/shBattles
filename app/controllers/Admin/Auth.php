@@ -1,19 +1,17 @@
 <?php
 
-namespace App\Controllers\Admin;
+namespace Controllers\Admin;
 
-use Framework\Core\CoreController as Controller;
-use App\Models;
-use Classes\Utils;
+use Core\CoreController;
+use Models;
+use Utils;
 
-class Auth extends Controller
+class Auth extends CoreController
 {
     public function __construct()
     {
-        $this->session = new Utils\Session;
-        $this->auth = new Utils\Auth($this->session);
-        $this->data = new Utils\Data;
-        $this->user = new Utils\User($this->session);
+        $this->auth = new Utils\Auth;
+        $this->user = new Utils\User;
     }
 
     public function login()

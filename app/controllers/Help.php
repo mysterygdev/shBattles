@@ -1,23 +1,22 @@
 <?php
 
-namespace App\Controllers;
+namespace Controllers;
 
-use Framework\Core\CoreController as Controller;
-use App\Models as Models;
-use Classes\Utils as Utils;
+use Core\CoreController as Controller;
+use Models as Models;
+use Utils;
 
 class Help extends Controller
 {
     public function __construct()
     {
         $this->data = new Utils\Data;
-        $this->session = new Utils\Session;
-        $this->user = new Utils\User($this->session);
+        $this->user = new Utils\User();
     }
 
     public function policy()
     {
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'user' => $this->user,
@@ -31,7 +30,7 @@ class Help extends Controller
     {
         $support = $this->model(Models\Help\Support::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'support' => $support,
@@ -45,7 +44,7 @@ class Help extends Controller
 
     public function rules()
     {
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'user' => $this->user,
@@ -59,7 +58,7 @@ class Help extends Controller
     {
         $support = $this->model(Models\Help\Support::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'support' => $support,
@@ -76,7 +75,7 @@ class Help extends Controller
     {
         $support = $this->model(Models\Help\Support::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'support' => $support,

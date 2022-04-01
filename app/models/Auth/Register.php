@@ -3,14 +3,14 @@
 namespace App\Models\Auth;
 
 use Illuminate\Database\Capsule\Manager as DB;
+use Utils;
 use Classes\Sys\MailSys as Mail;
 
 class Register
 {
-    public function __construct($user, $session)
+    public function __construct($user)
     {
-        $this->data = new \Classes\Utils\Data;
-        $this->session = $session;
+        $this->data = new Utils\Data;
         $this->user = $user;
     }
 

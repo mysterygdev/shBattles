@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Controllers;
+namespace Controllers;
 
-use Framework\Core\CoreController as Controller;
-use App\Models as Models;
+use Core\CoreController as Controller;
+use Models;
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Utils as Utils;
+use Utils;
+use Utils\Session;
 
 class WebMall extends Controller
 {
     public function __construct()
     {
         $this->data = new Utils\Data;
-        $this->session = new Utils\Session;
-        $this->user = new Utils\User($this->session);
+        $this->user = new Utils\User();
     }
 
     /* Get Methods */
@@ -22,7 +22,7 @@ class WebMall extends Controller
     {
         $webMall = $this->model(Models\Game\WebMall::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'webmall' => $webMall,
@@ -37,7 +37,7 @@ class WebMall extends Controller
     {
         $webMall = $this->model(Models\Game\WebMall::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'webmall' => $webMall,
@@ -52,7 +52,7 @@ class WebMall extends Controller
     {
         $webMall = $this->model(Models\Game\WebMall::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'webmall' => $webMall,
@@ -67,7 +67,7 @@ class WebMall extends Controller
     {
         $webMall = $this->model(Models\Game\WebMall::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'webmall' => $webMall,
@@ -82,7 +82,7 @@ class WebMall extends Controller
     {
         $webMall = $this->model(Models\Game\WebMall::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'webmall' => $webMall,
@@ -97,13 +97,13 @@ class WebMall extends Controller
     {
         $webMall = $this->model(Models\Game\WebMall::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'webmall' => $webMall,
             'user' => $this->user,
             'widgets' => $widgets,
-            'category' => $name,
+            'category' => $name
         ];
 
         $this->view('pages/cms/game/webmall/webmall', $data);
@@ -113,7 +113,7 @@ class WebMall extends Controller
     {
         $tiered = $this->model(Models\Game\TieredSpender::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'tiered' => $tiered,
@@ -163,15 +163,15 @@ class WebMall extends Controller
                     if (count($chkCode) < 1 && !empty($code)) {
                         $errors[] .= 'Coupon code doesnt exist';
                     }
-                    if ($this->session->has('WebMall', 'CouponCode')) {
+                    if (Session::has('WebMall', 'CouponCode')) {
                         $errors[] .= 'Coupon code already added.';
-                        $this->session->forget('WebMall');
+                        Session::forget('WebMall');
                     }
                     // TODO: check if code still valid and not expired
                     // If No Errors Continue
                     if (count($errors) == 0) {
                         // Check if coupon code is already added
-                        $this->session->put('WebMall', $code, 'CouponCode');
+                        Session::put('WebMall', $code, 'CouponCode');
                         //show how much off price was taken
                         echo '<div class="alert alert-success" role="alert">';
                         echo '<strong>Awesome!</strong> This coupon code has successfully been added.';

@@ -3,6 +3,7 @@
 namespace App\Models\Community;
 
 use Illuminate\Database\Capsule\Manager as DB;
+use Utils;
 
 class Events
 {
@@ -10,10 +11,9 @@ class Events
     public $res;
     public $errors = [];
 
-    public function __construct($session)
+    public function __construct()
     {
-        $this->data = new \Classes\Utils\Data;
-        $this->session = $session;
+        $this->data = new Utils\Data;
     }
 
     public function getEvents()

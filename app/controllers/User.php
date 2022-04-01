@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace Controllers;
 
-use Framework\Core\CoreController as Controller;
-use App\Models;
-use Classes\Utils;
+use Core\CoreController as Controller;
+use Models;
+use Utils;
 use Illuminate\Database\Capsule\Manager as DB;
 
 class User extends Controller
@@ -12,17 +12,16 @@ class User extends Controller
     public function __construct()
     {
         $this->data = new Utils\Data;
-        $this->session = new Utils\Session;
-        $this->user = new Utils\User($this->session);
+        $this->user = new Utils\User;
     }
 
     /* Get Methods */
 
     public function claimReward($id)
     {
-        $rewards = $this->model(Models\Game\Rewards::class, $this->user, $this->session);
+        $rewards = $this->model(Models\Game\Rewards::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'rewards' => $rewards,
@@ -36,9 +35,9 @@ class User extends Controller
 
     public function donate()
     {
-        $donate = $this->model(Models\User\Donate::class, $this->session);
+        $donate = $this->model(Models\User\Donate::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'donate' => $donate,
@@ -51,9 +50,9 @@ class User extends Controller
 
     public function donateProcess()
     {
-        $donate = $this->model(Models\User\Donate::class, $this->session);
+        $donate = $this->model(Models\User\Donate::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'donate' => $donate,
@@ -66,9 +65,9 @@ class User extends Controller
 
     public function donateComplete()
     {
-        $donate = $this->model(Models\User\Donate::class, $this->session);
+        $donate = $this->model(Models\User\Donate::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'donate' => $donate,
@@ -81,9 +80,9 @@ class User extends Controller
 
     public function listenerAdv()
     {
-        $donate = $this->model(Models\User\Donate::class, $this->session);
+        $donate = $this->model(Models\User\Donate::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'donate' => $donate,
@@ -96,7 +95,7 @@ class User extends Controller
 
     public function login()
     {
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'user' => $this->user,
@@ -108,9 +107,9 @@ class User extends Controller
 
     public function moveTerra()
     {
-        $terra = $this->model(Models\User\MoveTerra::class, $this->user, $this->session);
+        $terra = $this->model(Models\User\MoveTerra::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'terra' => $terra,
@@ -123,9 +122,9 @@ class User extends Controller
 
     public function panel($page = false)
     {
-        $panel = $this->model(Models\User\UserPanel::class, $this->user, $this->session);
+        $panel = $this->model(Models\User\UserPanel::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'panel' => $panel,
@@ -153,9 +152,9 @@ class User extends Controller
 
     public function settings()
     {
-        $settings = $this->model(Models\User\Settings::class, $this->session);
+        $settings = $this->model(Models\User\Settings::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'settings' => $settings,
@@ -168,9 +167,9 @@ class User extends Controller
 
     public function shareDp()
     {
-        $shareDp = $this->model(Models\User\ShareDP::class, $this->session);
+        $shareDp = $this->model(Models\User\ShareDP::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'share' => $shareDp,

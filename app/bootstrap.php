@@ -3,12 +3,12 @@
 namespace App;
 
 use Dotenv\Dotenv;
-use Framework\Core\Loader;
-use Classes\DB\MSSQL as DB;
-use Classes\Security\Security;
-use Classes\Utils as Utils;
-use Classes\Exception\Exception;
+use Core\Loader;
+use DB\MSSQL as DB;
+use Exceptions\Exception;
 use Pecee\SimpleRouter\SimpleRouter;
+use Utils;
+use Utils\Session;
 
 class Bootstrap
 {
@@ -38,13 +38,15 @@ class Bootstrap
             # Init PHP
             $this->loadPhp();
             # Init SSL Check
-            $this->security = new Security;
+            $this->security = new Utils\Security;
             # Set Default Exception
             $this->loadException();
             # Set Timezone
             date_default_timezone_set(APP['timeZone']);
             # Init DB
             $this->database = new DB;
+            # Init Session
+            Session::run();
             # Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
             # Load Langs
@@ -187,6 +189,7 @@ class Bootstrap
         }
     }
 
+    // Clean this up
     public function isAjax()
     {
         if (defined('AJAX_CALL')) {
@@ -201,7 +204,7 @@ class Bootstrap
             // Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
             // Init SSL Check
-            $this->security = new Security;
+            $this->security = new Utils\Security;
             // Load Helpers
             $this->loadHelpers();
             // Init PHP

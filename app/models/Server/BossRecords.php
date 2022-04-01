@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Server;
+namespace Models\Server;
 
 use Illuminate\Database\Capsule\Manager as DB;
 
@@ -11,19 +11,14 @@ class BossRecords
     public $CharName;
     public $ActionTime;
 
-    public function __construct()
-    {
-        $this->db = new \Classes\DB\MSSQL;
-    }
-
     public function getBossRecords($time, $value)
     {
         $records = DB::table(table('logBossDeath'))
-             ->select('MobName', 'CharName', 'ActionTime')
-             ->where('MobID', $value)
-             ->limit(1)
-             ->orderBy('ActionTime', 'DESC')
-             ->get();
+            ->select('MobName', 'CharName', 'ActionTime')
+            ->where('MobID', $value)
+            ->limit(1)
+            ->orderBy('ActionTime', 'DESC')
+            ->get();
         foreach ($records as $fet) {
             $this->MobName = $fet->MobName;
             $this->CharName = $fet->CharName;

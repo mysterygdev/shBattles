@@ -1,6 +1,6 @@
 <?php
 
-   namespace Classes\Utils;
+   namespace Utils;
 
     class Parser
     {

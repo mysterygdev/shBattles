@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework\Core;
+namespace Core;
 
 class CoreController
 {
@@ -27,9 +27,9 @@ class CoreController
     public function view($view, $data = [])
     {
         //$this->user = new \Classes\Utils\User;
-        $blade = new \Framework\Blade\BladeController('view');
+        $blade = new \Blade\BladeController('view');
         // Load Directives
-        $blade->loadDirectives($this->user, $this->session);
+        $blade->loadDirectives($this->user);
         // Load View
         $blade->loadView($view, $data);
     }
@@ -37,9 +37,9 @@ class CoreController
     // Load widget
     public function widget($view, $data = [])
     {
-        $blade = new \Framework\Blade\BladeController('widget', $view);
+        $blade = new \Blade\BladeController('widget', $view);
         // Load Directives
-        $blade->loadDirectives($this->user, $this->session);
+        $blade->loadDirectives($this->user);
         // Load View
         $blade->loadWidget($view, $data);
     }
