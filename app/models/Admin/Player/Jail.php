@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models\Admin\Player;
+namespace Models\Admin\Player;
 
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Sys\LogSys;
-use Classes\Utils as Utils;
+use Sys\LogSys;
+use Utils;
 
 class Jail
 {

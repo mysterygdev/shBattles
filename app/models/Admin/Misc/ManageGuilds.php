@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models\Admin\Misc;
+namespace Models\Admin\Misc;
 
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Utils as Utils;
+use Utils;
 
 class ManageGuilds
 {

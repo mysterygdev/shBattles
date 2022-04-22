@@ -39,14 +39,14 @@ class Auth
 
     public function logout(): void
     {
-        $user = new User($this->session);
+        $user = new User;
         // Log user out
-        if ($this->session->has('User')) {
+        if (Session::has('User')) {
             $user->updateLoginStatus(0);
-            $this->session->regenerate();
-            $this->session->forget('User');
+            Session::regenerate();
+            Session::forget('User');
             //$referrer = $_SERVER['HTTP_REFERER'];
-            redirect($this->session->getReferer());
+            redirect(Session::getReferer());
         }
     }
 

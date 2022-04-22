@@ -1,6 +1,6 @@
 <?php
 
-namespace Classes\Framework;
+namespace Framework;
 
 use Illuminate\Database\Capsule\Manager as DB;
 
@@ -14,6 +14,8 @@ class Configuration
 
         foreach ($query as $data) {
             $this->data[$data->Setting]=$data->Value;
+            $this->index = $data->Index;
+            define($this->index, $this->data);
         }
 
         /* if((env("SETTINGS_DEBUG")==true) && (env("SETTINGS_DEBUG_LVL")>="5")){
@@ -23,7 +25,7 @@ class Configuration
                 exit;
             } */
 
-        define('CONFIG', $this->data);
+        //define('CONFIG', $this->data);
         //$this->defined[].=$setting;
 
         /* if(env("SETTINGS_DEBUG") && env("SETTINGS_DEBUG_LVL")>="1"){

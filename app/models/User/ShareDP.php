@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\User;
+namespace Models\User;
 
 use Illuminate\Database\Capsule\Manager as DB;
 use Utils;

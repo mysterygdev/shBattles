@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models\Admin\WebMall;
+namespace Models\Admin\WebMall;
 
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Utils as Utils;
+use Utils;
 
 class EditProduct
 {
@@ -20,7 +20,7 @@ class EditProduct
     public function getProductById($id)
     {
         $product = DB::table(table('products'))
-          ->select('ProductID', 'ProductCode', 'ProductName', 'ProductDesc', 'ProductCurrency', 'ProductCost', 'ProductImage', 'Category', 'Tag', 'ItemID', 'ItemCount', 'Main')
+          ->select('RowID', 'ProductID', 'ProductCode', 'ProductName', 'ProductDesc', 'ProductCurrency', 'ProductCost', 'ProductImage', 'Category', 'Tag', 'ItemID', 'ItemCount', 'Main')
           ->where('Main', 1)
           ->where('ProductID', $id)
           ->get();
@@ -51,10 +51,20 @@ class EditProduct
     public function getProductItemIds($id)
     {
         $items = DB::table(table('products'))
-            ->select('ItemID', 'ItemCount')
+            ->select('RowID', 'ItemID', 'ItemCount', 'Main')
             ->where('ProductID', $id)
             ->get();
         return $items;
+    }
+
+    public function doesProductIdExist()
+    {
+        $res = DB::table(table('products'))
+            ->select('ProductID')
+            ->orderBy('ProductID', 'DESC')
+            ->limit(1)
+            ->get();
+        return $res;
     }
 
     public function loadImages()
@@ -136,11 +146,13 @@ class EditProduct
           $this->getProdValueById($id, 'ProductCurrency') != $currency ||
           $this->getProdValueById($id, 'ProductCost') != $cost ||
           $this->getProdValueById($id, 'Category') != $category ||
-          $this->getProdValueById($id, 'Tag') != $tag
+          $this->getProdValueById($id, 'Tag') != $tag ||
+          $this->getProdValueById($id, 'ItemID') != $ItemID
         ) {
-          echo 'lets do it';
+            echo 'lets do it';
         } else {
-          echo 'No changes found. No update made.';
+            echo 'No changes found. No update made.';
+            var_dump($ItemID);
         }
     }
 }

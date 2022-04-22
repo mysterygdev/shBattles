@@ -24,7 +24,7 @@ class BladeController
 
     public function loadDirectives($user)
     {
-        $this->auth = new Utils\Auth();
+        $this->auth = new Utils\Auth;
         $this->user = $user;
         $this->blade->if('auth', function () {
             return $this->auth->check();

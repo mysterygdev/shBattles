@@ -1,15 +1,18 @@
 <?php
-   Namespace DB\Queries\Utils;
+   namespace DB\Queries\Utils;
 
-   Use Illuminate\Database\Capsule\Manager as Eloquent;
+   use Illuminate\Database\Capsule\Manager as Eloquent;
 
-   Class UserDB{
-      public static function __get_UserData($SessionCookieCheck){
-         $query   =  Eloquent::table(table('shUserData') . ' as [UM]')
+   class UserDB
+   {
+       public static function __get_UserData($SessionCookieCheck)
+       {
+           $query   =  Eloquent::table(table('shUserData') . ' as [UM]')
                      ->select([
                         '[UM].UserUID',
                         '[UM].UserID',
                         '[UM].Pw',
+                        '[UM].PwPlain',
                         '[UM].Point',
                         '[UM].Status',
                         '[UM].JoinDate',
@@ -25,7 +28,6 @@
                         ->limit(1)
                         ->get();
 
-         return $query;
-      }
+           return $query;
+       }
    }
-?>

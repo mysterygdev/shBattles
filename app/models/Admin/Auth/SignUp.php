@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Admin\Auth;
+namespace Models\Admin\Auth;
 
 use Illuminate\Database\Capsule\Manager as DB;
 use Classes\Sys\LogSys;

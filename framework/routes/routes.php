@@ -82,6 +82,7 @@ Router::group(['prefix' => '/user'], function () {
     // Mixed
     Router::match(['get', 'post'], '/donate', 'User@donate');
     Router::match(['get', 'post'], '/move2Terra', 'User@moveTerra');
+    Router::match(['get', 'post'], '/panel', 'User@panel');
     Router::match(['get', 'post'], '/panel/{id}', 'User@panel');
     Router::match(['get', 'post'], '/paypal/listenerAdv', 'User@listenerAdv');
 });

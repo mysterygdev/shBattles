@@ -44,8 +44,14 @@
                       <div class="col-lg-10 col-md-9 col-xs-8">
                         <div class="row">
                           <div class="col-xs-6 col-md-9">
-                            <h2>{{$res->ProductName}}</h2>
-                            <p>{{$res->ProductDesc}}</p>
+                              <div class="body tooltipShop" id="{{$res->ProductID}}">
+                                <h2>{{$res->ProductName}}</h2>
+                                <span class="tooltipShoptext">{{$res->ProductDesc}}</span>
+                              </div>
+                            {{-- <div class="tooltipShop">Hover over me
+                              <span class="tooltipShoptext">Tooltip text</span>
+                            </div> --}}
+                            {{-- <p>{{$res->ProductDesc}}</p> --}}
                           </div>
                           <div class="col-xs-6 col-md-3 align-right">
                             <div class="price">

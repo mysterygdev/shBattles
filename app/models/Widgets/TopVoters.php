@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Models\Widgets;
+namespace Models\Widgets;
 
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Utils\Data;
-use Classes\Utils\User;
+use Utils\{
+    Data,
+    User
+};
 
 class TopVoters
 {

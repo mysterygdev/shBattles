@@ -14,7 +14,6 @@
       "illuminate/database": "^7.2",
       "vlucas/phpdotenv": "^4.1@dev",
       "phpmailer/phpmailer": "dev-master",
-      "nikic/fast-route": "^2.0@dev",
       "cbschuld/browser.php": "^1.9@dev",
       "pecee/simple-router": "dev-master",
       "monolog/monolog": "2.x-dev"
@@ -35,7 +34,9 @@
         "Models\\"    : "app/models",
         "Blade\\"     : "framework/blade",
         "Security\\"  : "app/classes/Security",
-        "Shaiya\\"  : "app/classes/Shaiya"
+        "Shaiya\\"  : "app/classes/Shaiya",
+        "Framework\\"  : "app/classes/Framework",
+        "Donate\\"  : "app/classes/Donate"
       }
     }
 }

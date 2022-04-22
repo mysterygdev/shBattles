@@ -21,7 +21,7 @@ class Get
      * The second key of the session (if needed)
      * @return void
      */
-    public function put($key, $value, $key2 = null): void
+    public static function put($key, $value, $key2 = null): void
     {
         // check if get started on each function
         // can extend this to allow as many keys as you want to without much text at all
@@ -39,7 +39,7 @@ class Get
         }
     }
 
-    public function has(string $key, $key2 = null): bool
+    public static function has(string $key, $key2 = null): bool
     {
         if (isset($_GET)) {
             if (isset($_GET[$key])) {
@@ -52,7 +52,7 @@ class Get
         }
     }
 
-    public function get(string $key, $key2 = null): string
+    public static function get(string $key, $key2 = null): string
     {
         if (isset($_GET)) {
             if ($key2) {
@@ -72,7 +72,7 @@ class Get
         }
     }
 
-    public function exists(string $key): bool
+    public static function exists(string $key): bool
     {
         if (isset($_GET)) {
             if (isset($_GET[$key])) {
@@ -83,17 +83,7 @@ class Get
         }
     }
 
-    public function all($type = null)
-    {
-        if (isset($_GET)) {
-            $result = '<pre>';
-            $result .= $this->variables($type, $_GET);
-            $result .= '</pre>';
-            return $result;
-        }
-    }
-
-    public function forget(string $key): void
+    public static function forget(string $key): void
     {
         if (isset($_GET)) {
             if (isset($_GET[$key])) {
@@ -102,7 +92,7 @@ class Get
         }
     }
 
-    public function variables($type, $vars)
+    public static function variables($type, $vars)
     {
         switch ($type) {
             case '1':

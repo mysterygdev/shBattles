@@ -4,18 +4,6 @@ namespace Core;
 
 class CoreController
 {
-    // Children
-    protected $auth;
-    protected $browser;
-    protected $captcha;
-    protected $data;
-    protected $logSys;
-    protected $pagination;
-    protected $panels;
-    protected $select;
-    protected $user;
-    protected $zone;
-
     // Load model
     public function model($model, $class1 = false, $class2 = false)
     {

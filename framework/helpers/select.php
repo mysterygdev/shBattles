@@ -1,5 +1,5 @@
 <?php
-function security_question()
+function security_question($value = null)
 {
     $secArr = [
                 "Please select a security question.",
@@ -59,7 +59,7 @@ function security_question()
 
     $return = '<select class="form-control text-center" id="SecQuestion" name="SecQuestion">';
     for ($i = 0;$i < count($secArr);$i++) {
-        $return.='<option value="'.$i.'">'.$secArr[$i].'</option>';
+        $return.='<option value="'.$i.'" '.($value == $i ? "selected=\"selected\"" : '').'>'.$secArr[$i].'</option>';
     }
     $return.='</select>';
 

@@ -1,21 +1,14 @@
 <?php
 
-namespace App\Models\Community;
+namespace Models\Community;
 
 use Illuminate\Database\Capsule\Manager as DB;
+Use DB\Queries\Shaiya\Guilds;
 
 class GuildRankings
 {
     public function getGuildRankings()
     {
-        $rankings = DB::table(table('shGuilds') . ' as [G]')
-            ->select()
-            ->join(table('shGuildDetails') . ' as  [GD]', '[GD].GuildID', '=', '[G].GuildID')
-            ->where('DEL', '0')
-            ->where('GuildPoint', '!=', '0')
-            ->limit(15)
-            ->orderBy('GuildPoint', 'DESC')
-            ->get();
-        return $rankings;
+        return Guilds\GuildRankings::getGuilds();
     }
 }

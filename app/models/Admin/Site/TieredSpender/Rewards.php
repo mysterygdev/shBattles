@@ -1,17 +1,11 @@
 <?php
 
-namespace App\Models\Admin\Site\TieredSpender;
+namespace Models\Admin\Site\TieredSpender;
 
-use Classes\Sys\LogSys;
 use Illuminate\Database\Capsule\Manager as DB;
 
 class Rewards
 {
-    public function __construct()
-    {
-        $this->db = new \Classes\DB\MSSQL;
-    }
-
     public function getRewards()
     {
         $rewards = DB::table(table('tieredRewards'))

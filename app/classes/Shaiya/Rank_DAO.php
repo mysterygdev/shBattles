@@ -2,7 +2,7 @@
 /**
  * Data access object for querying player ranking information from the database.
  */
-namespace Classes\Shaiya;
+namespace Shaiya;
 class Rank_DAO{
     public function __construct($Data,$db,$pagingHelper){
         $this->Data = $Data;

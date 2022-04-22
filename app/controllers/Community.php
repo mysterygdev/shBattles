@@ -10,6 +10,7 @@ use Illuminate\Database\Capsule\Manager as DB;
 
 class Community extends Controller
 {
+    public $chars = null;
     public function __construct()
     {
         $this->data = new Utils\Data;
@@ -217,18 +218,41 @@ class Community extends Controller
             $this->pagination->sp($query, $records_per_page, $prevPage, $nextPage, $page);
 
             try {
-                $rankings = DB::table(table('shCharData'))
-                    ->select('CharID', 'CharName', 'Level', 'Family', 'Job', 'K1', 'K2')
+                $users = DB::table(table('shUserData'))
+                    ->select('UserUID', 'UserID')
+                    ->orderBy('UserUID', 'ASC')
+                    ->get();
+
+                foreach($users as $user)
+                {
+                    //var_dump($user->UserUID);
+                    $chars = DB::table(table('shCharData'))
+                        ->select('UserUID', 'CharID', 'CharName', 'Level', 'Family', 'Job', 'K1', 'K2')
+                        ->where('UserUID', $user->UserUID)
+                        ->where('del', 0)
+                        ->orderBy('CharName', 'ASC')
+                        ->get();
+                    /* if (count($chars) > 0) {
+                        //echo 'UserUID: '.$chars[0]->UserUID.' Name: '.$chars[0]->CharName.'<br>';
+                        for($x = 1; $x < count($chars); $x++) {
+                            //echo 'UserUID: '.$chars[$x]->UserUID.' Name: '.$chars[$x]->CharName.'<br>';
+                        }
+                    } */
+                }
+
+
+                /* $rankings = DB::table(table('shCharData'))
+                    ->select('UserUID', 'CharID', 'CharName', 'Level', 'Family', 'Job', 'K1', 'K2')
                     ->offset($start_from)
                     ->limit($records_per_page)
                     ->orderBy('CharName', 'ASC')
-                    ->get();
+                    ->get(); */
 
-                if ($rankings) {
+                if ($users) {
                     $model = $this->model(Models\Community\Rankings::class);
-                    $guild = new \Classes\Shaiya\Guild;
+                    $guild = new \Shaiya\Guild;
                     $arr = [
-                        'rankings' => $rankings,
+                        'users' => $users,
                         'rankNum' => $RankNum,
                         'rank' => $model,
                         'guild' => $guild

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers\Admin;
+namespace Controllers\Admin;
 
 use Core\CoreController;
 use Shaiya\SExtended as SE;
@@ -14,8 +14,7 @@ class SExtended extends CoreController
     {
         $this->sExtended = new SE;
         $this->logSys = new LogSys;
-        $this->session = new Utils\Session;
-        $this->user = new Utils\User($this->session);
+        $this->user = new Utils\User;
     }
 
     public function sendNotice()

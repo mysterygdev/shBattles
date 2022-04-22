@@ -1,21 +1,12 @@
 <?php
 
-namespace App\Models\Admin\Site;
+namespace Models\Admin\Site;
 
-use Classes\Sys\LogSys;
 use Illuminate\Database\Capsule\Manager as DB;
 
 class Tickets
 {
     public $count = 1;
-
-    public function __construct()
-    {
-        $this->db = new \Classes\DB\MSSQL;
-
-        //$logSys = new LogSys;
-        //$logSys->createLog('Visited Access Logs Page');
-    }
 
     public function getTickets()
     {

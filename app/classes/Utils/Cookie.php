@@ -26,7 +26,7 @@ class Cookie
         }
     }
 
-    public function exists(string $key): bool
+    public static function exists(string $key): bool
     {
         if (isset($_COOKIE[$key])) {
             return true;
@@ -35,22 +35,14 @@ class Cookie
         }
     }
 
-    public function all($type = null)
-    {
-        $result = '<pre>';
-        $result .= $this->variables($type, $_COOKIE);
-        $result .= '</pre>';
-        return $result;
-    }
-
-    public function forget(string $key): void
+    public static function forget(string $key): void
     {
         if (isset($_COOKIE[$key])) {
             unset($_COOKIE[$key]);
         }
     }
 
-    public function variables($type, $vars)
+    public static function variables($type, $vars)
     {
         switch ($type) {
             case '1':

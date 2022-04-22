@@ -45,12 +45,15 @@ class Bootstrap
             date_default_timezone_set(APP['timeZone']);
             # Init DB
             $this->database = new DB;
+            # Init Configuration
+            $this->config = new \Framework\Configuration;
+            //print_r(get_defined_constants(true));
             # Init Session
             Session::run();
             # Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
             # Load Langs
-            //$this->loadLangSystem();
+            $this->loadLangSystem();
         }
     }
 
@@ -189,39 +192,28 @@ class Bootstrap
         }
     }
 
-    // Clean this up
     public function isAjax()
     {
         if (defined('AJAX_CALL')) {
             //$this->run();
-
-            // Load core classes
-            require_once CORE_PATH . 'loader.php';
-            // Load Dotenv
+            # Load Dotenv
             $this->initDotEnv();
-            // Load configuration files
+            # Load core classes
+            require_once CORE_PATH . 'loader.php';
+            # Load configuration files
             $this->loadConfigs();
-            // Load HTMLPurifier
-            require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
-            // Init SSL Check
-            $this->security = new Utils\Security;
-            // Load Helpers
+            # Load Helpers
             $this->loadHelpers();
-            // Init PHP
-            $this->php = new Utils\PHP;
-            // Init Session
-            $this->session = new Utils\Session;
-            // Init DB
+            # Init PHP
+            $this->loadPhp();
+            # Init SSL Check
+            $this->security = new Utils\Security;
+            # Init DB
             $this->database = new DB;
-            // Init Data
-            //$this->data = new Utils\Data;
-
-            //echo 'ajax loaded';
-
-            // Load HTMLPurifier
+            # Init Session
+            Session::run();
+            # Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
-            // Load Purifier Method
-            //$this->data->do('load_purifier');
 
             // Load Helpers
             foreach (scandir(DIRS['FRAMEWORK_PATH'] . '/Helpers/') as $filename) {

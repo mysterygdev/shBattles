@@ -22,10 +22,21 @@
         <h2 class="mt-0">Title</h2>
         <p>
           Start your new page here...
+          <p id="response"></p>
         </p>
     </div>
   </section>
 
     @include('layouts.cms.footer')
     @include('layouts.cms.scripts')
+    {{-- <script>
+      ajaxPOST(
+        "/resources/jquery/addons/ajax/site/support/send_ticket_submit.php",
+        1,
+        (message) => {
+          $("#response").html(message)
+        },
+        'error'
+      );
+    </script> --}}
 @endsection

@@ -10,7 +10,7 @@ viewTicket.addEventListener('click', e => {
 
             fetch('/resources/jquery/addons/ajax/blade/admin/init.ticket.php', {
                 method: 'post',
-                headers: {
+                 {
                     "Content-Type": "application/x-www-form-urlencoded"
                 },
                 body: JSON.stringify({

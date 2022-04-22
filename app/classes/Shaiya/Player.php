@@ -1,6 +1,6 @@
 <?php
 
-namespace Classes\Shaiya;
+namespace Shaiya;
 
 /**
  * @author Brandon Gonzalez

@@ -85,4 +85,43 @@
 
   @include('layouts.cms.footer')
   @include('layouts.cms.scripts')
+  <script>
+    $(document).ready(function(){
+      $("button#submit").click(function(e){
+        e.preventDefault();
+        ajaxPOST(
+          "/resources/jquery/addons/ajax/site/user/security_submit.php",
+          $('form#security_form').serialize(),
+          (message) => {
+            $("#response").html(message)
+          },
+          'error'
+        );
+      });
+      $(document).on('click', '.open_edit_details_modal', function (e) {
+        e.preventDefault();
+
+        var uid = $(this).data("id");
+
+            $("#get_edit_details_modal #dynamic-content").html("");
+            $("#get_edit_details_modal #modal-loader").show();
+
+        $.ajax({
+          type: "POST",
+          url: "/resources/jquery/addons/ajax/blade/init.edit_panel_details.php",
+          data: "id="+uid,
+          dataType: "html"
+        })
+        .done(function (data) {
+          $('#get_edit_details_modal #dynamic-content').html('');
+          $('#get_edit_details_modal #dynamic-content').hide().html(data).fadeIn("slow");
+          $('#get_edit_details_modal #modal-loader').hide("slow");
+        })
+        .fail(function () {
+          $("#get_edit_details_modal #dynamic-content").html("<i class=\"fa fa-exclamation-triangle\"></i> Something went wrong, Please try again...");
+          $("#get_edit_details_modal #modal-loader").hide();
+        });
+      });
+    });
+  </script>
 @endsection

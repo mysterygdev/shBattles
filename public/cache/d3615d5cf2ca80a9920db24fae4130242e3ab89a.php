@@ -45,8 +45,12 @@
                       <div class="col-lg-10 col-md-9 col-xs-8">
                         <div class="row">
                           <div class="col-xs-6 col-md-9">
-                            <h2><?php echo e($res->ProductName); ?></h2>
-                            <p><?php echo e($res->ProductDesc); ?></p>
+                              <div class="body tooltipShop" id="<?php echo e($res->ProductID); ?>">
+                                <h2><?php echo e($res->ProductName); ?></h2>
+                                <span class="tooltipShoptext"><p style="color:orange;">Conflict Helmet</p><p style="color:lime">Class: <span style="color:yellow">Fighter</span></p></span>
+                              </div>
+                            
+                            
                           </div>
                           <div class="col-xs-6 col-md-3 align-right">
                             <div class="price">

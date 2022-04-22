@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Auth;
+namespace Models\Auth;
 
 use Utils;
 use Classes\Sys\MailSys as Mail;

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Models\User;
+namespace Models\User;
 
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Donate\PayPal\Paypal as Paypal;
+use Donate\PayPal\Paypal as Paypal;
+use DB\Queries\CMS\User\DonateDB;
 use Utils;
 
 class Donate
@@ -20,21 +21,12 @@ class Donate
 
     public function getOptions()
     {
-        $res = DB::table(table('donateOptions'))
-            ->select()
-            ->orderBy('Reward', 'ASC')
-            ->get();
-        return $res;
+        return DonateDB::getOptions();
     }
 
     public function getUserPoints($user)
     {
-        $res = DB::table(table('shUserData'))
-            ->select('Point')
-            ->where('UserUID', $user)
-            ->limit(1)
-            ->get();
-        return $res[0]->Point;
+        return DonateDB::getUserPoints($user);
     }
 
     public function getRewardID()
@@ -44,20 +36,12 @@ class Donate
 
     public function getReward($id)
     {
-        $res = DB::table(table('donateOptions'))
-            ->select('Reward')
-            ->where('RowID', $id)
-            ->limit(1)
-            ->get();
-        return $res[0]->Reward;
+        return DonateDB::getReward($id);
     }
 
     public function getBonus($id)
     {
-        $res = DB::table(table('donateOptions'))
-            ->where('RowID', $id)
-            ->value('Bonus');
-        return $res;
+        return DonateDB::getBonus($id);
     }
 
     public function getTotalReward($id)
@@ -68,24 +52,7 @@ class Donate
 
     public function getPrice($id)
     {
-        // old way (messy)
-        $res = DB::table(table('donateOptions'))
-            ->select('Price')
-            ->where('RowID', $id)
-            ->limit(1)
-            ->get();
-        return $res[0]->Price;
-        // new way (clean)
-        /* $res = DB::table(table('donateOptions'))
-            ->select('Price')
-            ->where('RowID', $id)
-            ->first();
-        return $res->Price; */
-        // other clean way
-        /* $res = DB::table(table('donateOptions'))
-            ->where('RowID', $id)
-            ->value('Price');
-        return $res; */
+        DonateDB::getPrice($id);
     }
 
     public function getKey()

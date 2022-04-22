@@ -22,12 +22,14 @@ class Home extends CoreController
     {
         $newsModel = $this->model(Models\Community\News::class, $this->user);
         $serverInfo = $this->model(Models\Server\ServerInfo::class);
+        $vote = $this->model(Models\Game\Vote::class, $this->user);
 
         $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'news' => $newsModel,
             'info' => $serverInfo,
+            'vote' => $vote,
             'user' => $this->user,
             'widgets' => $widgets
         ];

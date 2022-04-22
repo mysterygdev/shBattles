@@ -1,6 +1,6 @@
 <?php
 
-namespace Classes\Donate\Paypal;
+namespace Donate\Paypal;
 
 use Illuminate\Database\Capsule\Manager as DB;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models\Admin\WebMall;
+namespace Models\Admin\WebMall;
 
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Utils as Utils;
+use Utils;
 
 class ManageProducts
 {

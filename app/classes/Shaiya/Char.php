@@ -1,6 +1,6 @@
 <?php
 
-namespace Classes\Shaiya;
+namespace Shaiya;
 
 /**
  * @author Brandon Gonzalez
@@ -12,31 +12,31 @@ use Illuminate\Database\Capsule\Manager as DB;
 class Char
 {
     // Get Methods
-    public function getCharId($id)
+    public static function getCharId($id)
     {
         // update: get char id by char name
         if (is_numeric($id)) {
             $res = DB::table(table('shCharData'))
-              ->where('UserUID', $id)
-              ->value('CharID');
+                ->where('UserUID', $id)
+                ->value('CharID');
         }
         $res = DB::table(table('shCharData'))
-              ->where('UserID', $id)
-              ->value('CharID');
+                ->where('UserID', $id)
+                ->value('CharID');
         return $res;
     }
 
-    public function getCharUID($id)
+    public static function getCharUID($id)
     {
         //
     }
 
-    public function getCharUserID($id)
+    public static function getCharUserID($id)
     {
         //
     }
 
-    public function getCharName($id)
+    public static function getCharName($id)
     {
         if (is_numeric($id)) {
             $res = DB::table(table('shCharData'))
@@ -48,138 +48,138 @@ class Char
         return $res;
     }
 
-    public function getCharSlot($id)
+    public static function getCharSlot($id)
     {
         //
     }
 
-    public function getCharClass($id)
+    public static function getCharClass($id)
     {
         //
     }
 
-    public function getCharFamily($id)
+    public static function getCharFamily($id)
     {
         //
     }
 
-    public function getCharLevel($id)
+    public static function getCharLevel($id)
     {
         if (is_numeric($id)) {
             $res = DB::table(table('shCharData'))
-              ->where('CharID', $id)
-              ->value('Level');
+                ->where('CharID', $id)
+                ->value('Level');
         } else {
             echo 'Identifier must be numeric for character id.';
         }
         return $res;
     }
 
-    public function getCharStatpoint($id)
+    public static function getCharStatpoint($id)
     {
         if (is_numeric($id)) {
             $res = DB::table(table('shCharData'))
-              ->where('CharID', $id)
-              ->value('StatPoint');
+                ->where('CharID', $id)
+                ->value('StatPoint');
         } else {
             echo 'Identifier must be numeric for character id.';
         }
         return $res;
     }
 
-    public function getCharSkillPoint($id)
+    public static function getCharSkillPoint($id)
     {
         if (is_numeric($id)) {
             $res = DB::table(table('shCharData'))
-              ->where('CharID', $id)
-              ->value('SkillPoint');
+                ->where('CharID', $id)
+                ->value('SkillPoint');
         } else {
             echo 'Identifier must be numeric for character id.';
         }
         return $res;
     }
 
-    public function getCharMap($id)
+    public static function getCharMap($id)
     {
         if (is_numeric($id)) {
             $res = DB::table(table('shCharData'))
-              ->where('CharID', $id)
-              ->value('Map');
+                ->where('CharID', $id)
+                ->value('Map');
         } else {
             echo 'Identifier must be numeric for character id.';
         }
         return $res;
     }
 
-    public function getCharMoney($id)
+    public static function getCharMoney($id)
     {
         if (is_numeric($id)) {
             $res = DB::table(table('shCharData'))
-              ->where('CharID', $id)
-              ->value('Money');
+                ->where('CharID', $id)
+                ->value('Money');
         } else {
             echo 'Identifier must be numeric for character id.';
         }
         return $res;
     }
 
-    public function getCharKills($id)
+    public static function getCharKills($id)
     {
         if (is_numeric($id)) {
             $res = DB::table(table('shCharData'))
-              ->where('CharID', $id)
-              ->value('K1');
+                ->where('CharID', $id)
+                ->value('K1');
         } else {
             echo 'Identifier must be numeric for character id.';
         }
         return $res;
     }
 
-    public function getCharDeaths($id)
+    public static function getCharDeaths($id)
     {
         if (is_numeric($id)) {
             $res = DB::table(table('shCharData'))
-              ->where('CharID', $id)
-              ->value('K2');
+                ->where('CharID', $id)
+                ->value('K2');
         } else {
             echo 'Identifier must be numeric for character id.';
         }
         return $res;
     }
 
-    public function getCharGuild($id)
+    public static function getCharGuild($id)
     {
         //
     }
 
     // Update Methods
 
-    public function updateCharName($id)
+    public static function updateCharName($id)
     {
         //
     }
 
-    public function updateCharLevel($id)
+    public static function updateCharLevel($id)
     {
         //
     }
 
-    public function updateCharMap($id)
+    public static function updateCharMap($id)
     {
         //
     }
 
-    public function updateCharMoney($id)
+    public static function updateCharMoney($id)
     {
         //
     }
 
-    public function updateCharKills($id)
+    public static function updateCharKills($id)
     {
         //
     }
 
-    public function updateCharDeaths($id)
+    public static function updateCharDeaths($id)
     {
         //
     }

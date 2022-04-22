@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Admin\Account;
+namespace Models\Admin\Account;
 
 use Illuminate\Database\Capsule\Manager as DB;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models\Admin\SExtended;
+namespace Models\Admin\SExtended;
 
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Utils as Utils;
+use Utils;
 
 class SendPlayerNotice
 {

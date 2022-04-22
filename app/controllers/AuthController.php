@@ -5,11 +5,13 @@ namespace Controllers;
 use Core\CoreController;
 use Models;
 use Illuminate\Database\Capsule\Manager as DB;
-use Utils\Auth;
-use Utils\Browser;
-use Utils\Data;
-use Utils\Session;
-use Utils\User;
+use Utils\{
+    Auth,
+    Browser,
+    Data,
+    Session,
+    User
+};
 
 class AuthController extends CoreController
 {
@@ -18,10 +20,9 @@ class AuthController extends CoreController
     public function __construct()
     {
         $this->browser = new Browser;
-        $this->session = new Session;
-        $this->auth = new Auth($this->session);
+        $this->auth = new Auth;
         $this->data = new Data;
-        $this->user = new User($this->session);
+        $this->user = new User;
     }
 
     /* Get Methods */
@@ -34,7 +35,7 @@ class AuthController extends CoreController
     {
         $verify = $this->model(Models\Auth\Verify::class);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'verify' => $verify,
@@ -80,9 +81,9 @@ class AuthController extends CoreController
 
     public function verify($name)
     {
-        $verify = $this->model(Models\Auth\Verify::class, $this->user, $this->session);
+        $verify = $this->model(Models\Auth\Verify::class, $this->user);
 
-        $widgets = $this->model(Widgets::class, $this->user, $this->session);
+        $widgets = $this->model(Widgets::class, $this->user);
 
         $data = [
             'verify' => $verify,
@@ -165,7 +166,7 @@ class AuthController extends CoreController
 
     public function forgotPasswordPost()
     {
-        $cPw = $this->model(Models\Auth\ChangePassword::class, $this->user, $this->session);
+        $cPw = $this->model(Models\Auth\ChangePassword::class, $this->user);
         $contentType = isset($_SERVER['CONTENT_TYPE']) ? trim($_SERVER['CONTENT_TYPE']) : '';
         if ($contentType === 'application/json') {
             //Receive the RAW post data.
@@ -289,6 +290,19 @@ class AuthController extends CoreController
         }
     }
 
+    public function json()
+    {
+        $contentType = isset($_SERVER['CONTENT_TYPE']) ? trim($_SERVER['CONTENT_TYPE']) : '';
+        if ($contentType === 'application/json') {
+            //Receive the RAW post data.
+            $content = trim(file_get_contents('php://input'));
+
+            $decoded = json_decode($content, true);
+
+            return $decoded;
+        }
+    }
+
     public function login()
     {
         //post to logout
@@ -340,12 +354,12 @@ class AuthController extends CoreController
                             foreach ($fet as $userInfo) {
                                 if (password_verify($Password, $userInfo->Pw)) {
                                     if ($userInfo->Status == 0 || $userInfo->Status == 16 || $userInfo->Status == 32 || $userInfo->Status == 48 || $userInfo->Status == 64 || $userInfo->Status == 80 || $userInfo->Status == 128) {
-                                        $this->session->put('User', $userInfo->UserUID, 'UserUID');
-                                        $this->session->put('User', $userInfo->UserID, 'UserID');
-                                        $this->session->put('User', $userInfo->Status, 'Status');
+                                        Session::put('User', $userInfo->UserUID, 'UserUID');
+                                        Session::put('User', $userInfo->UserID, 'UserID');
+                                        Session::put('User', $userInfo->Status, 'Status');
                                         $this->user->updateLoginStatus(1);
                                         $errors[] .= 'Login successful.<br>Loading your homepage now...';
-                                        redirect_html($this->session->getReferer(), 3);
+                                        redirect_html(Session::getReferer(), 3);
                                     } else {
                                         $errors[] .= 'Your account has been banned due to rules infractions.<br>To find out what infraction you were banned for, as well as ban period,<br>please ask a GM or GS.';
                                     }
@@ -371,7 +385,7 @@ class AuthController extends CoreController
 
     public function register()
     {
-        $register = $this->model(Models\Auth\Register::class, $this->user, $this->session);
+        $register = $this->model(Models\Auth\Register::class, $this->user);
 
         //post to logout
         $contentType = isset($_SERVER['CONTENT_TYPE']) ? trim($_SERVER['CONTENT_TYPE']) : '';
@@ -565,9 +579,9 @@ class AuthController extends CoreController
                                     ->get();
                                 if ($fet) {
                                     foreach ($fet as $userInfo) {
-                                        $this->session->put('User', $userInfo->UserUID, 'UserUID');
-                                        $this->session->put('User', $userInfo->UserID, 'UserID');
-                                        $this->session->put('User', $userInfo->Status, 'Status');
+                                        Session::put('User', $userInfo->UserUID, 'UserUID');
+                                        Session::put('User', $userInfo->UserID, 'UserID');
+                                        Session::put('User', $userInfo->Status, 'Status');
                                         $this->user->updateLoginStatus(1);
                                         redirect_html('/', 2);
                                     }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models\Admin\Account;
+namespace Models\Admin\Account;
 
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Sys\LogSys;
-use Classes\Utils as Utils;
+use Utils;
+use Sys\LogSys;
 
 class AccountBan
 {
@@ -16,19 +16,18 @@ class AccountBan
         $this->charName = isset($_POST['CharName']) ? $this->data->purify(trim($_POST['CharName'])) : false;
         $this->reason = isset($_POST['Reason']) ? $this->data->purify(trim($_POST['Reason'])) : false;
         $this->len = isset($_POST['Length']) ? $this->data->purify(trim($_POST['Length'])) : false;
-        $this->session = new Utils\Session;
-        $this->user = new Utils\User($this->session);
+        $this->user = new Utils\User;
         $this->logSys = new LogSys;
     }
 
     public function getUserUID()
     {
         $char = DB::table(table('shCharData'))
-          ->select('UserUID')
-          ->where('CharName', $this->charName)
-          ->where('del', 0)
-          ->limit(1)
-          ->get();
+            ->select('UserUID')
+            ->where('CharName', $this->charName)
+            ->where('del', 0)
+            ->limit(1)
+            ->get();
         return $char;
     }
 
@@ -45,9 +44,9 @@ class AccountBan
     public function checkIfBannedLog()
     {
         $banned = DB::table(table('banned'))
-          ->select()
-          ->where('CharName', $this->charName)
-          ->get();
+            ->select()
+            ->where('CharName', $this->charName)
+            ->get();
         return $banned;
     }
 
@@ -55,9 +54,9 @@ class AccountBan
     {
         try {
             $banShaiya = DB::table(table('shUserData'))
-              ->where('UserUID', $this->getUserUID()[0]->UserUID)
-              ->whereNotIn('Status', [16,32,48,64,80])
-              ->update(['Status' => -1]);
+                ->where('UserUID', $this->getUserUID()[0]->UserUID)
+                ->whereNotIn('Status', [16,32,48,64,80])
+                ->update(['Status' => -1]);
         } catch (\Illuminate\Database\QueryException $e) {
             $this->logSys->createLog('Failed ban on Character: '.$this->charName);
             return 'Could not ban user. Please try again.';
@@ -76,14 +75,14 @@ class AccountBan
     {
         try {
             $banWeb = DB::table(table('banned'))
-              ->whereNotIn('Status', [16,32,48,64,80])
-              ->insert([
-                'CharName' => $this->charName,
-                'Reason' => $this->reason,
-                'Duration' => $this->len,
-                'UserUID' => $this->getUserUID()[0]->UserUID,
-                'BannedBy' => $this->user->UserID
-              ]);
+                ->whereNotIn('Status', [16,32,48,64,80])
+                ->insert([
+                    'CharName' => $this->charName,
+                    'Reason' => $this->reason,
+                    'Duration' => $this->len,
+                    'UserUID' => $this->getUserUID()[0]->UserUID,
+                    'BannedBy' => $this->user->UserID
+                ]);
         } catch (\Illuminate\Database\QueryException $e) {
             $this->logSys->createLog('Failed ban on Character: '.$this->charName);
             return 'Could not ban user. Please try again.';

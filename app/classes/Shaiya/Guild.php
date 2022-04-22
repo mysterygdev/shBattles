@@ -1,6 +1,6 @@
 <?php
 
-namespace Classes\Shaiya;
+namespace Shaiya;
 
 /**
  * @author Brandon Gonzalez
@@ -13,7 +13,7 @@ class Guild
 {
     // Get Methods
 
-    public function getCharIdByName($name)
+    public static function getCharIdByName($name)
     {
         $res = DB::table(table('shCharData'))
               ->where('CharName', $name)
@@ -21,7 +21,7 @@ class Guild
         return $res;
     }
 
-    public function getGuildIdByCharId($id)
+    public static function getGuildIdByCharId($id)
     {
         //$id = $this->getCharIdByName($name);
         $res = DB::table(table('shGuildChars'))
@@ -36,10 +36,10 @@ class Guild
         }
     }
 
-    public function getGuildNameByCharName($name)
+    public static function getGuildNameByCharName($name)
     {
-        $charId = $this->getCharIdByName($name);
-        $guildId = $this->getGuildIdByCharId($charId);
+        $charId = self::getCharIdByName($name);
+        $guildId = self::getGuildIdByCharId($charId);
         $res = DB::table(table('shGuilds'))
               ->select('GuildName')
               ->where('GuildID', $guildId)

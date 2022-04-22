@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models\Admin\Player;
+namespace Models\Admin\Player;
 
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Utils as Utils;
+use Utils;
 
 class Gift
 {

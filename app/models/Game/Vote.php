@@ -181,6 +181,36 @@ class Vote
         }
     }
 
+    public function getVoteSubmit()
+    {
+        //
+    }
+
+    public function getVoteCookie()
+    {
+        //
+    }
+
+    public function getUser()
+    {
+        //
+    }
+
+    public function checkVoteLog()
+    {
+        //
+    }
+
+    public function insertVoteLog()
+    {
+        //
+    }
+
+    public function updateVoteLog()
+    {
+        //
+    }
+
     public function getUserPoints()
     {
         if (isset($_SESSION['User'])) {

@@ -3,6 +3,7 @@
 namespace Models\Server;
 
 use Illuminate\Database\Capsule\Manager as DB;
+Use DB\Queries\Shaiya\BossRecordsDB;
 
 class BossRecords
 {
@@ -13,12 +14,7 @@ class BossRecords
 
     public function getBossRecords($time, $value)
     {
-        $records = DB::table(table('logBossDeath'))
-            ->select('MobName', 'CharName', 'ActionTime')
-            ->where('MobID', $value)
-            ->limit(1)
-            ->orderBy('ActionTime', 'DESC')
-            ->get();
+        $records = BossRecordsDB::getRecords($value);
         foreach ($records as $fet) {
             $this->MobName = $fet->MobName;
             $this->CharName = $fet->CharName;

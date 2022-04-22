@@ -21,12 +21,23 @@
         <h2 class="mt-0">Title</h2>
         <p>
           Start your new page here...
+          <p id="response"></p>
         </p>
     </div>
   </section>
 
     <?php echo $__env->make('layouts.cms.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php echo $__env->make('layouts.cms.scripts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <script>
+      ajaxPOST(
+        "/resources/jquery/addons/ajax/site/support/send_ticket_submit2.php",
+        1,
+        (message) => {
+          $("#response").html(message)
+        },
+        'error2'
+      );
+    </script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.cms.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\shaiyabattles\resources\views/pages/cms/server/about.blade.php ENDPATH**/ ?>

@@ -36,7 +36,7 @@
                                 </h5>
                               </div>
                               <div class="card-body">
-                                <form method="post">
+                                <form method="post" id="editProd">
                                   {{$data['editProduct']->loadImages()}}
                                   <p id="response"></p>
                                   @foreach ($data['editProduct']->getProductById($_GET['id']) as $fet)
@@ -112,7 +112,7 @@
                                       @endforeach
                                     </div>
                                     @Separator(20)
-                                    <button type="submit" class="btn btn-sm btn-primary" name="submit" id="submit">Save Changes</button>
+                                    <button class="btn btn-sm btn-primary" name="submit" id="submit" data-id="{{$_GET['id']}}">Save Changes</button>
                                   @endforeach
                                 </form>
                               </div>
@@ -140,4 +140,31 @@
       </div>
     </div>
   </div>
+  <script>
+    $(document).ready(function(){
+      $("button#submit").click(function(e){
+        e.preventDefault();
+        var uid = $(this).data("id");
+        ajaxPOST(
+          "/resources/jquery/addons/ajax/admin/webmall/product_edit.php",
+          $('form#editProd').serialize() + "&id="+uid,
+          (message) => {
+            $("#response").html(message)
+          },
+          'error'
+        );
+        /* ajaxPOST(
+          '/resources/jquery/addons/ajax/admin/webmall/product_edit.php',
+          1,
+          (message) => {
+            alert("gg");
+            $("#response").html(message)
+          },
+          (error) => {
+            'Error'
+          },
+        ) */
+      });
+    });
+  </script>
 @endsection

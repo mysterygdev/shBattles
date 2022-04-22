@@ -2,14 +2,11 @@
 
     namespace Models\Community;
 
+    use Illuminate\Database\Capsule\Manager as DB;
+
     class Rankings
     {
         public $data;
-
-        public function __construct()
-        {
-            $this->MSSQL = new \DB\MSSQL;
-        }
 
         public function getRankings()
         {
@@ -120,5 +117,16 @@
                     case 5:	return 'Oracle'; 				break;
                 }
             }
+        }
+
+        public function getChars($user)
+        {
+            $chars = DB::table(table('shCharData'))
+                            ->select('UserUID', 'CharID', 'CharName', 'Level', 'Family', 'Job', 'K1', 'K2')
+                            ->where('UserUID', $user)
+                            ->where('del', 0)
+                            ->orderBy('CharName', 'ASC')
+                            ->get();
+            return $chars;
         }
     }

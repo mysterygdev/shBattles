@@ -3,6 +3,7 @@
 namespace Models\User;
 
 use Illuminate\Database\Capsule\Manager as DB;
+use Models;
 use Utils;
 
 class UserPanel
@@ -132,5 +133,54 @@ class UserPanel
         } else {
             echo 'lets do some code';
         }
+    }
+
+    public function resendVerificationEmail()
+    {
+        $register = new Models\Auth\Register($this->user);
+        // Send Email
+        $msgBody = $register->getEmailBody(
+            $displayName,
+            $userName,
+            $Password,
+            $recoveryKey,
+            $activationKey
+        );
+        $register->sendEmail(
+            'gmail',
+            'brandonjm033@gmail.com',
+            'Email Confirmation',
+            $msgBody
+        );
+    }
+
+    public function checkVerificationStatus()
+    {
+        $res = DB::table(table('webPresence'))
+            ->where('UserID', $_SESSION['User']['UserID'])
+            ->value('Verified');
+        return $res;
+    }
+
+    public function getSecurityQuestion()
+    {
+        //
+    }
+
+    public function getSecurityAnswer()
+    {
+        $res = DB::table(table('webPresence'))
+            ->where('UserID', $_SESSION['User']['UserID'])
+            ->value('SecAnswer');
+        return $res;
+    }
+
+    public function getWebData()
+    {
+        $res = DB::table(table('webPresence'))
+            ->select()
+            ->where('UserID', $_SESSION['User']['UserID'])
+            ->get();
+        return $res;
     }
 }

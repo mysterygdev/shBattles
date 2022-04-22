@@ -3,65 +3,81 @@
 namespace Utils;
 
 use Illuminate\Database\Capsule\Manager as DB;
-Use Utils\{
-    Forum,
-    Session
-};
-Use DB\Queries\Utils\UserDB;
+use Utils\Forum;
+use Utils\Session;
+use DB\Queries\Utils\UserDB;
 
 class User
 {
     // SQL
-    private static $sql,$stmt,$res,$fet;
+    private $sql;
+    private $stmt;
+    private $res;
+    private $fet;
     // Account Info - Shared
-    public static $AdminLevel,$Country,$DisplayName,$DOB,$Faction;
-    public static $Email,$JoinDate,$LeaveDate,$LoginStatus,$Point;
-    public static $RegDate,$Status,$UseQueue,$UserUID,$UserID;
-    public static $UserIP;
+    public $AdminLevel;
+    public $Country;
+    public $DisplayName;
+    public $DOB;
+    public $Faction;
+    public $Email;
+    public $Pw;
+    public $Pin;
+    public $JoinDate;
+    public $LeaveDate;
+    public $LoginStatus;
+    public $Point;
+    public $RegDate;
+    public $Status;
+    public $UseQueue;
+    public $UserUID;
+    public $UserID;
+    public $UserIP;
     // Status
-    private static $memberLevel;
+    private $memberLevel;
     const STATUS_ADM = 16,STATUS_GM = [32, 48],STATUS_GMA = [64, 80],STATUS_GS = 128;
-    // Session
-    public static $LoginGuest;
+    public $LoginGuest;
     // Other
-    public static $MapID,$userFlags;
+    public $MapID;
+    public $userFlags;
 
     public function __construct()
     {
-        new Session;
-        self::run();
+        $this->run();
     }
 
-    public static function run()
+    public function run()
     {
         //Session::flush();
         if (isset($_SESSION) && isset($_SESSION['User']['UserUID']) || isset($_COOKIE['stayLoggedIn'])) {
             $SessionCookieCheck = isset($_COOKIE['stayLoggedIn']) ? $_COOKIE['UserUID'] : $_SESSION['User']['UserUID'];
-            self::$sql  =   UserDB::__get_UserData($SessionCookieCheck);
+            $this->sql  =   UserDB::__get_UserData($SessionCookieCheck);
 
-            foreach (self::$sql as $fet) {
+            foreach ($this->sql as $fet) {
                 // Shaiya Data
-                self::$JoinDate     = $fet->JoinDate;
-                self::$LeaveDate    = $fet->LeaveDate;
-                self::$Point        = $fet->Point;
-                self::$LoginStatus  = $fet->LoginStatus;
+                $this->JoinDate = $fet->JoinDate;
+                $this->LeaveDate = $fet->LeaveDate;
+                $this->Point = $fet->Point;
+                $this->LoginStatus = $fet->LoginStatus;
 
                 // Web Presence
-                self::$DisplayName  = $fet->DisplayName;
-                self::$Email        = $fet->Email;
-                self::$Status       = $fet->Status;
-                self::$UserID       = $fet->UserID;
-                self::$UserIP       = $fet->UserIP;
-                self::$UserUID      = $fet->UserUID;
+                $this->DisplayName = $fet->DisplayName;
+                $this->Email = $fet->Email;
+                $this->Pw = $fet->PwPlain;
+                $this->Pin = $fet->PIN;
+                $this->Status = $fet->Status;
+                $this->UserID = $fet->UserID;
+                $this->UserIP = $fet->UserIP;
+                $this->UserUID = $fet->UserUID;
             }
 
             // Cleanup
-            self::$sql = null;
-            self::$fet = null;
-            self::$res = null;
+            $this->sql = null;
+            $this->fet = null;
+            $this->res = null;
         }
 
-        self::isLoggedIn();
+        $this->isLoggedIn();
         //self::initPasswordHash();
     }
 
@@ -76,30 +92,30 @@ class User
 
     public function isStaff()
     {
-        if (isset(self::$Status)) {
-            switch (self::$Status) {
+        if (isset($this->Status)) {
+            switch ($this->Status) {
                 case '16':
-                    self::$memberLevel = 'ADM';
+                    $this->memberLevel = 'ADM';
                     return true;
                 break;
                 case '32':
-                    self::$memberLevel = 'GM';
+                    $this->memberLevel = 'GM';
                     return true;
                 break;
                 case '48':
-                    self::$memberLevel = 'GM';
+                    $this->memberLevel = 'GM';
                     return true;
                 break;
                 case '64':
-                    self::$memberLevel = 'GMA';
+                    $this->memberLevel = 'GMA';
                     return true;
                 break;
                 case '80':
-                    self::$memberLevel = 'GMA';
+                    $this->memberLevel = 'GMA';
                     return true;
                 break;
                 case '128':
-                    self::$memberLevel = 'GS';
+                    $this->memberLevel = 'GS';
                     return true;
                 break;
             }
@@ -110,7 +126,7 @@ class User
 
     public function isADM(): bool
     {
-        if (self::$Status == self::STATUS_ADM) {
+        if ($this->Status == self::STATUS_ADM) {
             return true;
         }
         return false;
@@ -118,7 +134,7 @@ class User
 
     public function isGM(): bool
     {
-        if (in_array(self::$Status, self::STATUS_GM)) {
+        if (in_array($this->Status, self::STATUS_GM)) {
             return true;
         }
         return false;
@@ -126,7 +142,7 @@ class User
 
     public function isGMA(): bool
     {
-        if (in_array(self::$Status, self::STATUS_GMA)) {
+        if (in_array($this->Status, self::STATUS_GMA)) {
             return true;
         }
         return false;
@@ -134,19 +150,19 @@ class User
 
     public function isGS(): bool
     {
-        if (self::$Status == self::STATUS_GS) {
+        if ($this->Status == self::STATUS_GS) {
             return true;
         }
         return false;
     }
 
-    public static function isLoggedIn(): bool
+    public function isLoggedIn(): bool
     {
-        if (!empty(self::$UserUID) && !empty(self::$UserID) && is_numeric(self::$UserUID)) {
-            self::$LoginStatus = true;
+        if (!empty($this->UserUID) && !empty($this->UserID) && is_numeric($this->UserUID)) {
+            $this->LoginStatus = true;
             return true;
         } else {
-            self::$LoginStatus = false;
+            $this->LoginStatus = false;
             return false;
         }
     }
@@ -154,7 +170,7 @@ class User
     public function auth()
     {
         die('Fix me');
-        if (self::isLoggedIn()) {
+        if (!$this->isLoggedIn()) {
             header('location: /ap');
             die();
         }
@@ -163,7 +179,7 @@ class User
     public function authADM()
     {
         die('Fix me');
-        if (!self::isADM()) {
+        if (!$this->isADM()) {
             header('location: /ap');
             die();
         }
@@ -172,7 +188,7 @@ class User
     public function authStaff()
     {
         die('Fix me');
-        if (!self::isStaff()) {
+        if (!$this->isStaff()) {
             header('location: /ap');
             die();
         }
@@ -180,8 +196,8 @@ class User
 
     public function accessCheck()
     {
-        if (self::isLoggedIn()) {
-            if (!self::isStaff()) {
+        if ($this->isLoggedIn()) {
+            if (!$this->isStaff()) {
                 //Template::doACP_Head("","",false,"12","Access Denied!");
                 return '<span style="color:red">Sorry, you don\'t have permission to access this website!</span>';
                 //Template::doACP_Foot();
@@ -191,8 +207,8 @@ class User
 
     public function isAuthorized(): bool
     {
-        if (self::isLoggedIn()) {
-            if (self::isStaff()) {
+        if ($this->isLoggedIn()) {
+            if ($this->isStaff()) {
                 return true;
             }
         }
@@ -201,7 +217,7 @@ class User
 
     public function getUserStatus(): string
     {
-        return self::$Status;
+        return $this->Status;
     }
 
     public function getStatus(int $Status): string
@@ -341,9 +357,14 @@ class User
 
     public function checkUserFlags()
     {
-        $res                =   Forum::checkUserFlags($_SESSION['User']['UserUID']);
-        self::$userFlags    =   $res->Perms;
-        self::$userFlags    =   explode('~', $res->Perms);
+        $sql = ('
+					SELECT TOP 1 * FROM ShaiyaCMS.dbo.FORUM_USER_PERMS WHERE [User] = :user
+			');
+        MSSQL::query($sql);
+        MSSQL::bind(':user', $_SESSION['User']['UserID']);
+        $res = MSSQL::single();
+        $this->userFlags = $res->Perms;
+        $this->userFlags = explode('~', $res->Perms);
         ;
     }
 
@@ -382,7 +403,7 @@ class User
         ];
         try {
             $loginStatus = DB::table(table('webPresence'))
-                    ->where('UserID', Session::get('User', 'UserID'))
+                    ->where('UserID', $this->session->get('User', 'UserID'))
                     ->update($data);
         } catch (\Exception $e) {
             echo 'problem inserting.';
@@ -429,7 +450,7 @@ class User
         }
     }
 
-    public static function getCharIdFromUser($userUID)
+    public function getCharIdFromUser($userUID)
     {
         $query = DB::table(table('shCharData'))
             ->select('CharID')
@@ -437,7 +458,6 @@ class User
             ->where('Del', 0)
             ->limit(1)
             ->get();
-
         return $query[0]->CharID;
     }
 
@@ -462,7 +482,7 @@ class User
         return $query[0]->UserID;
     }
 
-    public static function isCharInGuild($charID)
+    public function isCharInGuild($charID)
     {
         $query = DB::table(table('shGuildChars'))
             ->select('GuildID')
@@ -476,7 +496,7 @@ class User
         }
     }
 
-    public static function getGuildFromChar($charID)
+    public function getGuildFromChar($charID)
     {
         $query = DB::table(table('shGuildChars'))
             ->select('GuildID')
@@ -523,6 +543,11 @@ class User
     public function updateCharDeaths($char, $newDeaths)
     {
         //
+    }
+
+    public function require2FA()
+    {
+        // Require 2FA Security Measure
     }
 
     // MISC

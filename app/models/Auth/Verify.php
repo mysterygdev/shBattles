@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Auth;
+namespace Models\Auth;
 
 use Utils;
 use Illuminate\Database\Capsule\Manager as DB;

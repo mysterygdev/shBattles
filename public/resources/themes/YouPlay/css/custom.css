@@ -228,3 +228,61 @@ table.drops{
 .MFAType input[type="radio"]{
   margin: 0 10px 0 10px;
 }
+
+.arrow {
+  position: relative;
+}
+
+.arrow::after {
+  content: "\f107";
+  color: #fff;
+  top: -2px;
+  right: 0px;
+  position: absolute;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.arrow[aria-expanded="true"]::after {
+  content: "\f106";
+}
+
+.tooltipShop {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted #000; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltipShop .tooltipShoptext {
+	visibility: hidden;
+	width: 185%;
+	background-color: #151514;
+	color: #fff;
+	text-align: center;
+	min-height: 250%;
+	padding: 20px;
+	border-radius: 1px;
+	border: 1px solid #000;
+	position: absolute;
+	z-index: 1;
+	top: -5px;
+	left: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipShop:hover .tooltipShoptext {
+	visibility: visible;
+}
+
+/* Arrow */
+.tooltipShop .tooltipShoptext::after {
+	content: " ";
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	margin-top: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent transparent black;
+}
